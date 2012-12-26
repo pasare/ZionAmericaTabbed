@@ -1,18 +1,18 @@
 //
-//  Login_ViewController.m
+//  HomeViewController.m
 //  Zion America
 //
-//  Created by Patrick Asare on 12/25/12.
+//  Created by Patrick Asare on 12/26/12.
 //  Copyright (c) 2012 Patrick Asare. All rights reserved.
 //
 
-#import "Login_ViewController.h"
+#import "HomeViewController.h"
 
-@interface Login_ViewController ()
+@interface HomeViewController ()
 
 @end
 
-@implementation Login_ViewController
+@implementation HomeViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FC85120D168A1AB100F94C60 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC85120C168A1AB100F94C60 /* UIKit.framework */; };
+		FC85120D168A1AB100F94C60 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC85120C168A1AB100F94C60 /* UIKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		FC85120F168A1AB100F94C60 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC85120E168A1AB100F94C60 /* Foundation.framework */; };
 		FC851211168A1AB100F94C60 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC851210168A1AB100F94C60 /* CoreGraphics.framework */; };
 		FC851217168A1AB100F94C60 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FC851215168A1AB100F94C60 /* InfoPlist.strings */; };
@@ -17,10 +17,8 @@
 		FC851221168A1AB200F94C60 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FC851220168A1AB200F94C60 /* Default@2x.png */; };
 		FC851223168A1AB200F94C60 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FC851222168A1AB200F94C60 /* Default-568h@2x.png */; };
 		FC851226168A1AB200F94C60 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC851224168A1AB200F94C60 /* MainStoryboard.storyboard */; };
-		FC851229168A1AB200F94C60 /* Zion_AmericaFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC851228168A1AB200F94C60 /* Zion_AmericaFirstViewController.m */; };
 		FC85122B168A1AB200F94C60 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = FC85122A168A1AB200F94C60 /* first.png */; };
 		FC85122D168A1AB200F94C60 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FC85122C168A1AB200F94C60 /* first@2x.png */; };
-		FC851230168A1AB200F94C60 /* Zion_AmericaSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC85122F168A1AB200F94C60 /* Zion_AmericaSecondViewController.m */; };
 		FC851232168A1AB200F94C60 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = FC851231168A1AB200F94C60 /* second.png */; };
 		FC851234168A1AB200F94C60 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FC851233168A1AB200F94C60 /* second@2x.png */; };
 		FC85123C168A1AB200F94C60 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC85123B168A1AB200F94C60 /* SenTestingKit.framework */; };
@@ -28,6 +26,13 @@
 		FC85123E168A1AB200F94C60 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC85120E168A1AB100F94C60 /* Foundation.framework */; };
 		FC851246168A1AB200F94C60 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FC851244168A1AB200F94C60 /* InfoPlist.strings */; };
 		FC851249168A1AB200F94C60 /* Zion_AmericaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FC851248168A1AB200F94C60 /* Zion_AmericaTests.m */; };
+		FC851268168A54B100F94C60 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC851267168A54B100F94C60 /* LoginViewController.m */; };
+		FC85127A168ABEC800F94C60 /* right.png in Resources */ = {isa = PBXBuildFile; fileRef = FC851279168ABEC800F94C60 /* right.png */; };
+		FC851281168AC78C00F94C60 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC851280168AC78C00F94C60 /* HomeViewController.m */; };
+		FC851283168AD11400F94C60 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = FC851282168AD11400F94C60 /* home.png */; };
+		FC851285168AD1ED00F94C60 /* envelop.png in Resources */ = {isa = PBXBuildFile; fileRef = FC851284168AD1ED00F94C60 /* envelop.png */; };
+		FC851287168AD1F600F94C60 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = FC851286168AD1F600F94C60 /* arrow.png */; };
+		FC851289168AD55F00F94C60 /* television.png in Resources */ = {isa = PBXBuildFile; fileRef = FC851288168AD55F00F94C60 /* television.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,12 +60,8 @@
 		FC851220168A1AB200F94C60 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		FC851222168A1AB200F94C60 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		FC851225168A1AB200F94C60 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		FC851227168A1AB200F94C60 /* Zion_AmericaFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Zion_AmericaFirstViewController.h; sourceTree = "<group>"; };
-		FC851228168A1AB200F94C60 /* Zion_AmericaFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Zion_AmericaFirstViewController.m; sourceTree = "<group>"; };
 		FC85122A168A1AB200F94C60 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		FC85122C168A1AB200F94C60 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
-		FC85122E168A1AB200F94C60 /* Zion_AmericaSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Zion_AmericaSecondViewController.h; sourceTree = "<group>"; };
-		FC85122F168A1AB200F94C60 /* Zion_AmericaSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Zion_AmericaSecondViewController.m; sourceTree = "<group>"; };
 		FC851231168A1AB200F94C60 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		FC851233168A1AB200F94C60 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
 		FC85123A168A1AB200F94C60 /* Zion AmericaTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Zion AmericaTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,6 +70,15 @@
 		FC851245168A1AB200F94C60 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FC851247168A1AB200F94C60 /* Zion_AmericaTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Zion_AmericaTests.h; sourceTree = "<group>"; };
 		FC851248168A1AB200F94C60 /* Zion_AmericaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Zion_AmericaTests.m; sourceTree = "<group>"; };
+		FC851266168A54B100F94C60 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		FC851267168A54B100F94C60 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		FC851279168ABEC800F94C60 /* right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right.png; sourceTree = "<group>"; };
+		FC85127F168AC78C00F94C60 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		FC851280168AC78C00F94C60 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		FC851282168AD11400F94C60 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
+		FC851284168AD1ED00F94C60 /* envelop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = envelop.png; sourceTree = "<group>"; };
+		FC851286168AD1F600F94C60 /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
+		FC851288168AD55F00F94C60 /* television.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = television.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,17 +138,14 @@
 		FC851212168A1AB100F94C60 /* Zion America */ = {
 			isa = PBXGroup;
 			children = (
+				FC851276168AB5D800F94C60 /* Resources */,
 				FC85121B168A1AB200F94C60 /* Zion_AmericaAppDelegate.h */,
 				FC85121C168A1AB200F94C60 /* Zion_AmericaAppDelegate.m */,
 				FC851224168A1AB200F94C60 /* MainStoryboard.storyboard */,
-				FC851227168A1AB200F94C60 /* Zion_AmericaFirstViewController.h */,
-				FC851228168A1AB200F94C60 /* Zion_AmericaFirstViewController.m */,
-				FC85122A168A1AB200F94C60 /* first.png */,
-				FC85122C168A1AB200F94C60 /* first@2x.png */,
-				FC85122E168A1AB200F94C60 /* Zion_AmericaSecondViewController.h */,
-				FC85122F168A1AB200F94C60 /* Zion_AmericaSecondViewController.m */,
-				FC851231168A1AB200F94C60 /* second.png */,
-				FC851233168A1AB200F94C60 /* second@2x.png */,
+				FC851266168A54B100F94C60 /* LoginViewController.h */,
+				FC851267168A54B100F94C60 /* LoginViewController.m */,
+				FC85127F168AC78C00F94C60 /* HomeViewController.h */,
+				FC851280168AC78C00F94C60 /* HomeViewController.m */,
 				FC851213168A1AB100F94C60 /* Supporting Files */,
 			);
 			path = "Zion America";
@@ -175,6 +182,22 @@
 				FC851244168A1AB200F94C60 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FC851276168AB5D800F94C60 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FC851288168AD55F00F94C60 /* television.png */,
+				FC851286168AD1F600F94C60 /* arrow.png */,
+				FC851284168AD1ED00F94C60 /* envelop.png */,
+				FC851282168AD11400F94C60 /* home.png */,
+				FC851233168A1AB200F94C60 /* second@2x.png */,
+				FC851231168A1AB200F94C60 /* second.png */,
+				FC85122C168A1AB200F94C60 /* first@2x.png */,
+				FC85122A168A1AB200F94C60 /* first.png */,
+				FC851279168ABEC800F94C60 /* right.png */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +281,11 @@
 				FC85122D168A1AB200F94C60 /* first@2x.png in Resources */,
 				FC851232168A1AB200F94C60 /* second.png in Resources */,
 				FC851234168A1AB200F94C60 /* second@2x.png in Resources */,
+				FC85127A168ABEC800F94C60 /* right.png in Resources */,
+				FC851283168AD11400F94C60 /* home.png in Resources */,
+				FC851285168AD1ED00F94C60 /* envelop.png in Resources */,
+				FC851287168AD1F600F94C60 /* arrow.png in Resources */,
+				FC851289168AD55F00F94C60 /* television.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,8 +322,8 @@
 			files = (
 				FC851219168A1AB200F94C60 /* main.m in Sources */,
 				FC85121D168A1AB200F94C60 /* Zion_AmericaAppDelegate.m in Sources */,
-				FC851229168A1AB200F94C60 /* Zion_AmericaFirstViewController.m in Sources */,
-				FC851230168A1AB200F94C60 /* Zion_AmericaSecondViewController.m in Sources */,
+				FC851268168A54B100F94C60 /* LoginViewController.m in Sources */,
+				FC851281168AC78C00F94C60 /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

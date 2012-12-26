@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
-        <!--View Controller - Home-->
+        <!--Home View Controller - Home-->
         <scene sceneID="11">
             <objects>
-                <viewController title="Home" id="2" sceneMemberID="viewController">
+                <viewController title="Home" providesPresentationContextTransitionStyle="YES" id="2" customClass="HomeViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="16">
                         <rect key="frame" x="0.0" y="20" width="320" height="499"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -25,7 +25,7 @@
                             <constraint firstItem="urS-gw-k6s" firstAttribute="leading" secondItem="16" secondAttribute="leading" type="default" id="y4s-Cb-owh"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" id="7"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="home.png" id="7"/>
                     <navigationItem key="navigationItem" id="bwA-TC-r1w"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
@@ -60,7 +60,7 @@
                             <constraint firstItem="ev2-5l-wf2" firstAttribute="leading" secondItem="LqR-e2-2QT" secondAttribute="leading" type="default" id="uHo-YE-vRN"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Inbox" id="965-tV-PLN"/>
+                    <tabBarItem key="tabBarItem" title="Inbox" image="envelop.png" id="965-tV-PLN"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iK9-SH-Hse" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -166,16 +166,16 @@
                             <constraint firstItem="e4W-bs-ncO" firstAttribute="top" secondItem="17" secondAttribute="top" type="default" id="oOk-l2-xWe"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Send Video" image="second" id="6"/>
+                    <tabBarItem key="tabBarItem" title="Send Video" image="television.png" id="6"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="12" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="653" y="498"/>
         </scene>
-        <!--View Controller - Login View Controller-->
+        <!--Login View Controller - Login View Controller-->
         <scene sceneID="gSP-Iz-8JA">
             <objects>
-                <viewController title="Login View Controller" id="G8G-Z4-crT" sceneMemberID="viewController">
+                <viewController title="Login View Controller" id="G8G-Z4-crT" customClass="LoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="N0G-D1-ggD">
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -192,28 +192,34 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                 <connections>
-                                    <outlet property="delegate" destination="G8G-Z4-crT" id="sda-gN-H4v"/>
+                                    <outlet property="delegate" destination="G8G-Z4-crT" id="9eJ-Pe-esy"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="IOL-9E-2z5">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
-                                    <outlet property="delegate" destination="G8G-Z4-crT" id="aTl-BG-dOq"/>
+                                    <outlet property="delegate" destination="G8G-Z4-crT" id="zBc-j8-5mR"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dy8-hB-6uj">
+                            <button contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dy8-hB-6uj">
+                                <color key="backgroundColor" red="0.1041011521969849" green="0.09646078743837537" blue="0.97112643718719482" alpha="0.5" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="74" type="user" id="qlS-8L-8y3"/>
+                                    <constraint firstAttribute="width" constant="52" id="QPB-dy-Mpt"/>
+                                    <constraint firstAttribute="height" constant="69" id="Wp3-bt-Y1g"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Login" image="first">
+                                <color key="tintColor" red="0.1041011521969849" green="0.09646078743837537" blue="0.97112643718719482" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="arrow.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="ProcessLogin:" destination="G8G-Z4-crT" eventType="touchUpInside" id="w1R-II-EaK"/>
+                                    <segue destination="4" kind="modal" id="BhG-Mj-iY9"/>
+                                </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Please make sure you are the only one to login to your account" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="226" translatesAutoresizingMaskIntoConstraints="NO" id="pMI-15-lwx">
                                 <constraints>
@@ -224,25 +230,40 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Incorrect User ID or Password" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="234" translatesAutoresizingMaskIntoConstraints="NO" id="nES-sk-Ihg">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="234" id="wKD-MK-Rb4"/>
+                                    <constraint firstAttribute="height" constant="57" id="yvO-Yt-71b"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="dy8-hB-6uj" firstAttribute="top" secondItem="1we-63-bz2" secondAttribute="top" type="default" id="8zQ-RQ-OCW"/>
-                            <constraint firstItem="pMI-15-lwx" firstAttribute="top" secondItem="IOL-9E-2z5" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="HEx-oZ-f07"/>
+                            <constraint firstItem="dy8-hB-6uj" firstAttribute="top" secondItem="N0G-D1-ggD" secondAttribute="top" constant="96" id="13k-5J-tve"/>
+                            <constraint firstItem="1we-63-bz2" firstAttribute="leading" secondItem="N0G-D1-ggD" secondAttribute="leading" constant="51" id="9zd-Vn-wdE"/>
                             <constraint firstItem="IOL-9E-2z5" firstAttribute="leading" secondItem="1we-63-bz2" secondAttribute="leading" type="default" id="HI1-tg-CzB"/>
+                            <constraint firstItem="IOL-9E-2z5" firstAttribute="top" secondItem="1we-63-bz2" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="IP5-gb-t5a"/>
                             <constraint firstItem="pMI-15-lwx" firstAttribute="leading" secondItem="N0G-D1-ggD" secondAttribute="leading" constant="35" id="J9H-rC-IsY"/>
                             <constraint firstItem="dy8-hB-6uj" firstAttribute="leading" secondItem="IOL-9E-2z5" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="L39-eh-NKC"/>
                             <constraint firstItem="xuL-yi-yRe" firstAttribute="leading" secondItem="N0G-D1-ggD" secondAttribute="leading" type="default" id="LMK-xg-9DG"/>
-                            <constraint firstItem="IOL-9E-2z5" firstAttribute="top" secondItem="1we-63-bz2" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="LyL-Ue-WcA"/>
-                            <constraint firstItem="dy8-hB-6uj" firstAttribute="trailing" secondItem="pMI-15-lwx" secondAttribute="trailing" type="default" id="Pcx-i5-wyT"/>
+                            <constraint firstItem="pMI-15-lwx" firstAttribute="top" secondItem="IOL-9E-2z5" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Ruf-Zx-d3J"/>
+                            <constraint firstItem="nES-sk-Ihg" firstAttribute="leading" secondItem="pMI-15-lwx" secondAttribute="leading" type="default" id="Y6U-b2-Abx"/>
+                            <constraint firstItem="pMI-15-lwx" firstAttribute="top" secondItem="dy8-hB-6uj" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="dvg-vQ-hrs"/>
                             <constraint firstItem="xuL-yi-yRe" firstAttribute="top" secondItem="N0G-D1-ggD" secondAttribute="top" constant="33" id="fJe-RZ-Wyq"/>
                             <constraint firstItem="xuL-yi-yRe" firstAttribute="trailing" secondItem="N0G-D1-ggD" secondAttribute="trailing" type="default" id="fOo-jd-rh7"/>
                             <constraint firstItem="dy8-hB-6uj" firstAttribute="leading" secondItem="1we-63-bz2" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="lGt-eb-NFU"/>
-                            <constraint firstItem="pMI-15-lwx" firstAttribute="top" secondItem="dy8-hB-6uj" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="ufH-8v-Ctu"/>
-                            <constraint firstItem="1we-63-bz2" firstAttribute="top" secondItem="N0G-D1-ggD" secondAttribute="top" constant="97" id="vyF-hK-Upf"/>
+                            <constraint firstItem="nES-sk-Ihg" firstAttribute="top" secondItem="N0G-D1-ggD" secondAttribute="top" constant="245" id="w6h-M7-VQA"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="O9L-Jk-0v7"/>
+                    <connections>
+                        <outlet property="errorLabel" destination="nES-sk-Ihg" id="T5S-FU-ZII"/>
+                        <outlet property="userID" destination="1we-63-bz2" id="6Qs-oq-i3m"/>
+                        <outlet property="userPassword" destination="IOL-9E-2z5" id="8YH-Hf-pZz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I2i-HE-QXn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -274,8 +295,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="16" height="16"/>
-        <image name="second" width="16" height="16"/>
+        <image name="arrow.png" width="32" height="32"/>
+        <image name="envelop.png" width="24" height="24"/>
+        <image name="home.png" width="24" height="24"/>
+        <image name="television.png" width="24" height="24"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

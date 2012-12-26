@@ -1,13 +1,13 @@
 //
-//  Zion_AmericaSecondViewController.h
+//  Login_ViewController.m
 //  Zion America
 //
 //  Created by Patrick Asare on 12/25/12.
 //  Copyright (c) 2012 Patrick Asare. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "Login_ViewController.h"
 
-@interface Zion_AmericaSecondViewController : UIViewController
+@implementation Login_ViewController
 
 @end

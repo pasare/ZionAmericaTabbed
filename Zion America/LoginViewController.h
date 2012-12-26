@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface Login_ViewController : UIViewController <UITextFieldDelegate>
+@interface LoginViewController : UIViewController <UITextFieldDelegate>
+@property (copy, nonatomic) NSString *loginID;
+@property (copy, nonatomic) NSString *loginPass;
 
 @end
+
+
