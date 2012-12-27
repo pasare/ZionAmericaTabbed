@@ -8,8 +8,8 @@
 
 #import "LoginViewController.h"
 
+
 @interface LoginViewController()
-@property (weak, nonatomic) IBOutlet UILabel *errorLabel;
 @property (weak, nonatomic) IBOutlet UITextField *userPassword;
 @property (weak, nonatomic) IBOutlet UITextField *userID;
 - (IBAction)ProcessLogin:(id)sender;
@@ -30,7 +30,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+	//Create the logging in alert
+    self.statusAlert = [[UIAlertView alloc] initWithTitle:@"Verifying Login Information" message:@"Please wait..." delegate:self cancelButtonTitle:nil otherButtonTitles:nil ];
+    UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    //Insert a spinner on the status alert
+    indicator.center = CGPointMake(self.statusAlert.bounds.size.width+140, self.statusAlert.bounds.size.height+100);
+    [indicator startAnimating];
+    [self.statusAlert addSubview:indicator];
+    //Create the failed login alert
+    self.failedLoginAlert = [[UIAlertView alloc] initWithTitle:@"Login Failed" message:@"Incorrect username or password" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil ];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -54,11 +64,25 @@
 }
 
 - (IBAction)ProcessLogin:(id)sender {
+    [self.statusAlert show];
+    [NSTimer scheduledTimerWithTimeInterval:.5 target:self selector:@selector(tryLogin) userInfo:nil repeats:NO];
+}
+
+-(void)tryLogin {
     self.loginID = self.userID.text;
     self.loginPass = self.userPassword.text;
-    self.errorLabel.hidden = false;
-    UIViewController *NextViewController = [[UIViewController alloc] initWithNibName:@"HomeViewController" bundle:nil];
-    [self.navigationController pushViewController:NextViewController animated:YES];
+    NSString *server = WPSERVER;
+    WordPressConnection *connection = [WordPressConnection alloc];
+    BOOL authResult = [connection authenticateUser:server username:self.loginID password: self.loginPass];
+    [self.statusAlert dismissWithClickedButtonIndex:0 animated:YES];
+    if (authResult) {
+        NSLog(@"Authenticated");
+        [self performSegueWithIdentifier: @"loginSegue" sender: self];
+    } else {
+        [self.failedLoginAlert show];
+        NSLog(@"Bad login or password");
+    }  
 }
+
 
 @end

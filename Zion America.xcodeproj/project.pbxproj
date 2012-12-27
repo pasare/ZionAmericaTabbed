@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		990D546D168B8EC200E0BEC5 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 990D546C168B8EC200E0BEC5 /* libsqlite3.0.dylib */; };
+		990D5470168B8FAB00E0BEC5 /* butterfly.png in Resources */ = {isa = PBXBuildFile; fileRef = 990D546F168B8FAB00E0BEC5 /* butterfly.png */; };
+		9991E11B168BD50500A88911 /* libXMLRPC_iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9991E118168BD4F000A88911 /* libXMLRPC_iOS.a */; };
+		9991E11F168C07C400A88911 /* WordPressConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 9991E11E168C07C400A88911 /* WordPressConnection.m */; };
+		9991E122168C0ADF00A88911 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9991E121168C0ADF00A88911 /* Constants.m */; };
+		9991E126168C21C700A88911 /* butterfly with text.png in Resources */ = {isa = PBXBuildFile; fileRef = 9991E125168C21C700A88911 /* butterfly with text.png */; };
 		FC85120D168A1AB100F94C60 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC85120C168A1AB100F94C60 /* UIKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		FC85120F168A1AB100F94C60 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC85120E168A1AB100F94C60 /* Foundation.framework */; };
 		FC851211168A1AB100F94C60 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC851210168A1AB100F94C60 /* CoreGraphics.framework */; };
@@ -36,6 +42,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		9991E117168BD4F000A88911 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9991E0F2168BCF1400A88911 /* XMLRPC-iOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D;
+			remoteInfo = "XMLRPC-iOS";
+		};
+		9991E119168BD4FE00A88911 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9991E0F2168BCF1400A88911 /* XMLRPC-iOS.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteInfo = "XMLRPC-iOS";
+		};
 		FC85123F168A1AB200F94C60 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FC8511FF168A1AB100F94C60 /* Project object */;
@@ -46,6 +66,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		99055D66168BC93E00F89CA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		990D546C168B8EC200E0BEC5 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		990D546F168B8FAB00E0BEC5 /* butterfly.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = butterfly.png; sourceTree = "<group>"; };
+		9991E0F2168BCF1400A88911 /* XMLRPC-iOS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "XMLRPC-iOS.xcodeproj"; path = "kdbdallas-xmlrpc-ios-f28a13cc16ae/XMLRPC-iOS.xcodeproj"; sourceTree = "<group>"; };
+		9991E11D168C07C400A88911 /* WordPressConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WordPressConnection.h; path = ../WordPressConnection.h; sourceTree = "<group>"; };
+		9991E11E168C07C400A88911 /* WordPressConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WordPressConnection.m; path = ../WordPressConnection.m; sourceTree = "<group>"; };
+		9991E120168C0ADF00A88911 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		9991E121168C0ADF00A88911 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		9991E125168C21C700A88911 /* butterfly with text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "butterfly with text.png"; sourceTree = "<group>"; };
 		FC851208168A1AB100F94C60 /* Zion America.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Zion America.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC85120C168A1AB100F94C60 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FC85120E168A1AB100F94C60 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -59,7 +88,6 @@
 		FC85121E168A1AB200F94C60 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		FC851220168A1AB200F94C60 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		FC851222168A1AB200F94C60 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		FC851225168A1AB200F94C60 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		FC85122A168A1AB200F94C60 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		FC85122C168A1AB200F94C60 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
 		FC851231168A1AB200F94C60 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
@@ -86,6 +114,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9991E11B168BD50500A88911 /* libXMLRPC_iOS.a in Frameworks */,
+				990D546D168B8EC200E0BEC5 /* libsqlite3.0.dylib in Frameworks */,
 				FC85120D168A1AB100F94C60 /* UIKit.framework in Frameworks */,
 				FC85120F168A1AB100F94C60 /* Foundation.framework in Frameworks */,
 				FC851211168A1AB100F94C60 /* CoreGraphics.framework in Frameworks */,
@@ -105,9 +135,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9991E114168BD4F000A88911 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9991E118168BD4F000A88911 /* libXMLRPC_iOS.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		FC8511FD168A1AB100F94C60 = {
 			isa = PBXGroup;
 			children = (
+				9991E0F2168BCF1400A88911 /* XMLRPC-iOS.xcodeproj */,
 				FC851212168A1AB100F94C60 /* Zion America */,
 				FC851241168A1AB200F94C60 /* Zion AmericaTests */,
 				FC85120B168A1AB100F94C60 /* Frameworks */,
@@ -138,7 +177,8 @@
 		FC851212168A1AB100F94C60 /* Zion America */ = {
 			isa = PBXGroup;
 			children = (
-				FC851276168AB5D800F94C60 /* Resources */,
+				9991E11D168C07C400A88911 /* WordPressConnection.h */,
+				9991E11E168C07C400A88911 /* WordPressConnection.m */,
 				FC85121B168A1AB200F94C60 /* Zion_AmericaAppDelegate.h */,
 				FC85121C168A1AB200F94C60 /* Zion_AmericaAppDelegate.m */,
 				FC851224168A1AB200F94C60 /* MainStoryboard.storyboard */,
@@ -146,7 +186,10 @@
 				FC851267168A54B100F94C60 /* LoginViewController.m */,
 				FC85127F168AC78C00F94C60 /* HomeViewController.h */,
 				FC851280168AC78C00F94C60 /* HomeViewController.m */,
+				FC851276168AB5D800F94C60 /* Resources */,
 				FC851213168A1AB100F94C60 /* Supporting Files */,
+				9991E120168C0ADF00A88911 /* Constants.h */,
+				9991E121168C0ADF00A88911 /* Constants.m */,
 			);
 			path = "Zion America";
 			sourceTree = "<group>";
@@ -154,6 +197,7 @@
 		FC851213168A1AB100F94C60 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				990D546C168B8EC200E0BEC5 /* libsqlite3.0.dylib */,
 				FC851214168A1AB100F94C60 /* Zion America-Info.plist */,
 				FC851215168A1AB100F94C60 /* InfoPlist.strings */,
 				FC851218168A1AB200F94C60 /* main.m */,
@@ -187,6 +231,8 @@
 		FC851276168AB5D800F94C60 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9991E125168C21C700A88911 /* butterfly with text.png */,
+				990D546F168B8FAB00E0BEC5 /* butterfly.png */,
 				FC851288168AD55F00F94C60 /* television.png */,
 				FC851286168AD1F600F94C60 /* arrow.png */,
 				FC851284168AD1ED00F94C60 /* envelop.png */,
@@ -214,6 +260,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				9991E11A168BD4FE00A88911 /* PBXTargetDependency */,
 			);
 			name = "Zion America";
 			productName = "Zion America";
@@ -255,10 +302,18 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				English,
+				Base,
 			);
 			mainGroup = FC8511FD168A1AB100F94C60;
 			productRefGroup = FC851209168A1AB100F94C60 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 9991E114168BD4F000A88911 /* Products */;
+					ProjectRef = 9991E0F2168BCF1400A88911 /* XMLRPC-iOS.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				FC851207168A1AB100F94C60 /* Zion America */,
@@ -266,6 +321,16 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		9991E118168BD4F000A88911 /* libXMLRPC_iOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libXMLRPC_iOS.a;
+			remoteRef = 9991E117168BD4F000A88911 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		FC851206168A1AB100F94C60 /* Resources */ = {
@@ -286,6 +351,8 @@
 				FC851285168AD1ED00F94C60 /* envelop.png in Resources */,
 				FC851287168AD1F600F94C60 /* arrow.png in Resources */,
 				FC851289168AD55F00F94C60 /* television.png in Resources */,
+				990D5470168B8FAB00E0BEC5 /* butterfly.png in Resources */,
+				9991E126168C21C700A88911 /* butterfly with text.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,6 +391,8 @@
 				FC85121D168A1AB200F94C60 /* Zion_AmericaAppDelegate.m in Sources */,
 				FC851268168A54B100F94C60 /* LoginViewController.m in Sources */,
 				FC851281168AC78C00F94C60 /* HomeViewController.m in Sources */,
+				9991E11F168C07C400A88911 /* WordPressConnection.m in Sources */,
+				9991E122168C0ADF00A88911 /* Constants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,6 +407,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		9991E11A168BD4FE00A88911 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "XMLRPC-iOS";
+			targetProxy = 9991E119168BD4FE00A88911 /* PBXContainerItemProxy */;
+		};
 		FC851240168A1AB200F94C60 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = FC851207168A1AB100F94C60 /* Zion America */;
@@ -357,7 +431,7 @@
 		FC851224168A1AB200F94C60 /* MainStoryboard.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				FC851225168A1AB200F94C60 /* en */,
+				99055D66168BC93E00F89CA3 /* Base */,
 			);
 			name = MainStoryboard.storyboard;
 			sourceTree = "<group>";
@@ -426,10 +500,18 @@
 		FC85124D168A1AB200F94C60 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Zion America/Zion America-Prefix.pch";
+				HEADER_SEARCH_PATHS = "\"${SRCROOT}\"/**";
 				INFOPLIST_FILE = "Zion America/Zion America-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../Library/Developer/Xcode/DerivedData/Zion_America-gvnzuiefhlctsjbjqepbodddvdnp/Build/Products/Debug-iphoneos\"",
+				);
+				New_Setting = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -437,10 +519,18 @@
 		FC85124E168A1AB200F94C60 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Zion America/Zion America-Prefix.pch";
+				HEADER_SEARCH_PATHS = "\"${SRCROOT}\"/**";
 				INFOPLIST_FILE = "Zion America/Zion America-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../Library/Developer/Xcode/DerivedData/Zion_America-gvnzuiefhlctsjbjqepbodddvdnp/Build/Products/Debug-iphoneos\"",
+				);
+				New_Setting = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -498,6 +588,7 @@
 				FC85124E168A1AB200F94C60 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FC85124F168A1AB200F94C60 /* Build configuration list for PBXNativeTarget "Zion AmericaTests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +597,7 @@
 				FC851251168A1AB200F94C60 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

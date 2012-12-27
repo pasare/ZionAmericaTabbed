@@ -1,0 +1,560 @@
+TZion America
+v5
+r1
+cCheck dependencies
+cProcessInfoPlistFile "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/Info.plist" "Zion America/Zion America-Info.plist"
+cProcessPCH "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/PrecompiledHeaders/Zion America-Prefix-gkmtuzubgmlowpfrxwxgrpoalkni/Zion America-Prefix.pch.pth" "Zion America/Zion America-Prefix.pch" normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC "DerivedData/Zion America/Build/Intermediates/Zion America.build/Debug-iphonesimulator/Zion America.build/Objects-normal/i386/main.o" "/Users/patrickasare/Desktop/Zion America/Zion America/main.m" normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC "DerivedData/Zion America/Build/Intermediates/Zion America.build/Debug-iphonesimulator/Zion America.build/Objects-normal/i386/Zion_AmericaAppDelegate.o" "/Users/patrickasare/Desktop/Zion America/Zion America/Zion_AmericaAppDelegate.m" normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC "DerivedData/Zion America/Build/Intermediates/Zion America.build/Debug-iphonesimulator/Zion America.build/Objects-normal/i386/LoginViewController.o" "/Users/patrickasare/Desktop/Zion America/Zion America/LoginViewController.m" normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC "DerivedData/Zion America/Build/Intermediates/Zion America.build/Debug-iphonesimulator/Zion America.build/Objects-normal/i386/HomeViewController.o" "/Users/patrickasare/Desktop/Zion America/Zion America/HomeViewController.m" normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cLd "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/Zion America" normal i386
+cGenerateDSYMFile "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app.dSYM" "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/Zion America"
+cCopyStringsFile "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/en.lproj/InfoPlist.strings" "Zion America/en.lproj/InfoPlist.strings"
+cCpResource "Zion America/Default.png" "DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/Default.png"
+cCpResource "Zion America/Default@2x.png" "DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/Default@2x.png"
+cCpResource "Zion America/Default-568h@2x.png" "DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/Default-568h@2x.png"
+cCompileStoryboard "/Users/patrickasare/Desktop/Zion America/Zion America/Base.lproj/MainStoryboard.storyboard"
+cCpResource "Zion America/first.png" "DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/first.png"
+cCpResource "Zion America/first@2x.png" "DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/first@2x.png"
+cCpResource "Zion America/second.png" "DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/second.png"
+cCpResource "Zion America/second@2x.png" "DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/second@2x.png"
+cCpResource "Zion America/right.png" "DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/right.png"
+cCpResource "Zion America/home.png" "DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/home.png"
+cCpResource "Zion America/envelop.png" "DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/envelop.png"
+cCpResource "Zion America/arrow.png" "DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/arrow.png"
+cCpResource "Zion America/television.png" "DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/television.png"
+cCpResource "Zion America/butterfly.png" "DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/butterfly.png"
+cTouch "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app"
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk
+c00000000504916AD0000000000000110
+t1346967213
+s272
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c0000000050D937890000000000228FD0
+t1356412809
+s2265040
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c0000000050D9378B00000000003DCEF0
+t1356412811
+s4050672
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c0000000050D9378A00000000000015F7
+t1356412810
+s5623
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
+c0000000050D9378E0000000000000E8D
+t1356412814
+s3725
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c0000000050D937900000000000AB3D60
+t1356412816
+s11222368
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk/usr/include/Availability.h
+c0000000050D9379E0000000000001B54
+t1356412830
+s6996
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk/usr/lib/libsqlite3.0.dylib
+c0000000050D937A000000000000D1F20
+t1356412832
+s859936
+
+N/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/PrecompiledHeaders/Zion America-Prefix-gkmtuzubgmlowpfrxwxgrpoalkni/Zion America-Prefix.pch.pth
+t1356570576
+s4840716
+
+N/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/Zion America.build/Debug-iphonesimulator/Zion America.build/Objects-normal/i386/HomeViewController.o
+t1356570582
+s68640
+
+N/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/Zion America.build/Debug-iphonesimulator/Zion America.build/Objects-normal/i386/LoginViewController.o
+t1356570582
+s82736
+
+N/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/Zion America.build/Debug-iphonesimulator/Zion America.build/Objects-normal/i386/Zion America.LinkFileList
+c0000000050DB9FCF00000000000002E4
+t1356570575
+s740
+
+N/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/Zion America.build/Debug-iphonesimulator/Zion America.build/Objects-normal/i386/Zion_AmericaAppDelegate.o
+t1356570576
+s86876
+
+N/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/Zion America.build/Debug-iphonesimulator/Zion America.build/Objects-normal/i386/main.o
+t1356570576
+s3328
+
+N/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app
+t1356570582
+s680
+
+N/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app.dSYM
+t1356570582
+s102
+
+N/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/Base.lproj/MainStoryboard.storyboardc
+t1356570582
+s374
+
+N/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/Default-568h@2x.png
+t1356570582
+s18594
+
+N/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/Default.png
+t1356570582
+s6540
+
+N/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/Default@2x.png
+t1356570582
+s16107
+
+N/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/Info.plist
+t1356570575
+s969
+
+N/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/PkgInfo
+t1356570575
+s8
+
+N/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/Zion America
+t1356570582
+s26232
+
+N/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/arrow.png
+t1356570582
+s1287
+
+N/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/butterfly.png
+t1356570582
+s2151
+
+N/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/en.lproj/InfoPlist.strings
+t1356570582
+s42
+
+N/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/envelop.png
+t1356570582
+s1097
+
+N/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/first.png
+t1356570582
+s253
+
+N/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/first@2x.png
+t1356570582
+s402
+
+N/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/home.png
+t1356570582
+s824
+
+N/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/right.png
+t1356570582
+s714
+
+N/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/second.png
+t1356570582
+s128
+
+N/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/second@2x.png
+t1356570582
+s130
+
+N/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/television.png
+t1356570582
+s961
+
+N/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/libXMLRPC_iOS.a
+c0000000050DB9FCF000000000002CCA8
+t1356570575
+s183464
+
+N/Users/patrickasare/Desktop/Zion America/Zion America/Base.lproj/MainStoryboard.storyboard
+c0000000050DB8E190000000000006E28
+t1356566041
+s28200
+
+N/Users/patrickasare/Desktop/Zion America/Zion America/Default-568h@2x.png
+c0000000050748B2300000000000048A2
+t1349815075
+s18594
+
+N/Users/patrickasare/Desktop/Zion America/Zion America/Default.png
+c0000000050748B23000000000000198C
+t1349815075
+s6540
+
+N/Users/patrickasare/Desktop/Zion America/Zion America/Default@2x.png
+c0000000050748B230000000000003EEB
+t1349815075
+s16107
+
+N/Users/patrickasare/Desktop/Zion America/Zion America/HomeViewController.h
+c0000000050DA9A8100000000000000E9
+t1356503681
+s233
+
+N/Users/patrickasare/Desktop/Zion America/Zion America/HomeViewController.m
+c0000000050DA900B00000000000002D6
+t1356501003
+s726
+
+N/Users/patrickasare/Desktop/Zion America/Zion America/LoginViewController.h
+c0000000050DB9FD500000000000001A6
+t1356570581
+s422
+
+N/Users/patrickasare/Desktop/Zion America/Zion America/LoginViewController.m
+c0000000050DB9AC90000000000000888
+t1356569289
+s2184
+
+N/Users/patrickasare/Desktop/Zion America/Zion America/Zion America-Prefix.pch
+c0000000050D9E3320000000000000147
+t1356456754
+s327
+i<Availability.h>
+i<UIKit/UIKit.h>
+i<Foundation/Foundation.h>
+
+N/Users/patrickasare/Desktop/Zion America/Zion America/Zion_AmericaAppDelegate.h
+c0000000050D9E3320000000000000137
+t1356456754
+s311
+
+N/Users/patrickasare/Desktop/Zion America/Zion America/Zion_AmericaAppDelegate.m
+c0000000050D9E3320000000000000805
+t1356456754
+s2053
+
+N/Users/patrickasare/Desktop/Zion America/Zion America/arrow.png
+c0000000050DA99F50000000000000507
+t1356503541
+s1287
+
+N/Users/patrickasare/Desktop/Zion America/Zion America/butterfly.png
+c0000000050DB57BB0000000000000867
+t1356552123
+s2151
+
+N/Users/patrickasare/Desktop/Zion America/Zion America/en.lproj/InfoPlist.strings
+c0000000050D9E331000000000000002D
+t1356456753
+s45
+
+N/Users/patrickasare/Desktop/Zion America/Zion America/envelop.png
+c0000000050DA9A620000000000000449
+t1356503650
+s1097
+
+N/Users/patrickasare/Desktop/Zion America/Zion America/first.png
+c0000000050748B2300000000000000FD
+t1349815075
+s253
+
+N/Users/patrickasare/Desktop/Zion America/Zion America/first@2x.png
+c0000000050748B230000000000000192
+t1349815075
+s402
+
+N/Users/patrickasare/Desktop/Zion America/Zion America/home.png
+c0000000050DA99830000000000000338
+t1356503427
+s824
+
+N/Users/patrickasare/Desktop/Zion America/Zion America/main.m
+c0000000050D9E3320000000000000172
+t1356456754
+s370
+
+N/Users/patrickasare/Desktop/Zion America/Zion America/right.png
+c0000000050DA871600000000000002CA
+t1356498710
+s714
+
+N/Users/patrickasare/Desktop/Zion America/Zion America/second.png
+c0000000050748B230000000000000080
+t1349815075
+s128
+
+N/Users/patrickasare/Desktop/Zion America/Zion America/second@2x.png
+c0000000050748B230000000000000082
+t1349815075
+s130
+
+N/Users/patrickasare/Desktop/Zion America/Zion America/television.png
+c0000000050DA9DD300000000000003C1
+t1356504531
+s961
+
+NZion America/Zion America-Info.plist
+c0000000050DB7F5E000000000000059B
+t1356562270
+s1435
+
+CBuild AST from "/Users/patrickasare/Desktop/Zion America/Zion America/HomeViewController.m"
+r0
+
+CBuild AST from "/Users/patrickasare/Desktop/Zion America/Zion America/LoginViewController.m"
+r0
+
+CBuild AST from "/Users/patrickasare/Desktop/Zion America/Zion America/Zion_AmericaAppDelegate.m"
+r0
+
+CBuild AST from "/Users/patrickasare/Desktop/Zion America/Zion America/main.m"
+r0
+
+CCheck dependencies
+r0
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies091b8e6ed78bb641^4f588e6ed78bb641^---0#1#0#--18"Check dependencies36"F4379251-C29F-41E7-8E93-2C2EA4E7012C-
+
+CCompileC "DerivedData/Zion America/Build/Intermediates/Zion America.build/Debug-iphonesimulator/Zion America.build/Objects-normal/i386/HomeViewController.o" "/Users/patrickasare/Desktop/Zion America/Zion America/HomeViewController.m" normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s378263382.066391
+e378263382.145283
+r1
+xCompileC
+xDerivedData/Zion America/Build/Intermediates/Zion America.build/Debug-iphonesimulator/Zion America.build/Objects-normal/i386/HomeViewController.o
+x/Users/patrickasare/Desktop/Zion America/Zion America/HomeViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection82"Compile /Users/patrickasare/Desktop/Zion America/Zion America/HomeViewController.m6b281156d78bb641^7b302556d78bb641^---0#0#0#-19%DVTDocumentLocation2@94"file://localhost/Users/patrickasare/Desktop/Zion%20America/Zion%20America/HomeViewController.m0000000000000000^3996"CompileC "DerivedData/Zion America/Build/Intermediates/Zion America.build/Debug-iphonesimulator/Zion America.build/Objects-normal/i386/HomeViewController.o" "Zion America/HomeViewController.m" normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd "/Users/patrickasare/Desktop/Zion America"    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk -fexceptions -fasm-blocks -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -mios-simulator-version-min=6.0 -iquote "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/Zion America.build/Debug-iphonesimulator/Zion America.build/Zion America-generated-files.hmap" "-I/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/Zion America.build/Debug-iphonesimulator/Zion America.build/Zion America-own-target-headers.hmap" "-I/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/Zion America.build/Debug-iphonesimulator/Zion America.build/Zion America-all-target-headers.hmap" -iquote "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/Zion America.build/Debug-iphonesimulator/Zion America.build/Zion America-project-headers.hmap" "-I/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/include" -I/Users/patrickasare/Desktop/Zion -IAmerica "-I/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/Zion America.build/Debug-iphonesimulator/Zion America.build/DerivedSources/i386" "-I/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/Zion America.build/Debug-iphonesimulator/Zion America.build/DerivedSources" "-F/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator" -include "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/PrecompiledHeaders/Zion America-Prefix-gkmtuzubgmlowpfrxwxgrpoalkni/Zion America-Prefix.pch" -MMD -MT dependencies -MF "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/Zion America.build/Debug-iphonesimulator/Zion America.build/Objects-normal/i386/HomeViewController.d" --serialize-diagnostics "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/Zion America.build/Debug-iphonesimulator/Zion America.build/Objects-normal/i386/HomeViewController.dia" -c "/Users/patrickasare/Desktop/Zion America/Zion America/HomeViewController.m" -o "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/Zion America.build/Debug-iphonesimulator/Zion America.build/Objects-normal/i386/HomeViewController.o"36"58AC75FB-0AA0-4C4F-84B4-D13BE8FB39F9-
+
+CCompileC "DerivedData/Zion America/Build/Intermediates/Zion America.build/Debug-iphonesimulator/Zion America.build/Objects-normal/i386/LoginViewController.o" "/Users/patrickasare/Desktop/Zion America/Zion America/LoginViewController.m" normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s378263382.065761
+e378263382.140009
+r1
+xCompileC
+xDerivedData/Zion America/Build/Intermediates/Zion America.build/Debug-iphonesimulator/Zion America.build/Objects-normal/i386/LoginViewController.o
+x/Users/patrickasare/Desktop/Zion America/Zion America/LoginViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+o/Users/patrickasare/Desktop/Zion America/Zion America/LoginViewController.m:62:12: warning: unused variable 'URL' [-Wunused-variable]
+o    NSURL *URL = [NSURL URLWithString: @"http://127.0.0.1:8080/"];
+o           ^
+o1 warning generated.
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection83"Compile /Users/patrickasare/Desktop/Zion America/Zion America/LoginViewController.mf7001156d78bb641^3e092456d78bb641^-235"/Users/patrickasare/Desktop/Zion America/Zion America/LoginViewController.m:62:12: warning: unused variable 'URL' [-Wunused-variable]    NSURL *URL = [NSURL URLWithString: @"http://127.0.0.1:8080/"];           ^1 warning generated.1(36%IDEClangDiagnosticActivityLogMessage2@21"Unused variable 'URL'-378263382#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic23%DVTTextDocumentLocation3@95"file://localhost/Users/patrickasare/Desktop/Zion%20America/Zion%20America/LoginViewController.m0000000000000000^61#11#61#11#1519#0#19"Unused Entity Issue--0#0#0#-19%DVTDocumentLocation4@95"file://localhost/Users/patrickasare/Desktop/Zion%20America/Zion%20America/LoginViewController.m0000000000000000^4002"CompileC "DerivedData/Zion America/Build/Intermediates/Zion America.build/Debug-iphonesimulator/Zion America.build/Objects-normal/i386/LoginViewController.o" "Zion America/LoginViewController.m" normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd "/Users/patrickasare/Desktop/Zion America"    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk -fexceptions -fasm-blocks -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -mios-simulator-version-min=6.0 -iquote "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/Zion America.build/Debug-iphonesimulator/Zion America.build/Zion America-generated-files.hmap" "-I/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/Zion America.build/Debug-iphonesimulator/Zion America.build/Zion America-own-target-headers.hmap" "-I/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/Zion America.build/Debug-iphonesimulator/Zion America.build/Zion America-all-target-headers.hmap" -iquote "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/Zion America.build/Debug-iphonesimulator/Zion America.build/Zion America-project-headers.hmap" "-I/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/include" -I/Users/patrickasare/Desktop/Zion -IAmerica "-I/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/Zion America.build/Debug-iphonesimulator/Zion America.build/DerivedSources/i386" "-I/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/Zion America.build/Debug-iphonesimulator/Zion America.build/DerivedSources" "-F/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator" -include "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/PrecompiledHeaders/Zion America-Prefix-gkmtuzubgmlowpfrxwxgrpoalkni/Zion America-Prefix.pch" -MMD -MT dependencies -MF "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/Zion America.build/Debug-iphonesimulator/Zion America.build/Objects-normal/i386/LoginViewController.d" --serialize-diagnostics "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/Zion America.build/Debug-iphonesimulator/Zion America.build/Objects-normal/i386/LoginViewController.dia" -c "/Users/patrickasare/Desktop/Zion America/Zion America/LoginViewController.m" -o "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/Zion America.build/Debug-iphonesimulator/Zion America.build/Objects-normal/i386/LoginViewController.o"36"CA78EAD0-97B8-4309-848B-BB3AA6465876-
+
+CCompileC "DerivedData/Zion America/Build/Intermediates/Zion America.build/Debug-iphonesimulator/Zion America.build/Objects-normal/i386/Zion_AmericaAppDelegate.o" "/Users/patrickasare/Desktop/Zion America/Zion America/Zion_AmericaAppDelegate.m" normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s378263376.310263
+e378263376.466412
+r1
+xCompileC
+xDerivedData/Zion America/Build/Intermediates/Zion America.build/Debug-iphonesimulator/Zion America.build/Objects-normal/i386/Zion_AmericaAppDelegate.o
+x/Users/patrickasare/Desktop/Zion America/Zion America/Zion_AmericaAppDelegate.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection87"Compile /Users/patrickasare/Desktop/Zion America/Zion America/Zion_AmericaAppDelegate.m98a34f50d78bb641^1a6f7750d78bb641^---0#0#0#-19%DVTDocumentLocation2@99"file://localhost/Users/patrickasare/Desktop/Zion%20America/Zion%20America/Zion_AmericaAppDelegate.m0000000000000000^4026"CompileC "DerivedData/Zion America/Build/Intermediates/Zion America.build/Debug-iphonesimulator/Zion America.build/Objects-normal/i386/Zion_AmericaAppDelegate.o" "Zion America/Zion_AmericaAppDelegate.m" normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd "/Users/patrickasare/Desktop/Zion America"    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk -fexceptions -fasm-blocks -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -mios-simulator-version-min=6.0 -iquote "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/Zion America.build/Debug-iphonesimulator/Zion America.build/Zion America-generated-files.hmap" "-I/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/Zion America.build/Debug-iphonesimulator/Zion America.build/Zion America-own-target-headers.hmap" "-I/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/Zion America.build/Debug-iphonesimulator/Zion America.build/Zion America-all-target-headers.hmap" -iquote "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/Zion America.build/Debug-iphonesimulator/Zion America.build/Zion America-project-headers.hmap" "-I/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/include" -I/Users/patrickasare/Desktop/Zion -IAmerica "-I/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/Zion America.build/Debug-iphonesimulator/Zion America.build/DerivedSources/i386" "-I/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/Zion America.build/Debug-iphonesimulator/Zion America.build/DerivedSources" "-F/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator" -include "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/PrecompiledHeaders/Zion America-Prefix-gkmtuzubgmlowpfrxwxgrpoalkni/Zion America-Prefix.pch" -MMD -MT dependencies -MF "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/Zion America.build/Debug-iphonesimulator/Zion America.build/Objects-normal/i386/Zion_AmericaAppDelegate.d" --serialize-diagnostics "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/Zion America.build/Debug-iphonesimulator/Zion America.build/Objects-normal/i386/Zion_AmericaAppDelegate.dia" -c "/Users/patrickasare/Desktop/Zion America/Zion America/Zion_AmericaAppDelegate.m" -o "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/Zion America.build/Debug-iphonesimulator/Zion America.build/Objects-normal/i386/Zion_AmericaAppDelegate.o"36"71205918-05E4-4C16-9E62-6AD039B2F374-
+
+CCompileC "DerivedData/Zion America/Build/Intermediates/Zion America.build/Debug-iphonesimulator/Zion America.build/Objects-normal/i386/main.o" "/Users/patrickasare/Desktop/Zion America/Zion America/main.m" normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s378263376.309673
+e378263376.339324
+r1
+xCompileC
+xDerivedData/Zion America/Build/Intermediates/Zion America.build/Debug-iphonesimulator/Zion America.build/Objects-normal/i386/main.o
+x/Users/patrickasare/Desktop/Zion America/Zion America/main.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection68"Compile /Users/patrickasare/Desktop/Zion America/Zion America/main.mdb884f50d78bb641^bbf15650d78bb641^---0#0#0#-19%DVTDocumentLocation2@80"file://localhost/Users/patrickasare/Desktop/Zion%20America/Zion%20America/main.m0000000000000000^3912"CompileC "DerivedData/Zion America/Build/Intermediates/Zion America.build/Debug-iphonesimulator/Zion America.build/Objects-normal/i386/main.o" "Zion America/main.m" normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd "/Users/patrickasare/Desktop/Zion America"    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk -fexceptions -fasm-blocks -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -mios-simulator-version-min=6.0 -iquote "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/Zion America.build/Debug-iphonesimulator/Zion America.build/Zion America-generated-files.hmap" "-I/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/Zion America.build/Debug-iphonesimulator/Zion America.build/Zion America-own-target-headers.hmap" "-I/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/Zion America.build/Debug-iphonesimulator/Zion America.build/Zion America-all-target-headers.hmap" -iquote "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/Zion America.build/Debug-iphonesimulator/Zion America.build/Zion America-project-headers.hmap" "-I/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/include" -I/Users/patrickasare/Desktop/Zion -IAmerica "-I/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/Zion America.build/Debug-iphonesimulator/Zion America.build/DerivedSources/i386" "-I/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/Zion America.build/Debug-iphonesimulator/Zion America.build/DerivedSources" "-F/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator" -include "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/PrecompiledHeaders/Zion America-Prefix-gkmtuzubgmlowpfrxwxgrpoalkni/Zion America-Prefix.pch" -MMD -MT dependencies -MF "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/Zion America.build/Debug-iphonesimulator/Zion America.build/Objects-normal/i386/main.d" --serialize-diagnostics "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/Zion America.build/Debug-iphonesimulator/Zion America.build/Objects-normal/i386/main.dia" -c "/Users/patrickasare/Desktop/Zion America/Zion America/main.m" -o "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/Zion America.build/Debug-iphonesimulator/Zion America.build/Objects-normal/i386/main.o"36"6F9EA3F7-BE3A-46C0-9D89-925385630791-
+
+CCompileStoryboard "/Users/patrickasare/Desktop/Zion America/Zion America/Base.lproj/MainStoryboard.storyboard"
+s378263382.235266
+e378263382.891154
+r1
+xCompileStoryboard
+x/Users/patrickasare/Desktop/Zion America/Zion America/Base.lproj/MainStoryboard.storyboard
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection69"CompileStoryboard "Zion America/Base.lproj/MainStoryboard.storyboard"724e3c56d78bb641^2b30e456d78bb641^---0#0#0#-19%DVTDocumentLocation2@110"file://localhost/Users/patrickasare/Desktop/Zion%20America/Zion%20America/Base.lproj/MainStoryboard.storyboard0000000000000000^1013"CompileStoryboard "Zion America/Base.lproj/MainStoryboard.storyboard"    cd "/Users/patrickasare/Desktop/Zion America"    setenv IBSC_MINIMUM_COMPATIBILITY_VERSION 6.0    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    setenv XCODE_DEVELOPER_USR_PATH /Applications/Xcode.app/Contents/Developer/usr/bin/..    /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/Base.lproj/MainStoryboard.storyboardc" "/Users/patrickasare/Desktop/Zion America/Zion America/Base.lproj/MainStoryboard.storyboard" --sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk36"90A6D1EE-B0F7-4448-814D-90630248CFA6-
+
+CCopyStringsFile "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/en.lproj/InfoPlist.strings" "Zion America/en.lproj/InfoPlist.strings"
+s378263382.222391
+e378263382.280412
+r1
+xCopyStringsFile
+x/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/en.lproj/InfoPlist.strings
+xZion America/en.lproj/InfoPlist.strings
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection44"Copy Zion America/en.lproj/InfoPlist.strings43033956d78bb641^bdfb5356d78bb641^---0#0#0#-19%DVTDocumentLocation2@100"file://localhost/Users/patrickasare/Desktop/Zion%20America/Zion%20America/en.lproj/InfoPlist.strings0000000000000000^677"CopyStringsFile "DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/en.lproj/InfoPlist.strings" "Zion America/en.lproj/InfoPlist.strings"    cd "/Users/patrickasare/Desktop/Zion America"    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copyStrings --validate --inputencoding utf-8 --outputencoding binary --outdir "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/en.lproj" -- "Zion America/en.lproj/InfoPlist.strings"36"45B967BF-926F-49A7-93A8-23EF9ACD42C6-
+
+CCpResource "Zion America/Default-568h@2x.png" "DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/Default-568h@2x.png"
+s378263382.232028
+e378263382.234073
+r1
+xCpResource
+xZion America/Default-568h@2x.png
+xDerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/Default-568h@2x.png
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection103"Copy DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/Default-568h@2x.png9f773b56d78bb641^4e294756d78bb641^---0#0#0#-19%DVTDocumentLocation2@161"file://localhost/Users/patrickasare/Desktop/Zion%20America/DerivedData/Zion%20America/Build/Products/Debug-iphonesimulator/Zion%20America.app/Default-568h@2x.png000000000080d041^702"CpResource "Zion America/Default-568h@2x.png" "DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/Default-568h@2x.png"    cd "/Users/patrickasare/Desktop/Zion America"    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks "/Users/patrickasare/Desktop/Zion America/Zion America/Default-568h@2x.png" "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app"36"FA8FA166-1F9B-449B-80F8-2B30A5C23921-
+
+CCpResource "Zion America/Default.png" "DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/Default.png"
+s378263382.223895
+e378263382.227263
+r1
+xCpResource
+xZion America/Default.png
+xDerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/Default.png
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection95"Copy DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/Default.pnge1623956d78bb641^9ab64356d78bb641^---0#0#0#-19%DVTDocumentLocation2@153"file://localhost/Users/patrickasare/Desktop/Zion%20America/DerivedData/Zion%20America/Build/Products/Debug-iphonesimulator/Zion%20America.app/Default.png000000000080d041^678"CpResource "Zion America/Default.png" "DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/Default.png"    cd "/Users/patrickasare/Desktop/Zion America"    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks "/Users/patrickasare/Desktop/Zion America/Zion America/Default.png" "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app"36"0CB49E4D-77BE-45D5-8566-5424CBD057C0-
+
+CCpResource "Zion America/Default@2x.png" "DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/Default@2x.png"
+s378263382.228540
+e378263382.230829
+r1
+xCpResource
+xZion America/Default@2x.png
+xDerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/Default@2x.png
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection98"Copy DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/Default@2x.png85953a56d78bb641^d6c74356d78bb641^---0#0#0#-19%DVTDocumentLocation2@156"file://localhost/Users/patrickasare/Desktop/Zion%20America/DerivedData/Zion%20America/Build/Products/Debug-iphonesimulator/Zion%20America.app/Default@2x.png000000000080d041^687"CpResource "Zion America/Default@2x.png" "DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/Default@2x.png"    cd "/Users/patrickasare/Desktop/Zion America"    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks "/Users/patrickasare/Desktop/Zion America/Zion America/Default@2x.png" "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app"36"7C295369-A666-495E-A892-4B1BA75DA81B-
+
+CCpResource "Zion America/arrow.png" "DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/arrow.png"
+s378263382.354086
+e378263382.356125
+r1
+xCpResource
+xZion America/arrow.png
+xDerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/arrow.png
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection93"Copy DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/arrow.png84b85a56d78bb641^51305b56d78bb641^---0#0#0#-19%DVTDocumentLocation2@151"file://localhost/Users/patrickasare/Desktop/Zion%20America/DerivedData/Zion%20America/Build/Products/Debug-iphonesimulator/Zion%20America.app/arrow.png000000000080d041^672"CpResource "Zion America/arrow.png" "DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/arrow.png"    cd "/Users/patrickasare/Desktop/Zion America"    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks "/Users/patrickasare/Desktop/Zion America/Zion America/arrow.png" "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app"36"40030DA4-55A7-4E4D-904C-D8A5BBEF5E06-
+
+CCpResource "Zion America/butterfly.png" "DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/butterfly.png"
+s378263382.361608
+e378263382.364226
+r1
+xCpResource
+xZion America/butterfly.png
+xDerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/butterfly.png
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection97"Copy DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/butterfly.png33a65c56d78bb641^88485d56d78bb641^---0#0#0#-19%DVTDocumentLocation2@155"file://localhost/Users/patrickasare/Desktop/Zion%20America/DerivedData/Zion%20America/Build/Products/Debug-iphonesimulator/Zion%20America.app/butterfly.png000000000080d041^684"CpResource "Zion America/butterfly.png" "DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/butterfly.png"    cd "/Users/patrickasare/Desktop/Zion America"    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks "/Users/patrickasare/Desktop/Zion America/Zion America/butterfly.png" "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app"36"486785BB-2374-4B84-9B7C-D22458D818EF-
+
+CCpResource "Zion America/envelop.png" "DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/envelop.png"
+s378263382.350335
+e378263382.352872
+r1
+xCpResource
+xZion America/envelop.png
+xDerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/envelop.png
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection95"Copy DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/envelop.png11c45956d78bb641^0f5f5a56d78bb641^---0#0#0#-19%DVTDocumentLocation2@153"file://localhost/Users/patrickasare/Desktop/Zion%20America/DerivedData/Zion%20America/Build/Products/Debug-iphonesimulator/Zion%20America.app/envelop.png000000000080d041^678"CpResource "Zion America/envelop.png" "DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/envelop.png"    cd "/Users/patrickasare/Desktop/Zion America"    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks "/Users/patrickasare/Desktop/Zion America/Zion America/envelop.png" "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app"36"E29F482D-079D-49F7-B6B2-48787885FABE-
+
+CCpResource "Zion America/first.png" "DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/first.png"
+s378263382.283118
+e378263382.286653
+r1
+xCpResource
+xZion America/first.png
+xDerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/first.png
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection93"Copy DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/first.png118f4856d78bb641^fd135456d78bb641^---0#0#0#-19%DVTDocumentLocation2@151"file://localhost/Users/patrickasare/Desktop/Zion%20America/DerivedData/Zion%20America/Build/Products/Debug-iphonesimulator/Zion%20America.app/first.png000000000080d041^672"CpResource "Zion America/first.png" "DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/first.png"    cd "/Users/patrickasare/Desktop/Zion America"    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks "/Users/patrickasare/Desktop/Zion America/Zion America/first.png" "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app"36"B670C15D-A16B-4956-9CB9-C297465515B2-
+
+CCpResource "Zion America/first@2x.png" "DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/first@2x.png"
+s378263382.288126
+e378263382.317704
+r1
+xCpResource
+xZion America/first@2x.png
+xDerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/first@2x.png
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection96"Copy DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/first@2x.png5ed54956d78bb641^611c5456d78bb641^---0#0#0#-19%DVTDocumentLocation2@154"file://localhost/Users/patrickasare/Desktop/Zion%20America/DerivedData/Zion%20America/Build/Products/Debug-iphonesimulator/Zion%20America.app/first@2x.png000000000080d041^681"CpResource "Zion America/first@2x.png" "DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/first@2x.png"    cd "/Users/patrickasare/Desktop/Zion America"    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks "/Users/patrickasare/Desktop/Zion America/Zion America/first@2x.png" "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app"36"EBE0E802-C3AB-45DA-8139-D3A5C89B2FD9-
+
+CCpResource "Zion America/home.png" "DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/home.png"
+s378263382.345330
+e378263382.349100
+r1
+xCpResource
+xZion America/home.png
+xDerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/home.png
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection92"Copy DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/home.png12a25856d78bb641^1a695956d78bb641^---0#0#0#-19%DVTDocumentLocation2@150"file://localhost/Users/patrickasare/Desktop/Zion%20America/DerivedData/Zion%20America/Build/Products/Debug-iphonesimulator/Zion%20America.app/home.png000000000080d041^669"CpResource "Zion America/home.png" "DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/home.png"    cd "/Users/patrickasare/Desktop/Zion America"    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks "/Users/patrickasare/Desktop/Zion America/Zion America/home.png" "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app"36"44F5DFEA-2C33-4F7D-95E6-507F9CB8167B-
+
+CCpResource "Zion America/right.png" "DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/right.png"
+s378263382.341279
+e378263382.344173
+r1
+xCpResource
+xZion America/right.png
+xDerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/right.png
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection93"Copy DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/right.png93725756d78bb641^50525856d78bb641^---0#0#0#-19%DVTDocumentLocation2@151"file://localhost/Users/patrickasare/Desktop/Zion%20America/DerivedData/Zion%20America/Build/Products/Debug-iphonesimulator/Zion%20America.app/right.png000000000080d041^672"CpResource "Zion America/right.png" "DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/right.png"    cd "/Users/patrickasare/Desktop/Zion America"    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks "/Users/patrickasare/Desktop/Zion America/Zion America/right.png" "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app"36"047A36EB-CE10-4447-B49C-82BD6A858629-
+
+CCpResource "Zion America/second.png" "DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/second.png"
+s378263382.323466
+e378263382.331143
+r1
+xCpResource
+xZion America/second.png
+xDerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/second.png
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection94"Copy DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/second.pngdae25256d78bb641^21ac5656d78bb641^---0#0#0#-19%DVTDocumentLocation2@152"file://localhost/Users/patrickasare/Desktop/Zion%20America/DerivedData/Zion%20America/Build/Products/Debug-iphonesimulator/Zion%20America.app/second.png000000000080d041^675"CpResource "Zion America/second.png" "DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/second.png"    cd "/Users/patrickasare/Desktop/Zion America"    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks "/Users/patrickasare/Desktop/Zion America/Zion America/second.png" "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app"36"DFF3D1ED-615D-40BA-BEF9-45CE41BA0BF2-
+
+CCpResource "Zion America/second@2x.png" "DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/second@2x.png"
+s378263382.332435
+e378263382.339529
+r1
+xCpResource
+xZion America/second@2x.png
+xDerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/second@2x.png
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection97"Copy DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/second@2x.png4d2f5556d78bb641^6ef75656d78bb641^---0#0#0#-19%DVTDocumentLocation2@155"file://localhost/Users/patrickasare/Desktop/Zion%20America/DerivedData/Zion%20America/Build/Products/Debug-iphonesimulator/Zion%20America.app/second@2x.png000000000080d041^684"CpResource "Zion America/second@2x.png" "DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/second@2x.png"    cd "/Users/patrickasare/Desktop/Zion America"    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks "/Users/patrickasare/Desktop/Zion America/Zion America/second@2x.png" "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app"36"F92E8AE2-B5C3-41E7-A45B-BED244D28A68-
+
+CCpResource "Zion America/television.png" "DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/television.png"
+s378263382.357313
+e378263382.360381
+r1
+xCpResource
+xZion America/television.png
+xDerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/television.png
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection98"Copy DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/television.png4c8e5b56d78bb641^734a5c56d78bb641^---0#0#0#-19%DVTDocumentLocation2@156"file://localhost/Users/patrickasare/Desktop/Zion%20America/DerivedData/Zion%20America/Build/Products/Debug-iphonesimulator/Zion%20America.app/television.png000000000080d041^687"CpResource "Zion America/television.png" "DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/television.png"    cd "/Users/patrickasare/Desktop/Zion America"    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks "/Users/patrickasare/Desktop/Zion America/Zion America/television.png" "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app"36"3644B97D-BDE7-45B5-9A29-2A3DC1E22E09-
+
+CGenerateDSYMFile "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app.dSYM" "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/Zion America"
+s378263382.190566
+e378263382.214157
+r1
+xGenerateDSYMFile
+x/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app.dSYM
+x/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/Zion America
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection135"Generating /Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app.dSYM72e13056d78bb641^0ef63e56d78bb641^---0#0#0#-19%DVTDocumentLocation2@146"file://localhost/Users/patrickasare/Desktop/Zion%20America/DerivedData/Zion%20America/Build/Products/Debug-iphonesimulator/Zion%20America.app.dSYM000000000080d041^807"GenerateDSYMFile "DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app.dSYM" "DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/Zion America"    cd "/Users/patrickasare/Desktop/Zion America"    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dsymutil "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/Zion America" -o "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app.dSYM"36"7D292BBE-C480-4466-9300-A805E832AA69-
+
+CLd "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/Zion America" normal i386
+s378263382.152940
+e378263382.182828
+r1
+xLd
+x/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/Zion America
+xnormal
+xi386
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection137"Link /Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/Zion America4e442756d78bb641^abce2e56d78bb641^---0#0#0#--1671"Ld "DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/Zion America" normal i386    cd "/Users/patrickasare/Desktop/Zion America"    setenv IPHONEOS_DEPLOYMENT_TARGET 6.0    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -arch i386 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk "-L/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator" "-L/Users/patrickasare/Desktop/Zion America/../../Library/Developer/Xcode/DerivedData/Zion_America-gvnzuiefhlctsjbjqepbodddvdnp/Build/Products/Debug-iphoneos" "-F/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator" -filelist "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/Zion America.build/Debug-iphonesimulator/Zion America.build/Objects-normal/i386/Zion America.LinkFileList" -Xlinker -objc_abi_version -Xlinker 2 -fobjc-arc -fobjc-link-runtime -Xlinker -no_implicit_dylibs -mios-simulator-version-min=6.0 "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/libXMLRPC_iOS.a" -lsqlite3.0 -framework UIKit -framework Foundation -framework CoreGraphics -o "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/Zion America"36"ABAB74BD-6D4B-4192-8F69-E1534E4A150D-
+
+CProcessInfoPlistFile "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/Info.plist" "Zion America/Zion America-Info.plist"
+s378263375.938482
+e378263375.943103
+r1
+xProcessInfoPlistFile
+x/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/Info.plist
+xZion America/Zion America-Info.plist
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection44"Process Zion America/Zion America-Info.plistac58f04fd78bb641^1399f14fd78bb641^---0#0#0#-19%DVTDocumentLocation2@99"file://localhost/Users/patrickasare/Desktop/Zion%20America/Zion%20America/Zion%20America-Info.plist0000000000000000^805"ProcessInfoPlistFile "DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/Info.plist" "Zion America/Zion America-Info.plist"    cd "/Users/patrickasare/Desktop/Zion America"    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility "Zion America/Zion America-Info.plist" -genpkginfo "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/PkgInfo" -expandbuildsettings -format binary -platform iphonesimulator -o "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app/Info.plist"36"8916E3B5-C01A-46D0-AA9C-81DF20EEB922-
+
+CProcessPCH "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/PrecompiledHeaders/Zion America-Prefix-gkmtuzubgmlowpfrxwxgrpoalkni/Zion America-Prefix.pch.pth" "Zion America/Zion America-Prefix.pch" normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s378263375.951930
+e378263376.302583
+r1
+xProcessPCH
+x/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/PrecompiledHeaders/Zion America-Prefix-gkmtuzubgmlowpfrxwxgrpoalkni/Zion America-Prefix.pch.pth
+xZion America/Zion America-Prefix.pch
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection47"Precompile Zion America/Zion America-Prefix.pchc4eaf34fd78bb641^6e884d50d78bb641^---0#0#0#-19%DVTDocumentLocation2@99"file://localhost/Users/patrickasare/Desktop/Zion%20America/Zion%20America/Zion%20America-Prefix.pch0000000000000000^3798"ProcessPCH "DerivedData/Zion America/Build/Intermediates/PrecompiledHeaders/Zion America-Prefix-gkmtuzubgmlowpfrxwxgrpoalkni/Zion America-Prefix.pch.pth" "Zion America/Zion America-Prefix.pch" normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd "/Users/patrickasare/Desktop/Zion America"    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c-header -arch i386 -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk -fexceptions -fasm-blocks -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -mios-simulator-version-min=6.0 -iquote "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/Zion America.build/Debug-iphonesimulator/Zion America.build/Zion America-generated-files.hmap" "-I/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/Zion America.build/Debug-iphonesimulator/Zion America.build/Zion America-own-target-headers.hmap" "-I/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/Zion America.build/Debug-iphonesimulator/Zion America.build/Zion America-all-target-headers.hmap" -iquote "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/Zion America.build/Debug-iphonesimulator/Zion America.build/Zion America-project-headers.hmap" "-I/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/include" -I/Users/patrickasare/Desktop/Zion -IAmerica "-I/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/Zion America.build/Debug-iphonesimulator/Zion America.build/DerivedSources/i386" "-I/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/Zion America.build/Debug-iphonesimulator/Zion America.build/DerivedSources" "-F/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator" --serialize-diagnostics "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/PrecompiledHeaders/Zion America-Prefix-gkmtuzubgmlowpfrxwxgrpoalkni/Zion America-Prefix.pch.dia" -c "/Users/patrickasare/Desktop/Zion America/Zion America/Zion America-Prefix.pch" -o "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/PrecompiledHeaders/Zion America-Prefix-gkmtuzubgmlowpfrxwxgrpoalkni/Zion America-Prefix.pch.pth" -MMD -MT dependencies -MF "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/PrecompiledHeaders/Zion America-Prefix-gkmtuzubgmlowpfrxwxgrpoalkni/Zion America-Prefix.pch.d"36"52125E3A-CD41-4DC9-9781-D2BFF5E12EE9-
+
+CProcessPCH "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Index/PrecompiledHeaders/Zion America-Prefix-fwrvacllnrcezjbmzswlmdjdiknn_ast/Zion America-Prefix.pch.pth" "Zion America/Zion America-Prefix.pch" normal i386 objective-c com.apple.compilers.llvm.clang.1_0.astbuilder
+r0
+
+CTouch "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app"
+s378263382.899043
+e378263382.907171
+r1
+xTouch
+x/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection125"Touch /Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.appaf3ee656d78bb641^b343e856d78bb641^---0#0#0#--476"Touch "DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app"    cd "/Users/patrickasare/Desktop/Zion America"    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/Zion America.app"36"760D46A6-B4DE-4DA2-8CD1-47AD954E7EB8-
+

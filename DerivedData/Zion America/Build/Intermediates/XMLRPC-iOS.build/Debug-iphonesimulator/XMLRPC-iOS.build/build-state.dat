@@ -1,0 +1,350 @@
+TXMLRPC-iOS
+v5
+r1
+cCheck dependencies
+cProcessPCH "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/PrecompiledHeaders/XMLRPC_iOS_Prefix-cpihsjoetxairigouczvlzrhbbjk/XMLRPC_iOS_Prefix.pch.pth" XMLRPC_iOS_Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/NSDataAdditions.o" "/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/NSDataAdditions.m" normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/NSStringAdditions.o" "/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/NSStringAdditions.m" normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/XMLRPCConnection.o" "/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/XMLRPCConnection.m" normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/XMLRPCConnectionManager.o" "/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/XMLRPCConnectionManager.m" normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/XMLRPCEncoder.o" "/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/XMLRPCEncoder.m" normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/XMLRPCEventBasedParser.o" "/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/XMLRPCEventBasedParser.m" normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/XMLRPCEventBasedParserDelegate.o" "/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/XMLRPCEventBasedParserDelegate.m" normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/XMLRPCRequest.o" "/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/XMLRPCRequest.m" normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/XMLRPCResponse.o" "/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/XMLRPCResponse.m" normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cLibtool "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/libXMLRPC_iOS.a" normal i386
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk
+c00000000504916AD0000000000000110
+t1346967213
+s272
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c0000000050D9378B00000000003DCEF0
+t1356412811
+s4050672
+
+N/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/PrecompiledHeaders/XMLRPC_iOS_Prefix-cpihsjoetxairigouczvlzrhbbjk/XMLRPC_iOS_Prefix.pch.pth
+t1356570575
+s2918672
+
+N/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/NSDataAdditions.o
+t1356570575
+s6548
+
+N/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/NSStringAdditions.o
+t1356570575
+s16936
+
+N/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/XMLRPCConnection.o
+t1356570575
+s24080
+
+N/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/XMLRPCConnectionManager.o
+t1356570575
+s15964
+
+N/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/XMLRPCEncoder.o
+t1356570575
+s31248
+
+N/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/XMLRPCEventBasedParser.o
+t1356570575
+s18280
+
+N/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/XMLRPCEventBasedParserDelegate.o
+t1356570575
+s38432
+
+N/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/XMLRPCRequest.o
+t1356570575
+s17092
+
+N/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/XMLRPCResponse.o
+t1356570575
+s11868
+
+N/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/XMLRPC_iOS.LinkFileList
+c0000000050DB9FCF0000000000000670
+t1356570575
+s1648
+
+N/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/libXMLRPC_iOS.a
+t1356570575
+s183464
+
+N/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/NSDataAdditions.h
+c000000004D2785C80000000000000522
+t1294435784
+s1314
+
+N/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/NSDataAdditions.m
+c000000004D2785C80000000000000DEA
+t1294435784
+s3562
+
+N/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/NSStringAdditions.h
+c000000004D2785C800000000000005AD
+t1294435784
+s1453
+
+N/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/NSStringAdditions.m
+c000000004D2785C80000000000001748
+t1294435784
+s5960
+
+N/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/XMLRPCConnection.h
+c000000004D2785C800000000000007B6
+t1294435784
+s1974
+
+N/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/XMLRPCConnection.m
+c000000004D2785C80000000000001958
+t1294435784
+s6488
+
+N/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/XMLRPCConnectionDelegate.h
+c000000004D2785C8000000000000075D
+t1294435784
+s1885
+
+N/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/XMLRPCConnectionManager.h
+c000000004D2785C80000000000000748
+t1294435784
+s1864
+
+N/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/XMLRPCConnectionManager.m
+c000000004D2785C80000000000000D7A
+t1294435784
+s3450
+
+N/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/XMLRPCEncoder.h
+c000000004D2785C800000000000005D8
+t1294435784
+s1496
+
+N/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/XMLRPCEncoder.m
+c000000004D2785C800000000000021B4
+t1294435784
+s8628
+
+N/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/XMLRPCEventBasedParser.h
+c000000004D2785C8000000000000063F
+t1294435784
+s1599
+
+N/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/XMLRPCEventBasedParser.m
+c000000004D2785C80000000000000AC6
+t1294435784
+s2758
+
+N/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/XMLRPCEventBasedParserDelegate.h
+c000000004D2785C800000000000008E4
+t1294435784
+s2276
+
+N/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/XMLRPCEventBasedParserDelegate.m
+c000000004D2785C80000000000002929
+t1294435784
+s10537
+
+N/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/XMLRPCRequest.h
+c000000004D2785C80000000000000762
+t1294435784
+s1890
+
+N/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/XMLRPCRequest.m
+c000000004D2785C80000000000000F17
+t1294435784
+s3863
+
+N/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/XMLRPCResponse.h
+c000000004D2785C80000000000000601
+t1294435784
+s1537
+
+N/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/XMLRPCResponse.m
+c000000004D2785C80000000000000950
+t1294435784
+s2384
+
+N/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/XMLRPC_iOS_Prefix.pch
+c000000004D2785C800000000000000BC
+t1294435784
+s188
+
+CBuild AST from "/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/NSDataAdditions.m"
+r0
+
+CBuild AST from "/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/NSStringAdditions.m"
+r0
+
+CBuild AST from "/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/XMLRPCConnection.m"
+r0
+
+CBuild AST from "/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/XMLRPCConnectionManager.m"
+r0
+
+CBuild AST from "/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/XMLRPCEncoder.m"
+r0
+
+CBuild AST from "/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/XMLRPCEventBasedParser.m"
+r0
+
+CBuild AST from "/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/XMLRPCEventBasedParserDelegate.m"
+r0
+
+CBuild AST from "/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/XMLRPCRequest.m"
+r0
+
+CBuild AST from "/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/XMLRPCResponse.m"
+r0
+
+CCheck dependencies
+r0
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependenciese771806ed78bb641^2b14816ed78bb641^---0#1#0#--18"Check dependencies36"1854E485-D8C6-4707-A4F7-B123D2483746-
+
+CCompileC "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/NSDataAdditions.o" "/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/NSDataAdditions.m" normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s378263375.674166
+e378263375.699890
+r1
+xCompileC
+x/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/NSDataAdditions.o
+x/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/NSDataAdditions.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection100"Compile /Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/NSDataAdditions.m0abbac4fd78bb641^5038b34fd78bb641^---0#0#0#-19%DVTDocumentLocation2@110"file://localhost/Users/patrickasare/Desktop/Zion%20America/kdbdallas-xmlrpc-ios-f28a13cc16ae/NSDataAdditions.m0000000000000000^3431"CompileC "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/NSDataAdditions.o" NSDataAdditions.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd "/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae"    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk -fexceptions -fasm-blocks -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -mios-simulator-version-min=4.0 "-I/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/XMLRPC_iOS.hmap" "-I/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/include" -I/Users/patrickasare/Desktop/Zion -IAmerica/kdbdallas-xmlrpc-ios-f28a13cc16ae "-I/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/DerivedSources/i386" "-I/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/DerivedSources" "-F/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator" -include "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/PrecompiledHeaders/XMLRPC_iOS_Prefix-cpihsjoetxairigouczvlzrhbbjk/XMLRPC_iOS_Prefix.pch" -MMD -MT dependencies -MF "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/NSDataAdditions.d" --serialize-diagnostics "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/NSDataAdditions.dia" -c "/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/NSDataAdditions.m" -o "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/NSDataAdditions.o"36"74066D1B-F71D-444B-940F-9CEA1266E12F-
+
+CCompileC "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/NSStringAdditions.o" "/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/NSStringAdditions.m" normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s378263375.674436
+e378263375.711261
+r1
+xCompileC
+x/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/NSStringAdditions.o
+x/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/NSStringAdditions.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection102"Compile /Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/NSStringAdditions.m69c8ac4fd78bb641^e02bb64fd78bb641^---0#0#0#-19%DVTDocumentLocation2@112"file://localhost/Users/patrickasare/Desktop/Zion%20America/kdbdallas-xmlrpc-ios-f28a13cc16ae/NSStringAdditions.m0000000000000000^3443"CompileC "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/NSStringAdditions.o" NSStringAdditions.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd "/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae"    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk -fexceptions -fasm-blocks -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -mios-simulator-version-min=4.0 "-I/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/XMLRPC_iOS.hmap" "-I/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/include" -I/Users/patrickasare/Desktop/Zion -IAmerica/kdbdallas-xmlrpc-ios-f28a13cc16ae "-I/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/DerivedSources/i386" "-I/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/DerivedSources" "-F/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator" -include "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/PrecompiledHeaders/XMLRPC_iOS_Prefix-cpihsjoetxairigouczvlzrhbbjk/XMLRPC_iOS_Prefix.pch" -MMD -MT dependencies -MF "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/NSStringAdditions.d" --serialize-diagnostics "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/NSStringAdditions.dia" -c "/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/NSStringAdditions.m" -o "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/NSStringAdditions.o"36"C35CDEA6-E701-46ED-B996-8A2A6756816D-
+
+CCompileC "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/XMLRPCConnection.o" "/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/XMLRPCConnection.m" normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s378263375.701185
+e378263375.749143
+r1
+xCompileC
+x/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/XMLRPCConnection.o
+x/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/XMLRPCConnection.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection101"Compile /Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/XMLRPCConnection.m11a7b34fd78bb641^4bc8bf4fd78bb641^---0#0#0#-19%DVTDocumentLocation2@111"file://localhost/Users/patrickasare/Desktop/Zion%20America/kdbdallas-xmlrpc-ios-f28a13cc16ae/XMLRPCConnection.m0000000000000000^3437"CompileC "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/XMLRPCConnection.o" XMLRPCConnection.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd "/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae"    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk -fexceptions -fasm-blocks -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -mios-simulator-version-min=4.0 "-I/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/XMLRPC_iOS.hmap" "-I/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/include" -I/Users/patrickasare/Desktop/Zion -IAmerica/kdbdallas-xmlrpc-ios-f28a13cc16ae "-I/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/DerivedSources/i386" "-I/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/DerivedSources" "-F/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator" -include "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/PrecompiledHeaders/XMLRPC_iOS_Prefix-cpihsjoetxairigouczvlzrhbbjk/XMLRPC_iOS_Prefix.pch" -MMD -MT dependencies -MF "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/XMLRPCConnection.d" --serialize-diagnostics "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/XMLRPCConnection.dia" -c "/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/XMLRPCConnection.m" -o "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/XMLRPCConnection.o"36"0B9BBCFF-149E-48F5-A4FC-F9A3043F5E83-
+
+CCompileC "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/XMLRPCConnectionManager.o" "/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/XMLRPCConnectionManager.m" normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s378263375.712533
+e378263375.745718
+r1
+xCompileC
+x/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/XMLRPCConnectionManager.o
+x/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/XMLRPCConnectionManager.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection108"Compile /Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/XMLRPCConnectionManager.m8f8bb64fd78bb641^8880bf4fd78bb641^---0#0#0#-19%DVTDocumentLocation2@118"file://localhost/Users/patrickasare/Desktop/Zion%20America/kdbdallas-xmlrpc-ios-f28a13cc16ae/XMLRPCConnectionManager.m0000000000000000^3479"CompileC "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/XMLRPCConnectionManager.o" XMLRPCConnectionManager.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd "/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae"    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk -fexceptions -fasm-blocks -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -mios-simulator-version-min=4.0 "-I/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/XMLRPC_iOS.hmap" "-I/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/include" -I/Users/patrickasare/Desktop/Zion -IAmerica/kdbdallas-xmlrpc-ios-f28a13cc16ae "-I/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/DerivedSources/i386" "-I/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/DerivedSources" "-F/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator" -include "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/PrecompiledHeaders/XMLRPC_iOS_Prefix-cpihsjoetxairigouczvlzrhbbjk/XMLRPC_iOS_Prefix.pch" -MMD -MT dependencies -MF "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/XMLRPCConnectionManager.d" --serialize-diagnostics "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/XMLRPCConnectionManager.dia" -c "/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/XMLRPCConnectionManager.m" -o "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/XMLRPCConnectionManager.o"36"745E8905-6B09-4BC5-9246-29F86FEE333F-
+
+CCompileC "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/XMLRPCEncoder.o" "/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/XMLRPCEncoder.m" normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s378263375.747526
+e378263375.793061
+r1
+xCompileC
+x/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/XMLRPCEncoder.o
+x/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/XMLRPCEncoder.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection98"Compile /Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/XMLRPCEncoder.m98a7bf4fd78bb641^8f1acb4fd78bb641^---0#0#0#-19%DVTDocumentLocation2@108"file://localhost/Users/patrickasare/Desktop/Zion%20America/kdbdallas-xmlrpc-ios-f28a13cc16ae/XMLRPCEncoder.m0000000000000000^3419"CompileC "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/XMLRPCEncoder.o" XMLRPCEncoder.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd "/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae"    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk -fexceptions -fasm-blocks -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -mios-simulator-version-min=4.0 "-I/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/XMLRPC_iOS.hmap" "-I/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/include" -I/Users/patrickasare/Desktop/Zion -IAmerica/kdbdallas-xmlrpc-ios-f28a13cc16ae "-I/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/DerivedSources/i386" "-I/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/DerivedSources" "-F/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator" -include "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/PrecompiledHeaders/XMLRPC_iOS_Prefix-cpihsjoetxairigouczvlzrhbbjk/XMLRPC_iOS_Prefix.pch" -MMD -MT dependencies -MF "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/XMLRPCEncoder.d" --serialize-diagnostics "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/XMLRPCEncoder.dia" -c "/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/XMLRPCEncoder.m" -o "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/XMLRPCEncoder.o"36"122F2992-E05F-4377-845B-2BCCB68A1E4F-
+
+CCompileC "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/XMLRPCEventBasedParser.o" "/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/XMLRPCEventBasedParser.m" normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s378263375.750627
+e378263375.780945
+r1
+xCompileC
+x/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/XMLRPCEventBasedParser.o
+x/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/XMLRPCEventBasedParser.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection107"Compile /Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/XMLRPCEventBasedParser.me946c04fd78bb641^b0fec74fd78bb641^---0#0#0#-19%DVTDocumentLocation2@117"file://localhost/Users/patrickasare/Desktop/Zion%20America/kdbdallas-xmlrpc-ios-f28a13cc16ae/XMLRPCEventBasedParser.m0000000000000000^3473"CompileC "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/XMLRPCEventBasedParser.o" XMLRPCEventBasedParser.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd "/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae"    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk -fexceptions -fasm-blocks -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -mios-simulator-version-min=4.0 "-I/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/XMLRPC_iOS.hmap" "-I/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/include" -I/Users/patrickasare/Desktop/Zion -IAmerica/kdbdallas-xmlrpc-ios-f28a13cc16ae "-I/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/DerivedSources/i386" "-I/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/DerivedSources" "-F/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator" -include "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/PrecompiledHeaders/XMLRPC_iOS_Prefix-cpihsjoetxairigouczvlzrhbbjk/XMLRPC_iOS_Prefix.pch" -MMD -MT dependencies -MF "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/XMLRPCEventBasedParser.d" --serialize-diagnostics "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/XMLRPCEventBasedParser.dia" -c "/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/XMLRPCEventBasedParser.m" -o "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/XMLRPCEventBasedParser.o"36"800A2350-3706-410D-BDCA-CE37C19B202C-
+
+CCompileC "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/XMLRPCEventBasedParserDelegate.o" "/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/XMLRPCEventBasedParserDelegate.m" normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s378263375.782219
+e378263375.828146
+r1
+xCompileC
+x/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/XMLRPCEventBasedParserDelegate.o
+x/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/XMLRPCEventBasedParserDelegate.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection115"Compile /Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/XMLRPCEventBasedParserDelegate.m3161c84fd78bb641^3f01d44fd78bb641^---0#0#0#-19%DVTDocumentLocation2@125"file://localhost/Users/patrickasare/Desktop/Zion%20America/kdbdallas-xmlrpc-ios-f28a13cc16ae/XMLRPCEventBasedParserDelegate.m0000000000000000^3521"CompileC "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/XMLRPCEventBasedParserDelegate.o" XMLRPCEventBasedParserDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd "/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae"    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk -fexceptions -fasm-blocks -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -mios-simulator-version-min=4.0 "-I/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/XMLRPC_iOS.hmap" "-I/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/include" -I/Users/patrickasare/Desktop/Zion -IAmerica/kdbdallas-xmlrpc-ios-f28a13cc16ae "-I/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/DerivedSources/i386" "-I/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/DerivedSources" "-F/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator" -include "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/PrecompiledHeaders/XMLRPC_iOS_Prefix-cpihsjoetxairigouczvlzrhbbjk/XMLRPC_iOS_Prefix.pch" -MMD -MT dependencies -MF "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/XMLRPCEventBasedParserDelegate.d" --serialize-diagnostics "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/XMLRPCEventBasedParserDelegate.dia" -c "/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/XMLRPCEventBasedParserDelegate.m" -o "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/XMLRPCEventBasedParserDelegate.o"36"77BC4DF4-7F36-4C0A-9F60-843C167D40D8-
+
+CCompileC "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/XMLRPCRequest.o" "/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/XMLRPCRequest.m" normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s378263375.794327
+e378263375.827693
+r1
+xCompileC
+x/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/XMLRPCRequest.o
+x/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/XMLRPCRequest.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection98"Compile /Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/XMLRPCRequest.m6780cb4fd78bb641^fef0d34fd78bb641^---0#0#0#-19%DVTDocumentLocation2@108"file://localhost/Users/patrickasare/Desktop/Zion%20America/kdbdallas-xmlrpc-ios-f28a13cc16ae/XMLRPCRequest.m0000000000000000^3419"CompileC "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/XMLRPCRequest.o" XMLRPCRequest.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd "/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae"    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk -fexceptions -fasm-blocks -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -mios-simulator-version-min=4.0 "-I/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/XMLRPC_iOS.hmap" "-I/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/include" -I/Users/patrickasare/Desktop/Zion -IAmerica/kdbdallas-xmlrpc-ios-f28a13cc16ae "-I/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/DerivedSources/i386" "-I/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/DerivedSources" "-F/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator" -include "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/PrecompiledHeaders/XMLRPC_iOS_Prefix-cpihsjoetxairigouczvlzrhbbjk/XMLRPC_iOS_Prefix.pch" -MMD -MT dependencies -MF "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/XMLRPCRequest.d" --serialize-diagnostics "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/XMLRPCRequest.dia" -c "/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/XMLRPCRequest.m" -o "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/XMLRPCRequest.o"36"4783EF04-5FCB-4A74-B5B6-C89ED768D2F5-
+
+CCompileC "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/XMLRPCResponse.o" "/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/XMLRPCResponse.m" normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s378263375.829018
+e378263375.856042
+r1
+xCompileC
+x/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/XMLRPCResponse.o
+x/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/XMLRPCResponse.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection99"Compile /Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/XMLRPCResponse.ma35ad44fd78bb641^f625db4fd78bb641^---0#0#0#-19%DVTDocumentLocation2@109"file://localhost/Users/patrickasare/Desktop/Zion%20America/kdbdallas-xmlrpc-ios-f28a13cc16ae/XMLRPCResponse.m0000000000000000^3425"CompileC "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/XMLRPCResponse.o" XMLRPCResponse.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd "/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae"    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk -fexceptions -fasm-blocks -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -mios-simulator-version-min=4.0 "-I/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/XMLRPC_iOS.hmap" "-I/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/include" -I/Users/patrickasare/Desktop/Zion -IAmerica/kdbdallas-xmlrpc-ios-f28a13cc16ae "-I/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/DerivedSources/i386" "-I/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/DerivedSources" "-F/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator" -include "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/PrecompiledHeaders/XMLRPC_iOS_Prefix-cpihsjoetxairigouczvlzrhbbjk/XMLRPC_iOS_Prefix.pch" -MMD -MT dependencies -MF "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/XMLRPCResponse.d" --serialize-diagnostics "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/XMLRPCResponse.dia" -c "/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/XMLRPCResponse.m" -o "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/XMLRPCResponse.o"36"B85776D9-53A5-4C17-B1EE-0CBADA79ED42-
+
+CLibtool "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/libXMLRPC_iOS.a" normal i386
+s378263375.862977
+e378263375.907934
+r1
+xLibtool
+x/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/libXMLRPC_iOS.a
+xnormal
+xi386
+o/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/libtool: -dynamic not specified the following flags are invalid: -ObjC 
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection140"Libtool "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/libXMLRPC_iOS.a" normal i3864cc6e14fd78bb641^828ce84fd78bb641^-159"/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/libtool: -dynamic not specified the following flags are invalid: -ObjC -0#0#0#--1170"Libtool "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/libXMLRPC_iOS.a" normal i386    cd "/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae"    setenv IPHONEOS_DEPLOYMENT_TARGET 4.0    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/libtool -static -arch_only i386 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk "-L/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator" -filelist "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/Objects-normal/i386/XMLRPC_iOS.LinkFileList" -ObjC -framework Foundation -o "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/libXMLRPC_iOS.a"36"D7EB9932-DFE7-4B3C-BB62-D54F213D1C55-
+
+CProcessPCH "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/PrecompiledHeaders/XMLRPC_iOS_Prefix-cpihsjoetxairigouczvlzrhbbjk/XMLRPC_iOS_Prefix.pch.pth" XMLRPC_iOS_Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s378263375.038084
+e378263375.666700
+r1
+xProcessPCH
+x/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/PrecompiledHeaders/XMLRPC_iOS_Prefix-cpihsjoetxairigouczvlzrhbbjk/XMLRPC_iOS_Prefix.pch.pth
+xXMLRPC_iOS_Prefix.pch
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection32"Precompile XMLRPC_iOS_Prefix.pche7e4094fd78bb641^1ac1aa4fd78bb641^---0#0#0#-19%DVTDocumentLocation2@114"file://localhost/Users/patrickasare/Desktop/Zion%20America/kdbdallas-xmlrpc-ios-f28a13cc16ae/XMLRPC_iOS_Prefix.pch0000000000000000^3251"ProcessPCH "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/PrecompiledHeaders/XMLRPC_iOS_Prefix-cpihsjoetxairigouczvlzrhbbjk/XMLRPC_iOS_Prefix.pch.pth" XMLRPC_iOS_Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd "/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae"    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c-header -arch i386 -fmessage-length=0 -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk -fexceptions -fasm-blocks -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -mios-simulator-version-min=4.0 "-I/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/XMLRPC_iOS.hmap" "-I/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/include" -I/Users/patrickasare/Desktop/Zion -IAmerica/kdbdallas-xmlrpc-ios-f28a13cc16ae "-I/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/DerivedSources/i386" "-I/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/XMLRPC-iOS.build/Debug-iphonesimulator/XMLRPC-iOS.build/DerivedSources" "-F/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator" --serialize-diagnostics "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/PrecompiledHeaders/XMLRPC_iOS_Prefix-cpihsjoetxairigouczvlzrhbbjk/XMLRPC_iOS_Prefix.pch.dia" -c "/Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/XMLRPC_iOS_Prefix.pch" -o "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/PrecompiledHeaders/XMLRPC_iOS_Prefix-cpihsjoetxairigouczvlzrhbbjk/XMLRPC_iOS_Prefix.pch.pth" -MMD -MT dependencies -MF "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Intermediates/PrecompiledHeaders/XMLRPC_iOS_Prefix-cpihsjoetxairigouczvlzrhbbjk/XMLRPC_iOS_Prefix.pch.d"36"F40E6060-BA4D-417F-B26F-8BC959B79FC7-
+
+CProcessPCH "/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Index/PrecompiledHeaders/XMLRPC_iOS_Prefix-emfaqsiamjftyyevyhockzenndlr_ast/XMLRPC_iOS_Prefix.pch.pth" XMLRPC_iOS_Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.astbuilder
+r0
+

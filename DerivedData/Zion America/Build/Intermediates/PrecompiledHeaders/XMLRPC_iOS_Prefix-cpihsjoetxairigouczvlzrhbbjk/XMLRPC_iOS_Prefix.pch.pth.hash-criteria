@@ -1,0 +1,27 @@
+Contents of /Users/patrickasare/Desktop/Zion America/kdbdallas-xmlrpc-ios-f28a13cc16ae/XMLRPC_iOS_Prefix.pch
+4.1 (tags/Apple/clang-421.11.66) (based on LLVM 3.1svn)
+i386-apple-darwin11.4.2
+-x
+objective-c
+-arch
+i386
+-fmessage-length=0
+-std=c99
+-fpascal-strings
+-O0
+-isysroot
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk
+-fexceptions
+-fasm-blocks
+-g
+-fobjc-abi-version=2
+-fobjc-legacy-dispatch
+-DIBOutlet=__attribute__((iboutlet))
+-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))
+-DIBAction=void)__attribute__((ibaction)
+-mios-simulator-version-min=4.0
+-I/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator/include
+-I/Users/patrickasare/Desktop/Zion
+-IAmerica/kdbdallas-xmlrpc-ios-f28a13cc16ae
+-F/Users/patrickasare/Desktop/Zion America/DerivedData/Zion America/Build/Products/Debug-iphonesimulator
+SDK_PRODUCT_BUILD_VERSION=10A403
