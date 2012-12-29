@@ -7,8 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "LoginViewController.h"
 
 @interface Constants : NSObject
 FOUNDATION_EXPORT NSString *const WPSERVER;
+
 //FOUNDATION_EXPORT NSString *const MySecondConstant;
 @end

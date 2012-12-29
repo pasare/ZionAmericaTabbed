@@ -30,13 +30,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	//Create the logging in alert
+	
+    //Create the logging in alert
     self.statusAlert = [[UIAlertView alloc] initWithTitle:@"Verifying Login Information" message:@"Please wait..." delegate:self cancelButtonTitle:nil otherButtonTitles:nil ];
     UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    
     //Insert a spinner on the status alert
     indicator.center = CGPointMake(self.statusAlert.bounds.size.width+140, self.statusAlert.bounds.size.height+100);
     [indicator startAnimating];
     [self.statusAlert addSubview:indicator];
+    
     //Create the failed login alert
     self.failedLoginAlert = [[UIAlertView alloc] initWithTitle:@"Login Failed" message:@"Incorrect username or password" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil ];
     
@@ -76,6 +79,12 @@
     BOOL authResult = [connection authenticateUser:server username:self.loginID password: self.loginPass];
     [self.statusAlert dismissWithClickedButtonIndex:0 animated:YES];
     if (authResult) {
+        
+        //Load the shared instance for all global variables
+        VariableStore *globals =[VariableStore sharedInstance];
+        globals.loginID = self.loginID;
+        globals.loginPass = self.loginPass;
+        
         NSLog(@"Authenticated");
         [self performSegueWithIdentifier: @"loginSegue" sender: self];
     } else {

@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		99050B3B168D441800276395 /* SendVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99050B3A168D441800276395 /* SendVideoViewController.m */; };
+		99050B3E168D59DB00276395 /* VariableStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 99050B3D168D59DB00276395 /* VariableStore.m */; };
 		990D546D168B8EC200E0BEC5 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 990D546C168B8EC200E0BEC5 /* libsqlite3.0.dylib */; };
 		990D5470168B8FAB00E0BEC5 /* butterfly.png in Resources */ = {isa = PBXBuildFile; fileRef = 990D546F168B8FAB00E0BEC5 /* butterfly.png */; };
+		9986BB52168EAD3F00A1C8F5 /* VideoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9986BB51168EAD3F00A1C8F5 /* VideoDetailViewController.m */; };
 		9991E11B168BD50500A88911 /* libXMLRPC_iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9991E118168BD4F000A88911 /* libXMLRPC_iOS.a */; };
 		9991E11F168C07C400A88911 /* WordPressConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 9991E11E168C07C400A88911 /* WordPressConnection.m */; };
 		9991E122168C0ADF00A88911 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9991E121168C0ADF00A88911 /* Constants.m */; };
@@ -66,9 +69,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		99050B39168D441800276395 /* SendVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendVideoViewController.h; sourceTree = "<group>"; };
+		99050B3A168D441800276395 /* SendVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendVideoViewController.m; sourceTree = "<group>"; };
+		99050B3C168D59DB00276395 /* VariableStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VariableStore.h; sourceTree = "<group>"; };
+		99050B3D168D59DB00276395 /* VariableStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VariableStore.m; sourceTree = "<group>"; };
 		99055D66168BC93E00F89CA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		990D546C168B8EC200E0BEC5 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		990D546F168B8FAB00E0BEC5 /* butterfly.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = butterfly.png; sourceTree = "<group>"; };
+		9986BB50168EAD3F00A1C8F5 /* VideoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoDetailViewController.h; sourceTree = "<group>"; };
+		9986BB51168EAD3F00A1C8F5 /* VideoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoDetailViewController.m; sourceTree = "<group>"; };
 		9991E0F2168BCF1400A88911 /* XMLRPC-iOS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "XMLRPC-iOS.xcodeproj"; path = "kdbdallas-xmlrpc-ios-f28a13cc16ae/XMLRPC-iOS.xcodeproj"; sourceTree = "<group>"; };
 		9991E11D168C07C400A88911 /* WordPressConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WordPressConnection.h; path = ../WordPressConnection.h; sourceTree = "<group>"; };
 		9991E11E168C07C400A88911 /* WordPressConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WordPressConnection.m; path = ../WordPressConnection.m; sourceTree = "<group>"; };
@@ -186,10 +195,16 @@
 				FC851267168A54B100F94C60 /* LoginViewController.m */,
 				FC85127F168AC78C00F94C60 /* HomeViewController.h */,
 				FC851280168AC78C00F94C60 /* HomeViewController.m */,
-				FC851276168AB5D800F94C60 /* Resources */,
-				FC851213168A1AB100F94C60 /* Supporting Files */,
+				99050B39168D441800276395 /* SendVideoViewController.h */,
+				99050B3A168D441800276395 /* SendVideoViewController.m */,
 				9991E120168C0ADF00A88911 /* Constants.h */,
 				9991E121168C0ADF00A88911 /* Constants.m */,
+				99050B3C168D59DB00276395 /* VariableStore.h */,
+				99050B3D168D59DB00276395 /* VariableStore.m */,
+				9986BB50168EAD3F00A1C8F5 /* VideoDetailViewController.h */,
+				9986BB51168EAD3F00A1C8F5 /* VideoDetailViewController.m */,
+				FC851276168AB5D800F94C60 /* Resources */,
+				FC851213168A1AB100F94C60 /* Supporting Files */,
 			);
 			path = "Zion America";
 			sourceTree = "<group>";
@@ -393,6 +408,9 @@
 				FC851281168AC78C00F94C60 /* HomeViewController.m in Sources */,
 				9991E11F168C07C400A88911 /* WordPressConnection.m in Sources */,
 				9991E122168C0ADF00A88911 /* Constants.m in Sources */,
+				99050B3B168D441800276395 /* SendVideoViewController.m in Sources */,
+				99050B3E168D59DB00276395 /* VariableStore.m in Sources */,
+				9986BB52168EAD3F00A1C8F5 /* VideoDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

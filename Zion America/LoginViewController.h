@@ -12,6 +12,8 @@
 #import "XMLRPCResponse.h"
 #import "WordPressConnection.h"
 #import "Constants.h"
+#import "VariableStore.h"
+
 
 @interface LoginViewController : UIViewController <UITextFieldDelegate>
 @property (copy, nonatomic) NSString *loginID;

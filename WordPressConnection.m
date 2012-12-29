@@ -34,7 +34,6 @@
 //This method is used by our action above to call the getBlogsForUser to verify the user credentials
 - (BOOL)authenticateUser:(NSString *)xmlrpc username:(NSString *)username password:(NSString *)password {
 	BOOL result = NO;
-    //[self.statusAlert release];
     if((xmlrpc != nil) && (username != nil) && (password != nil)) {
 		if([self getBlogsForUser:xmlrpc username:username password:password] != nil)
 			result = YES;
@@ -48,9 +47,8 @@
     NSString *server = WPSERVER;
     
 	@try {
-        
         NSMutableArray *args = [NSArray arrayWithObjects:[NSNumber numberWithInt:1], username, password, nil];
-        NSString *method = @"metaWeblog.getPost";
+        NSString *method = @"wp.getPost";
         XMLRPCRequest *request = [[XMLRPCRequest alloc] initWithURL:[NSURL URLWithString:server]];
         [request setMethod:method withParameters:args];
         
@@ -80,6 +78,53 @@
 		else {
 			finalData = nil;
 			NSLog(@"method failed: %@", returnedData);
+		}
+	}
+	@catch (NSException * e) {
+		finalData = nil;
+		NSLog(@"method failed: %@", e);
+	}
+    
+	return finalData;
+}
+
+-(NSMutableDictionary *)getPosts:(NSString *)xmlrpcServer username:(NSString *)username password:(NSString *)password {
+    
+    NSMutableDictionary *finalData = [[NSMutableDictionary alloc] init];
+    NSString *server = WPSERVER;
+    
+	@try {
+        NSDictionary *filter =[NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:@"1000",@"desc",@"post_name",nil] forKeys:[NSArray arrayWithObjects:@"number",@"order",@"orderby",nil]];
+        //NSLog(@"filter: %@", filter);
+        
+        NSMutableArray *args = [NSArray arrayWithObjects:[NSNumber numberWithInt:1], username, password,filter,nil];
+        NSString *method = @"wp.getPosts";
+        XMLRPCRequest *request = [[XMLRPCRequest alloc] initWithURL:[NSURL URLWithString:server]];
+        [request setMethod:method withParameters:args];
+        
+        NSMutableDictionary *returnedData = [self executeXMLRPCRequest:request];
+        
+		if([returnedData isKindOfClass:[NSArray class]]) {
+            finalData = returnedData;//[NSArray arrayWithObjects:returnedData, nil];
+        
+		}
+        else if([returnedData isKindOfClass:[NSDictionary class]]) {
+            finalData = returnedData;
+		}
+		else if([returnedData isKindOfClass:[NSError class]]) {
+			self.error = (NSError *)returnedData;
+			NSString *errorMessage = [self.error localizedDescription];
+            
+			finalData = nil;
+            
+			if([errorMessage isEqualToString:@"The operation couldn’t be completed. (NSXMLParserErrorDomain error 4.)"])
+				errorMessage = @"Your blog's XML-RPC endpoint was found but it isn't communicating properly. Try disabling plugins or contacting your host.";
+			else if([errorMessage isEqualToString:@"Bad login/pass combination."])
+                errorMessage = nil;
+            }
+            else {
+                finalData = nil;
+                NSLog(@"method failed: %@", returnedData);
 		}
 	}
 	@catch (NSException * e) {
