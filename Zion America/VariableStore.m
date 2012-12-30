@@ -32,7 +32,7 @@
     return _loginPass;
 }
 
--(NSDictionary*) posts {
-    return _posts;
+-(NSString*) videoName {
+    return _videoName;
 }
 @end

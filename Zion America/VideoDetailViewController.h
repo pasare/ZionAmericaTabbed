@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VariableStore.h"
 
 @interface VideoDetailViewController : UIViewController 
+@property (weak, nonatomic) IBOutlet UILabel *urlLabel;
 @property (weak, nonatomic) IBOutlet UIButton *sendSMS;
 @property (weak, nonatomic) IBOutlet UIButton *sendEmail;
 @property (weak, nonatomic) IBOutlet UILabel *videoLabel;
-@property NSString *selectedVideo;
 @end

@@ -26,8 +26,24 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSArray *savedPosts = [defaults objectForKey:@"posts"];
+    NSString *videoName = [[VariableStore sharedInstance]videoName ];
+    NSDictionary *videoInfo;
+	_videoLabel.text = videoName;
     
-	_videoLabel.text = _selectedVideo;
+    //Retrieve the video information
+    for (id currentPost in savedPosts)
+    {
+        if ([[currentPost objectForKey:@"post_title"] isEqualToString:videoName])
+        {
+            videoInfo = currentPost;
+            
+        }
+    }
+    //Set all of the decription labels
+    _urlLabel.text = [videoInfo objectForKey:@"link"];
+    //NSLog(@"Here I am %@",videoInfo);
 }
 
 - (void)didReceiveMemoryWarning

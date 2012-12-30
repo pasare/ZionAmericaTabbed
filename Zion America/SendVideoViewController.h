@@ -16,7 +16,7 @@
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UITableView *videoTable;
 @property UIAlertView *statusAlert;
-@property UIAlertView *failedLoginAlert;
+@property UIAlertView *failedVideoAlert;
 @property NSMutableArray *tableArray;
 @property NSMutableArray *englishArray;
 @property NSMutableArray *spanishArray;
@@ -28,4 +28,5 @@
 
 - (void) searchTableView;
 - (void) doneSearching_Clicked:(id)sender;
+- (void) loadVideoList:(NSArray*) wpposts;
 @end

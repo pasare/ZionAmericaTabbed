@@ -151,11 +151,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Zion America/SendVideoViewController.m"
-         timestampString = "378454405.898563"
+         timestampString = "378589375.698984"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "136"
-         endingLineNumber = "136"
+         startingLineNumber = "187"
+         endingLineNumber = "187"
          landmarkName = "-tableView:cellForRowAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -164,11 +164,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Zion America/SendVideoViewController.m"
-         timestampString = "378452946.812067"
+         timestampString = "378589375.698984"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "101"
-         endingLineNumber = "101"
+         startingLineNumber = "152"
+         endingLineNumber = "152"
          landmarkName = "-tryRetrieveVideoList"
          landmarkType = "5">
       </FileBreakpoint>
@@ -203,12 +203,64 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Zion America/SendVideoViewController.m"
-         timestampString = "378457142.178461"
+         timestampString = "378586663.723734"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "171"
-         endingLineNumber = "171"
-         landmarkName = "-tableView:didSelectRowAtIndexPath:"
+         startingLineNumber = "78"
+         endingLineNumber = "78"
+         landmarkName = "-loadVideoList:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Zion America/SendVideoViewController.m"
+         timestampString = "378586663.723734"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "62"
+         endingLineNumber = "62"
+         landmarkName = "-viewDidLoad"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Zion America/SendVideoViewController.m"
+         timestampString = "378589375.698984"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "266"
+         endingLineNumber = "266"
+         landmarkName = "-searchTableView"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Zion America/SendVideoViewController.m"
+         timestampString = "378589375.698984"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "224"
+         endingLineNumber = "224"
+         landmarkName = "-searchBarTextDidBeginEditing:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Zion America/SendVideoViewController.m"
+         timestampString = "378589375.698984"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "263"
+         endingLineNumber = "263"
+         landmarkName = "-searchBar:textDidChange:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

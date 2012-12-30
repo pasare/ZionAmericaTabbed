@@ -13,8 +13,6 @@
 @end
 
 @implementation SendVideoViewController
-    NSArray *recipes;
-    NSArray *posts;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -42,6 +40,7 @@
     _letUserSelectRow = YES;
     _listOfItems = [[NSMutableArray alloc] init];
     
+    
     //UIAlert for retrieving video list
 	self.statusAlert = [[UIAlertView alloc] initWithTitle:@"Retrieving Video List" message:@"Please wait..." delegate:self cancelButtonTitle:nil otherButtonTitles:nil ];
     UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
@@ -52,11 +51,21 @@
     [self.statusAlert addSubview:indicator];
     
     //Create the failed login alert
-    self.failedLoginAlert = [[UIAlertView alloc] initWithTitle:@"Retrieval Error" message:@"You are not authorized to view this video list" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil ];
+    self.failedVideoAlert = [[UIAlertView alloc] initWithTitle:@"List Error" message:@"unable to load the video list at this time" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil ];
     
-    //Start retrieving video list
-    [self.statusAlert show];
-    [NSTimer scheduledTimerWithTimeInterval:.5 target:self selector:@selector(tryRetrieveVideoList) userInfo:nil repeats:NO];
+    //Load the video list from memory if possible
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSArray *wpposts = [defaults objectForKey:@"posts"];
+    
+    //Load the video list from memory
+    if (wpposts != nil) {
+        [self loadVideoList:wpposts];
+    }
+    //Retrieve video list from server
+    else {
+        [self.statusAlert show];
+        [NSTimer scheduledTimerWithTimeInterval:.5 target:self selector:@selector(tryRetrieveVideoList) userInfo:nil repeats:NO];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -65,15 +74,12 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void) tryRetrieveVideoList {
-    //Retrieve all of the blog posts
-    NSString *server = WPSERVER;
-    WordPressConnection *connection = [WordPressConnection alloc];
-    NSDictionary *wpposts = [connection getPosts:server username: [[VariableStore sharedInstance] loginID] password:[[VariableStore sharedInstance] loginPass]];
-    [self.statusAlert dismissWithClickedButtonIndex:0 animated:YES];
-    //Save the posts as global
-    VariableStore *globals =[VariableStore sharedInstance];
-    globals.posts = wpposts;
+//Retrieve video list from memory
+-(void) loadVideoList:(NSArray*) wpposts{
+    //Save the posts to defaults, to keep across sessions
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:wpposts forKey:@"posts"];
+    
     if (wpposts != nil) {
         _tableArray = [[NSMutableArray alloc] initWithCapacity:[wpposts count]];
         _englishArray = [[NSMutableArray alloc] initWithCapacity:[wpposts count]];
@@ -97,10 +103,55 @@
         _spanishSorted = [_spanishArray sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
         [_tableArray addObject:_englishSorted];
         [_tableArray addObject:_spanishSorted];
+        [_listOfItems addObjectsFromArray:_englishSorted];
+        [_listOfItems addObjectsFromArray:_spanishSorted];
         [_videoTable reloadData];
     }
     else {
-        [self.failedLoginAlert show];
+        [self.failedVideoAlert show];
+    }
+}
+
+//Retrieve video list from server
+-(void) tryRetrieveVideoList {
+    NSString *server = WPSERVER;
+    WordPressConnection *connection = [WordPressConnection alloc];
+    NSDictionary *wpposts = [connection getPosts:server username: [[VariableStore sharedInstance] loginID] password:[[VariableStore sharedInstance] loginPass]];
+    [self.statusAlert dismissWithClickedButtonIndex:0 animated:YES];
+    
+    //Save the posts to defaults, to keep across sessions
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:wpposts forKey:@"posts"];
+
+    if (wpposts != nil) {
+        _tableArray = [[NSMutableArray alloc] initWithCapacity:[wpposts count]];
+        _englishArray = [[NSMutableArray alloc] initWithCapacity:[wpposts count]];
+        _spanishArray = [[NSMutableArray alloc] initWithCapacity:[wpposts count]];
+        
+        //Find which group the video belongs to
+        for (NSDictionary *element in wpposts) {
+            if ([[[[element objectForKey:@"terms"]objectAtIndex:0]objectForKey:@"slug"]isEqualToString:@"english"]) {
+                [_englishArray addObject:[element objectForKey:@"post_title"]];
+            }
+            else if ([[[[element objectForKey:@"terms"]objectAtIndex:1]objectForKey:@"slug"]isEqualToString:@"english"]){
+                [_englishArray addObject:[element objectForKey:@"post_title"]];
+            }
+            else {
+                [_spanishArray addObject:[element objectForKey:@"post_title"]];
+            }
+        }
+        
+        //Sort the smaller arrays and add to sectioning array
+        _englishSorted = [_englishArray sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
+        _spanishSorted = [_spanishArray sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
+        [_tableArray addObject:_englishSorted];
+        [_tableArray addObject:_spanishSorted];
+        [_listOfItems addObjectsFromArray:_englishSorted];
+        [_listOfItems addObjectsFromArray:_spanishSorted];
+        [_videoTable reloadData];
+    }
+    else {
+        [self.failedVideoAlert show];
     }
 }
 
@@ -165,12 +216,8 @@
         NSArray *array = [_tableArray objectAtIndex:indexPath.section];
         selectedVideo = [array objectAtIndex:indexPath.row];
     }
-    VideoDetailViewController *dvController = [[VideoDetailViewController alloc] initWithNibName:@"videoDetailView" bundle:[NSBundle mainBundle]];
-    
-    dvController.selectedVideo = selectedVideo;
-    [self.navigationController pushViewController:dvController animated:YES];
-    dvController = nil;
-    //[self performSegueWithIdentifier: @"videoDetailSegue" sender: self];
+    [VariableStore sharedInstance].videoName = selectedVideo;
+    [self performSegueWithIdentifier: @"videoDetailSegue" sender: self];
 }
 
 //Searching methods
@@ -253,5 +300,6 @@
     
     [self searchTableView];
 }
+
 
 @end
