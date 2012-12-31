@@ -28,5 +28,6 @@
 
 - (void) searchTableView;
 - (void) doneSearching_Clicked:(id)sender;
+- (void) updateList:(id) sender;
 - (void) loadVideoList:(NSArray*) wpposts;
 @end

@@ -22,6 +22,7 @@
 - (NSMutableDictionary *)getPost:(NSString *)xmlrpc username:(NSString *)username password:(NSString *)password;
 - (NSMutableArray *)getBlogsForUser:(NSString *)xmlrpc username:(NSString *)username password:(NSString *)password;
 -(NSMutableDictionary *)getPosts:(NSString *)xmlrpcServer username:(NSString *)username password:(NSString *)password;
+-(NSMutableDictionary *)getUsers:(NSString *)xmlrpcServer username:(NSString *)username password:(NSString *)password;
 
 - (id)executeXMLRPCRequest:(XMLRPCRequest *)req;
 @end

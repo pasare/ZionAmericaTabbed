@@ -26,7 +26,21 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+
+    NSString *server = WPSERVER;
+    WordPressConnection *connection = [WordPressConnection alloc];
+    NSDictionary *wpusers = [connection getUsers:server username: [[VariableStore sharedInstance] loginID] password:[[VariableStore sharedInstance] loginPass]];
+    NSString *username = _userNameLabel.text;
+    for (id user in wpusers) {
+        if ([[user objectForKey:@"username"]isEqualToString:[[VariableStore sharedInstance]loginID]]) {
+            username = [username stringByAppendingString:[user objectForKey:@"first_name"]];
+            username = [username stringByAppendingString:@" "];
+            username = [username stringByAppendingString:[user objectForKey:@"last_name"]];
+        }
+    }
+    
+    _userNameLabel.text = username;
+    //NSLog(@"Users %@",wpusers);
 }
 
 - (void)didReceiveMemoryWarning

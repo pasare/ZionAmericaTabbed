@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WordPressConnection.h"
+#import "VariableStore.h"
 
 @interface HomeViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UILabel *displayEmailCount;
+@property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
+
 
 @end

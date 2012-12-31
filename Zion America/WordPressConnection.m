@@ -173,6 +173,42 @@
 	return usersBlogs;
 }
 
+-(NSArray *)getUsers:(NSString *)xmlrpc username:(NSString *)username password:(NSString *)password {
+    
+    NSArray *wpusers = [[NSArray alloc] init];
+    
+	@try {
+		XMLRPCRequest *xmlrpcUsers = [[XMLRPCRequest alloc] initWithURL:[NSURL URLWithString:xmlrpc]];
+		[xmlrpcUsers setMethod:@"wp.getUsers" withParameters:[NSArray arrayWithObjects:[NSNumber numberWithInt:1],username, password, nil]];
+        
+		NSArray *usersData = [self executeXMLRPCRequest:xmlrpcUsers];
+        
+		if([usersData isKindOfClass:[NSArray class]]) {
+            wpusers = [NSArray arrayWithArray:usersData];
+		}
+		else if([usersData isKindOfClass:[NSError class]]) {
+			self.error = (NSError *)usersData;
+			NSString *errorMessage = [self.error localizedDescription];
+            
+			wpusers = nil;
+            
+			if([errorMessage isEqualToString:@"The operation couldn’t be completed. (NSXMLParserErrorDomain error 4.)"])
+				errorMessage = @"Your blog's XML-RPC endpoint was found but it isn't communicating properly. Try disabling plugins or contacting your host.";
+            
+		}
+		else {
+			wpusers = nil;
+			NSLog(@"getUsers failed: %@", usersData);
+		}
+	}
+	@catch (NSException * e) {
+		wpusers = nil;
+		NSLog(@"getUsers failed: %@", e);
+	}
+    
+	return wpusers;
+}
+
 - (id)executeXMLRPCRequest:(XMLRPCRequest *)req {
     NSError *error2 = nil;
 	XMLRPCResponse *userInfoResponse = [XMLRPCConnection sendSynchronousXMLRPCRequest:req error:&error2];

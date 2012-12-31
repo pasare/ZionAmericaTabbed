@@ -66,6 +66,11 @@
         [self.statusAlert show];
         [NSTimer scheduledTimerWithTimeInterval:.5 target:self selector:@selector(tryRetrieveVideoList) userInfo:nil repeats:NO];
     }
+    //If the sync button is press, update the video list
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]
+                                              initWithTitle:@"Sync" style:UIBarButtonItemStylePlain
+                                              target:self action:@selector(updateList:)];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -290,8 +295,12 @@
     
     _letUserSelectRow = YES;
     _searching = NO;
-    self.navigationItem.rightBarButtonItem = nil;
     _videoTable.scrollEnabled = YES;
+    //Recreate the sync button
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]
+                                              initWithTitle:@"Sync" style:UIBarButtonItemStylePlain
+                                              target:self action:@selector(updateList:)];
+    
     
     [_videoTable reloadData];
 }
@@ -301,5 +310,13 @@
     [self searchTableView];
 }
 
+//update the table
+- (void) updateList:(id) sender{
+    [_tableArray removeAllObjects];
+    [_listOfItems removeAllObjects];
+    [_videoTable reloadData];
+    [self.statusAlert show];
+    [NSTimer scheduledTimerWithTimeInterval:.5 target:self selector:@selector(tryRetrieveVideoList) userInfo:nil repeats:NO];
+}
 
 @end
