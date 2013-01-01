@@ -80,7 +80,8 @@
 }
 
 //Retrieve video list from memory
--(void) loadVideoList:(NSArray*) wpposts{
+-(void) loadVideoList:(NSArray*) wpposts
+{
     //Save the posts to defaults, to keep across sessions
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:wpposts forKey:@"posts"];
@@ -118,7 +119,8 @@
 }
 
 //Retrieve video list from server
--(void) tryRetrieveVideoList {
+-(void) tryRetrieveVideoList
+{
     NSString *server = WPSERVER;
     WordPressConnection *connection = [WordPressConnection alloc];
     NSDictionary *wpposts = [connection getPosts:server username: [[VariableStore sharedInstance] loginID] password:[[VariableStore sharedInstance] loginPass]];
@@ -160,14 +162,16 @@
     }
 }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
     if (_searching)
         return 1;
     else
         return [_tableArray count];
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
     if (_searching)
         return @"Search Results";
     else {
@@ -211,7 +215,8 @@
 }
 
 //Get the selected row
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
     
     NSString *selectedVideo = nil;
     
@@ -226,7 +231,8 @@
 }
 
 //Searching methods
-- (void) searchBarTextDidBeginEditing:(UISearchBar *)theSearchBar {
+- (void) searchBarTextDidBeginEditing:(UISearchBar *)theSearchBar
+{
     
     _searching = YES;
     _letUserSelectRow = NO;
@@ -238,7 +244,8 @@
                                                target:self action:@selector(doneSearching_Clicked:)];
 }
 
-- (NSIndexPath *)tableView :(UITableView *)theTableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+- (NSIndexPath *)tableView :(UITableView *)theTableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
     
     if(_letUserSelectRow)
         return indexPath;
@@ -246,7 +253,8 @@
         return nil;
 }
 
-- (void)searchBar:(UISearchBar *)theSearchBar textDidChange:(NSString *)searchText {
+- (void)searchBar:(UISearchBar *)theSearchBar textDidChange:(NSString *)searchText
+{
     
     //Remove all objects first.
     [_listOfItems removeAllObjects];
@@ -268,7 +276,8 @@
     [_videoTable reloadData];
 }
 
-- (void) searchTableView {
+- (void) searchTableView
+{
     
     NSString *searchText = _searchBar.text;
     NSMutableArray *searchArray = [[NSMutableArray alloc] init];
@@ -288,7 +297,8 @@
     searchArray = nil;
 }
 
-- (void) doneSearching_Clicked:(id)sender {
+- (void) doneSearching_Clicked:(id)sender
+{
     
     _searchBar.text = @"";
     [_searchBar resignFirstResponder];
@@ -305,7 +315,8 @@
     [_videoTable reloadData];
 }
 
-- (void) searchBarSearchButtonClicked:(UISearchBar *)theSearchBar {
+- (void) searchBarSearchButtonClicked:(UISearchBar *)theSearchBar
+{
     
     [self searchTableView];
 }

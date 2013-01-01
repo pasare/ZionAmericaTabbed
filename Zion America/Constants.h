@@ -11,6 +11,7 @@
 
 @interface Constants : NSObject
 FOUNDATION_EXPORT NSString *const WPSERVER;
-
+FOUNDATION_EXPORT NSString *const MAILHOST;
+FOUNDATION_EXPORT NSInteger *const MAILPORT;
 //FOUNDATION_EXPORT NSString *const MySecondConstant;
 @end

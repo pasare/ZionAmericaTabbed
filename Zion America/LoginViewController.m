@@ -66,12 +66,14 @@
     return YES;
 }
 
-- (IBAction)ProcessLogin:(id)sender {
+- (IBAction)ProcessLogin:(id)sender
+{
     [self.statusAlert show];
     [NSTimer scheduledTimerWithTimeInterval:.5 target:self selector:@selector(tryLogin) userInfo:nil repeats:NO];
 }
 
--(void)tryLogin {
+-(void)tryLogin
+{
     self.loginID = self.userID.text;
     self.loginPass = self.userPassword.text;
     NSString *server = WPSERVER;
