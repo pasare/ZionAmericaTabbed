@@ -50,7 +50,7 @@
     [indicator startAnimating];
     [self.statusAlert addSubview:indicator];
     
-    //Create the failed login alert
+    //Create the failed load alert
     self.failedVideoAlert = [[UIAlertView alloc] initWithTitle:@"List Error" message:@"unable to load the video list at this time" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil ];
     
     //Load the video list from memory if possible

@@ -12,8 +12,10 @@
 @property (copy, nonatomic) NSString *loginID;
 @property (copy, nonatomic) NSString *loginPass;
 @property (copy, nonatomic) NSString *videoName;
+@property (copy, nonatomic) NSString *emailName;
 + (VariableStore *)sharedInstance;
 - (NSString*) loginID;
 - (NSString*) loginPass;
 - (NSString*) videoName;
+- (NSString*) emailName;
 @end
