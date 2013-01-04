@@ -16,6 +16,7 @@
 		99176FA91694147900271DF1 /* bullet_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 99176FA81694147900271DF1 /* bullet_blue.png */; };
 		997C98DA1694039600B2C809 /* InboxCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 997C98D91694039600B2C809 /* InboxCell.m */; };
 		997C98DC1694046B00B2C809 /* InboxCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 997C98DB1694046B00B2C809 /* InboxCellView.xib */; };
+		997F12C51694170200E2F27B /* gnome_mail_read.png in Resources */ = {isa = PBXBuildFile; fileRef = 997F12C41694170200E2F27B /* gnome_mail_read.png */; };
 		9984A05E169218A700C28A9A /* App_Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9984A05D169218A700C28A9A /* App_Icon.png */; };
 		9984A060169218D500C28A9A /* App_Icon.png_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 9984A05F169218D500C28A9A /* App_Icon.png_4.png */; };
 		9986BB52168EAD3F00A1C8F5 /* VideoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9986BB51168EAD3F00A1C8F5 /* VideoDetailViewController.m */; };
@@ -28,6 +29,9 @@
 		99881EF816921FAC006433E8 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 99881EF716921FAC006433E8 /* libiconv.dylib */; };
 		99881EFA16921FB9006433E8 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 99881EF916921FB9006433E8 /* libcrypto.a */; };
 		99881F0116924DF0006433E8 /* InboxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99881F0016924DF0006433E8 /* InboxViewController.m */; };
+		9988A0C91696933000D90D0D /* HeaderDisclosureArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 9988A0C81696932F00D90D0D /* HeaderDisclosureArrow.png */; };
+		9988A0CB1696940F00D90D0D /* UITV_accessory_disclosure.png in Resources */ = {isa = PBXBuildFile; fileRef = 9988A0CA1696940F00D90D0D /* UITV_accessory_disclosure.png */; };
+		9988A0CE1696A06700D90D0D /* InboxDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9988A0CD1696A06700D90D0D /* InboxDetailViewController.m */; };
 		9991E11B168BD50500A88911 /* libXMLRPC_iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9991E118168BD4F000A88911 /* libXMLRPC_iOS.a */; };
 		9991E122168C0ADF00A88911 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9991E121168C0ADF00A88911 /* Constants.m */; };
 		9991E126168C21C700A88911 /* butterfly with text.png in Resources */ = {isa = PBXBuildFile; fileRef = 9991E125168C21C700A88911 /* butterfly with text.png */; };
@@ -125,6 +129,7 @@
 		997C98D81694039600B2C809 /* InboxCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InboxCell.h; sourceTree = "<group>"; };
 		997C98D91694039600B2C809 /* InboxCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InboxCell.m; sourceTree = "<group>"; };
 		997C98DB1694046B00B2C809 /* InboxCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InboxCellView.xib; sourceTree = "<group>"; };
+		997F12C41694170200E2F27B /* gnome_mail_read.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gnome_mail_read.png; sourceTree = "<group>"; };
 		9984A05D169218A700C28A9A /* App_Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = App_Icon.png; path = ../App_Icon.png; sourceTree = "<group>"; };
 		9984A05F169218D500C28A9A /* App_Icon.png_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = App_Icon.png_4.png; path = ../App_Icon.png_4.png; sourceTree = "<group>"; };
 		9986BB50168EAD3F00A1C8F5 /* VideoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoDetailViewController.h; sourceTree = "<group>"; };
@@ -142,6 +147,10 @@
 		99881EF916921FB9006433E8 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = "../../MailCore/iOSPorts/ports/security/openssl/build/Release-iphoneos/libcrypto.a"; sourceTree = "<group>"; };
 		99881EFF16924DF0006433E8 /* InboxViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InboxViewController.h; sourceTree = "<group>"; };
 		99881F0016924DF0006433E8 /* InboxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InboxViewController.m; sourceTree = "<group>"; };
+		9988A0C81696932F00D90D0D /* HeaderDisclosureArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeaderDisclosureArrow.png; sourceTree = "<group>"; };
+		9988A0CA1696940F00D90D0D /* UITV_accessory_disclosure.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UITV_accessory_disclosure.png; sourceTree = "<group>"; };
+		9988A0CC1696A06700D90D0D /* InboxDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InboxDetailViewController.h; sourceTree = "<group>"; };
+		9988A0CD1696A06700D90D0D /* InboxDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InboxDetailViewController.m; sourceTree = "<group>"; };
 		9991E0F2168BCF1400A88911 /* XMLRPC-iOS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "XMLRPC-iOS.xcodeproj"; path = "kdbdallas-xmlrpc-ios-f28a13cc16ae/XMLRPC-iOS.xcodeproj"; sourceTree = "<group>"; };
 		9991E120168C0ADF00A88911 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		9991E121168C0ADF00A88911 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
@@ -290,6 +299,8 @@
 				997C98D81694039600B2C809 /* InboxCell.h */,
 				997C98D91694039600B2C809 /* InboxCell.m */,
 				997C98DB1694046B00B2C809 /* InboxCellView.xib */,
+				9988A0CC1696A06700D90D0D /* InboxDetailViewController.h */,
+				9988A0CD1696A06700D90D0D /* InboxDetailViewController.m */,
 				FC851276168AB5D800F94C60 /* Resources */,
 				FC851213168A1AB100F94C60 /* Supporting Files */,
 			);
@@ -338,6 +349,9 @@
 		FC851276168AB5D800F94C60 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9988A0CA1696940F00D90D0D /* UITV_accessory_disclosure.png */,
+				9988A0C81696932F00D90D0D /* HeaderDisclosureArrow.png */,
+				997F12C41694170200E2F27B /* gnome_mail_read.png */,
 				99176FA81694147900271DF1 /* bullet_blue.png */,
 				9984A05F169218D500C28A9A /* App_Icon.png_4.png */,
 				9984A05D169218A700C28A9A /* App_Icon.png */,
@@ -497,6 +511,9 @@
 				99176FA51694135400271DF1 /* stock_mail_unread.png in Resources */,
 				99176FA71694135B00271DF1 /* gnome_mail_unread.png in Resources */,
 				99176FA91694147900271DF1 /* bullet_blue.png in Resources */,
+				997F12C51694170200E2F27B /* gnome_mail_read.png in Resources */,
+				9988A0C91696933000D90D0D /* HeaderDisclosureArrow.png in Resources */,
+				9988A0CB1696940F00D90D0D /* UITV_accessory_disclosure.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -543,6 +560,7 @@
 				9986BB5B1691412300A1C8F5 /* WordPressConnection.m in Sources */,
 				99881F0116924DF0006433E8 /* InboxViewController.m in Sources */,
 				997C98DA1694039600B2C809 /* InboxCell.m in Sources */,
+				9988A0CE1696A06700D90D0D /* InboxDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

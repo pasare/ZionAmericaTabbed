@@ -79,8 +79,14 @@
     CTCoreAccount *account = [[CTCoreAccount alloc] init];
     [account connectToServer:@"mail.marylandzion.org" port:143 connectionType:CONNECTION_TYPE_PLAIN authType:IMAP_AUTH_TYPE_PLAIN login:@"info@marylandzion.org" password:@"M4ryl4ndZ1on!"];
     CTCoreFolder *inbox = [account folderWithPath:@"INBOX"];
-    NSArray *messageList = [inbox messagesFromUID:1 to:0 withFetchAttributes:CTFetchAttrEnvelope];
+    NSArray *messageList = [inbox messagesFromSequenceNumber:1 to:0 withFetchAttributes:CTFetchAttrEnvelope| CTFetchAttrBodyStructure];
     _tableArray = messageList;
+    
+    //Sort array so that newest mail shows up first
+    NSSortDescriptor *sortDescriptor;
+    sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"senderDate" ascending:NO];
+    NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
+    _tableArray = [messageList sortedArrayUsingDescriptors:sortDescriptors];
     
     for (CTCoreMessage *message in messageList) {
         //Get the number of new messages
@@ -151,7 +157,7 @@
             [[cell unreadMessageLabel] setImage:[UIImage imageNamed:@"gnome_mail_unread.png"]];
         }
         else {
-            //[[cell unreadMessageLabel] setImage:[UIImage imageNamed:@"stock_mail_unread.png"]];
+            [[cell unreadMessageLabel] setImage:[UIImage imageNamed:@"gnome_mail_read.png"]];
         }
         [[cell senderLabel]setText:currentSender];
         [[cell titleLabel]setText:subject];
@@ -165,16 +171,15 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    NSString *selectedEmail = nil;
+    CTCoreMessage *selectedEmail;
     
     if(_searching)
         selectedEmail = [_listOfItems objectAtIndex:indexPath.row];
     else {
-        NSArray *array = [_tableArray objectAtIndex:indexPath.section];
-        selectedEmail = [array objectAtIndex:indexPath.row];
+        selectedEmail = [_tableArray objectAtIndex:indexPath.row];
     }
-    [VariableStore sharedInstance].emailName = selectedEmail;
-    //[self performSegueWithIdentifier: @"videoDetailSegue" sender: self];
+    [VariableStore sharedInstance].selectedEmail = selectedEmail;
+    [self performSegueWithIdentifier: @"emailDetailSegue" sender: self];
 }
 
 @end
