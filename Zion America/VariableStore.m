@@ -35,4 +35,8 @@
 -(NSString*) videoName {
     return _videoName;
 }
+
+-(CTCoreMessage *)selectedEmail {
+    return _selectedEmail;
+}
 @end

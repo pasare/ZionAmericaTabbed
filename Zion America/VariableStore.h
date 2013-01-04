@@ -7,15 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <MailCore/MailCore.h>
 
 @interface VariableStore : NSObject
 @property (copy, nonatomic) NSString *loginID;
 @property (copy, nonatomic) NSString *loginPass;
 @property (copy, nonatomic) NSString *videoName;
-@property (copy, nonatomic) NSString *emailName;
+@property (nonatomic) CTCoreMessage *selectedEmail;
 + (VariableStore *)sharedInstance;
 - (NSString*) loginID;
 - (NSString*) loginPass;
 - (NSString*) videoName;
-- (NSString*) emailName;
+- (CTCoreMessage*) selectedEmail;
 @end

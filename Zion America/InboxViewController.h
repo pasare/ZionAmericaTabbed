@@ -15,7 +15,6 @@
 
 @interface InboxViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UINavigationItem *inboxNavigationItem;
-@property (weak, nonatomic) IBOutlet UINavigationBar *inboxNavigationBar;
 @property (weak, nonatomic) IBOutlet UITableView *emailTable;
 @property UIAlertView *statusAlert;
 @property UIAlertView *failedVideoAlert;
