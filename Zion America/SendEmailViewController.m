@@ -27,7 +27,14 @@
 {
     [super viewDidLoad];
     //Set up mailer alert
+    //UIAlert for retrieving video list
+	self.statusAlert = [[UIAlertView alloc] initWithTitle:@"Retrieving Video List" message:@"Please wait..." delegate:self cancelButtonTitle:nil otherButtonTitles:nil ];
+    UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
     
+    //Insert a spinner on the status alert
+    indicator.center = CGPointMake(self.statusAlert.bounds.size.width+140, self.statusAlert.bounds.size.height+100);
+    [indicator startAnimating];
+    [self.statusAlert addSubview:indicator];
     
 	// Do any additional setup after loading the view.
     _commentView.layer.borderWidth = 3.0f;
@@ -126,12 +133,12 @@
 {
     if (_activeView !=nil)
     {
-        NSDictionary* info = [aNotification userInfo];
+        /*NSDictionary* info = [aNotification userInfo];
         CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
         CGRect bkgndRect = _activeView.superview.frame;
         bkgndRect.size.height += kbSize.height;
         [_activeView.superview setFrame:bkgndRect];
-        [_scrollView setContentOffset:CGPointMake(0.0, _activeView.frame.origin.y-kbSize.height+100) animated:YES];
+        [_scrollView setContentOffset:CGPointMake(0.0, _activeView.frame.origin.y-kbSize.height+100) animated:YES]; */
     }
 }
 
@@ -143,10 +150,9 @@
 //send the email
 - (void) sendEmail:(id) sender
 {
-    
+    [self.statusAlert show];
     CTCoreMessage *msg = [[CTCoreMessage alloc] init];
-    CTCoreAddress *toAddress = [CTCoreAddress addressWithName:_emailName.text
-                                                        email:_emailAddress.text];
+    CTCoreAddress *toAddress = [CTCoreAddress addressWithName:_emailName.text email:_emailAddress.text];
     [msg setTo:[NSSet setWithObject:toAddress]];
     [msg setBody:_commentView.text];
     
@@ -156,13 +162,15 @@
                                         username:@"info@marylandzion.org"
                                         password:@"M4ryl4ndZ1on!"
                                             port:26
-                                  connectionType:CTSMTPConnectionTypeTLS
+                                  connectionType:CTSMTPConnectionTypeStartTLS
                                          useAuth:YES
                                            error:&error];
     if (success) {
+        [self.statusAlert dismissWithClickedButtonIndex:0 animated:YES];
         NSLog(@"Email sent successfully");
     }
     else {
+        [self.statusAlert dismissWithClickedButtonIndex:0 animated:YES];
         NSLog(@"An error was encountered while sending the email %@", error);
     }
 }

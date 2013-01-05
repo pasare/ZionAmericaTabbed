@@ -21,6 +21,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *emailName;
 @property UITextField *activeField;
 @property UITextView *activeView;
-
+@property UIAlertView *statusAlert;
 @end
 

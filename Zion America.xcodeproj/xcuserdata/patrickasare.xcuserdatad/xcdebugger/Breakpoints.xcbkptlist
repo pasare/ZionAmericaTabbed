@@ -294,11 +294,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Zion America/SendEmailViewController.m"
-         timestampString = "378678997.991258"
+         timestampString = "379057518.821958"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "127"
-         endingLineNumber = "127"
+         startingLineNumber = "134"
+         endingLineNumber = "134"
          landmarkName = "-keyboardDidShow:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -307,11 +307,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Zion America/SendEmailViewController.m"
-         timestampString = "378678997.991258"
+         timestampString = "379057518.821958"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "83"
-         endingLineNumber = "83"
+         startingLineNumber = "90"
+         endingLineNumber = "90"
          landmarkName = "-textViewDidBeginEditing:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -320,11 +320,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Zion America/SendEmailViewController.m"
-         timestampString = "378678997.991258"
+         timestampString = "379057518.821958"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "36"
-         endingLineNumber = "36"
+         startingLineNumber = "43"
+         endingLineNumber = "43"
          landmarkName = "-viewDidLoad"
          landmarkType = "5">
       </FileBreakpoint>
@@ -333,11 +333,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Zion America/SendEmailViewController.m"
-         timestampString = "378678997.991258"
+         timestampString = "379057518.821958"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "129"
-         endingLineNumber = "129"
+         startingLineNumber = "136"
+         endingLineNumber = "136"
          landmarkName = "-keyboardDidShow:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -346,11 +346,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Zion America/SendEmailViewController.m"
-         timestampString = "378687583.202955"
+         timestampString = "379058093.644035"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "158"
-         endingLineNumber = "158"
+         startingLineNumber = "164"
+         endingLineNumber = "164"
          landmarkName = "-sendEmail:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -359,11 +359,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Zion America/SendEmailViewController.m"
-         timestampString = "378687583.202955"
+         timestampString = "379058093.644035"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "150"
-         endingLineNumber = "150"
+         startingLineNumber = "156"
+         endingLineNumber = "156"
          landmarkName = "-sendEmail:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -372,11 +372,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Zion America/SendEmailViewController.m"
-         timestampString = "378687583.202955"
+         timestampString = "379058093.644035"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "154"
-         endingLineNumber = "154"
+         startingLineNumber = "160"
+         endingLineNumber = "160"
          landmarkName = "-sendEmail:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -394,20 +394,20 @@
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Zion America/InboxViewController.m"
-         timestampString = "378969678.450437"
+         timestampString = "379047849.758938"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "174"
-         endingLineNumber = "174"
+         startingLineNumber = "168"
+         endingLineNumber = "168"
          landmarkName = "-tableView:didSelectRowAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Zion America/VariableStore.m"
@@ -417,6 +417,32 @@
          startingLineNumber = "39"
          endingLineNumber = "39"
          landmarkName = "-selectedEmail"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Zion America/InboxViewController.m"
+         timestampString = "379048074.100539"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "230"
+         endingLineNumber = "230"
+         landmarkName = "-searchTableView"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Zion America/SendEmailViewController.m"
+         timestampString = "379058093.644035"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "159"
+         endingLineNumber = "159"
+         landmarkName = "-sendEmail:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

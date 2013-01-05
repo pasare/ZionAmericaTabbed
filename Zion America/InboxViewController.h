@@ -14,6 +14,7 @@
 #import "InboxCell.h"
 
 @interface InboxViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UINavigationItem *inboxNavigationItem;
 @property (weak, nonatomic) IBOutlet UITableView *emailTable;
 @property UIAlertView *statusAlert;

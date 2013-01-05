@@ -117,11 +117,6 @@
     static NSString *cellIdentifier = @"inboxCell";
     InboxCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
-    /*if (cell == nil)
-    {
-        cell = [[InboxCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-    } */
-    
     NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"InboxCellView" owner:nil options:nil];
     
     for(id currentObject in topLevelObjects)
@@ -132,39 +127,38 @@
             break;
         }
     }
-    
+    CTCoreMessage *message;
     if (_searching){
-        cell.textLabel.text = [_listOfItems objectAtIndex:indexPath.row];
-        return cell;
+        message = [_listOfItems objectAtIndex:indexPath.row];
     }
     else {
         //Add the cells
         
-        CTCoreMessage *message = [_tableArray objectAtIndex:indexPath.row];
-        NSString *currentSender = [[message.from anyObject] name];
-        NSString *subject = [message subject];
-        NSDate *senderDate = [message senderDate];
-        NSDate *localDate = [NSDate date];
-        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
-        dateFormatter.dateFormat = @"MM/dd/yy";
-        
-        NSString *dateString = [dateFormatter stringFromDate: senderDate];
-        
-        if ([currentSender isEqualToString:@""]) {
-                currentSender = [[message.from anyObject] email];
-            }
-        if ([message isUnread]) {
-            [[cell unreadMessageLabel] setImage:[UIImage imageNamed:@"gnome_mail_unread.png"]];
-        }
-        else {
-            [[cell unreadMessageLabel] setImage:[UIImage imageNamed:@"gnome_mail_read.png"]];
-        }
-        [[cell senderLabel]setText:currentSender];
-        [[cell titleLabel]setText:subject];
-        [[cell timeLabel]setText:dateString];
-        NSLog(@"Sender date %@",dateString);
-        return cell;
+        message = [_tableArray objectAtIndex:indexPath.row];
     }
+    NSString *currentSender = [[message.from anyObject] name];
+    NSString *subject = [message subject];
+    NSDate *senderDate = [message senderDate];
+    NSDate *localDate = [NSDate date];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    dateFormatter.dateFormat = @"MM/dd/yy";
+        
+    NSString *dateString = [dateFormatter stringFromDate: senderDate];
+        
+    if ([currentSender isEqualToString:@""]) {
+            currentSender = [[message.from anyObject] email];
+        }
+    if ([message isUnread]) {
+        [[cell unreadMessageLabel] setImage:[UIImage imageNamed:@"gnome_mail_unread.png"]];
+    }
+    else {
+        [[cell unreadMessageLabel] setImage:[UIImage imageNamed:@"gnome_mail_read.png"]];
+    }
+    [[cell senderLabel]setText:currentSender];
+    [[cell titleLabel]setText:subject];
+    [[cell timeLabel]setText:dateString];
+    //NSLog(@"Sender date %@",dateString);
+    return cell;
 }
 
 //Get the selected row
@@ -180,6 +174,92 @@
     }
     [VariableStore sharedInstance].selectedEmail = selectedEmail;
     [self performSegueWithIdentifier: @"emailDetailSegue" sender: self];
+}
+
+//Searching methods
+- (void) searchBarTextDidBeginEditing:(UISearchBar *)theSearchBar
+{
+    
+    _searching = YES;
+    _letUserSelectRow = NO;
+    _emailTable.scrollEnabled = NO;
+    
+    //Add the done button.
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]
+                                              initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+                                              target:self action:@selector(doneSearching_Clicked:)];
+}
+
+- (NSIndexPath *)tableView :(UITableView *)theTableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    if(_letUserSelectRow)
+        return indexPath;
+    else
+        return nil;
+}
+
+- (void)searchBar:(UISearchBar *)theSearchBar textDidChange:(NSString *)searchText
+{
+    
+    //Remove all objects first.
+    [_listOfItems removeAllObjects];
+    
+    if([searchText length] > 0) {
+        
+        _searching = YES;
+        _letUserSelectRow = YES;
+        _emailTable.scrollEnabled = YES;
+        [self searchTableView];
+    }
+    else {
+        
+        _searching = NO;
+        _letUserSelectRow = NO;
+        _emailTable.scrollEnabled = NO;
+    }
+    
+    [_emailTable reloadData];
+}
+
+- (void) searchTableView
+{
+    
+    NSString *searchText = _searchBar.text;
+
+    for (CTCoreMessage *sTemp in _tableArray)
+    {
+        NSRange subjectResultsRange = [[sTemp subject] rangeOfString:searchText options:NSCaseInsensitiveSearch];
+        NSRange fromResultsRange = [[[sTemp.from anyObject]name] rangeOfString:searchText options:NSCaseInsensitiveSearch];
+        NSRange toResultsRange = [[[sTemp.to anyObject]name] rangeOfString:searchText options:NSCaseInsensitiveSearch];
+        NSRange bodyResultsRange = [[sTemp body] rangeOfString:searchText options:NSCaseInsensitiveSearch];
+        if (subjectResultsRange.length > 0 || fromResultsRange.length > 0 || toResultsRange.length > 0 || bodyResultsRange.length > 0)
+            [_listOfItems addObject:sTemp];
+    }
+}
+
+- (void) doneSearching_Clicked:(id)sender
+{
+    
+    _searchBar.text = @"";
+    [_searchBar resignFirstResponder];
+    
+    _letUserSelectRow = YES;
+    _searching = NO;
+    _emailTable.scrollEnabled = YES;
+    //Recreate the sync button
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]
+                                              initWithTitle:@"Sync" style:UIBarButtonItemStylePlain
+                                              target:self action:@selector(updateList:)];
+    
+    
+    [_emailTable reloadData];
+}
+
+- (void) searchBarSearchButtonClicked:(UISearchBar *)theSearchBar
+{
+    
+    [self searchTableView];
 }
 
 @end
