@@ -22,5 +22,6 @@
 @property UITextField *activeField;
 @property UITextView *activeView;
 @property UIAlertView *statusAlert;
+@property UIAlertView *emailAlert;
 @end
 
