@@ -12,6 +12,7 @@
 @interface LoginViewController()
 @property (weak, nonatomic) IBOutlet UITextField *userPassword;
 @property (weak, nonatomic) IBOutlet UITextField *userID;
+@property (nonatomic) NSMutableArray *zionsArray;
 - (IBAction)ProcessLogin:(id)sender;
 @end
 
@@ -43,6 +44,19 @@
     //Create the failed login alert
     self.failedLoginAlert = [[UIAlertView alloc] initWithTitle:@"Login Failed" message:@"Incorrect username or password" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil ];
     
+    _zionsArray = [[NSMutableArray alloc] init];
+    [_zionsArray addObject:@"Maryland Zion"];
+    [_zionsArray addObject:@"DC Zion"];
+    [_zionsArray addObject:@"New York Zion"];
+    [_zionsArray addObject:@"Deleware Zion"];
+    //Display the zion Label, check if a zion has been selected yet.
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *zionName = [defaults objectForKey:@"zionName"];
+    
+    if (zionName != nil) {
+        _zionNameLabel.text = zionName;
+    }
+    
     
 }
 
@@ -66,10 +80,35 @@
     return YES;
 }
 
+-(IBAction)changeZion:(id)sender
+{
+    _zionPicker.hidden = NO;
+}
+
 - (IBAction)ProcessLogin:(id)sender
 {
-    [self.statusAlert show];
-    [NSTimer scheduledTimerWithTimeInterval:.5 target:self selector:@selector(tryLogin) userInfo:nil repeats:NO];
+    if ([_zionNameLabel.text isEqualToString:@"No Zion Selected Yet"])
+    {
+        _failedLoginAlert.message = @"Please select your Zion before proceeding";
+        [_failedLoginAlert show];
+    }
+    else {
+        if ([_userID.text isEqualToString:@""])
+        {
+            _failedLoginAlert.message = @"Please enter a username";
+            [_failedLoginAlert show];
+        }
+        else if ([_userPassword.text isEqualToString:@""])
+        {
+            _failedLoginAlert.message = @"Please enter a password";
+            [_failedLoginAlert show];
+        }
+        else
+        {
+            [self.statusAlert show];
+            [NSTimer scheduledTimerWithTimeInterval:.5 target:self selector:@selector(tryLogin) userInfo:nil repeats:NO];
+        }
+    }
 }
 
 -(void)tryLogin
@@ -95,5 +134,28 @@
     }  
 }
 
+//Zion Picker methods
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)thePickerView {
+    
+    return 1;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)thePickerView numberOfRowsInComponent:(NSInteger)component {
+    
+    return [_zionsArray count];
+}
+
+- (NSString *)pickerView:(UIPickerView *)thePickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    return [_zionsArray objectAtIndex:row];
+}
+
+- (void)pickerView:(UIPickerView *)thePickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    NSString *selectedZion = [_zionsArray objectAtIndex:row];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+   [defaults setObject:selectedZion forKey:@"zionName"];
+    _zionNameLabel.text = selectedZion;
+    _zionPicker.hidden = YES;
+}
 
 @end

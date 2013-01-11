@@ -39,4 +39,8 @@
 -(CTCoreMessage *)selectedEmail {
     return _selectedEmail;
 }
+
+-(NSDictionary *)selectedContact {
+    return _selectedContact;
+}
 @end

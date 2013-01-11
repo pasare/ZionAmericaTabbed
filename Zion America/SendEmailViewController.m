@@ -36,6 +36,9 @@
     [indicator startAnimating];
     [self.statusAlert addSubview:indicator];
     
+    //Create the failed login alert
+    _emailAlert = [[UIAlertView alloc] initWithTitle:@"Status" message:@"The email was sent successfully, God bless you!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil ];
+    
 	// Do any additional setup after loading the view.
     _commentView.layer.borderWidth = 3.0f;
     _commentView.layer.borderColor = [[UIColor grayColor] CGColor];
@@ -153,10 +156,29 @@
     [self.statusAlert show];
     CTCoreMessage *msg = [[CTCoreMessage alloc] init];
     CTCoreAddress *toAddress = [CTCoreAddress addressWithName:_emailName.text email:_emailAddress.text];
-    [msg setTo:[NSSet setWithObject:toAddress]];
-    [msg setBody:_commentView.text];
+    CTCoreAddress *fromAddress = [CTCoreAddress addressWithName:@"Maryland Zion" email:@"info@marylandzion.org"];
     
     NSError *error;
+    NSString *videoName = [VariableStore sharedInstance].videoName;
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *videoUrl;
+    NSArray *wpposts = [defaults objectForKey:@"posts"];
+    
+    for (NSDictionary *post in wpposts) {
+        if ([[post objectForKey:@"post_title"] isEqualToString:videoName]) {
+            videoUrl = [post objectForKey:@"link"];
+        }
+    }
+    //Create the message to send
+    NSString *videoDescription = [NSString stringWithFormat:@"Please enjoy this video titled: %@\r%@",videoName , videoUrl];
+    NSMutableString *msgBody = [NSMutableString stringWithCapacity:0];
+    [msgBody appendString:videoDescription];
+    [msgBody appendString:[NSString stringWithFormat:@"\r%@",_commentView.text]];
+    [msg setTo:[NSSet setWithObject:toAddress]];
+    [msg setFrom: [NSSet setWithObject:fromAddress]];
+    [msg setSubject:_emailSubject.text];
+    [msg setBody:msgBody];
+    
     BOOL success = [CTSMTPConnection sendMessage:msg
                                           server:@"mail.marylandzion.org"
                                         username:@"info@marylandzion.org"
@@ -165,9 +187,25 @@
                                   connectionType:CTSMTPConnectionTypeStartTLS
                                          useAuth:YES
                                            error:&error];
-    if (success) {
+    
+        if (success) {
         [self.statusAlert dismissWithClickedButtonIndex:0 animated:YES];
+        NSDictionary *contact = [NSDictionary dictionaryWithObjectsAndKeys:_emailName.text,@"name",_emailAddress.text,@"email", nil];
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        //Save this contact to the contact list
+        NSMutableArray *contactList = [defaults objectForKey:@"contactList"];
+        if (contactList == nil)
+        {
+            contactList = [[NSMutableArray alloc] init];
+        }
+        if (![contactList containsObject:contact]){
+            [contactList addObject:contact];
+            [defaults setObject:contactList forKey:@"contactList"];
+        }
+        [_emailAlert show];
+        [self performSegueWithIdentifier: @"emailSentSegue" sender: self];
         NSLog(@"Email sent successfully");
+
     }
     else {
         [self.statusAlert dismissWithClickedButtonIndex:0 animated:YES];

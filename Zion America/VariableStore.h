@@ -10,13 +10,15 @@
 #import <MailCore/MailCore.h>
 
 @interface VariableStore : NSObject
-@property (copy, nonatomic) NSString *loginID;
-@property (copy, nonatomic) NSString *loginPass;
-@property (copy, nonatomic) NSString *videoName;
+@property (nonatomic) NSString *loginID;
+@property (nonatomic) NSString *loginPass;
+@property (nonatomic) NSString *videoName;
 @property (nonatomic) CTCoreMessage *selectedEmail;
+@property (nonatomic) NSDictionary *selectedContact;
 + (VariableStore *)sharedInstance;
 - (NSString*) loginID;
 - (NSString*) loginPass;
 - (NSString*) videoName;
 - (CTCoreMessage*) selectedEmail;
+- (NSDictionary*) selectedContact;
 @end
