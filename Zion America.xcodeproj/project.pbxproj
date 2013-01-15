@@ -18,6 +18,7 @@
 		997C98DA1694039600B2C809 /* InboxCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 997C98D91694039600B2C809 /* InboxCell.m */; };
 		997C98DC1694046B00B2C809 /* InboxCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 997C98DB1694046B00B2C809 /* InboxCellView.xib */; };
 		997F12C51694170200E2F27B /* gnome_mail_read.png in Resources */ = {isa = PBXBuildFile; fileRef = 997F12C41694170200E2F27B /* gnome_mail_read.png */; };
+		9982926916A1211300709871 /* SendSmsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9982926816A1211300709871 /* SendSmsViewController.m */; };
 		9984A05E169218A700C28A9A /* App_Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9984A05D169218A700C28A9A /* App_Icon.png */; };
 		9984A060169218D500C28A9A /* App_Icon.png_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 9984A05F169218D500C28A9A /* App_Icon.png_4.png */; };
 		9986BB52168EAD3F00A1C8F5 /* VideoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9986BB51168EAD3F00A1C8F5 /* VideoDetailViewController.m */; };
@@ -133,6 +134,8 @@
 		997C98D91694039600B2C809 /* InboxCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InboxCell.m; sourceTree = "<group>"; };
 		997C98DB1694046B00B2C809 /* InboxCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InboxCellView.xib; sourceTree = "<group>"; };
 		997F12C41694170200E2F27B /* gnome_mail_read.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gnome_mail_read.png; sourceTree = "<group>"; };
+		9982926716A1211300709871 /* SendSmsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendSmsViewController.h; sourceTree = "<group>"; };
+		9982926816A1211300709871 /* SendSmsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendSmsViewController.m; sourceTree = "<group>"; };
 		9984A05D169218A700C28A9A /* App_Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = App_Icon.png; path = ../App_Icon.png; sourceTree = "<group>"; };
 		9984A05F169218D500C28A9A /* App_Icon.png_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = App_Icon.png_4.png; path = ../App_Icon.png_4.png; sourceTree = "<group>"; };
 		9986BB50168EAD3F00A1C8F5 /* VideoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoDetailViewController.h; sourceTree = "<group>"; };
@@ -297,6 +300,8 @@
 				9986BB51168EAD3F00A1C8F5 /* VideoDetailViewController.m */,
 				9986BB5616913F0C00A1C8F5 /* SendEmailViewController.h */,
 				9986BB5716913F0C00A1C8F5 /* SendEmailViewController.m */,
+				9982926716A1211300709871 /* SendSmsViewController.h */,
+				9982926816A1211300709871 /* SendSmsViewController.m */,
 				99881EFF16924DF0006433E8 /* InboxViewController.h */,
 				99881F0016924DF0006433E8 /* InboxViewController.m */,
 				997C98D81694039600B2C809 /* InboxCell.h */,
@@ -567,6 +572,7 @@
 				997C98DA1694039600B2C809 /* InboxCell.m in Sources */,
 				9988A0CE1696A06700D90D0D /* InboxDetailViewController.m in Sources */,
 				9900D14316994913004DD65A /* ContactsViewController.m in Sources */,
+				9982926916A1211300709871 /* SendSmsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

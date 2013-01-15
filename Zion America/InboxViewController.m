@@ -49,7 +49,7 @@
     //If the sync button is press, update the email list
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]
                                               initWithTitle:@"Sync" style:UIBarButtonItemStylePlain
-                                              target:self action:@selector(updateList:)];
+                                              target:self action:@selector(updateList)];
     //Load the email list from memory
     if (emails != nil) {
         [self loadEmailList:emails];
@@ -250,7 +250,7 @@
     //Recreate the sync button
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]
                                               initWithTitle:@"Sync" style:UIBarButtonItemStylePlain
-                                              target:self action:@selector(updateList:)];
+                                              target:self action:@selector(updateList)];
     
     
     [_emailTable reloadData];
@@ -262,4 +262,9 @@
     [self searchTableView];
 }
 
+-(void) updateList
+{
+    [self.statusAlert show];
+    [NSTimer scheduledTimerWithTimeInterval:.5 target:self selector:@selector(tryRetrieveEmailList) userInfo:nil repeats:NO];
+}
 @end

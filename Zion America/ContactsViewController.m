@@ -89,7 +89,7 @@
         selectedContact = [_tableArray objectAtIndex:indexPath.row];
     }
     [VariableStore sharedInstance].selectedContact = selectedContact;
-    //[self performSegueWithIdentifier: @"emailDetailSegue" sender: self];
+    [self performSegueWithIdentifier: @"contactToEmailSegue" sender: self];
 }
 
 

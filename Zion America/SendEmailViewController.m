@@ -26,6 +26,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSDictionary *contact = [VariableStore sharedInstance].selectedContact;
+    if (contact != nil) {
+        _emailName.text = [contact objectForKey:@"name"];
+        _emailAddress.text = [contact objectForKey:@"email"];
+    }
     //Set up mailer alert
     //UIAlert for retrieving video list
 	self.statusAlert = [[UIAlertView alloc] initWithTitle:@"Retrieving Video List" message:@"Please wait..." delegate:self cancelButtonTitle:nil otherButtonTitles:nil ];
@@ -204,6 +209,7 @@
         }
         [_emailAlert show];
         [self performSegueWithIdentifier: @"emailSentSegue" sender: self];
+            [VariableStore sharedInstance].selectedContact = nil;
         NSLog(@"Email sent successfully");
 
     }
