@@ -10,6 +10,10 @@
 		9900D14316994913004DD65A /* ContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9900D14216994913004DD65A /* ContactsViewController.m */; };
 		99050B3B168D441800276395 /* SendVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99050B3A168D441800276395 /* SendVideoViewController.m */; };
 		99050B3E168D59DB00276395 /* VariableStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 99050B3D168D59DB00276395 /* VariableStore.m */; };
+		9907A06B16AB992A003599BE /* red_uibutton.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9907A06A16AB992A003599BE /* red_uibutton.jpeg */; };
+		9907A06D16AB99F0003599BE /* red_uibutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 9907A06C16AB99F0003599BE /* red_uibutton.png */; };
+		9907A06F16AB99F7003599BE /* green_uibutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 9907A06E16AB99F7003599BE /* green_uibutton.png */; };
+		9907A07116AB99FE003599BE /* grey_uibutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 9907A07016AB99FE003599BE /* grey_uibutton.png */; };
 		990D546D168B8EC200E0BEC5 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 990D546C168B8EC200E0BEC5 /* libsqlite3.0.dylib */; };
 		990D5470168B8FAB00E0BEC5 /* butterfly.png in Resources */ = {isa = PBXBuildFile; fileRef = 990D546F168B8FAB00E0BEC5 /* butterfly.png */; };
 		99176FA51694135400271DF1 /* stock_mail_unread.png in Resources */ = {isa = PBXBuildFile; fileRef = 99176FA41694135400271DF1 /* stock_mail_unread.png */; };
@@ -125,6 +129,10 @@
 		99050B3C168D59DB00276395 /* VariableStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VariableStore.h; sourceTree = "<group>"; };
 		99050B3D168D59DB00276395 /* VariableStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VariableStore.m; sourceTree = "<group>"; };
 		99055D66168BC93E00F89CA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		9907A06A16AB992A003599BE /* red_uibutton.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = red_uibutton.jpeg; sourceTree = "<group>"; };
+		9907A06C16AB99F0003599BE /* red_uibutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red_uibutton.png; sourceTree = "<group>"; };
+		9907A06E16AB99F7003599BE /* green_uibutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green_uibutton.png; sourceTree = "<group>"; };
+		9907A07016AB99FE003599BE /* grey_uibutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grey_uibutton.png; sourceTree = "<group>"; };
 		990D546C168B8EC200E0BEC5 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		990D546F168B8FAB00E0BEC5 /* butterfly.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = butterfly.png; sourceTree = "<group>"; };
 		99176FA41694135400271DF1 /* stock_mail_unread.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stock_mail_unread.png; sourceTree = "<group>"; };
@@ -359,6 +367,10 @@
 		FC851276168AB5D800F94C60 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9907A07016AB99FE003599BE /* grey_uibutton.png */,
+				9907A06E16AB99F7003599BE /* green_uibutton.png */,
+				9907A06C16AB99F0003599BE /* red_uibutton.png */,
+				9907A06A16AB992A003599BE /* red_uibutton.jpeg */,
 				9988A0CA1696940F00D90D0D /* UITV_accessory_disclosure.png */,
 				9988A0C81696932F00D90D0D /* HeaderDisclosureArrow.png */,
 				997F12C41694170200E2F27B /* gnome_mail_read.png */,
@@ -524,6 +536,10 @@
 				997F12C51694170200E2F27B /* gnome_mail_read.png in Resources */,
 				9988A0C91696933000D90D0D /* HeaderDisclosureArrow.png in Resources */,
 				9988A0CB1696940F00D90D0D /* UITV_accessory_disclosure.png in Resources */,
+				9907A06B16AB992A003599BE /* red_uibutton.jpeg in Resources */,
+				9907A06D16AB99F0003599BE /* red_uibutton.png in Resources */,
+				9907A06F16AB99F7003599BE /* green_uibutton.png in Resources */,
+				9907A07116AB99FE003599BE /* grey_uibutton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

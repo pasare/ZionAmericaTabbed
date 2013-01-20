@@ -16,6 +16,7 @@
 
 
 @interface LoginViewController : UIViewController <UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate>
+@property (weak, nonatomic) IBOutlet UIButton *loginButton;
 @property (weak, nonatomic) IBOutlet UIButton *changeZionButton;
 @property (weak, nonatomic) IBOutlet UIPickerView *zionPicker;
 @property (weak, nonatomic) IBOutlet UILabel *zionNameLabel;

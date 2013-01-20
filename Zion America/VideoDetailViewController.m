@@ -31,7 +31,6 @@
     NSString *videoName = [[VariableStore sharedInstance]videoName ];
     NSDictionary *videoInfo;
 	_videoLabel.text = videoName;
-    
     //Retrieve the video information
     for (id currentPost in savedPosts)
     {
