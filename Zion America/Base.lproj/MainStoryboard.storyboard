@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="G8G-Z4-crT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="G8G-Z4-crT">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
         <!--Home View Controller - Home-->
@@ -239,7 +239,7 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="LjP-QI-NAF">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelectionDuringEditing="YES" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="LjP-QI-NAF">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="contactCell" id="SZW-fE-7P9">
@@ -260,10 +260,11 @@
                             <searchBar contentMode="redraw" placeholder="Search Contacts" translatesAutoresizingMaskIntoConstraints="NO" id="qTw-Ol-h7k">
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <outlet property="delegate" destination="PMa-hf-9Su" id="BWF-ub-Hxk"/>
+                                    <outlet property="delegate" destination="PMa-hf-9Su" id="w8a-Of-gEC"/>
                                 </connections>
                             </searchBar>
                         </subviews>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="LjP-QI-NAF" firstAttribute="trailing" secondItem="Q9C-qA-WZV" secondAttribute="trailing" type="default" id="5R8-fL-d9o"/>
                             <constraint firstItem="LjP-QI-NAF" firstAttribute="bottom" secondItem="Q9C-qA-WZV" secondAttribute="bottom" type="default" id="7OD-gK-RZO"/>
@@ -280,8 +281,15 @@
                                 <segue destination="G8G-Z4-crT" kind="modal" modalTransitionStyle="crossDissolve" id="ofk-nZ-0in"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="gVL-iA-O3d">
+                            <connections>
+                                <segue destination="KlO-0p-4Ec" kind="modal" identifier="addContactSegue" modalTransitionStyle="partialCurl" id="afz-he-Tl4"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="contactTable" destination="LjP-QI-NAF" id="02F-ZA-PLd"/>
+                        <outlet property="searchBar" destination="qTw-Ol-h7k" id="RN6-al-Y6D"/>
                         <outlet property="searchDisplayController" destination="k39-J8-ANg" id="XHw-VR-FWO"/>
                         <segue destination="3" kind="push" identifier="contactToEmailSegue" id="8sI-Va-apy"/>
                     </connections>
@@ -298,6 +306,113 @@
                 </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="871" y="1493"/>
+        </scene>
+        <!--Add Contact View Controller-->
+        <scene sceneID="xU4-ey-luR">
+            <objects>
+                <viewController id="KlO-0p-4Ec" customClass="AddContactViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Pl6-n3-bs7">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Email:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HMm-IA-A4t">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="selectedTextBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pAE-e3-pt9">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="74" id="EkM-oL-xjG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="selectedTextBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Phone #:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6WH-2c-l7F">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="selectedTextBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ABJ-xJ-fbW">
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="156" id="cCz-GN-tan"/>
+                                    <constraint firstAttribute="height" constant="30" id="h6c-hP-zWt"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="KlO-0p-4Ec" id="9wn-SO-HOp"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e7j-tB-Sga">
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="KlO-0p-4Ec" id="7Fi-vC-c2I"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sQ7-eC-qXi">
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="KlO-0p-4Ec" id="JvO-Ed-5jQ"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7lD-e4-gky">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="PNl-Le-C4Z"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                <state key="normal" title="Save Contact     " backgroundImage="grey_uibutton.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveContact:" destination="KlO-0p-4Ec" eventType="touchUpInside" id="Enl-dW-PLd"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="e7j-tB-Sga" firstAttribute="trailing" secondItem="ABJ-xJ-fbW" secondAttribute="trailing" type="default" id="1R5-5b-bTK"/>
+                            <constraint firstItem="HMm-IA-A4t" firstAttribute="top" secondItem="Pl6-n3-bs7" secondAttribute="top" constant="132" id="1aU-ib-qor"/>
+                            <constraint firstItem="ABJ-xJ-fbW" firstAttribute="leading" secondItem="pAE-e3-pt9" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="5Xx-qe-mGe"/>
+                            <constraint firstItem="6WH-2c-l7F" firstAttribute="top" secondItem="Pl6-n3-bs7" secondAttribute="top" constant="182" id="7dN-Lf-kfd"/>
+                            <constraint firstItem="ABJ-xJ-fbW" firstAttribute="baseline" secondItem="pAE-e3-pt9" secondAttribute="baseline" type="default" id="9cB-HX-79j"/>
+                            <constraint firstItem="7lD-e4-gky" firstAttribute="leading" secondItem="Pl6-n3-bs7" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="ABV-7m-oO6"/>
+                            <constraint firstItem="e7j-tB-Sga" firstAttribute="leading" secondItem="ABJ-xJ-fbW" secondAttribute="leading" type="default" id="ARC-Ge-RzT"/>
+                            <constraint firstItem="6WH-2c-l7F" firstAttribute="leading" secondItem="Pl6-n3-bs7" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="K8P-0x-CX6"/>
+                            <constraint firstAttribute="bottom" secondItem="7lD-e4-gky" secondAttribute="bottom" constant="175" id="QQg-xq-mtn"/>
+                            <constraint firstItem="pAE-e3-pt9" firstAttribute="top" secondItem="Pl6-n3-bs7" secondAttribute="top" constant="84" id="SUe-4z-ZcA"/>
+                            <constraint firstItem="pAE-e3-pt9" firstAttribute="leading" secondItem="Pl6-n3-bs7" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Ta5-vH-zjA"/>
+                            <constraint firstItem="ABJ-xJ-fbW" firstAttribute="top" secondItem="Pl6-n3-bs7" secondAttribute="top" constant="80" id="Ulu-M1-7BG"/>
+                            <constraint firstItem="sQ7-eC-qXi" firstAttribute="trailing" secondItem="e7j-tB-Sga" secondAttribute="trailing" type="default" id="XdS-I9-oEv"/>
+                            <constraint firstItem="sQ7-eC-qXi" firstAttribute="leading" secondItem="e7j-tB-Sga" secondAttribute="leading" type="default" id="XtA-LL-BYd"/>
+                            <constraint firstItem="HMm-IA-A4t" firstAttribute="leading" secondItem="Pl6-n3-bs7" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="dOx-D8-zZe"/>
+                            <constraint firstItem="e7j-tB-Sga" firstAttribute="leading" secondItem="HMm-IA-A4t" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="hI1-v4-qlU"/>
+                            <constraint firstItem="sQ7-eC-qXi" firstAttribute="leading" secondItem="6WH-2c-l7F" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="iuC-o5-wyi"/>
+                            <constraint firstItem="sQ7-eC-qXi" firstAttribute="top" secondItem="Pl6-n3-bs7" secondAttribute="top" constant="178" id="jrc-Mj-ezZ"/>
+                            <constraint firstAttribute="trailing" secondItem="7lD-e4-gky" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="uff-3c-bRy"/>
+                            <constraint firstItem="e7j-tB-Sga" firstAttribute="top" secondItem="Pl6-n3-bs7" secondAttribute="top" constant="128" id="zUB-a0-qFZ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Fee-aN-3Ba"/>
+                    <connections>
+                        <outlet property="contactName" destination="ABJ-xJ-fbW" id="HQQ-xx-gCE"/>
+                        <outlet property="emailAddress" destination="e7j-tB-Sga" id="5hv-ro-3Jq"/>
+                        <outlet property="phoneNumber" destination="sQ7-eC-qXi" id="8TM-eF-2q8"/>
+                        <outlet property="saveContactButton" destination="7lD-e4-gky" id="P9E-A4-om8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vBi-wY-e9u" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1293" y="1493"/>
         </scene>
         <!--Navigation Controller - Send Video-->
         <scene sceneID="C87-si-xKS">
@@ -361,7 +476,7 @@
             <objects>
                 <viewController storyboardIdentifier="sendVideoView" title="Send Video Controller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3" customClass="SendVideoViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="17">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" pagingEnabled="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="wst-2q-gXn">
@@ -442,7 +557,7 @@
             <objects>
                 <viewController id="LOa-oo-i5q" customClass="SendEmailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Skm-Uc-we4">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="22z-NB-NG0">
@@ -577,7 +692,7 @@
             <objects>
                 <viewController storyboardIdentifier="videoDetailView" id="xbr-xM-X46" customClass="VideoDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" restorationIdentifier="videoDetailView" id="nVv-BA-ESd">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S7k-nF-eRy">
@@ -662,13 +777,10 @@
             <objects>
                 <viewController id="0Hx-X5-kwL" customClass="SendSmsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KKO-UB-YRf">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Phone Number:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TuH-id-100">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="123" id="gzJ-f5-5ra"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="selectedTextBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 <nil key="highlightedColor"/>
@@ -690,36 +802,57 @@
                                 <color key="textColor" name="selectedTextBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yEZ-ds-d9F">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="yEZ-ds-d9F">
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="149" id="C6O-da-jYI"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="0Hx-X5-kwL" id="pDN-Xh-zhZ"/>
                                 </connections>
                             </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecP-Wu-G1h">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="123" id="m0d-ia-bvl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="selectedTextBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="8Kc-Ti-74e">
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="149" id="dex-zs-ucD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="yEZ-ds-d9F" firstAttribute="trailing" secondItem="8Kc-Ti-74e" secondAttribute="trailing" type="default" id="BUc-LF-NG3"/>
                             <constraint firstItem="TuH-id-100" firstAttribute="baseline" secondItem="yEZ-ds-d9F" secondAttribute="baseline" type="default" id="DUf-YW-N3R"/>
+                            <constraint firstItem="ecP-Wu-G1h" firstAttribute="trailing" secondItem="TuH-id-100" secondAttribute="trailing" type="default" id="Eb7-Eu-5ri"/>
                             <constraint firstItem="NgQ-g7-eZg" firstAttribute="top" secondItem="daQ-IZ-EGH" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Gtw-wY-rpk"/>
+                            <constraint firstItem="8Kc-Ti-74e" firstAttribute="leading" secondItem="KKO-UB-YRf" secondAttribute="leading" constant="145" id="HZF-lf-vyd"/>
                             <constraint firstAttribute="trailing" secondItem="NgQ-g7-eZg" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="KOy-MS-Q6p"/>
+                            <constraint firstItem="8Kc-Ti-74e" firstAttribute="leading" secondItem="yEZ-ds-d9F" secondAttribute="leading" type="default" id="LRU-pI-894"/>
                             <constraint firstItem="daQ-IZ-EGH" firstAttribute="leading" secondItem="KKO-UB-YRf" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Mtk-Tc-ehn"/>
+                            <constraint firstItem="8Kc-Ti-74e" firstAttribute="top" secondItem="KKO-UB-YRf" secondAttribute="top" constant="30" id="N1d-0a-fK7"/>
                             <constraint firstItem="NgQ-g7-eZg" firstAttribute="leading" secondItem="KKO-UB-YRf" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="PHQ-9a-TXs"/>
-                            <constraint firstItem="daQ-IZ-EGH" firstAttribute="top" secondItem="KKO-UB-YRf" secondAttribute="top" constant="65" id="WLa-Iv-aHO"/>
-                            <constraint firstItem="yEZ-ds-d9F" firstAttribute="leading" secondItem="KKO-UB-YRf" secondAttribute="leading" constant="145" id="dVD-U9-dTE"/>
-                            <constraint firstItem="TuH-id-100" firstAttribute="top" secondItem="KKO-UB-YRf" secondAttribute="top" constant="20" symbolic="YES" type="default" id="eRN-QR-v36"/>
+                            <constraint firstItem="ecP-Wu-G1h" firstAttribute="leading" secondItem="KKO-UB-YRf" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="gQr-0C-LTo"/>
                             <constraint firstItem="TuH-id-100" firstAttribute="trailing" secondItem="daQ-IZ-EGH" secondAttribute="trailing" type="default" id="jPY-VD-GV5"/>
+                            <constraint firstItem="yEZ-ds-d9F" firstAttribute="top" secondItem="KKO-UB-YRf" secondAttribute="top" constant="77" id="l7l-ae-CgD"/>
                             <constraint firstItem="TuH-id-100" firstAttribute="leading" secondItem="KKO-UB-YRf" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="oWd-QN-3eW"/>
+                            <constraint firstItem="daQ-IZ-EGH" firstAttribute="top" secondItem="KKO-UB-YRf" secondAttribute="top" constant="125" id="prK-Vz-Fcb"/>
+                            <constraint firstItem="ecP-Wu-G1h" firstAttribute="top" secondItem="KKO-UB-YRf" secondAttribute="top" constant="34" id="za7-GJ-h4w"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Send Sms" id="Ttu-Nm-B5a"/>
                     <connections>
                         <outlet property="commentView" destination="NgQ-g7-eZg" id="etY-Hb-KHs"/>
+                        <outlet property="phoneName" destination="8Kc-Ti-74e" id="d1e-8U-qCG"/>
                         <outlet property="phoneText" destination="yEZ-ds-d9F" id="F7L-77-g60"/>
+                        <segue destination="3" kind="custom" identifier="smsSentSegue" id="Rid-yT-bPv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mbv-Up-ckp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -903,83 +1036,6 @@
         <image name="home.png" width="24" height="24"/>
         <image name="television.png" width="24" height="24"/>
     </resources>
-    <classes>
-        <class className="ContactsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ContactsViewController.h"/>
-        </class>
-        <class className="HomeViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HomeViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="displayEmailCount" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="userNameLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="InboxDetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/InboxDetailViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="bodyView" candidateClass="UIWebView"/>
-                <relationship kind="outlet" name="fromLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="subjectLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="toLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="InboxViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/InboxViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="emailTable" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="inboxNavigationItem" candidateClass="UINavigationItem"/>
-                <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
-            </relationships>
-        </class>
-        <class className="LoginViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="ProcessLogin:"/>
-                <relationship kind="outlet" name="changeZionButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="loginButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="userID" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="userPassword" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="zionNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="zionPicker" candidateClass="UIPickerView"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="SendEmailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SendEmailViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="commentView" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="emailAddress" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="emailName" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="emailSubject" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-            </relationships>
-        </class>
-        <class className="SendSmsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SendSmsViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="commentView" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="phoneText" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="SendVideoViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SendVideoViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
-                <relationship kind="outlet" name="videoTable" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="VideoDetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VideoDetailViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="sendEmail" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="sendSMS" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="urlLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="videoLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
@@ -987,6 +1043,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="ofk-nZ-0in"/>
-        <segue reference="8sI-Va-apy"/>
+        <segue reference="Rid-yT-bPv"/>
     </inferredMetricsTieBreakers>
 </document>

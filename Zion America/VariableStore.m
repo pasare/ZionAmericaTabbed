@@ -40,7 +40,19 @@
     return _selectedEmail;
 }
 
--(NSDictionary *)selectedContact {
+-(Contact *)selectedContact {
     return _selectedContact;
+}
+
+-(Contact *)updateContact {
+    return _updateContact;
+}
+
+-(NSManagedObjectContext *)context {
+    return _context;
+}
+
+- (NSFetchedResultsController*) fetchedContactsController{
+    return _fetchedContactsController;
 }
 @end

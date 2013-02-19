@@ -12,6 +12,7 @@
 #import <MessageUI/MFMailComposeViewController.h>
 #import <MailCore/MailCore.h>
 #import "Constants.h"
+#import "Contact.h"
 
 @interface SendEmailViewController : UIViewController 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;

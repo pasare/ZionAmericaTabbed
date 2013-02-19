@@ -26,14 +26,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSDictionary *contact = [VariableStore sharedInstance].selectedContact;
+    Contact *contact = [VariableStore sharedInstance].selectedContact;
     if (contact != nil) {
-        _emailName.text = [contact objectForKey:@"name"];
-        _emailAddress.text = [contact objectForKey:@"email"];
+        _emailName.text = [contact name];
+        _emailAddress.text = [contact email];
     }
     //Set up mailer alert
     //UIAlert for retrieving video list
-	self.statusAlert = [[UIAlertView alloc] initWithTitle:@"Retrieving Video List" message:@"Please wait..." delegate:self cancelButtonTitle:nil otherButtonTitles:nil ];
+	self.statusAlert = [[UIAlertView alloc] initWithTitle:@"Sending Email" message:@"Please wait..." delegate:self cancelButtonTitle:nil otherButtonTitles:nil ];
     UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
     
     //Insert a spinner on the status alert
@@ -41,7 +41,7 @@
     [indicator startAnimating];
     [self.statusAlert addSubview:indicator];
     
-    //Create the failed login alert
+    //Create the sucessful email alert
     _emailAlert = [[UIAlertView alloc] initWithTitle:@"Status" message:@"The email was sent successfully, God bless you!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil ];
     
 	// Do any additional setup after loading the view.
@@ -156,9 +156,14 @@
 }
 
 //send the email
-- (void) sendEmail:(id) sender
-{
+
+-(void) sendEmail:(id) sender {
     [self.statusAlert show];
+    [NSTimer scheduledTimerWithTimeInterval:.5 target:self selector:@selector(sendEmailFinal:) userInfo:nil repeats:NO];
+}
+- (void) sendEmailFinal:(id) sender
+{
+    
     CTCoreMessage *msg = [[CTCoreMessage alloc] init];
     CTCoreAddress *toAddress = [CTCoreAddress addressWithName:_emailName.text email:_emailAddress.text];
     CTCoreAddress *fromAddress = [CTCoreAddress addressWithName:@"Maryland Zion" email:@"info@marylandzion.org"];
@@ -177,8 +182,9 @@
     //Create the message to send
     NSString *videoDescription = [NSString stringWithFormat:@"Please enjoy this video titled: %@\r%@",videoName , videoUrl];
     NSMutableString *msgBody = [NSMutableString stringWithCapacity:0];
-    [msgBody appendString:videoDescription];
+    
     [msgBody appendString:[NSString stringWithFormat:@"\r%@",_commentView.text]];
+    [msgBody appendString:videoDescription];
     [msg setTo:[NSSet setWithObject:toAddress]];
     [msg setFrom: [NSSet setWithObject:fromAddress]];
     [msg setSubject:_emailSubject.text];
@@ -193,29 +199,65 @@
                                          useAuth:YES
                                            error:&error];
     
-        if (success) {
-        [self.statusAlert dismissWithClickedButtonIndex:0 animated:YES];
-        NSDictionary *contact = [NSDictionary dictionaryWithObjectsAndKeys:_emailName.text,@"name",_emailAddress.text,@"email", nil];
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if (success) {
+        BOOL duplicate = NO;
+        
+        
+        Contact *contact = (Contact *)[NSEntityDescription insertNewObjectForEntityForName:@"Contact" inManagedObjectContext:[[VariableStore sharedInstance] context]];
+        [contact setName:_emailName.text];
+        [contact setEmail:_emailAddress.text];
+        [contact setPhone:nil];
         //Save this contact to the contact list
-        NSMutableArray *contactList = [defaults objectForKey:@"contactList"];
-        if (contactList == nil)
-        {
-            contactList = [[NSMutableArray alloc] init];
+        NSFetchedResultsController *fetchedContacts = [[VariableStore sharedInstance]fetchedContactsController];
+        NSArray *contactList = [fetchedContacts fetchedObjects];
+        BOOL contactToDelete = NO;
+        //loop through the contact list checking for a duplicate name
+        for (Contact *currentContact in contactList){
+            if ([contact duplicateContact:currentContact] ) {
+                //If the contact exists but the email is blank copy the phone and save again
+                if ([currentContact email] == nil) {
+                    [contact setName:_emailName.text];
+                    [contact setEmail:_emailAddress.text];
+                    [contact setPhone:[currentContact phone]];
+                    
+                    //delete the old object
+                    [[[VariableStore sharedInstance] context] deleteObject:currentContact];
+                    
+                    //replace with new object
+                    if (![[[VariableStore sharedInstance] context] save:&error]) {
+                        // Handle the error.
+                    }
+                    contactToDelete = YES;
+                }
+                else
+                    duplicate = YES;
+            }
+        } 
+        if (!duplicate && !contactToDelete){
+            NSError *error = nil;
+            if (![[[VariableStore sharedInstance] context] save:&error]) {
+                // Handle the error.
+            }
         }
-        if (![contactList containsObject:contact]){
-            [contactList addObject:contact];
-            [defaults setObject:contactList forKey:@"contactList"];
-        }
+        
+        [self.statusAlert dismissWithClickedButtonIndex:0 animated:YES];
+        [[[VariableStore sharedInstance]context]deleteObject:contact];
         [_emailAlert show];
+        contact = nil;
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"DataSaved" object:nil];
         [self performSegueWithIdentifier: @"emailSentSegue" sender: self];
             [VariableStore sharedInstance].selectedContact = nil;
+        _emailAddress.text=@"";
+        _emailName.text=@"";
+        _emailSubject.text=@"";
         NSLog(@"Email sent successfully");
 
     }
     else {
         [self.statusAlert dismissWithClickedButtonIndex:0 animated:YES];
         NSLog(@"An error was encountered while sending the email %@", error);
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"DataSaved" object:nil];
+        [self performSegueWithIdentifier: @"emailSentSegue" sender: self];
     }
 }
 

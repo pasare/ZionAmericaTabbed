@@ -8,17 +8,25 @@
 
 #import <Foundation/Foundation.h>
 #import <MailCore/MailCore.h>
+#import "Contact.h"
 
 @interface VariableStore : NSObject
 @property (nonatomic) NSString *loginID;
 @property (nonatomic) NSString *loginPass;
 @property (nonatomic) NSString *videoName;
 @property (nonatomic) CTCoreMessage *selectedEmail;
-@property (nonatomic) NSDictionary *selectedContact;
+@property (nonatomic) Contact *selectedContact;
+@property (nonatomic) Contact *updateContact;
+@property (nonatomic) NSManagedObjectContext *context;
+@property (nonatomic) NSFetchedResultsController *fetchedContactsController;
+
 + (VariableStore *)sharedInstance;
 - (NSString*) loginID;
 - (NSString*) loginPass;
 - (NSString*) videoName;
 - (CTCoreMessage*) selectedEmail;
-- (NSDictionary*) selectedContact;
+- (Contact*) selectedContact;
+- (Contact*) updateContact;
+- (NSManagedObjectContext*) context;
+- (NSFetchedResultsController*) fetchedContactsController;
 @end
