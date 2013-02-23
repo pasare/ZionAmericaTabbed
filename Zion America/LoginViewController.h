@@ -15,15 +15,16 @@
 #import "VariableStore.h"
 
 
-@interface LoginViewController : UIViewController <UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate>
+@interface LoginViewController : UIViewController <UITextFieldDelegate>
+@property (weak, nonatomic) IBOutlet UILabel *cellLabel;
+@property (weak, nonatomic) IBOutlet UITableView *loginTable;
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
-@property (weak, nonatomic) IBOutlet UIButton *changeZionButton;
-@property (weak, nonatomic) IBOutlet UIPickerView *zionPicker;
-@property (weak, nonatomic) IBOutlet UILabel *zionNameLabel;
 @property (copy, nonatomic) NSString *loginID;
 @property (copy, nonatomic) NSString *loginPass;
 @property UIAlertView *statusAlert;
 @property UIAlertView *failedLoginAlert;
+@property UITextField *userID;
+@property UITextField *userPassword ;
 @end
 
 

@@ -26,6 +26,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    //set the colors
+     self.view.backgroundColor = [UIColor colorWithRed:0/255.0f green:41/255.0f blue:92/255.0f alpha:1];
+    _emailName.backgroundColor = [UIColor colorWithRed:210/255.0f green:226/255.0f blue:245/255.0f alpha:1];
+    _emailAddress.backgroundColor = [UIColor colorWithRed:210/255.0f green:226/255.0f blue:245/255.0f alpha:1];
+    _emailSubject.backgroundColor = [UIColor colorWithRed:210/255.0f green:226/255.0f blue:245/255.0f alpha:1];
+    _commentView.backgroundColor = [UIColor colorWithRed:210/255.0f green:226/255.0f blue:245/255.0f alpha:1];
     Contact *contact = [VariableStore sharedInstance].selectedContact;
     if (contact != nil) {
         _emailName.text = [contact name];
@@ -183,7 +189,7 @@
     NSString *videoDescription = [NSString stringWithFormat:@"Please enjoy this video titled: %@\r%@",videoName , videoUrl];
     NSMutableString *msgBody = [NSMutableString stringWithCapacity:0];
     
-    [msgBody appendString:[NSString stringWithFormat:@"\r%@",_commentView.text]];
+    [msgBody appendString:[NSString stringWithFormat:@"\r%@\r",_commentView.text]];
     [msgBody appendString:videoDescription];
     [msg setTo:[NSSet setWithObject:toAddress]];
     [msg setFrom: [NSSet setWithObject:fromAddress]];

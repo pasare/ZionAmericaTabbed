@@ -26,6 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor colorWithRed:0/255.0f green:41/255.0f blue:92/255.0f alpha:1];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSArray *savedPosts = [defaults objectForKey:@"posts"];
     NSString *videoName = [[VariableStore sharedInstance]videoName ];

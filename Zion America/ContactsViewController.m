@@ -181,7 +181,7 @@
 - (void)searchBar:(UISearchBar *)theSearchBar textDidChange:(NSString *)searchText
 {
     
-    //Remove all objects first.
+  /*  //Remove all objects first.
     [_listOfItems removeAllObjects];
     
     if([searchText length] > 0) {
@@ -196,7 +196,7 @@
         _letUserSelectRow = NO;
     }
     
-    [_contactTable reloadData];
+    [_contactTable reloadData]; */
 }
 
 - (void) searchTableView

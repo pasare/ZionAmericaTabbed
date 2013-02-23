@@ -10,8 +10,6 @@
 
 
 @interface LoginViewController()
-@property (weak, nonatomic) IBOutlet UITextField *userPassword;
-@property (weak, nonatomic) IBOutlet UITextField *userID;
 @property (nonatomic) NSMutableArray *zionsArray;
 - (IBAction)ProcessLogin:(id)sender;
 @end
@@ -22,16 +20,27 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        
         // Custom initialization
     }
     return self;
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    //self.navigationController.tabBarController =nil;
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	
+    //set background
+    UIGraphicsBeginImageContext(self.view.frame.size);
+    [[UIImage imageNamed:@"Zion America v2_login_bg only_no text.png"] drawInRect:self.view.bounds];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    self.view.backgroundColor = [UIColor colorWithPatternImage:image];
+    
+
+    _loginTable.backgroundColor = [UIColor clearColor];
+    [_loginTable setBackgroundView:nil];
     //Create the logging in alert
     self.statusAlert = [[UIAlertView alloc] initWithTitle:@"Verifying Login Information" message:@"Please wait..." delegate:self cancelButtonTitle:nil otherButtonTitles:nil ];
     UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
@@ -43,21 +52,6 @@
     
     //Create the failed login alert
     self.failedLoginAlert = [[UIAlertView alloc] initWithTitle:@"Login Failed" message:@"Incorrect username or password" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil ];
-    
-    _zionsArray = [[NSMutableArray alloc] init];
-    [_zionsArray addObject:@"Maryland Zion"];
-    [_zionsArray addObject:@"DC Zion"];
-    [_zionsArray addObject:@"New York Zion"];
-    [_zionsArray addObject:@"Deleware Zion"];
-    //Display the zion Label, check if a zion has been selected yet.
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString *zionName = [defaults objectForKey:@"zionName"];
-    
-    if (zionName != nil) {
-        _zionNameLabel.text = zionName;
-    }
-    
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -80,34 +74,23 @@
     return YES;
 }
 
--(IBAction)changeZion:(id)sender
-{
-    _zionPicker.hidden = NO;
-}
 
 - (IBAction)ProcessLogin:(id)sender
 {
-    if ([_zionNameLabel.text isEqualToString:@"No Zion Selected Yet"])
+    if ([_userID.text isEqualToString:@""])
     {
-        _failedLoginAlert.message = @"Please select your Zion before proceeding";
+        _failedLoginAlert.message = @"Please enter a username";
         [_failedLoginAlert show];
     }
-    else {
-        if ([_userID.text isEqualToString:@""])
-        {
-            _failedLoginAlert.message = @"Please enter a username";
-            [_failedLoginAlert show];
-        }
-        else if ([_userPassword.text isEqualToString:@""])
-        {
-            _failedLoginAlert.message = @"Please enter a password";
-            [_failedLoginAlert show];
-        }
-        else
-        {
-            [self.statusAlert show];
-            [NSTimer scheduledTimerWithTimeInterval:.5 target:self selector:@selector(tryLogin) userInfo:nil repeats:NO];
-        }
+    else if ([_userPassword.text isEqualToString:@""])
+    {
+        _failedLoginAlert.message = @"Please enter a password";
+        [_failedLoginAlert show];
+    }
+    else
+    {
+        [self.statusAlert show];
+        [NSTimer scheduledTimerWithTimeInterval:.5 target:self selector:@selector(tryLogin) userInfo:nil repeats:NO];
     }
 }
 
@@ -134,28 +117,50 @@
     }  
 }
 
-//Zion Picker methods
 
-- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)thePickerView {
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 2;
+}
+- (UITableViewCell *)tableView:(UITableView *)table cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    UITableViewCell *cell = [table dequeueReusableCellWithIdentifier:@"Cell"];
+    if( cell == nil)
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
+    
+    if (indexPath.row == 0) {
+        _userID = [[UITextField alloc] initWithFrame:CGRectMake(5, 0, 195, 21)];
+        _userID.autocorrectionType = UITextAutocorrectionTypeNo;
+        [_userID setClearButtonMode:UITextFieldViewModeWhileEditing];
+        cell.textLabel.text = @"Username";
+        cell.accessoryView = _userID ;
+    }
+    if (indexPath.row == 1) {
+        _userPassword = [[UITextField alloc] initWithFrame:CGRectMake(5, 0, 195, 21)];
+        _userPassword.secureTextEntry = YES;
+        _userPassword.autocorrectionType = UITextAutocorrectionTypeNo;
+        [_userPassword setClearButtonMode:UITextFieldViewModeWhileEditing];
+        [_userPassword setReturnKeyType:UIReturnKeyDone];
+        cell.textLabel.text = @"Password";
+        cell.accessoryView = _userPassword;
+    }
+    _userID.delegate = self;
+    _userPassword.delegate = self;
+    
+    
+    [_loginTable addSubview:_userID];
+    [_loginTable addSubview:_userPassword];
+    //cell.backgroundView = [[UIView alloc] initWithFrame:cell.bounds];
+    cell.backgroundColor = [UIColor colorWithRed:210/255.0f green:226/255.0f blue:245/255.0f alpha:1];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    return cell;
+}
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     
     return 1;
 }
 
-- (NSInteger)pickerView:(UIPickerView *)thePickerView numberOfRowsInComponent:(NSInteger)component {
-    
-    return [_zionsArray count];
-}
 
-- (NSString *)pickerView:(UIPickerView *)thePickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    return [_zionsArray objectAtIndex:row];
-}
 
-- (void)pickerView:(UIPickerView *)thePickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    NSString *selectedZion = [_zionsArray objectAtIndex:row];
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-   [defaults setObject:selectedZion forKey:@"zionName"];
-    _zionNameLabel.text = selectedZion;
-    _zionPicker.hidden = YES;
-}
+
 
 @end

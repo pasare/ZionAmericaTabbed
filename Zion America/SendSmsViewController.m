@@ -26,7 +26,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    //set the colors
+    self.view.backgroundColor = [UIColor colorWithRed:0/255.0f green:41/255.0f blue:92/255.0f alpha:1];
+    _phoneText.backgroundColor = [UIColor colorWithRed:210/255.0f green:226/255.0f blue:245/255.0f alpha:1];
+    _phoneName.backgroundColor = [UIColor colorWithRed:210/255.0f green:226/255.0f blue:245/255.0f alpha:1];
+    _commentView.backgroundColor = [UIColor colorWithRed:210/255.0f green:226/255.0f blue:245/255.0f alpha:1];
     //Create the logging in alert
     self.statusAlert = [[UIAlertView alloc] initWithTitle:@"Sending Message" message:@"Please wait..." delegate:self cancelButtonTitle:nil otherButtonTitles:nil ];
     UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
@@ -119,7 +123,9 @@
                 if ([contact duplicateContact:currentContact] ) {
                     //If the contact exists but the phone is blank copy the email and save again
                     if ([currentContact phone] == nil) {
+                        [contact setName:_phoneName.text];
                         [contact setEmail:[currentContact email]];
+                        [contact setPhone:_phoneText.text];
                         
                         //delete the old object
                         [[[VariableStore sharedInstance] context] deleteObject:currentContact];

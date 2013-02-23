@@ -48,7 +48,7 @@
     
     //If the sync button is press, update the email list
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]
-                                              initWithTitle:@"Sync" style:UIBarButtonItemStylePlain
+                                              initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
                                               target:self action:@selector(updateList)];
     //Load the email list from memory
     if (emails != nil) {
@@ -158,6 +158,7 @@
     [[cell titleLabel]setText:subject];
     [[cell timeLabel]setText:dateString];
     //NSLog(@"Sender date %@",dateString);
+    
     return cell;
 }
 
@@ -249,7 +250,7 @@
     _emailTable.scrollEnabled = YES;
     //Recreate the sync button
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]
-                                              initWithTitle:@"Sync" style:UIBarButtonItemStylePlain
+                                              initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
                                               target:self action:@selector(updateList)];
     
     

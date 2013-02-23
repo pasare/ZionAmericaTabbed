@@ -33,7 +33,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    //set the background color
+    _videoTable.backgroundColor = [UIColor colorWithRed:0/255.0f green:41/255.0f blue:92/255.0f alpha:1];
+    [_videoTable setBackgroundView:nil];
     //Add the searchbar to the view
     //_videoTable.tableHeaderView = _searchBar;
     _searching = NO;
@@ -68,7 +70,7 @@
     }
     //If the sync button is press, update the video list
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]
-                                              initWithTitle:@"Sync" style:UIBarButtonItemStylePlain
+                                              initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
                                               target:self action:@selector(updateList:)];
     
 }
@@ -182,6 +184,34 @@
     }
 }
 
+- (UIView *) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 200, tableView.bounds.size.width, 30)];
+    UILabel *titleLabel = [ [UILabel alloc] initWithFrame:CGRectMake(15, 0, 300, 44)];
+    titleLabel.font = [UIFont fontWithName:@"Helvetica" size:17];
+    titleLabel.font = [UIFont boldSystemFontOfSize:17];
+    if (_searching) {
+        titleLabel.textColor = [UIColor blackColor];
+        titleLabel.text =@"Search Results";
+    }
+    else {
+        
+        titleLabel.textColor = [UIColor whiteColor];
+        if(section == 0)
+            titleLabel.text = @"English";
+        else
+            titleLabel.text = @"Spanish";
+    }
+    
+    
+    
+    titleLabel.backgroundColor = [UIColor clearColor];
+    
+    [headerView addSubview:titleLabel];
+    return headerView;
+}
+
+
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (_searching)
@@ -210,6 +240,7 @@
     //Add the cells by sections
         NSArray *array = [_tableArray objectAtIndex:indexPath.section];
         cell.textLabel.text = [array objectAtIndex:indexPath.row];
+        cell.backgroundColor = [UIColor colorWithRed:210/255.0f green:226/255.0f blue:245/255.0f alpha:1];
         return cell;
     }
 }
@@ -308,7 +339,7 @@
     _videoTable.scrollEnabled = YES;
     //Recreate the sync button
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]
-                                              initWithTitle:@"Sync" style:UIBarButtonItemStylePlain
+                                              initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
                                               target:self action:@selector(updateList:)];
     
     
