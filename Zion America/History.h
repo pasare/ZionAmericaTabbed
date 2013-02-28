@@ -9,5 +9,7 @@
 #import <CoreData/CoreData.h>
 
 @interface History : NSManagedObject
-
+@property (nonatomic, retain) NSString * recipient;
+@property (nonatomic, retain) NSString * video;
+@property (nonatomic, retain) NSDate * date;
 @end

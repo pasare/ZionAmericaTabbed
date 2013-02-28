@@ -55,4 +55,8 @@
 - (NSFetchedResultsController*) fetchedContactsController{
     return _fetchedContactsController;
 }
+
+- (NSFetchedResultsController*) fetchedHistoryController{
+    return _fetchedHistoryController;
+}
 @end

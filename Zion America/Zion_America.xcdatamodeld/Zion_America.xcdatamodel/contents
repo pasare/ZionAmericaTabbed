@@ -5,7 +5,13 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="History" representedClassName="History" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="recipient" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="video" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <elements>
         <element name="Contact" positionX="160" positionY="192" width="128" height="90"/>
+        <element name="History" positionX="160" positionY="192" width="128" height="90"/>
     </elements>
 </model>

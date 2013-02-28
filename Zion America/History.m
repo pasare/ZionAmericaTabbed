@@ -9,5 +9,8 @@
 #import "History.h"
 
 @implementation History
+@dynamic recipient;
+@dynamic video;
+@dynamic date;
 
 @end

@@ -19,6 +19,7 @@
 @property (nonatomic) Contact *updateContact;
 @property (nonatomic) NSManagedObjectContext *context;
 @property (nonatomic) NSFetchedResultsController *fetchedContactsController;
+@property (nonatomic) NSFetchedResultsController *fetchedHistoryController;
 
 + (VariableStore *)sharedInstance;
 - (NSString*) loginID;
@@ -29,4 +30,5 @@
 - (Contact*) updateContact;
 - (NSManagedObjectContext*) context;
 - (NSFetchedResultsController*) fetchedContactsController;
+- (NSFetchedResultsController*) fetchedHistoryController;
 @end

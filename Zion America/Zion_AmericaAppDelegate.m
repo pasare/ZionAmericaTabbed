@@ -26,23 +26,41 @@
         // Handle the error.
     }
     else {
+        //Request for contacts
         NSFetchRequest *request = [[NSFetchRequest alloc] init];
         NSEntityDescription *entity = [NSEntityDescription entityForName:@"Contact" inManagedObjectContext:_managedObjectContext];
         [request setEntity:entity];
         NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
         NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
         [request setSortDescriptors:sortDescriptors];
+        NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:_managedObjectContext sectionNameKeyPath:nil cacheName:@"Contacts"];
+        [VariableStore sharedInstance].fetchedContactsController = aFetchedResultsController;
+        
+        //Request for history
+        NSFetchRequest *request2 = [[NSFetchRequest alloc]init];
+        NSEntityDescription *entity2 = [NSEntityDescription entityForName:@"History" inManagedObjectContext:_managedObjectContext];
+        [request2 setEntity:entity2];
+        NSSortDescriptor *sortDescriptor2 = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:NO];
+        NSArray *sortDescriptors2 = [[NSArray alloc] initWithObjects:sortDescriptor2, nil];
+        [request2 setSortDescriptors:sortDescriptors2];
+        NSFetchedResultsController *historyFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request2 managedObjectContext:_managedObjectContext sectionNameKeyPath:nil cacheName:@"History"];
+        [VariableStore sharedInstance].fetchedHistoryController = historyFetchedResultsController;
         
         VariableStore *globals =[VariableStore sharedInstance];
         globals.context = context;
         
         NSError *error = nil;
         
-        NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:_managedObjectContext sectionNameKeyPath:nil cacheName:@"Contacts"];
-        [VariableStore sharedInstance].fetchedContactsController = aFetchedResultsController;
         
-        globals.fetchedContactsController = aFetchedResultsController;
+        
+        //globals.fetchedContactsController = aFetchedResultsController;
         if (![globals.fetchedContactsController performFetch:&error]) {
+            // Replace this implementation with code to handle the error appropriately.
+            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+            abort();
+        }
+        if (![globals.fetchedHistoryController performFetch:&error]) {
             // Replace this implementation with code to handle the error appropriately.
             // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
             NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
