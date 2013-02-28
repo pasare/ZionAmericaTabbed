@@ -58,7 +58,7 @@
         _contactLabel.text = @"Add A Contact";
     }
 	//Create the failed alert
-    _failedContactAlert = [[UIAlertView alloc] initWithTitle:@"Status" message:@"The contact already exists!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil ];
+    _failedContactAlert = [[UIAlertView alloc] initWithTitle:@"Status" message:@"The contact already exists! Why dont you try updating instead." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
     
     //Create the success alert
     _successContactAlert = [[UIAlertView alloc] initWithTitle:@"Status" message:@"The contact was added successfully, God bless you!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil ];
@@ -109,12 +109,16 @@
         
     }
     else {
+        NSFetchedResultsController *fetchedContacts = [[VariableStore sharedInstance]fetchedContactsController];
+        NSArray *contactList = [fetchedContacts fetchedObjects];
+        
         //loop through the contact list checking for a duplicate name
-        /*for (Contact *currentContact in contactList){
+        for (Contact *currentContact in contactList){
             if ([contact duplicateContact:currentContact ]) {
                 duplicate = YES;
+                break;
             }
-        } */
+        } 
         if (!duplicate){
             NSError *error = nil;
             if (![[[VariableStore sharedInstance] context] save:&error]) {
@@ -123,10 +127,14 @@
             [_successContactAlert setMessage:@"The contact was added successfully, God bless you!"];
             [_successContactAlert show];
             [[NSNotificationCenter defaultCenter] postNotificationName:@"DataSaved" object:nil];
+            contact = nil;
             [self dismissViewControllerAnimated:YES completion:^(void){}];
         }
         else {
             [_failedContactAlert show];
+            //clear the contact so that it does not get saved
+            [[[VariableStore sharedInstance]context]deleteObject:contact];
+            contact = nil;
             [self dismissViewControllerAnimated:YES completion:^(void){}];
         }
     }
@@ -174,7 +182,8 @@
     }
     if (indexPath.row == 2) {
         
-        _phoneNumber.autocorrectionType = UITextAutocorrectionTypeYes;
+        _phoneNumber.autocorrectionType = UITextAutocorrectionTypeNo;
+        [_phoneNumber setKeyboardType:UIKeyboardTypePhonePad];
         [_phoneNumber setClearButtonMode:UITextFieldViewModeWhileEditing];
         cell.textLabel.text = @"Number";
         cell.accessoryView = _phoneNumber;

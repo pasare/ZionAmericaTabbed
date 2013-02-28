@@ -40,9 +40,6 @@
                                              selector:@selector(dataSaved:)
                                                  name:@"DataSaved" object:nil];
 	// Do any additional setup after loading the view.
-    _searching = NO;
-    _letUserSelectRow = YES;
-    _listOfItems = [[NSMutableArray alloc] init];
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -61,11 +58,6 @@
     NSFetchedResultsController * fetchedResultsController = [[VariableStore sharedInstance ]fetchedContactsController];
     id <NSFetchedResultsSectionInfo> sectionInfo = [[fetchedResultsController sections] objectAtIndex:section];
     return [sectionInfo numberOfObjects];
-    if (_searching)
-        return [_listOfItems count];
-    else {
-        return [_tableArray count];
-    }
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -78,16 +70,9 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
     
-    if (_searching){
-        [self configureCell:cell atIndexPath:indexPath];
-        cell.backgroundColor = [UIColor colorWithRed:210/255.0f green:226/255.0f blue:245/255.0f alpha:1];
-        return cell;
-    }
-    else {
-        [self configureCell:cell atIndexPath:indexPath];
-        cell.backgroundColor = [UIColor colorWithRed:210/255.0f green:226/255.0f blue:245/255.0f alpha:1];
-        return cell;
-    }
+    [self configureCell:cell atIndexPath:indexPath];
+    cell.backgroundColor = [UIColor colorWithRed:210/255.0f green:226/255.0f blue:245/255.0f alpha:1];
+    return cell;
 }
 
 //Get the selected row
@@ -95,13 +80,6 @@
 {
     
     Contact *contact = [[[VariableStore sharedInstance] fetchedContactsController] objectAtIndexPath:indexPath];
-    
-    if(_searching){
-        //selectedContact = [_listOfItems objectAtIndex:indexPath.row];
-    }
-    else {
-        //selectedContact = [_tableArray objectAtIndex:indexPath.row];
-    }
     [VariableStore sharedInstance].selectedContact = contact;
     [self performSegueWithIdentifier: @"contactToEmailSegue" sender: self];
 }
@@ -166,75 +144,36 @@
 - (void) searchBarTextDidBeginEditing:(UISearchBar *)theSearchBar
 {
     
-    _searching = YES;
-    _letUserSelectRow = NO;
     
-    //Add the done button.
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]
-                                              initWithBarButtonSystemItem:UIBarButtonSystemItemDone
-                                              target:self action:@selector(doneSearching_Clicked:)];
 }
 
 - (void)searchBar:(UISearchBar *)theSearchBar textDidChange:(NSString *)searchText
 {
     
-  /*  //Remove all objects first.
-    [_listOfItems removeAllObjects];
-    
-    if([searchText length] > 0) {
-        
-        _searching = YES;
-        _letUserSelectRow = YES;
-        [self searchTableView];
-    }
-    else {
-        
-        _searching = NO;
-        _letUserSelectRow = NO;
-    }
-    
-    [_contactTable reloadData]; */
 }
 
-- (void) searchTableView
-{
-    
-    NSString *searchText = _searchBar.text;
-    NSMutableArray *searchArray = [[NSMutableArray alloc] init];
-    
-    for (NSArray *array in _tableArray)
-    {
-        [searchArray addObjectsFromArray:array];
-    }
-    
-    for (NSString *sTemp in searchArray)
-    {
-        NSRange titleResultsRange = [sTemp rangeOfString:searchText options:NSCaseInsensitiveSearch];
-        
-        if (titleResultsRange.length > 0)
-            [_listOfItems addObject:sTemp];
-    }
-    searchArray = nil;
-}
-
-- (void) doneSearching_Clicked:(id)sender
-{
-    
-    _searchBar.text = @"";
-    [_searchBar resignFirstResponder];
-    
-    _letUserSelectRow = YES;
-    _searching = NO;
-    
-    /*self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]
-                                              initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:<#(SEL)#>
-                                              target:self action:@selector(sendEmail:)]; */
-    [_contactTable reloadData];
-}
 
 - (void) searchBarSearchButtonClicked:(UISearchBar *)theSearchBar
 {
     
-    [self searchTableView];
+}
+
+- (IBAction)confirmLogout:(id)sender {
+    _sheet = [[UIActionSheet alloc] initWithTitle:@"You will be logged out of the system"
+                                         delegate:self
+                                cancelButtonTitle:@"Cancel"
+                           destructiveButtonTitle:@"Confirm"
+                                otherButtonTitles:nil];
+    
+    // Show the sheet
+    [_sheet showFromTabBar:self.tabBarController.tabBar];
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    //Logout confirmed
+    if (buttonIndex == 0) {
+        [self performSegueWithIdentifier: @"logoutSegue" sender: self];
+    }
 }
 @end

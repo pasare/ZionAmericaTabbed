@@ -12,7 +12,7 @@
 #import "VariableStore.h"
 #import "VideoDetailViewController.h"
 
-@interface SendVideoViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface SendVideoViewController : UIViewController <UITableViewDelegate, UITableViewDataSource,UIActionSheetDelegate>
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UITableView *videoTable;
 @property UIAlertView *statusAlert;
@@ -25,6 +25,7 @@
 @property NSArray *spanishSorted;
 @property BOOL searching;
 @property BOOL letUserSelectRow;
+@property (nonatomic, retain) UIActionSheet *sheet;
 
 - (void) searchTableView;
 - (void) doneSearching_Clicked:(id)sender;

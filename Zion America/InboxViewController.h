@@ -13,10 +13,11 @@
 #import "VariableStore.h"
 #import "InboxCell.h"
 
-@interface InboxViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface InboxViewController : UIViewController <UITableViewDelegate, UITableViewDataSource,UIActionSheetDelegate>
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UINavigationItem *inboxNavigationItem;
 @property (weak, nonatomic) IBOutlet UITableView *emailTable;
+@property (nonatomic, retain) UIActionSheet *sheet;
 @property UIAlertView *statusAlert;
 @property UIAlertView *failedVideoAlert;
 @property NSArray *tableArray;

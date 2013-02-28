@@ -270,4 +270,23 @@
     [self.statusAlert show];
     [NSTimer scheduledTimerWithTimeInterval:.5 target:self selector:@selector(tryRetrieveEmailList) userInfo:nil repeats:NO];
 }
+
+- (IBAction)confirmLogout:(id)sender {
+    _sheet = [[UIActionSheet alloc] initWithTitle:@"You will be logged out of the system"
+                                         delegate:self
+                                cancelButtonTitle:@"Cancel"
+                           destructiveButtonTitle:@"Confirm"
+                                otherButtonTitles:nil];
+    
+    // Show the sheet
+    [_sheet showFromTabBar:self.tabBarController.tabBar];
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    //Logout confirmed
+    if (buttonIndex == 0) {
+        [self performSegueWithIdentifier: @"logoutSegue" sender: self];
+    }
+}
 @end

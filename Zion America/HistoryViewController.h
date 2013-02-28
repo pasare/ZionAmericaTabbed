@@ -10,9 +10,7 @@
 #import "HistoryCell.h"
 #import "VariableStore.h"
 
-@interface HistoryViewController : UIViewController
+@interface HistoryViewController : UIViewController <UIActionSheetDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *historyTable;
-@property BOOL searching;
-@property NSMutableArray *listOfItems;
-@property BOOL letUserSelectRow;
+@property (nonatomic, retain) UIActionSheet *sheet;
 @end

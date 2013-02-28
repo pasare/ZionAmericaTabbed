@@ -216,106 +216,52 @@
     
     BOOL success = NO;
     
+    
+    //Create the message to send
+    NSString *videoDescription = [NSString stringWithFormat:@"Please enjoy this video titled: %@\r%@",videoName , videoUrl];
+    NSMutableString *msgBody = [NSMutableString stringWithCapacity:0];
         
+    [msgBody appendString:[NSString stringWithFormat:@"\r%@\r",_commentView.text]];
+    [msgBody appendString:videoDescription];
+    [msg setTo:[NSSet setWithObject:toAddress]];
+    [msg setFrom: [NSSet setWithObject:fromAddress]];
+    if (_emailSubject.text.length > 0)
+        [msg setSubject:_emailSubject.text];
+    [msg setBody:msgBody];
         
-        
-        //Create the message to send
-        NSString *videoDescription = [NSString stringWithFormat:@"Please enjoy this video titled: %@\r%@",videoName , videoUrl];
-        NSMutableString *msgBody = [NSMutableString stringWithCapacity:0];
-        
-        [msgBody appendString:[NSString stringWithFormat:@"\r%@\r",_commentView.text]];
-        [msgBody appendString:videoDescription];
-        [msg setTo:[NSSet setWithObject:toAddress]];
-        [msg setFrom: [NSSet setWithObject:fromAddress]];
-        if (_emailSubject.text.length > 0)
-            [msg setSubject:_emailSubject.text];
-        [msg setBody:msgBody];
-        
-        success = [CTSMTPConnection sendMessage:msg
-                                          server:@"mail.marylandzion.org"
-                                        username:@"info@marylandzion.org"
-                                        password:@"M4ryl4ndZ1on!"
-                                            port:26
-                                  connectionType:CTSMTPConnectionTypeStartTLS
-                                         useAuth:YES
-                                           error:&error];
+    success = [CTSMTPConnection sendMessage:msg
+                                server:@"mail.marylandzion.org"
+                                username:@"info@marylandzion.org"
+                                password:@"M4ryl4ndZ1on!"
+                                port:26
+                                connectionType:CTSMTPConnectionTypeStartTLS
+                                    useAuth:YES
+                                    error:&error];
     
     if (success) {
-        BOOL duplicate = NO;
-        
-        
-        Contact *contact = (Contact *)[NSEntityDescription insertNewObjectForEntityForName:@"Contact" inManagedObjectContext:[[VariableStore sharedInstance] context]];
-        [contact setName:_emailName.text];
-        [contact setEmail:_emailAddress.text];
-        [contact setPhone:nil];
-        
-        //Save this contact to the contact list
-        NSFetchedResultsController *fetchedContacts = [[VariableStore sharedInstance]fetchedContactsController];
-        NSArray *contactList = [fetchedContacts fetchedObjects];
-        BOOL contactToDelete = NO;
-        
-        //loop through the contact list checking for a duplicate name
-        for (Contact *currentContact in contactList){
-            if ([contact duplicateContact:currentContact] ) {
-                //If the contact exists but the email is blank copy the phone and save again
-                if ([currentContact email] == nil) {
-                    [contact setName:_emailName.text];
-                    [contact setEmail:_emailAddress.text];
-                    [contact setPhone:[currentContact phone]];
-                    
-                    //delete the old object
-                    [[[VariableStore sharedInstance] context] deleteObject:currentContact];
-                    
-                    //replace with new object
-                    if (![[[VariableStore sharedInstance] context] save:&error]) {
-                        // Handle the error.
-                    }
-                    contactToDelete = YES;
-                    break;
-                }
-                else
-                    duplicate = YES;
-            }
-        } 
-        if (!duplicate && !contactToDelete){
-            NSError *error = nil;
-            if (![[[VariableStore sharedInstance] context] save:&error]) {
-                // Handle the error.
-            }
-        }
         
         [self.statusAlert dismissWithClickedButtonIndex:0 animated:YES];
-        //clear the contact so that it does not get saved again
-        [[[VariableStore sharedInstance]context]deleteObject:contact];
-        contact = nil;
+        //Save contact
+        [self saveContact];
         
         //Add item to history
-        History *history = (History *)[NSEntityDescription insertNewObjectForEntityForName:@"History" inManagedObjectContext:[[VariableStore sharedInstance] context]];
-        [history setDate:[NSDate date]];
-        [history setRecipient:_emailName.text];
-        [history setVideo:videoName];
-        if (![[[VariableStore sharedInstance] context] save:&error]) {
-            // Handle the error.
-        }
+        [self saveHistory];
         
         
         [_emailAlert show];
-        contact = nil;
+        //return to video selection view
         [[NSNotificationCenter defaultCenter] postNotificationName:@"DataSaved" object:nil];
         [self performSegueWithIdentifier: @"emailSentSegue" sender: self];
-            [VariableStore sharedInstance].selectedContact = nil;
+        [VariableStore sharedInstance].selectedContact = nil;
         _emailAddress.text=@"";
         _emailName.text=@"";
         _emailSubject.text=@"";
-        NSLog(@"Email sent successfully");
 
     }
     else {
         [self.statusAlert dismissWithClickedButtonIndex:0 animated:YES];
         NSLog(@"An error was encountered while sending the email %@", error);
         [_failedAlert show];
-        //[[NSNotificationCenter defaultCenter] postNotificationName:@"DataSaved" object:nil];
-        //[self performSegueWithIdentifier: @"emailSentSegue" sender: self];
     }
 }
 
@@ -332,18 +278,21 @@
     if (indexPath.row == 0) {
         _emailName.autocorrectionType = UITextAutocorrectionTypeNo;
         [_emailName setClearButtonMode:UITextFieldViewModeWhileEditing];
+        [_emailName setReturnKeyType:UIReturnKeyNext];
         cell.textLabel.text = @"Name";
         cell.accessoryView = _emailName ;
     }
     if (indexPath.row == 1) {
         _emailAddress.autocorrectionType = UITextAutocorrectionTypeNo;
         [_emailAddress setClearButtonMode:UITextFieldViewModeWhileEditing];
+        [_emailAddress setReturnKeyType:UIReturnKeyNext];
         cell.textLabel.text = @"Email";
         cell.accessoryView = _emailAddress;
     }
     if (indexPath.row == 2) {
         _emailSubject.autocorrectionType = UITextAutocorrectionTypeYes;
         [_emailSubject setClearButtonMode:UITextFieldViewModeWhileEditing];
+        [_emailSubject setReturnKeyType:UIReturnKeyNext];
         cell.textLabel.text = @"Subject";
         cell.accessoryView = _emailSubject;
     }
@@ -365,4 +314,59 @@
     return 1;
 }
 
+-(void) saveContact {
+    BOOL duplicate = NO;
+    Contact *contact = (Contact *)[NSEntityDescription insertNewObjectForEntityForName:@"Contact" inManagedObjectContext:[[VariableStore sharedInstance] context]];
+    [contact setName:_emailName.text];
+    [contact setEmail:_emailAddress.text];
+    [contact setPhone:nil];
+    
+    //Save this contact to the contact list
+    NSFetchedResultsController *fetchedContacts = [[VariableStore sharedInstance]fetchedContactsController];
+    NSArray *contactList = [fetchedContacts fetchedObjects];
+    
+    //loop through the contact list checking for a duplicate name
+    for (Contact *currentContact in contactList){
+        if ([contact duplicateContact:currentContact] ) {
+            //If the contact exists but the email is blank copy the phone and save again
+            if ([[currentContact email] isEqualToString:@""]) {
+                [contact setName:_emailName.text];
+                [contact setEmail:_emailAddress.text];
+                [contact setPhone:[currentContact phone]];
+                
+                //delete the old object
+                [[[VariableStore sharedInstance] context] deleteObject:currentContact];
+                
+                break;
+            }
+            else
+                duplicate = YES;
+                break;
+        }
+    }
+    if (!duplicate){
+        NSError *error = nil;
+        if (![[[VariableStore sharedInstance] context] save:&error]) {
+            // Handle the error.
+        }
+    }
+    else {
+        //clear the contact so that it does not get saved
+        [[[VariableStore sharedInstance]context]deleteObject:contact];
+    }
+    
+    contact = nil;
+}
+
+-(void) saveHistory {
+    NSError *error;
+    History *history = (History *)[NSEntityDescription insertNewObjectForEntityForName:@"History" inManagedObjectContext:[[VariableStore sharedInstance] context]];
+    [history setDate:[NSDate date]];
+    [history setRecipient:_emailName.text];
+    [history setVideo:[VariableStore sharedInstance].videoName];
+    if (![[[VariableStore sharedInstance] context] save:&error]) {
+        // Handle the error.
+    }
+    history = nil;
+}
 @end

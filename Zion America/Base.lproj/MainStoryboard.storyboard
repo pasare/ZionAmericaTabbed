@@ -41,7 +41,7 @@
                     <navigationItem key="navigationItem" title="Inbox" id="Az3-lf-cf6">
                         <barButtonItem key="leftBarButtonItem" image="ZionAmerica_Logout_button.png" id="phb-7k-ifg">
                             <connections>
-                                <segue destination="G8G-Z4-crT" kind="modal" modalTransitionStyle="crossDissolve" id="9X1-sU-feV"/>
+                                <action selector="confirmLogout:" destination="erO-I1-Je0" id="q8m-yM-jXH"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -51,6 +51,7 @@
                         <outlet property="searchBar" destination="Xjg-db-9jF" id="fBm-QG-1M3"/>
                         <outlet property="searchDisplayController" destination="x8W-8q-84f" id="2T3-aT-d6m"/>
                         <segue destination="4N1-SI-aIo" kind="push" identifier="emailDetailSegue" id="TLJ-66-sS5"/>
+                        <segue destination="G8G-Z4-crT" kind="modal" identifier="logoutSegue" id="pad-7t-dQh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iK9-SH-Hse" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -211,7 +212,7 @@
                     <navigationItem key="navigationItem" title="Contacts" id="9Yq-fa-zGX">
                         <barButtonItem key="leftBarButtonItem" image="ZionAmerica_Logout_button.png" id="Rsb-ab-XxR">
                             <connections>
-                                <segue destination="G8G-Z4-crT" kind="modal" modalTransitionStyle="crossDissolve" id="ofk-nZ-0in"/>
+                                <action selector="confirmLogout:" destination="PMa-hf-9Su" id="Q6S-CH-Nes"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="gVL-iA-O3d">
@@ -225,6 +226,7 @@
                         <outlet property="searchBar" destination="qTw-Ol-h7k" id="RN6-al-Y6D"/>
                         <outlet property="searchDisplayController" destination="k39-J8-ANg" id="XHw-VR-FWO"/>
                         <segue destination="3" kind="push" identifier="contactToEmailSegue" id="8sI-Va-apy"/>
+                        <segue destination="G8G-Z4-crT" kind="modal" identifier="logoutSegue" id="jBT-Qe-kXc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0fN-gc-Jgs" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -343,7 +345,7 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="499"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="Cyn-a1-4IU">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="Cyn-a1-4IU">
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="historyCell" id="tPC-yQ-OGJ">
@@ -366,7 +368,7 @@
                                     <navigationItem title="History" id="Wpd-qo-UoG">
                                         <barButtonItem key="leftBarButtonItem" image="ZionAmerica_Logout_button.png" id="jzz-qe-arN">
                                             <connections>
-                                                <segue destination="G8G-Z4-crT" kind="modal" modalTransitionStyle="crossDissolve" id="bj1-Wc-iTu"/>
+                                                <action selector="confirmLogout:" destination="naU-c6-e0H" id="af2-cv-bSg"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -397,6 +399,7 @@
                     <connections>
                         <outlet property="historyTable" destination="Cyn-a1-4IU" id="3Ln-LR-Z4r"/>
                         <outlet property="searchDisplayController" destination="28F-wj-khv" id="7h5-Ib-xiZ"/>
+                        <segue destination="G8G-Z4-crT" kind="modal" identifier="logoutSegue" id="6rp-Rh-epy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1YZ-D2-nOZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -468,7 +471,7 @@
                     <navigationItem key="navigationItem" title="Send Video" id="3Ov-zN-ccC">
                         <barButtonItem key="leftBarButtonItem" image="ZionAmerica_Logout_button.png" id="Vbx-r2-b3h">
                             <connections>
-                                <segue destination="G8G-Z4-crT" kind="modal" modalTransitionStyle="crossDissolve" id="H24-5w-VZG"/>
+                                <action selector="confirmLogout:" destination="3" id="nfv-B9-Uc4"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -477,6 +480,7 @@
                         <outlet property="searchDisplayController" destination="Ho0-cT-7mh" id="YPo-FK-nvK"/>
                         <outlet property="videoTable" destination="wst-2q-gXn" id="7dp-tN-60K"/>
                         <segue destination="xbr-xM-X46" kind="push" identifier="videoDetailSegue" id="3Cb-FY-6PC"/>
+                        <segue destination="G8G-Z4-crT" kind="modal" identifier="logoutSegue" modalTransitionStyle="flipHorizontal" id="Dva-Xt-oQ0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="12" sceneMemberID="firstResponder"/>
@@ -515,6 +519,7 @@
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="225" id="k3O-TD-fP8"/>
+                                            <constraint firstAttribute="width" constant="280" id="yj5-7K-Jmx"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
@@ -527,7 +532,6 @@
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="158" id="BfG-NH-GDI"/>
-                                            <constraint firstAttribute="width" constant="320" id="xmh-3R-ycB"/>
                                         </constraints>
                                         <prototypes>
                                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="Cell" textLabel="szH-DQ-VgV" style="IBUITableViewCellStyleDefault" id="qqc-7W-muF">
@@ -554,13 +558,13 @@
                                     </tableView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="dTM-Ia-0bv" firstAttribute="leading" secondItem="22z-NB-NG0" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="4MG-cf-xPB"/>
-                                    <constraint firstItem="dTM-Ia-0bv" firstAttribute="centerX" secondItem="22z-NB-NG0" secondAttribute="centerX" type="default" id="69V-9r-A9z"/>
                                     <constraint firstItem="jcM-jv-8lp" firstAttribute="leading" secondItem="22z-NB-NG0" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="6D5-gJ-jCx"/>
-                                    <constraint firstAttribute="bottom" secondItem="dTM-Ia-0bv" secondAttribute="bottom" constant="112" id="Ntc-nQ-8Vn"/>
-                                    <constraint firstAttribute="trailing" secondItem="dTM-Ia-0bv" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="RqD-Be-2uz"/>
+                                    <constraint firstAttribute="trailing" secondItem="dTM-Ia-0bv" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="A8O-DW-hML"/>
+                                    <constraint firstItem="duz-hl-oro" firstAttribute="leading" secondItem="22z-NB-NG0" secondAttribute="leading" constant="14" id="JQK-kf-R1w"/>
                                     <constraint firstItem="duz-hl-oro" firstAttribute="trailing" secondItem="22z-NB-NG0" secondAttribute="trailing" type="default" id="T8J-d8-e74"/>
-                                    <constraint firstItem="dTM-Ia-0bv" firstAttribute="top" secondItem="jcM-jv-8lp" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="rnY-sa-78N"/>
+                                    <constraint firstItem="dTM-Ia-0bv" firstAttribute="top" secondItem="jcM-jv-8lp" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="YVb-Te-rT4"/>
+                                    <constraint firstAttribute="bottom" secondItem="dTM-Ia-0bv" secondAttribute="bottom" constant="112" id="a8H-3P-Tz2"/>
+                                    <constraint firstItem="dTM-Ia-0bv" firstAttribute="centerX" secondItem="duz-hl-oro" secondAttribute="centerX" type="default" id="gOF-Dl-soh"/>
                                     <constraint firstItem="duz-hl-oro" firstAttribute="top" secondItem="22z-NB-NG0" secondAttribute="top" constant="20" symbolic="YES" type="default" id="vnm-RJ-nza"/>
                                     <constraint firstItem="jcM-jv-8lp" firstAttribute="top" secondItem="22z-NB-NG0" secondAttribute="top" constant="192" id="w37-zh-6dV"/>
                                 </constraints>
@@ -682,7 +686,7 @@
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="HYI-2i-XRK">
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="129" id="Pue-Be-Igu"/>
+                                            <constraint firstAttribute="height" constant="104" id="qRT-eT-3C1"/>
                                         </constraints>
                                         <prototypes>
                                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" textLabel="Yn4-k6-wnA" style="IBUITableViewCellStyleDefault" id="t64-io-dT3">
@@ -720,16 +724,27 @@
                                             <outlet property="delegate" destination="0Hx-X5-kwL" id="gcO-YQ-qF2"/>
                                         </connections>
                                     </textView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Comments:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZEI-3F-oEB">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="22" id="YWM-wQ-Rz8"/>
+                                            <constraint firstAttribute="width" constant="93" id="oFe-fO-jJu"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" name="selectedTextBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="HYI-2i-XRK" firstAttribute="leading" secondItem="JGT-un-MgY" secondAttribute="leading" type="default" id="4dN-D5-vUx"/>
                                     <constraint firstItem="HYI-2i-XRK" firstAttribute="trailing" secondItem="JGT-un-MgY" secondAttribute="trailing" type="default" id="61n-R0-9vK"/>
+                                    <constraint firstItem="ZEI-3F-oEB" firstAttribute="top" secondItem="JGT-un-MgY" secondAttribute="top" constant="138" id="63F-mL-h0X"/>
                                     <constraint firstAttribute="trailing" secondItem="NgQ-g7-eZg" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="CFL-gG-eAI"/>
                                     <constraint firstItem="NgQ-g7-eZg" firstAttribute="leading" secondItem="JGT-un-MgY" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="EW5-Bm-mHf"/>
-                                    <constraint firstItem="NgQ-g7-eZg" firstAttribute="centerX" secondItem="JGT-un-MgY" secondAttribute="centerX" type="default" id="Nzz-ss-J68"/>
-                                    <constraint firstAttribute="bottom" secondItem="NgQ-g7-eZg" secondAttribute="bottom" constant="162" id="OtW-qK-KSB"/>
-                                    <constraint firstItem="HYI-2i-XRK" firstAttribute="top" secondItem="JGT-un-MgY" secondAttribute="top" constant="20" symbolic="YES" type="default" id="XCp-nz-EwR"/>
-                                    <constraint firstItem="NgQ-g7-eZg" firstAttribute="top" secondItem="JGT-un-MgY" secondAttribute="top" constant="161" id="ed4-pU-vNe"/>
+                                    <constraint firstItem="NgQ-g7-eZg" firstAttribute="top" secondItem="ZEI-3F-oEB" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="EXJ-wV-ids"/>
+                                    <constraint firstItem="ZEI-3F-oEB" firstAttribute="leading" secondItem="JGT-un-MgY" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Sk4-vk-7Oq"/>
+                                    <constraint firstItem="HYI-2i-XRK" firstAttribute="centerX" secondItem="JGT-un-MgY" secondAttribute="centerX" type="default" id="Xy5-5o-QnV"/>
+                                    <constraint firstItem="HYI-2i-XRK" firstAttribute="top" secondItem="JGT-un-MgY" secondAttribute="top" constant="20" symbolic="YES" type="default" id="ey9-cm-jp1"/>
+                                    <constraint firstAttribute="bottom" secondItem="NgQ-g7-eZg" secondAttribute="bottom" constant="155" id="xvO-M3-IOR"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="delegate" destination="0Hx-X5-kwL" id="gdc-1t-zTP"/>
@@ -759,7 +774,7 @@
         <!--Login View Controller - Login View Controller-->
         <scene sceneID="gSP-Iz-8JA">
             <objects>
-                <viewController title="Login View Controller" id="G8G-Z4-crT" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginViewController" title="Login View Controller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="G8G-Z4-crT" customClass="LoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="N0G-D1-ggD">
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -908,7 +923,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="bj1-Wc-iTu"/>
+        <segue reference="pad-7t-dQh"/>
         <segue reference="8sI-Va-apy"/>
     </inferredMetricsTieBreakers>
 </document>

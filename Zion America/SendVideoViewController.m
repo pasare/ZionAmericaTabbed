@@ -240,6 +240,14 @@
     //Add the cells by sections
         NSArray *array = [_tableArray objectAtIndex:indexPath.section];
         cell.textLabel.text = [array objectAtIndex:indexPath.row];
+        
+        //Set background of cells
+        /*UIGraphicsBeginImageContext(self.view.frame.size);
+        [[UIImage imageNamed:@"Zion America_v2_login_button grey.png"] drawInRect:self.view.bounds];
+        UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        cell.backgroundColor = [UIColor colorWithPatternImage:image]; */
+        
         cell.backgroundColor = [UIColor colorWithRed:210/255.0f green:226/255.0f blue:245/255.0f alpha:1];
         return cell;
     }
@@ -359,6 +367,24 @@
     [_videoTable reloadData];
     [self.statusAlert show];
     [NSTimer scheduledTimerWithTimeInterval:.5 target:self selector:@selector(tryRetrieveVideoList) userInfo:nil repeats:NO];
+}
+- (IBAction)confirmLogout:(id)sender {
+    _sheet = [[UIActionSheet alloc] initWithTitle:@"You will be logged out of the system"
+                                         delegate:self
+                                cancelButtonTitle:@"Cancel"
+                           destructiveButtonTitle:@"Confirm"
+                                otherButtonTitles:nil];
+    
+    // Show the sheet
+    [_sheet showFromTabBar:self.tabBarController.tabBar];
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    //Logout confirmed
+    if (buttonIndex == 0) {
+        [self performSegueWithIdentifier: @"logoutSegue" sender: self];
+    }
 }
 
 @end

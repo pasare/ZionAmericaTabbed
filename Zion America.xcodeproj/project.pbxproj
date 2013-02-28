@@ -70,8 +70,16 @@
 		99E8149116DDCC7D00ED04C5 /* Zion America v2_login_bg only_no text_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 99E8149016DDCC7D00ED04C5 /* Zion America v2_login_bg only_no text_2.png */; };
 		99E8149316DDD77900ED04C5 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 99E8149216DDD77900ED04C5 /* icon@2x.png */; };
 		99E8149516DDD78000ED04C5 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 99E8149416DDD78000ED04C5 /* icon.png */; };
-		99E8149716DDD79C00ED04C5 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 99E8149616DDD79C00ED04C5 /* icon.png */; };
-		99E8149916DDD7A800ED04C5 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 99E8149816DDD7A800ED04C5 /* icon@2x.png */; };
+		99E8149D16DF30A900ED04C5 /* Zion America v2_App Icon_57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = 99E8149C16DF30A900ED04C5 /* Zion America v2_App Icon_57x57.png */; };
+		99E8149F16DF30C100ED04C5 /* Zion America v2_App Icon_114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = 99E8149E16DF30C100ED04C5 /* Zion America v2_App Icon_114x114.png */; };
+		99E814A116DF30E400ED04C5 /* Zion America v2_App Icon_57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = 99E814A016DF30E400ED04C5 /* Zion America v2_App Icon_57x57.png */; };
+		99E814A316DF30F600ED04C5 /* Zion America v2_App Icon_114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = 99E814A216DF30F600ED04C5 /* Zion America v2_App Icon_114x114.png */; };
+		99E814A516DF312500ED04C5 /* Zion America v2_loading_iphone5.png in Resources */ = {isa = PBXBuildFile; fileRef = 99E814A416DF312500ED04C5 /* Zion America v2_loading_iphone5.png */; };
+		99E814A716DF312D00ED04C5 /* Zion America v2_loading_iphone4.png in Resources */ = {isa = PBXBuildFile; fileRef = 99E814A616DF312D00ED04C5 /* Zion America v2_loading_iphone4.png */; };
+		99E814A916DF313500ED04C5 /* Zion America v2_loading_iphone3.png in Resources */ = {isa = PBXBuildFile; fileRef = 99E814A816DF313400ED04C5 /* Zion America v2_loading_iphone3.png */; };
+		99E814AB16DF314000ED04C5 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 99E814AA16DF314000ED04C5 /* Default.png */; };
+		99E814AD16DF314D00ED04C5 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 99E814AC16DF314D00ED04C5 /* Default@2x.png */; };
+		99E814AF16DF315700ED04C5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 99E814AE16DF315700ED04C5 /* Default-568h@2x.png */; };
 		FC85120D168A1AB100F94C60 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC85120C168A1AB100F94C60 /* UIKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		FC85120F168A1AB100F94C60 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC85120E168A1AB100F94C60 /* Foundation.framework */; };
 		FC851211168A1AB100F94C60 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC851210168A1AB100F94C60 /* CoreGraphics.framework */; };
@@ -236,6 +244,16 @@
 		99E8149416DDD78000ED04C5 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		99E8149616DDD79C00ED04C5 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		99E8149816DDD7A800ED04C5 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		99E8149C16DF30A900ED04C5 /* Zion America v2_App Icon_57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Zion America v2_App Icon_57x57.png"; sourceTree = "<group>"; };
+		99E8149E16DF30C100ED04C5 /* Zion America v2_App Icon_114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Zion America v2_App Icon_114x114.png"; sourceTree = "<group>"; };
+		99E814A016DF30E400ED04C5 /* Zion America v2_App Icon_57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Zion America v2_App Icon_57x57.png"; sourceTree = "<group>"; };
+		99E814A216DF30F600ED04C5 /* Zion America v2_App Icon_114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Zion America v2_App Icon_114x114.png"; sourceTree = "<group>"; };
+		99E814A416DF312500ED04C5 /* Zion America v2_loading_iphone5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Zion America v2_loading_iphone5.png"; sourceTree = "<group>"; };
+		99E814A616DF312D00ED04C5 /* Zion America v2_loading_iphone4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Zion America v2_loading_iphone4.png"; sourceTree = "<group>"; };
+		99E814A816DF313400ED04C5 /* Zion America v2_loading_iphone3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Zion America v2_loading_iphone3.png"; sourceTree = "<group>"; };
+		99E814AA16DF314000ED04C5 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		99E814AC16DF314D00ED04C5 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		99E814AE16DF315700ED04C5 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		FC851208168A1AB100F94C60 /* Zion America.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Zion America.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC85120C168A1AB100F94C60 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FC85120E168A1AB100F94C60 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -325,6 +343,11 @@
 		FC8511FD168A1AB100F94C60 = {
 			isa = PBXGroup;
 			children = (
+				99E814AE16DF315700ED04C5 /* Default-568h@2x.png */,
+				99E814AC16DF314D00ED04C5 /* Default@2x.png */,
+				99E814AA16DF314000ED04C5 /* Default.png */,
+				99E814A216DF30F600ED04C5 /* Zion America v2_App Icon_114x114.png */,
+				99E814A016DF30E400ED04C5 /* Zion America v2_App Icon_57x57.png */,
 				99E8149816DDD7A800ED04C5 /* icon@2x.png */,
 				99E8149616DDD79C00ED04C5 /* icon.png */,
 				99A7186B16D1BD5E00AA7518 /* CoreData.framework */,
@@ -453,6 +476,11 @@
 		FC851276168AB5D800F94C60 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				99E814A816DF313400ED04C5 /* Zion America v2_loading_iphone3.png */,
+				99E814A616DF312D00ED04C5 /* Zion America v2_loading_iphone4.png */,
+				99E814A416DF312500ED04C5 /* Zion America v2_loading_iphone5.png */,
+				99E8149E16DF30C100ED04C5 /* Zion America v2_App Icon_114x114.png */,
+				99E8149C16DF30A900ED04C5 /* Zion America v2_App Icon_57x57.png */,
 				99E8149416DDD78000ED04C5 /* icon.png */,
 				99E8149216DDD77900ED04C5 /* icon@2x.png */,
 				99E8149016DDCC7D00ED04C5 /* Zion America v2_login_bg only_no text_2.png */,
@@ -666,8 +694,16 @@
 				99E8149116DDCC7D00ED04C5 /* Zion America v2_login_bg only_no text_2.png in Resources */,
 				99E8149316DDD77900ED04C5 /* icon@2x.png in Resources */,
 				99E8149516DDD78000ED04C5 /* icon.png in Resources */,
-				99E8149716DDD79C00ED04C5 /* icon.png in Resources */,
-				99E8149916DDD7A800ED04C5 /* icon@2x.png in Resources */,
+				99E8149D16DF30A900ED04C5 /* Zion America v2_App Icon_57x57.png in Resources */,
+				99E8149F16DF30C100ED04C5 /* Zion America v2_App Icon_114x114.png in Resources */,
+				99E814A116DF30E400ED04C5 /* Zion America v2_App Icon_57x57.png in Resources */,
+				99E814A316DF30F600ED04C5 /* Zion America v2_App Icon_114x114.png in Resources */,
+				99E814A516DF312500ED04C5 /* Zion America v2_loading_iphone5.png in Resources */,
+				99E814A716DF312D00ED04C5 /* Zion America v2_loading_iphone4.png in Resources */,
+				99E814A916DF313500ED04C5 /* Zion America v2_loading_iphone3.png in Resources */,
+				99E814AB16DF314000ED04C5 /* Default.png in Resources */,
+				99E814AD16DF314D00ED04C5 /* Default@2x.png in Resources */,
+				99E814AF16DF315700ED04C5 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -94,7 +94,6 @@
     }
     else if (theTextField == _phoneText) {
         [theTextField resignFirstResponder];
-        [_commentView becomeFirstResponder];
     }
     return YES;
 }
@@ -225,12 +224,15 @@
     if (indexPath.row == 0) {
         _phoneName.autocorrectionType = UITextAutocorrectionTypeNo;
         [_phoneName setClearButtonMode:UITextFieldViewModeWhileEditing];
+        [_phoneName setReturnKeyType:UIReturnKeyNext];
         cell.textLabel.text = @"Name";
         cell.accessoryView = _phoneName ;
     }
     if (indexPath.row == 1) {
         _phoneText.autocorrectionType = UITextAutocorrectionTypeNo;
         [_phoneText setClearButtonMode:UITextFieldViewModeWhileEditing];
+        [_phoneText setKeyboardType:UIKeyboardTypePhonePad];
+        [_phoneText setReturnKeyType:UIReturnKeyNext];
         cell.textLabel.text = @"Number";
         cell.accessoryView = _phoneText;
     }
@@ -246,9 +248,7 @@
 }
 
 -(void) saveContact{
-    NSError *error;
     BOOL duplicate = NO;
-     BOOL contactToDelete = NO;
     NSFetchedResultsController *fetchedContacts = [[VariableStore sharedInstance]fetchedContactsController];
     NSArray *contactList = [fetchedContacts fetchedObjects];
     Contact *contact = (Contact *)[NSEntityDescription insertNewObjectForEntityForName:@"Contact" inManagedObjectContext:[[VariableStore sharedInstance] context]];
@@ -258,7 +258,7 @@
     for (Contact *currentContact in contactList){
         if ([contact duplicateContact:currentContact] ) {
             //If the contact exists but the phone is blank copy the email and save again
-            if ([currentContact phone] == nil) {
+            if ([[currentContact phone] isEqualToString:@""]) {
                 [contact setName:_phoneName.text];
                 [contact setEmail:[currentContact email]];
                 [contact setPhone:_phoneText.text];
@@ -266,25 +266,24 @@
                 //delete the old object
                 [[[VariableStore sharedInstance] context] deleteObject:currentContact];
                 
-                //replace with new object
-                if (![[[VariableStore sharedInstance] context] save:&error]) {
-                    // Handle the error.
-                }
-                contactToDelete = YES;
                 break;
             }
             else
                 duplicate = YES;
+                break;
         }
     }
-    if (!duplicate && !contactToDelete){
+    if (!duplicate){
         NSError *error = nil;
         if (![[[VariableStore sharedInstance] context] save:&error]) {
             // Handle the error.
         }
     }
-    //clear the contact so that it does not get saved twice
-    [[[VariableStore sharedInstance]context]deleteObject:contact];
+    else {
+        //clear the contact so that it does not get saved twice
+        [[[VariableStore sharedInstance]context]deleteObject:contact];
+    }
+    
     contact = nil;
 }
 
@@ -298,5 +297,6 @@
     if (![[[VariableStore sharedInstance] context] save:&error]) {
         // Handle the error.
     }
+    history = nil;
 }
 @end

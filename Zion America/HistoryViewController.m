@@ -33,9 +33,16 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    _searching = NO;
-    _letUserSelectRow = YES;
-    _listOfItems = [[NSMutableArray alloc] init];
+    
+    //Notification for when table needs to be updated
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(dataSaved:)
+                                                 name:@"DataSaved" object:nil];
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [_historyTable reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -143,11 +150,84 @@
 {
     NSFetchedResultsController *fetchedResultsController = [[VariableStore sharedInstance] fetchedHistoryController];
     NSManagedObject *object = [fetchedResultsController objectAtIndexPath:indexPath];
+    [self calculateDate:[object valueForKey:@"date"]];
     [[cell recipLabel] setText:[[object valueForKey:@"recipient"] description]];
     [[cell videoLabel] setText:[[object valueForKey:@"video"] description]];
-    [[cell timeLabel] setText:[[object valueForKey:@"date"] description]];
+    [[cell timeLabel] setText:[self calculateDate:[object valueForKey:@"date"]]];
     //cell.textLabel.text = [[object valueForKey:@"recipient"] description];
     cell.backgroundColor = [UIColor colorWithRed:210/255.0f green:226/255.0f blue:245/255.0f alpha:1];
 }
 
+-(NSString *)calculateDate:(NSDate *)historyDate {
+    NSCalendar *calendar = [[NSLocale currentLocale] objectForKey:NSLocaleCalendar];
+    [calendar setTimeZone:[NSTimeZone timeZoneWithName:@"America/New_York"]];
+    NSDate *date = [NSDate date];
+    NSTimeInterval secondsBetween = [date timeIntervalSinceDate:historyDate];
+    int numberOfDays = secondsBetween / 86400;
+    NSString * dateString;
+    
+    
+    //If it occured today than put the time
+    if (numberOfDays <= 0) {
+        dateString = [NSDateFormatter localizedStringFromDate:historyDate
+                                                    dateStyle:NSDateFormatterNoStyle
+                                                    timeStyle:NSDateFormatterShortStyle];
+    }
+    //If it occured during this week than put the day
+    else if (numberOfDays < 7) {
+        NSDateComponents *weekdayComponents = [calendar components:NSWeekdayCalendarUnit fromDate:historyDate];
+        int dayOfWeek = [weekdayComponents weekday];
+        NSLog(@"This is the date %d",dayOfWeek);
+        NSLog(@"This is the date %@",date);
+        switch (dayOfWeek) {
+            case 1:
+                dateString = @"Sunday";
+                break;
+            case 2:
+                dateString = @"Monday";
+                break;
+            case 3:
+                dateString = @"Tuesday";
+                break;
+            case 4:
+                dateString = @"Wednesday";
+                break;
+            case 5:
+                dateString = @"Thursday";
+                break;
+            case 6:
+                dateString = @"Friday";
+                break;
+            case 7:
+                dateString = @"Sabbath";
+                break;
+        }
+    }
+    //more than a week old put the date
+    else {
+        dateString = [NSDateFormatter localizedStringFromDate:historyDate
+                                                    dateStyle:NSDateFormatterShortStyle
+                                                    timeStyle:NSDateFormatterNoStyle];
+    }
+    return dateString;
+}
+
+- (IBAction)confirmLogout:(id)sender {
+    _sheet = [[UIActionSheet alloc] initWithTitle:@"You will be logged out of the system"
+                                         delegate:self
+                                cancelButtonTitle:@"Cancel"
+                           destructiveButtonTitle:@"Confirm"
+                                otherButtonTitles:nil];
+    
+    // Show the sheet
+    [_sheet showFromTabBar:self.tabBarController.tabBar];
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    //Logout confirmed
+    if (buttonIndex == 0) {
+        [self performSegueWithIdentifier: @"logoutSegue" sender: self];
+    }
+}
 @end

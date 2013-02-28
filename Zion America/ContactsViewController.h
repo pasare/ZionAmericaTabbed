@@ -11,13 +11,10 @@
 #import "Contact.h"
 #import <CoreData/CoreData.h>
 
-@interface ContactsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, UISearchDisplayDelegate>
+@interface ContactsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, UISearchDisplayDelegate,UIActionSheetDelegate>
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UITableView *contactTable;
+@property (nonatomic, retain) UIActionSheet *sheet;
 
-@property NSArray *tableArray;
-@property NSMutableArray *listOfItems;
-@property BOOL searching;
-@property BOOL letUserSelectRow;
 
 @end
