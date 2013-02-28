@@ -176,4 +176,50 @@
         [self performSegueWithIdentifier: @"logoutSegue" sender: self];
     }
 }
+
+//Code for search feature
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString {
+    NSInteger searchOption = controller.searchBar.selectedScopeButtonIndex;
+    return [self searchDisplayController:controller shouldReloadTableForSearchString:searchString searchScope:searchOption];
+}
+
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchScope:(NSInteger)searchOption {
+    NSString* searchString = controller.searchBar.text;
+    return [self searchDisplayController:controller shouldReloadTableForSearchString:searchString searchScope:searchOption];
+}
+
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString*)searchString searchScope:(NSInteger)searchOption {
+    
+    NSPredicate *predicate = nil;
+    if ([searchString length]) {
+        if (searchOption == 0){ // full text, in my implementation.  Other scope button titles are "Author", "Title"
+            predicate = [NSPredicate predicateWithFormat:@"name contains[cd] %@ OR email contains[cd] %@", searchString, searchString];
+        }
+        else {
+            // docs say keys are case insensitive, but apparently not so.
+            predicate = [NSPredicate predicateWithFormat:@"%K contains[cd] %@", [[controller.searchBar.scopeButtonTitles objectAtIndex:searchOption] lowercaseString], searchString];
+        }
+    }
+    [[[VariableStore sharedInstance] fetchedContactsController].fetchRequest setPredicate:predicate];
+    
+    NSError *error = nil;
+    if (![[[VariableStore sharedInstance] fetchedContactsController] performFetch:&error]) {
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
+    }
+    
+    return YES;
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
+{
+    NSError *error;
+	searchBar.text = nil;
+	[searchBar resignFirstResponder];
+    
+    [[[VariableStore sharedInstance] fetchedContactsController].fetchRequest setPredicate:nil];
+    [[[VariableStore sharedInstance] fetchedContactsController] performFetch:&error];
+    [_contactTable reloadData];
+	
+}
 @end
