@@ -13,16 +13,19 @@
 #import <MailCore/MailCore.h>
 #import "Constants.h"
 #import "Contact.h"
+#import "History.h"
 
-@interface SendEmailViewController : UIViewController 
+@interface SendEmailViewController : UIViewController <UITextFieldDelegate>
+@property (weak, nonatomic) IBOutlet UITableView *sendEmailTable;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UITextView *commentView;
-@property (weak, nonatomic) IBOutlet UITextField *emailSubject;
-@property (weak, nonatomic) IBOutlet UITextField *emailAddress;
-@property (weak, nonatomic) IBOutlet UITextField *emailName;
+@property (nonatomic, retain) UITextField *emailName;
+@property (nonatomic, retain) UITextField *emailAddress;
+@property (nonatomic, retain) UITextField *emailSubject;
 @property UITextField *activeField;
 @property UITextView *activeView;
 @property UIAlertView *statusAlert;
 @property UIAlertView *emailAlert;
+@property UIAlertView *failedAlert;
 @end
 

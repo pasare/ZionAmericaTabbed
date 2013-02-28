@@ -26,6 +26,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    _emailTable.backgroundColor = [UIColor colorWithRed:0/255.0f green:41/255.0f blue:92/255.0f alpha:1];
+    [_emailTable setBackgroundView:nil];
     _searching = NO;
     _letUserSelectRow = YES;
     _listOfItems = [[NSMutableArray alloc] init];
@@ -128,7 +130,7 @@
         }
     }
     CTCoreMessage *message;
-    if (_searching){
+    if (_searching && [_listOfItems count] >0){
         message = [_listOfItems objectAtIndex:indexPath.row];
     }
     else {
@@ -158,7 +160,7 @@
     [[cell titleLabel]setText:subject];
     [[cell timeLabel]setText:dateString];
     //NSLog(@"Sender date %@",dateString);
-    
+    cell.backgroundColor = [UIColor colorWithRed:210/255.0f green:226/255.0f blue:245/255.0f alpha:1];
     return cell;
 }
 

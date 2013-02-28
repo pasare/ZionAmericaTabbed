@@ -16,7 +16,7 @@
 
 
 @interface LoginViewController : UIViewController <UITextFieldDelegate>
-@property (weak, nonatomic) IBOutlet UILabel *cellLabel;
+@property (weak, nonatomic) IBOutlet UILabel *copyrightLabel;
 @property (weak, nonatomic) IBOutlet UITableView *loginTable;
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
 @property (copy, nonatomic) NSString *loginID;

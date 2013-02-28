@@ -23,14 +23,22 @@
     return self;
 }
 
+-(void)viewDidDisappear:(BOOL)animated {
+    [VariableStore sharedInstance].updateContact = nil;
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     //set the colors
      self.view.backgroundColor = [UIColor colorWithRed:0/255.0f green:41/255.0f blue:92/255.0f alpha:1];
-    _phoneNumber.backgroundColor = [UIColor colorWithRed:210/255.0f green:226/255.0f blue:245/255.0f alpha:1];
-    _emailAddress.backgroundColor = [UIColor colorWithRed:210/255.0f green:226/255.0f blue:245/255.0f alpha:1];
-    _contactName.backgroundColor = [UIColor colorWithRed:210/255.0f green:226/255.0f blue:245/255.0f alpha:1];
+    _addContactTable.backgroundColor = [UIColor clearColor];
+    [_addContactTable setBackgroundView:nil];
+    
+    //Initalize variables
+    _contactName = [[UITextField alloc] initWithFrame:CGRectMake(5, 0, 195, 21)];
+    _emailAddress = [[UITextField alloc] initWithFrame:CGRectMake(5, 0, 195, 21)];
+    _phoneNumber = [[UITextField alloc] initWithFrame:CGRectMake(5, 0, 195, 21)];
+    
     //Check if the user is editing the contact
     if ([VariableStore sharedInstance].updateContact != nil) {
         Contact *contact = [[VariableStore sharedInstance] updateContact ];
@@ -38,18 +46,27 @@
         _phoneNumber.text = [contact phone];
         _emailAddress.text = [contact email];
         _saveContactButton.titleLabel.text = @"Update Contact";
+        _contactLabel.text = @"Updating Contact";
+        NSLog(@"THis is the contact %@",[contact name]);
         
     }
     else {
         _contactName.text = @"";
         _phoneNumber.text = @"";
         _emailAddress.text = @"";
+        _saveContactButton.titleLabel.text = @"Save Contact";
+        _contactLabel.text = @"Add A Contact";
     }
 	//Create the failed alert
     _failedContactAlert = [[UIAlertView alloc] initWithTitle:@"Status" message:@"The contact already exists!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil ];
     
     //Create the success alert
     _successContactAlert = [[UIAlertView alloc] initWithTitle:@"Status" message:@"The contact was added successfully, God bless you!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil ];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(dismissKeyboard)];
+    [self.view addGestureRecognizer:tap];
 }
 
 - (void)didReceiveMemoryWarning
@@ -57,6 +74,14 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+-(void)dismissKeyboard
+{
+    [ _contactName resignFirstResponder];
+    [ _emailAddress resignFirstResponder];
+    [_phoneNumber resignFirstResponder];
+}
+
 - (IBAction)saveContact:(id)sender {
     Contact *contact = (Contact *)[NSEntityDescription insertNewObjectForEntityForName:@"Contact" inManagedObjectContext:[[VariableStore sharedInstance] context]];
     [contact setName:_contactName.text];
@@ -121,6 +146,51 @@
         [theTextField resignFirstResponder];
     }
     return YES;
+}
+
+//Create the group cells look for textboxes
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 3;
+}
+- (UITableViewCell *)tableView:(UITableView *)table cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    UITableViewCell *cell = [table dequeueReusableCellWithIdentifier:@"Cell"];
+    if( cell == nil)
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
+    
+    if (indexPath.row == 0) {
+        
+        _contactName.autocorrectionType = UITextAutocorrectionTypeNo;
+        [_contactName setClearButtonMode:UITextFieldViewModeWhileEditing];
+        cell.textLabel.text = @"Name";
+        cell.accessoryView = _contactName ;
+    }
+    if (indexPath.row == 1) {
+        
+        _emailAddress.autocorrectionType = UITextAutocorrectionTypeNo;
+        [_emailAddress setClearButtonMode:UITextFieldViewModeWhileEditing];
+        cell.textLabel.text = @"Email";
+        cell.accessoryView = _emailAddress;
+    }
+    if (indexPath.row == 2) {
+        
+        _phoneNumber.autocorrectionType = UITextAutocorrectionTypeYes;
+        [_phoneNumber setClearButtonMode:UITextFieldViewModeWhileEditing];
+        cell.textLabel.text = @"Number";
+        cell.accessoryView = _phoneNumber;
+    }
+    _contactName.delegate = self;
+    _emailAddress.delegate = self;
+    _phoneNumber.delegate = self;
+    
+    
+    [_addContactTable addSubview:_contactName];
+    [_addContactTable addSubview:_emailAddress];
+    [_addContactTable addSubview:_phoneNumber];
+    //cell.backgroundView = [[UIView alloc] initWithFrame:cell.bounds];
+    cell.backgroundColor = [UIColor colorWithRed:210/255.0f green:226/255.0f blue:245/255.0f alpha:1];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    return cell;
 }
 
 @end

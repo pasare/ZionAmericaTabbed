@@ -11,12 +11,16 @@
 #import <MessageUI/MessageUI.h>
 #import "VariableStore.h"
 #import "Contact.h"
+#import "History.h"
 
-@interface SendSmsViewController : UIViewController<MFMessageComposeViewControllerDelegate, UINavigationControllerDelegate>
-@property (weak, nonatomic) IBOutlet UITextField *phoneName;
+@interface SendSmsViewController : UIViewController<UITextFieldDelegate, MFMessageComposeViewControllerDelegate, UINavigationControllerDelegate>
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UITableView *sendSmsTable;
 @property (weak, nonatomic) IBOutlet UITextView *commentView;
-@property (weak, nonatomic) IBOutlet UITextField *phoneText;
+@property UITextField *phoneName;
+@property UITextField *phoneText;
 @property UIAlertView *statusAlert;
 @property UIAlertView *failedAlert;
+@property UITextView *activeView;
 
 @end

@@ -10,11 +10,13 @@
 #import "Contact.h"
 #import "VariableStore.h"
 
-@interface AddContactViewController : UIViewController
+@interface AddContactViewController : UIViewController <UITextFieldDelegate>
+@property (weak, nonatomic) IBOutlet UILabel *contactLabel;
+@property (weak, nonatomic) IBOutlet UITableView *addContactTable;
 @property (weak, nonatomic) IBOutlet UIButton *saveContactButton;
-@property (weak, nonatomic) IBOutlet UITextField *phoneNumber;
-@property (weak, nonatomic) IBOutlet UITextField *emailAddress;
-@property (weak, nonatomic) IBOutlet UITextField *contactName;
+@property (nonatomic, retain) UITextField *contactName;
+@property (nonatomic, retain) UITextField *emailAddress;
+@property (nonatomic, retain) UITextField *phoneNumber;
 @property UIAlertView *failedContactAlert;
 @property UIAlertView *successContactAlert;
 @end

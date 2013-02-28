@@ -38,6 +38,8 @@
 		9988A0C91696933000D90D0D /* HeaderDisclosureArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 9988A0C81696932F00D90D0D /* HeaderDisclosureArrow.png */; };
 		9988A0CB1696940F00D90D0D /* UITV_accessory_disclosure.png in Resources */ = {isa = PBXBuildFile; fileRef = 9988A0CA1696940F00D90D0D /* UITV_accessory_disclosure.png */; };
 		9988A0CE1696A06700D90D0D /* InboxDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9988A0CD1696A06700D90D0D /* InboxDetailViewController.m */; };
+		998DB38916D978570088C9D3 /* Zion America v2_login_no line.png in Resources */ = {isa = PBXBuildFile; fileRef = 998DB38816D978570088C9D3 /* Zion America v2_login_no line.png */; };
+		998DB38C16D97CBB0088C9D3 /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 998DB38B16D97CBB0088C9D3 /* HistoryViewController.m */; };
 		9991E11B168BD50500A88911 /* libXMLRPC_iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9991E118168BD4F000A88911 /* libXMLRPC_iOS.a */; };
 		9991E122168C0ADF00A88911 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9991E121168C0ADF00A88911 /* Constants.m */; };
 		9991E126168C21C700A88911 /* butterfly with text.png in Resources */ = {isa = PBXBuildFile; fileRef = 9991E125168C21C700A88911 /* butterfly with text.png */; };
@@ -55,6 +57,21 @@
 		99CAA9B616D89D02001622B0 /* menu_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 99CAA9B516D89D02001622B0 /* menu_icon.png */; };
 		99E3E65C16CCA3C300207D44 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99E3E65B16CCA3C200207D44 /* MessageUI.framework */; };
 		99E3E65F16CDADE900207D44 /* AddContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E3E65E16CDADE900207D44 /* AddContactViewController.m */; };
+		99E8146E16DBAFFA00ED04C5 /* History.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E8146D16DBAFFA00ED04C5 /* History.m */; };
+		99E8147516DC7F4200ED04C5 /* HistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E8147416DC7F4200ED04C5 /* HistoryCell.m */; };
+		99E8147916DC80BB00ED04C5 /* HistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99E8147816DC80BB00ED04C5 /* HistoryCell.xib */; };
+		99E8147B16DDAED100ED04C5 /* Zion America v2_settings button.png in Resources */ = {isa = PBXBuildFile; fileRef = 99E8147A16DDAED100ED04C5 /* Zion America v2_settings button.png */; };
+		99E8147D16DDB0AF00ED04C5 /* Zion America v2_settings button-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 99E8147C16DDB0AF00ED04C5 /* Zion America v2_settings button-2.png */; };
+		99E8147F16DDB5F600ED04C5 /* Zion America v2_settings button-20x20.png in Resources */ = {isa = PBXBuildFile; fileRef = 99E8147E16DDB5F600ED04C5 /* Zion America v2_settings button-20x20.png */; };
+		99E8148116DDB62200ED04C5 /* Zion America v2_settings button-40x40.png in Resources */ = {isa = PBXBuildFile; fileRef = 99E8148016DDB62200ED04C5 /* Zion America v2_settings button-40x40.png */; };
+		99E8148716DDC2B400ED04C5 /* Zion America v2_login_button grey.png in Resources */ = {isa = PBXBuildFile; fileRef = 99E8148616DDC2B400ED04C5 /* Zion America v2_login_button grey.png */; };
+		99E8148916DDC50B00ED04C5 /* ZionAmerica_Logout_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 99E8148816DDC50B00ED04C5 /* ZionAmerica_Logout_button.png */; };
+		99E8148B16DDC61400ED04C5 /* Zion America_v2_login_button grey.png in Resources */ = {isa = PBXBuildFile; fileRef = 99E8148A16DDC61400ED04C5 /* Zion America_v2_login_button grey.png */; };
+		99E8149116DDCC7D00ED04C5 /* Zion America v2_login_bg only_no text_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 99E8149016DDCC7D00ED04C5 /* Zion America v2_login_bg only_no text_2.png */; };
+		99E8149316DDD77900ED04C5 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 99E8149216DDD77900ED04C5 /* icon@2x.png */; };
+		99E8149516DDD78000ED04C5 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 99E8149416DDD78000ED04C5 /* icon.png */; };
+		99E8149716DDD79C00ED04C5 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 99E8149616DDD79C00ED04C5 /* icon.png */; };
+		99E8149916DDD7A800ED04C5 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 99E8149816DDD7A800ED04C5 /* icon@2x.png */; };
 		FC85120D168A1AB100F94C60 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC85120C168A1AB100F94C60 /* UIKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		FC85120F168A1AB100F94C60 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC85120E168A1AB100F94C60 /* Foundation.framework */; };
 		FC851211168A1AB100F94C60 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC851210168A1AB100F94C60 /* CoreGraphics.framework */; };
@@ -179,6 +196,9 @@
 		9988A0CA1696940F00D90D0D /* UITV_accessory_disclosure.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UITV_accessory_disclosure.png; sourceTree = "<group>"; };
 		9988A0CC1696A06700D90D0D /* InboxDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InboxDetailViewController.h; sourceTree = "<group>"; };
 		9988A0CD1696A06700D90D0D /* InboxDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InboxDetailViewController.m; sourceTree = "<group>"; };
+		998DB38816D978570088C9D3 /* Zion America v2_login_no line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Zion America v2_login_no line.png"; sourceTree = "<group>"; };
+		998DB38A16D97CBB0088C9D3 /* HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryViewController.h; sourceTree = "<group>"; };
+		998DB38B16D97CBB0088C9D3 /* HistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryViewController.m; sourceTree = "<group>"; };
 		9991E0F2168BCF1400A88911 /* XMLRPC-iOS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "XMLRPC-iOS.xcodeproj"; path = "kdbdallas-xmlrpc-ios-f28a13cc16ae/XMLRPC-iOS.xcodeproj"; sourceTree = "<group>"; };
 		9991E120168C0ADF00A88911 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		9991E121168C0ADF00A88911 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
@@ -199,6 +219,23 @@
 		99E3E65B16CCA3C200207D44 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		99E3E65D16CDADE900207D44 /* AddContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddContactViewController.h; sourceTree = "<group>"; };
 		99E3E65E16CDADE900207D44 /* AddContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddContactViewController.m; sourceTree = "<group>"; };
+		99E8146C16DBAFFA00ED04C5 /* History.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = History.h; sourceTree = "<group>"; };
+		99E8146D16DBAFFA00ED04C5 /* History.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = History.m; sourceTree = "<group>"; };
+		99E8147316DC7F4200ED04C5 /* HistoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryCell.h; sourceTree = "<group>"; };
+		99E8147416DC7F4200ED04C5 /* HistoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryCell.m; sourceTree = "<group>"; };
+		99E8147816DC80BB00ED04C5 /* HistoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoryCell.xib; sourceTree = "<group>"; };
+		99E8147A16DDAED100ED04C5 /* Zion America v2_settings button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Zion America v2_settings button.png"; sourceTree = "<group>"; };
+		99E8147C16DDB0AF00ED04C5 /* Zion America v2_settings button-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Zion America v2_settings button-2.png"; sourceTree = "<group>"; };
+		99E8147E16DDB5F600ED04C5 /* Zion America v2_settings button-20x20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Zion America v2_settings button-20x20.png"; sourceTree = "<group>"; };
+		99E8148016DDB62200ED04C5 /* Zion America v2_settings button-40x40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Zion America v2_settings button-40x40.png"; sourceTree = "<group>"; };
+		99E8148616DDC2B400ED04C5 /* Zion America v2_login_button grey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Zion America v2_login_button grey.png"; sourceTree = "<group>"; };
+		99E8148816DDC50B00ED04C5 /* ZionAmerica_Logout_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ZionAmerica_Logout_button.png; sourceTree = "<group>"; };
+		99E8148A16DDC61400ED04C5 /* Zion America_v2_login_button grey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Zion America_v2_login_button grey.png"; sourceTree = "<group>"; };
+		99E8149016DDCC7D00ED04C5 /* Zion America v2_login_bg only_no text_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Zion America v2_login_bg only_no text_2.png"; sourceTree = "<group>"; };
+		99E8149216DDD77900ED04C5 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		99E8149416DDD78000ED04C5 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		99E8149616DDD79C00ED04C5 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		99E8149816DDD7A800ED04C5 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 		FC851208168A1AB100F94C60 /* Zion America.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Zion America.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC85120C168A1AB100F94C60 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FC85120E168A1AB100F94C60 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -288,6 +325,8 @@
 		FC8511FD168A1AB100F94C60 = {
 			isa = PBXGroup;
 			children = (
+				99E8149816DDD7A800ED04C5 /* icon@2x.png */,
+				99E8149616DDD79C00ED04C5 /* icon.png */,
 				99A7186B16D1BD5E00AA7518 /* CoreData.framework */,
 				99E3E65B16CCA3C200207D44 /* MessageUI.framework */,
 				99881EC816921DE9006433E8 /* MailCore.xcodeproj */,
@@ -353,11 +392,18 @@
 				9988A0CD1696A06700D90D0D /* InboxDetailViewController.m */,
 				9900D14116994913004DD65A /* ContactsViewController.h */,
 				9900D14216994913004DD65A /* ContactsViewController.m */,
-				99E3E65D16CDADE900207D44 /* AddContactViewController.h */,
-				99E3E65E16CDADE900207D44 /* AddContactViewController.m */,
-				99A7181316D1B4B700AA7518 /* Zion_America.xcdatamodeld */,
 				99A7186D16D1C10B00AA7518 /* Contact.h */,
 				99A7186E16D1C10B00AA7518 /* Contact.m */,
+				99E3E65D16CDADE900207D44 /* AddContactViewController.h */,
+				99E3E65E16CDADE900207D44 /* AddContactViewController.m */,
+				998DB38A16D97CBB0088C9D3 /* HistoryViewController.h */,
+				998DB38B16D97CBB0088C9D3 /* HistoryViewController.m */,
+				99A7181316D1B4B700AA7518 /* Zion_America.xcdatamodeld */,
+				99E8146C16DBAFFA00ED04C5 /* History.h */,
+				99E8146D16DBAFFA00ED04C5 /* History.m */,
+				99E8147816DC80BB00ED04C5 /* HistoryCell.xib */,
+				99E8147316DC7F4200ED04C5 /* HistoryCell.h */,
+				99E8147416DC7F4200ED04C5 /* HistoryCell.m */,
 				FC851276168AB5D800F94C60 /* Resources */,
 				FC851213168A1AB100F94C60 /* Supporting Files */,
 				99CAA9AD16D88598001622B0 /* loginBox.xib */,
@@ -407,6 +453,17 @@
 		FC851276168AB5D800F94C60 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				99E8149416DDD78000ED04C5 /* icon.png */,
+				99E8149216DDD77900ED04C5 /* icon@2x.png */,
+				99E8149016DDCC7D00ED04C5 /* Zion America v2_login_bg only_no text_2.png */,
+				99E8148A16DDC61400ED04C5 /* Zion America_v2_login_button grey.png */,
+				99E8148816DDC50B00ED04C5 /* ZionAmerica_Logout_button.png */,
+				99E8148616DDC2B400ED04C5 /* Zion America v2_login_button grey.png */,
+				99E8148016DDB62200ED04C5 /* Zion America v2_settings button-40x40.png */,
+				99E8147E16DDB5F600ED04C5 /* Zion America v2_settings button-20x20.png */,
+				99E8147C16DDB0AF00ED04C5 /* Zion America v2_settings button-2.png */,
+				99E8147A16DDAED100ED04C5 /* Zion America v2_settings button.png */,
+				998DB38816D978570088C9D3 /* Zion America v2_login_no line.png */,
 				99CAA9AF16D885CC001622B0 /* Zion America v2_login_user pass.png */,
 				99CAA9B516D89D02001622B0 /* menu_icon.png */,
 				99CAA9B316D88D4A001622B0 /* Zion America v2_login_pass.png */,
@@ -597,6 +654,20 @@
 				99CAA9B216D886C9001622B0 /* Zion America v2_login_user_pass.png in Resources */,
 				99CAA9B416D88D4A001622B0 /* Zion America v2_login_pass.png in Resources */,
 				99CAA9B616D89D02001622B0 /* menu_icon.png in Resources */,
+				998DB38916D978570088C9D3 /* Zion America v2_login_no line.png in Resources */,
+				99E8147916DC80BB00ED04C5 /* HistoryCell.xib in Resources */,
+				99E8147B16DDAED100ED04C5 /* Zion America v2_settings button.png in Resources */,
+				99E8147D16DDB0AF00ED04C5 /* Zion America v2_settings button-2.png in Resources */,
+				99E8147F16DDB5F600ED04C5 /* Zion America v2_settings button-20x20.png in Resources */,
+				99E8148116DDB62200ED04C5 /* Zion America v2_settings button-40x40.png in Resources */,
+				99E8148716DDC2B400ED04C5 /* Zion America v2_login_button grey.png in Resources */,
+				99E8148916DDC50B00ED04C5 /* ZionAmerica_Logout_button.png in Resources */,
+				99E8148B16DDC61400ED04C5 /* Zion America_v2_login_button grey.png in Resources */,
+				99E8149116DDCC7D00ED04C5 /* Zion America v2_login_bg only_no text_2.png in Resources */,
+				99E8149316DDD77900ED04C5 /* icon@2x.png in Resources */,
+				99E8149516DDD78000ED04C5 /* icon.png in Resources */,
+				99E8149716DDD79C00ED04C5 /* icon.png in Resources */,
+				99E8149916DDD7A800ED04C5 /* icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -649,6 +720,9 @@
 				99E3E65F16CDADE900207D44 /* AddContactViewController.m in Sources */,
 				99A7181516D1B4B700AA7518 /* Zion_America.xcdatamodeld in Sources */,
 				99A7186F16D1C10B00AA7518 /* Contact.m in Sources */,
+				998DB38C16D97CBB0088C9D3 /* HistoryViewController.m in Sources */,
+				99E8146E16DBAFFA00ED04C5 /* History.m in Sources */,
+				99E8147516DC7F4200ED04C5 /* HistoryCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -26,11 +26,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    _commentView.text =@"Message";
     //set the colors
     self.view.backgroundColor = [UIColor colorWithRed:0/255.0f green:41/255.0f blue:92/255.0f alpha:1];
-    _phoneText.backgroundColor = [UIColor colorWithRed:210/255.0f green:226/255.0f blue:245/255.0f alpha:1];
-    _phoneName.backgroundColor = [UIColor colorWithRed:210/255.0f green:226/255.0f blue:245/255.0f alpha:1];
+    _sendSmsTable.backgroundColor = [UIColor clearColor];
+    [_sendSmsTable setBackgroundView:nil];
     _commentView.backgroundColor = [UIColor colorWithRed:210/255.0f green:226/255.0f blue:245/255.0f alpha:1];
+    
+    //Initalize variables
+    _phoneName = [[UITextField alloc] initWithFrame:CGRectMake(5, 0, 195, 21)];
+    _phoneText = [[UITextField alloc] initWithFrame:CGRectMake(5, 0, 195, 21)];
+    
     //Create the logging in alert
     self.statusAlert = [[UIAlertView alloc] initWithTitle:@"Sending Message" message:@"Please wait..." delegate:self cancelButtonTitle:nil otherButtonTitles:nil ];
     UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
@@ -52,14 +58,83 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]
                                               initWithTitle:@"Send" style:UIBarButtonItemStyleDone
                                               target:self action:@selector(sendSms:)];
-    _commentView.layer.borderWidth = 3.0f;
+    _commentView.layer.borderWidth = 1.0f;
     _commentView.layer.borderColor = [[UIColor grayColor] CGColor];
+    
+    //keyboard functions
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardDidShow:)
+                                                 name:UIKeyboardDidShowNotification
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardDidHide:)
+                                                 name:UIKeyboardDidHideNotification
+                                               object:nil];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(dismissKeyboard)];
+    
+    [self.view addGestureRecognizer:tap];
+    
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+//Method to control the text fields
+- (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
+    
+    if (theTextField == _phoneName) {
+        [theTextField resignFirstResponder];
+        [_phoneText becomeFirstResponder ];
+    }
+    else if (theTextField == _phoneText) {
+        [theTextField resignFirstResponder];
+        [_commentView becomeFirstResponder];
+    }
+    return YES;
+}
+
+//Tap anywhere to dismiss keyboard
+-(void)dismissKeyboard
+{
+    [ _phoneText resignFirstResponder];
+    [ _phoneName resignFirstResponder];
+    [ _commentView resignFirstResponder];
+}
+
+-(void)textViewDidBeginEditing:(UITextView *)textView
+{
+    _activeView = textView;
+    textView.text = @"";
+}
+
+-(void)textViewDidEndEditing:(UITextView *)textView
+{
+    _activeView = nil;
+    
+}
+
+- (void)keyboardDidShow:(NSNotification*)aNotification
+{
+    if (_activeView !=nil)
+    {
+        NSDictionary* info = [aNotification userInfo];
+        CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+        CGRect bkgndRect = _activeView.superview.frame;
+        bkgndRect.size.height += kbSize.height;
+        [_activeView.superview setFrame:bkgndRect];
+        [_scrollView setContentOffset:CGPointMake(0.0, _activeView.frame.origin.y-kbSize.height+200) animated:YES];
+    }
+}
+
+- (void)keyboardDidHide: (NSNotification*) aNotification
+{
+    
 }
 
 -(void) sendSms:(id)sender
@@ -106,53 +181,17 @@
             
 		case MessageComposeResultSent:{
             
-            //Save this contact to the contact list
-            BOOL duplicate = NO;
-            NSError *error;
-            NSFetchedResultsController *fetchedContacts = [[VariableStore sharedInstance]fetchedContactsController];
-            NSArray *contactList = [fetchedContacts fetchedObjects];
-            BOOL contactToDelete = NO;
-            Contact *contact = (Contact *)[NSEntityDescription insertNewObjectForEntityForName:@"Contact" inManagedObjectContext:[[VariableStore sharedInstance] context]];
-            [contact setName:_phoneName.text];
-            [contact setEmail:nil];
-            [contact setPhone:_phoneText.text];
             [self.statusAlert dismissWithClickedButtonIndex:0 animated:YES];
             
-            //loop through the contact list checking for a duplicate contact
-            for (Contact *currentContact in contactList){
-                if ([contact duplicateContact:currentContact] ) {
-                    //If the contact exists but the phone is blank copy the email and save again
-                    if ([currentContact phone] == nil) {
-                        [contact setName:_phoneName.text];
-                        [contact setEmail:[currentContact email]];
-                        [contact setPhone:_phoneText.text];
-                        
-                        //delete the old object
-                        [[[VariableStore sharedInstance] context] deleteObject:currentContact];
-                        
-                        //replace with new object
-                        if (![[[VariableStore sharedInstance] context] save:&error]) {
-                            // Handle the error.
-                        }
-                        contactToDelete = YES;
-                    }
-                    else
-                        duplicate = YES;
-                }
-            }
-            if (!duplicate && !contactToDelete){
-                NSError *error = nil;
-                if (![[[VariableStore sharedInstance] context] save:&error]) {
-                    // Handle the error.
-                }
-            }
-            [[[VariableStore sharedInstance]context]deleteObject:contact];
-            contact = nil;
+            //Save the contact
+            [self saveContact];
+            
+            //add item to history
+            [self saveHistory];
+            
+            //Display successful sms message
             [[NSNotificationCenter defaultCenter] postNotificationName:@"DataSaved" object:nil];
             [self performSegueWithIdentifier: @"smsSentSegue" sender: self];
-            _phoneName.text = [contact name];
-            _phoneText.text = [contact phone];
-            //Display successful sms message
             [_failedAlert show];
 			break;
         }
@@ -172,5 +211,92 @@
 			break;
 	}
 	[self dismissViewControllerAnimated:YES completion:^(void){}];
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 2;
+}
+- (UITableViewCell *)tableView:(UITableView *)table cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    UITableViewCell *cell = [table dequeueReusableCellWithIdentifier:@"Cell"];
+    if( cell == nil)
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
+    
+    if (indexPath.row == 0) {
+        _phoneName.autocorrectionType = UITextAutocorrectionTypeNo;
+        [_phoneName setClearButtonMode:UITextFieldViewModeWhileEditing];
+        cell.textLabel.text = @"Name";
+        cell.accessoryView = _phoneName ;
+    }
+    if (indexPath.row == 1) {
+        _phoneText.autocorrectionType = UITextAutocorrectionTypeNo;
+        [_phoneText setClearButtonMode:UITextFieldViewModeWhileEditing];
+        cell.textLabel.text = @"Number";
+        cell.accessoryView = _phoneText;
+    }
+    _phoneName.delegate = self;
+    _phoneText.delegate = self;
+    
+    
+    [_sendSmsTable addSubview:_phoneName];
+    [_sendSmsTable addSubview:_phoneText];
+    cell.backgroundColor = [UIColor colorWithRed:210/255.0f green:226/255.0f blue:245/255.0f alpha:1];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    return cell;
+}
+
+-(void) saveContact{
+    NSError *error;
+    BOOL duplicate = NO;
+     BOOL contactToDelete = NO;
+    NSFetchedResultsController *fetchedContacts = [[VariableStore sharedInstance]fetchedContactsController];
+    NSArray *contactList = [fetchedContacts fetchedObjects];
+    Contact *contact = (Contact *)[NSEntityDescription insertNewObjectForEntityForName:@"Contact" inManagedObjectContext:[[VariableStore sharedInstance] context]];
+    [contact setName:_phoneName.text];
+    [contact setEmail:nil];
+    [contact setPhone:_phoneText.text];
+    for (Contact *currentContact in contactList){
+        if ([contact duplicateContact:currentContact] ) {
+            //If the contact exists but the phone is blank copy the email and save again
+            if ([currentContact phone] == nil) {
+                [contact setName:_phoneName.text];
+                [contact setEmail:[currentContact email]];
+                [contact setPhone:_phoneText.text];
+                
+                //delete the old object
+                [[[VariableStore sharedInstance] context] deleteObject:currentContact];
+                
+                //replace with new object
+                if (![[[VariableStore sharedInstance] context] save:&error]) {
+                    // Handle the error.
+                }
+                contactToDelete = YES;
+                break;
+            }
+            else
+                duplicate = YES;
+        }
+    }
+    if (!duplicate && !contactToDelete){
+        NSError *error = nil;
+        if (![[[VariableStore sharedInstance] context] save:&error]) {
+            // Handle the error.
+        }
+    }
+    //clear the contact so that it does not get saved twice
+    [[[VariableStore sharedInstance]context]deleteObject:contact];
+    contact = nil;
+}
+
+-(void) saveHistory{
+    NSError *error;
+    History *history = (History *)[NSEntityDescription insertNewObjectForEntityForName:@"History" inManagedObjectContext:[[VariableStore sharedInstance] context]];
+    [history setDate:[NSDate date]];
+    [history setRecipient:_phoneName.text];
+    [history setVideo:[[VariableStore sharedInstance] videoName ]];
+    //save the newly created history item
+    if (![[[VariableStore sharedInstance] context] save:&error]) {
+        // Handle the error.
+    }
 }
 @end

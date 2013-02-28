@@ -26,6 +26,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    _contactTable.backgroundColor = [UIColor colorWithRed:0/255.0f green:41/255.0f blue:92/255.0f alpha:1];
+    [_contactTable setBackgroundView:nil];
     UILongPressGestureRecognizer *lpgr = [[UILongPressGestureRecognizer alloc]
                                           initWithTarget:self action:@selector(handleLongPress:)];
     lpgr.minimumPressDuration = 0.3; //seconds
@@ -41,13 +43,10 @@
     _searching = NO;
     _letUserSelectRow = YES;
     _listOfItems = [[NSMutableArray alloc] init];
-    //_tableArray = [[VariableStore sharedInstance] contactsArray];
-    //NSLog(@"contactList %@",_tableArray);
 }
 
 -(void)viewDidAppear:(BOOL)animated
 {
-    //_tableArray = [[VariableStore sharedInstance] contactsArray];
    [_contactTable reloadData];
 }
 
@@ -80,15 +79,13 @@
     }
     
     if (_searching){
-        //Contact *contact = (Contact *) [_listOfItems objectAtIndex:indexPath.row];
-        //cell.textLabel.text = [contact name];
         [self configureCell:cell atIndexPath:indexPath];
+        cell.backgroundColor = [UIColor colorWithRed:210/255.0f green:226/255.0f blue:245/255.0f alpha:1];
         return cell;
     }
     else {
-        //Contact *contact = (Contact *)[_tableArray objectAtIndex:indexPath.row];
-        //cell.textLabel.text = [contact name];
         [self configureCell:cell atIndexPath:indexPath];
+        cell.backgroundColor = [UIColor colorWithRed:210/255.0f green:226/255.0f blue:245/255.0f alpha:1];
         return cell;
     }
 }
@@ -97,7 +94,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    Contact *selectedContact = [[[VariableStore sharedInstance] fetchedContactsController] objectAtIndexPath:indexPath];
+    Contact *contact = [[[VariableStore sharedInstance] fetchedContactsController] objectAtIndexPath:indexPath];
     
     if(_searching){
         //selectedContact = [_listOfItems objectAtIndex:indexPath.row];
@@ -105,7 +102,7 @@
     else {
         //selectedContact = [_tableArray objectAtIndex:indexPath.row];
     }
-    [VariableStore sharedInstance].selectedContact = selectedContact;
+    [VariableStore sharedInstance].selectedContact = contact;
     [self performSegueWithIdentifier: @"contactToEmailSegue" sender: self];
 }
 
@@ -229,7 +226,9 @@
     _letUserSelectRow = YES;
     _searching = NO;
     
-    
+    /*self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]
+                                              initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:<#(SEL)#>
+                                              target:self action:@selector(sendEmail:)]; */
     [_contactTable reloadData];
 }
 

@@ -31,9 +31,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy"];
+    NSString *yearString = [formatter stringFromDate:[NSDate date]];
+    _copyrightLabel.text = [NSString stringWithFormat:@"\u00A9 All Rights Reserved %@",yearString];
     //set background
     UIGraphicsBeginImageContext(self.view.frame.size);
-    [[UIImage imageNamed:@"Zion America v2_login_bg only_no text.png"] drawInRect:self.view.bounds];
+    [[UIImage imageNamed:@"Zion America v2_login_bg only_no text_2.png"] drawInRect:self.view.bounds];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     self.view.backgroundColor = [UIColor colorWithPatternImage:image];
@@ -52,6 +56,11 @@
     
     //Create the failed login alert
     self.failedLoginAlert = [[UIAlertView alloc] initWithTitle:@"Login Failed" message:@"Incorrect username or password" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil ];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(dismissKeyboard)];
+    [self.view addGestureRecognizer:tap];
 }
 
 - (void)didReceiveMemoryWarning
@@ -60,7 +69,15 @@
     // Dispose of any resources that can be recreated.
 }
 
+
 //Method to control the text fields
+
+-(void)dismissKeyboard
+{
+    [ _userID resignFirstResponder];
+    [ _userPassword resignFirstResponder];
+}
+
 - (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
     
     if (theTextField == self.userID) {
@@ -131,6 +148,7 @@
         _userID = [[UITextField alloc] initWithFrame:CGRectMake(5, 0, 195, 21)];
         _userID.autocorrectionType = UITextAutocorrectionTypeNo;
         [_userID setClearButtonMode:UITextFieldViewModeWhileEditing];
+        [_userID setReturnKeyType:UIReturnKeyNext];
         cell.textLabel.text = @"Username";
         cell.accessoryView = _userID ;
     }
@@ -159,8 +177,13 @@
     return 1;
 }
 
+- (BOOL)shouldAutorotate {
+    return YES;
+}
 
-
+- (NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskPortrait;
+}
 
 
 @end
