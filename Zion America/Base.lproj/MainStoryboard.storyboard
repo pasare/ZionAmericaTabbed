@@ -39,7 +39,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Inbox" image="envelop.png" id="965-tV-PLN"/>
                     <navigationItem key="navigationItem" title="Inbox" id="Az3-lf-cf6">
-                        <barButtonItem key="leftBarButtonItem" image="ZionAmerica_Logout_button.png" id="phb-7k-ifg">
+                        <barButtonItem key="leftBarButtonItem" image="logout button-20x20.png" id="phb-7k-ifg">
                             <connections>
                                 <action selector="confirmLogout:" destination="erO-I1-Je0" id="q8m-yM-jXH"/>
                             </connections>
@@ -210,7 +210,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Contacts" id="9Yq-fa-zGX">
-                        <barButtonItem key="leftBarButtonItem" image="ZionAmerica_Logout_button.png" id="Rsb-ab-XxR">
+                        <barButtonItem key="leftBarButtonItem" image="logout button-20x20.png" id="Rsb-ab-XxR">
                             <connections>
                                 <action selector="confirmLogout:" destination="PMa-hf-9Su" id="Q6S-CH-Nes"/>
                             </connections>
@@ -366,7 +366,7 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mxn-Vp-Lbg">
                                 <items>
                                     <navigationItem title="History" id="Wpd-qo-UoG">
-                                        <barButtonItem key="leftBarButtonItem" image="ZionAmerica_Logout_button.png" id="jzz-qe-arN">
+                                        <barButtonItem key="leftBarButtonItem" image="logout button-20x20.png" id="jzz-qe-arN">
                                             <connections>
                                                 <action selector="confirmLogout:" destination="naU-c6-e0H" id="af2-cv-bSg"/>
                                             </connections>
@@ -469,7 +469,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Send Video" image="television.png" id="6"/>
                     <navigationItem key="navigationItem" title="Send Video" id="3Ov-zN-ccC">
-                        <barButtonItem key="leftBarButtonItem" image="ZionAmerica_Logout_button.png" id="Vbx-r2-b3h">
+                        <barButtonItem key="leftBarButtonItem" image="logout button-20x20.png" id="Vbx-r2-b3h">
                             <connections>
                                 <action selector="confirmLogout:" destination="3" id="nfv-B9-Uc4"/>
                             </connections>
@@ -911,10 +911,10 @@
     </scenes>
     <resources>
         <image name="Zion America_v2_login_button grey.png" width="590" height="84"/>
-        <image name="ZionAmerica_Logout_button.png" width="20" height="20"/>
         <image name="butterfly with text.png" width="369" height="42"/>
         <image name="envelop.png" width="24" height="24"/>
         <image name="home.png" width="24" height="24"/>
+        <image name="logout button-20x20.png" width="18" height="18"/>
         <image name="television.png" width="24" height="24"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

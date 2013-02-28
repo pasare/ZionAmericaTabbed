@@ -34,7 +34,7 @@
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyy"];
     NSString *yearString = [formatter stringFromDate:[NSDate date]];
-    _copyrightLabel.text = [NSString stringWithFormat:@"\u00A9 All Rights Reserved %@",yearString];
+    _copyrightLabel.text = [NSString stringWithFormat:@"\u00A9 %@, All Rights Reserved",yearString];
     //set background
     UIGraphicsBeginImageContext(self.view.frame.size);
     [[UIImage imageNamed:@"Zion America v2_login_bg only_no text_2.png"] drawInRect:self.view.bounds];
