@@ -167,7 +167,7 @@
 
 - (void)keyboardDidHide: (NSNotification*) aNotification
 {
-
+    _scrollView.scrollEnabled = YES;
 }
 
 //send the email
@@ -286,11 +286,12 @@
         _emailAddress.autocorrectionType = UITextAutocorrectionTypeNo;
         [_emailAddress setClearButtonMode:UITextFieldViewModeWhileEditing];
         [_emailAddress setReturnKeyType:UIReturnKeyNext];
+        [_emailAddress setKeyboardType:UIKeyboardTypeEmailAddress];
         cell.textLabel.text = @"Email";
         cell.accessoryView = _emailAddress;
     }
     if (indexPath.row == 2) {
-        _emailSubject.autocorrectionType = UITextAutocorrectionTypeYes;
+        _emailSubject.autocorrectionType = UITextAutocorrectionTypeNo;
         [_emailSubject setClearButtonMode:UITextFieldViewModeWhileEditing];
         [_emailSubject setReturnKeyType:UIReturnKeyNext];
         cell.textLabel.text = @"Subject";
@@ -368,5 +369,13 @@
         // Handle the error.
     }
     history = nil;
+}
+
+- (BOOL)shouldAutorotate {
+    return YES;
+}
+
+- (NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskPortrait;
 }
 @end

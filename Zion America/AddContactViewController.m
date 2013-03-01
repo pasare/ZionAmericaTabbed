@@ -47,7 +47,6 @@
         _emailAddress.text = [contact email];
         _saveContactButton.titleLabel.text = @"Update Contact";
         _contactLabel.text = @"Updating Contact";
-        NSLog(@"THis is the contact %@",[contact name]);
         
     }
     else {
@@ -170,6 +169,7 @@
         
         _contactName.autocorrectionType = UITextAutocorrectionTypeNo;
         [_contactName setClearButtonMode:UITextFieldViewModeWhileEditing];
+        [_contactName setReturnKeyType:UIReturnKeyNext];
         cell.textLabel.text = @"Name";
         cell.accessoryView = _contactName ;
     }
@@ -177,6 +177,8 @@
         
         _emailAddress.autocorrectionType = UITextAutocorrectionTypeNo;
         [_emailAddress setClearButtonMode:UITextFieldViewModeWhileEditing];
+        [_emailAddress setKeyboardType:UIKeyboardTypeEmailAddress];
+        [_emailAddress setReturnKeyType:UIReturnKeyNext];
         cell.textLabel.text = @"Email";
         cell.accessoryView = _emailAddress;
     }
@@ -185,7 +187,7 @@
         _phoneNumber.autocorrectionType = UITextAutocorrectionTypeNo;
         [_phoneNumber setKeyboardType:UIKeyboardTypePhonePad];
         [_phoneNumber setClearButtonMode:UITextFieldViewModeWhileEditing];
-        cell.textLabel.text = @"Number";
+        cell.textLabel.text = @"Phone";
         cell.accessoryView = _phoneNumber;
     }
     _contactName.delegate = self;

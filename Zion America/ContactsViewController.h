@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "VariableStore.h"
 #import "Contact.h"
+#import "SendVideoViewController.h"
 #import <CoreData/CoreData.h>
 
 @interface ContactsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, UISearchDisplayDelegate,UIActionSheetDelegate>

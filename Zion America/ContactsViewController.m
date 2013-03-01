@@ -81,6 +81,12 @@
     
     Contact *contact = [[[VariableStore sharedInstance] fetchedContactsController] objectAtIndexPath:indexPath];
     [VariableStore sharedInstance].selectedContact = contact;
+    
+    /*UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard"
+                                                             bundle: nil];
+    SendVideoViewController *controller = (SendVideoViewController*)[mainStoryboard
+                                                                     instantiateViewControllerWithIdentifier: @"sendVideoView"];
+    [self.navigationController pushViewController:controller animated:YES]; */
     [self performSegueWithIdentifier: @"contactToEmailSegue" sender: self];
 }
 
@@ -104,7 +110,7 @@
     else {
         Contact *contact = [[[VariableStore sharedInstance] fetchedContactsController] objectAtIndexPath:indexPath];
         [VariableStore sharedInstance].updateContact = contact;
-            [self performSegueWithIdentifier: @"addContactSegue" sender: self];
+        [self performSegueWithIdentifier: @"addContactSegue" sender: self];
         
     }
 }
@@ -196,7 +202,6 @@
             predicate = [NSPredicate predicateWithFormat:@"name contains[cd] %@ OR email contains[cd] %@", searchString, searchString];
         }
         else {
-            // docs say keys are case insensitive, but apparently not so.
             predicate = [NSPredicate predicateWithFormat:@"%K contains[cd] %@", [[controller.searchBar.scopeButtonTitles objectAtIndex:searchOption] lowercaseString], searchString];
         }
     }

@@ -33,6 +33,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    //Check if the back button should be displayed
+    if ([[VariableStore sharedInstance] updateContact] != nil) {
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]
+                                                  initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
+                                                  target:self action:@selector(updateList:)];
+    }
     //set the background color
     _videoTable.backgroundColor = [UIColor colorWithRed:0/255.0f green:41/255.0f blue:92/255.0f alpha:1];
     [_videoTable setBackgroundView:nil];
@@ -164,6 +171,7 @@
     }
 }
 
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     if (_searching)
@@ -171,6 +179,7 @@
     else
         return [_tableArray count];
 }
+
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {

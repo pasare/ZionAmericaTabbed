@@ -26,7 +26,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    _commentView.text =@"Message";
     //set the colors
     self.view.backgroundColor = [UIColor colorWithRed:0/255.0f green:41/255.0f blue:92/255.0f alpha:1];
     _sendSmsTable.backgroundColor = [UIColor clearColor];
@@ -153,7 +152,7 @@
             }
         }
         
-        NSString *bodyText =[[NSString alloc] initWithFormat:@"%@\rPlease Enjoy this video titled: %@\r%@",_commentView.text,videoName,videoUrl];
+        NSString *bodyText =[[NSString alloc] initWithFormat:@"%@\rPlease enjoy this video titled: %@\r%@",_commentView.text,videoName,videoUrl];
 		controller.body = bodyText;
 		controller.recipients = [NSArray arrayWithObjects:_phoneText.text, nil];
 		controller.messageComposeDelegate = self;
@@ -233,7 +232,7 @@
         [_phoneText setClearButtonMode:UITextFieldViewModeWhileEditing];
         [_phoneText setKeyboardType:UIKeyboardTypePhonePad];
         [_phoneText setReturnKeyType:UIReturnKeyNext];
-        cell.textLabel.text = @"Number";
+        cell.textLabel.text = @"Phone";
         cell.accessoryView = _phoneText;
     }
     _phoneName.delegate = self;
@@ -298,5 +297,13 @@
         // Handle the error.
     }
     history = nil;
+}
+
+- (BOOL)shouldAutorotate {
+    return YES;
+}
+
+- (NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskPortrait;
 }
 @end

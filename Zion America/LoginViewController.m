@@ -149,6 +149,7 @@
         _userID.autocorrectionType = UITextAutocorrectionTypeNo;
         [_userID setClearButtonMode:UITextFieldViewModeWhileEditing];
         [_userID setReturnKeyType:UIReturnKeyNext];
+        _userID.autocapitalizationType = UITextAutocapitalizationTypeNone;
         cell.textLabel.text = @"Username";
         cell.accessoryView = _userID ;
     }

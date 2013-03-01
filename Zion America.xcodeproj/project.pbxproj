@@ -22,6 +22,7 @@
 		997C98DA1694039600B2C809 /* InboxCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 997C98D91694039600B2C809 /* InboxCell.m */; };
 		997C98DC1694046B00B2C809 /* InboxCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 997C98DB1694046B00B2C809 /* InboxCellView.xib */; };
 		997F12C51694170200E2F27B /* gnome_mail_read.png in Resources */ = {isa = PBXBuildFile; fileRef = 997F12C41694170200E2F27B /* gnome_mail_read.png */; };
+		997FE37416E0745400D20FCE /* Zion America v2_power button-20x20.png in Resources */ = {isa = PBXBuildFile; fileRef = 997FE37316E0745400D20FCE /* Zion America v2_power button-20x20.png */; };
 		9982926916A1211300709871 /* SendSmsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9982926816A1211300709871 /* SendSmsViewController.m */; };
 		9984A05E169218A700C28A9A /* App_Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9984A05D169218A700C28A9A /* App_Icon.png */; };
 		9984A060169218D500C28A9A /* App_Icon.png_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 9984A05F169218D500C28A9A /* App_Icon.png_4.png */; };
@@ -182,6 +183,7 @@
 		997C98D91694039600B2C809 /* InboxCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InboxCell.m; sourceTree = "<group>"; };
 		997C98DB1694046B00B2C809 /* InboxCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InboxCellView.xib; sourceTree = "<group>"; };
 		997F12C41694170200E2F27B /* gnome_mail_read.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gnome_mail_read.png; sourceTree = "<group>"; };
+		997FE37316E0745400D20FCE /* Zion America v2_power button-20x20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Zion America v2_power button-20x20.png"; sourceTree = "<group>"; };
 		9982926716A1211300709871 /* SendSmsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendSmsViewController.h; sourceTree = "<group>"; };
 		9982926816A1211300709871 /* SendSmsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendSmsViewController.m; sourceTree = "<group>"; };
 		9984A05D169218A700C28A9A /* App_Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = App_Icon.png; path = ../App_Icon.png; sourceTree = "<group>"; };
@@ -355,6 +357,7 @@
 				FC851209168A1AB100F94C60 /* Products */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 0;
 		};
 		FC851209168A1AB100F94C60 /* Products */ = {
 			isa = PBXGroup;
@@ -471,6 +474,7 @@
 		FC851276168AB5D800F94C60 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				997FE37316E0745400D20FCE /* Zion America v2_power button-20x20.png */,
 				99C7370016DF3A3000173260 /* logout button-20x20.png */,
 				99E814AE16DF315700ED04C5 /* Default-568h@2x.png */,
 				99E814AC16DF314D00ED04C5 /* Default@2x.png */,
@@ -708,6 +712,7 @@
 				99E814AD16DF314D00ED04C5 /* Default@2x.png in Resources */,
 				99E814AF16DF315700ED04C5 /* Default-568h@2x.png in Resources */,
 				99C7370116DF3A3000173260 /* logout button-20x20.png in Resources */,
+				997FE37416E0745400D20FCE /* Zion America v2_power button-20x20.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

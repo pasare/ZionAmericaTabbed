@@ -142,7 +142,6 @@
 								<string key="NSFrame">{{180, 2}, {100, 21}}</string>
 								<reference key="NSSuperview" ref="398706950"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -161,7 +160,7 @@
 								</object>
 								<reference key="IBUIHighlightedColor" ref="760863408"/>
 								<int key="IBUIBaselineAdjustment">0</int>
-								<int key="IBUITextAlignment">1</int>
+								<int key="IBUITextAlignment">2</int>
 								<object class="IBUIFontDescription" key="IBUIFontDescription">
 									<int key="type">1</int>
 									<double key="pointSize">15</double>
@@ -474,16 +473,6 @@
 						<reference key="parent" ref="940259370"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">11</int>
-						<reference key="object" ref="203927606"/>
-						<reference key="parent" ref="940259370"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">14</int>
-						<reference key="object" ref="408510646"/>
-						<reference key="parent" ref="940259370"/>
-					</object>
-					<object class="IBObjectRecord">
 						<int key="objectID">19</int>
 						<reference key="object" ref="713290925"/>
 						<reference key="parent" ref="268850153"/>
@@ -511,6 +500,16 @@
 					<object class="IBObjectRecord">
 						<int key="objectID">28</int>
 						<reference key="object" ref="190422982"/>
+						<reference key="parent" ref="940259370"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">11</int>
+						<reference key="object" ref="203927606"/>
+						<reference key="parent" ref="940259370"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">14</int>
+						<reference key="object" ref="408510646"/>
 						<reference key="parent" ref="940259370"/>
 					</object>
 				</array>
@@ -563,7 +562,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">28</int>
+			<int key="maxID">32</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
