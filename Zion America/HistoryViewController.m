@@ -42,6 +42,8 @@
 
 -(void)viewDidAppear:(BOOL)animated
 {
+    NSError *error;
+    [[[VariableStore sharedInstance] fetchedHistoryController] performFetch:&error];
     [_historyTable reloadData];
 }
 
