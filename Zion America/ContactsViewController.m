@@ -9,10 +9,12 @@
 #import "ContactsViewController.h"
 
 @interface ContactsViewController ()
+
 @end
 
 @implementation ContactsViewController
 
+bool _searching = NO;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,6 +28,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    _searchBar.tintColor = [UIColor colorWithHue:0.6 saturation:0.33 brightness:0.69 alpha:0];
     _contactTable.backgroundColor = [UIColor colorWithRed:0/255.0f green:41/255.0f blue:92/255.0f alpha:1];
     [_contactTable setBackgroundView:nil];
     UILongPressGestureRecognizer *lpgr = [[UILongPressGestureRecognizer alloc]
@@ -146,23 +149,6 @@
     return YES;
 }
 
-//Search bar features
-- (void) searchBarTextDidBeginEditing:(UISearchBar *)theSearchBar
-{
-    
-    
-}
-
-- (void)searchBar:(UISearchBar *)theSearchBar textDidChange:(NSString *)searchText
-{
-    
-}
-
-
-- (void) searchBarSearchButtonClicked:(UISearchBar *)theSearchBar
-{
-    
-}
 
 - (IBAction)confirmLogout:(id)sender {
     _sheet = [[UIActionSheet alloc] initWithTitle:@"You will be logged out of the system"
@@ -195,10 +181,10 @@
 }
 
 - (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString*)searchString searchScope:(NSInteger)searchOption {
-    
+    _searching = YES;
     NSPredicate *predicate = nil;
     if ([searchString length]) {
-        if (searchOption == 0){ // full text, in my implementation.  Other scope button titles are "Author", "Title"
+        if (searchOption == 0){ 
             predicate = [NSPredicate predicateWithFormat:@"name contains[cd] %@ OR email contains[cd] %@", searchString, searchString];
         }
         else {
@@ -221,10 +207,56 @@
     NSError *error;
 	searchBar.text = nil;
 	[searchBar resignFirstResponder];
-    
+    _searching = NO;
     [[[VariableStore sharedInstance] fetchedContactsController].fetchRequest setPredicate:nil];
     [[[VariableStore sharedInstance] fetchedContactsController] performFetch:&error];
     [_contactTable reloadData];
 	
 }
+
+//Index view on right hand side
+/*- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
+    
+    if(_searching)
+        return nil;
+    
+    NSMutableArray *tempArray = [[NSMutableArray alloc] init];
+    [tempArray addObject:UITableViewIndexSearch];
+    [tempArray addObject:@"A"];
+    [tempArray addObject:@"B"];
+    [tempArray addObject:@"C"];
+    [tempArray addObject:@"D"];
+    [tempArray addObject:@"E"];
+    [tempArray addObject:@"F"];
+    [tempArray addObject:@"G"];
+    [tempArray addObject:@"H"];
+    [tempArray addObject:@"I"];
+    [tempArray addObject:@"J"];
+    [tempArray addObject:@"K"];
+    [tempArray addObject:@"L"];
+    [tempArray addObject:@"M"];
+    [tempArray addObject:@"N"];
+    [tempArray addObject:@"O"];
+    [tempArray addObject:@"P"];
+    [tempArray addObject:@"Q"];
+    [tempArray addObject:@"R"];
+    [tempArray addObject:@"S"];
+    [tempArray addObject:@"T"];
+    [tempArray addObject:@"U"];
+    [tempArray addObject:@"V"];
+    [tempArray addObject:@"W"];
+    [tempArray addObject:@"X"];
+    [tempArray addObject:@"Y"];
+    [tempArray addObject:@"Z"];
+    
+    return tempArray;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index {
+    if (index == 0) {
+        [tableView scrollRectToVisible:[[tableView tableHeaderView] bounds] animated:NO];
+        return -1;
+    }
+    return index;
+} */
 @end

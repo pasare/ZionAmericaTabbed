@@ -35,18 +35,18 @@
     [super viewDidLoad];
     
     //Check if the back button should be displayed
-    if ([[VariableStore sharedInstance] updateContact] != nil) {
+    /*if ([[VariableStore sharedInstance] updateContact] != nil) {
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]
                                                   initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
                                                   target:self action:@selector(updateList:)];
-    }
+    } */
     //set the background color
+    _searchBar.tintColor = [UIColor colorWithHue:0.6 saturation:0.33 brightness:0.69 alpha:0];
     _videoTable.backgroundColor = [UIColor colorWithRed:0/255.0f green:41/255.0f blue:92/255.0f alpha:1];
     [_videoTable setBackgroundView:nil];
     //Add the searchbar to the view
     //_videoTable.tableHeaderView = _searchBar;
     _searching = NO;
-    _letUserSelectRow = YES;
     _listOfItems = [[NSMutableArray alloc] init];
     
     
@@ -184,7 +184,7 @@
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     if (_searching)
-        return @"Search Results";
+        return @"";
     else {
     if(section == 0)
         return @"English";
@@ -200,8 +200,8 @@
     titleLabel.font = [UIFont fontWithName:@"Helvetica" size:17];
     titleLabel.font = [UIFont boldSystemFontOfSize:17];
     if (_searching) {
-        titleLabel.textColor = [UIColor blackColor];
-        titleLabel.text =@"Search Results";
+        titleLabel.textColor = [UIColor whiteColor];
+        titleLabel.text =@"";
     }
     else {
         
@@ -278,90 +278,7 @@
     [self performSegueWithIdentifier: @"videoDetailSegue" sender: self];
 }
 
-//Searching methods
-- (void) searchBarTextDidBeginEditing:(UISearchBar *)theSearchBar
-{
-    
-    _searching = YES;
-    _letUserSelectRow = NO;
-    _videoTable.scrollEnabled = NO;
-    
-    //Add the done button.
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]
-                                               initWithBarButtonSystemItem:UIBarButtonSystemItemDone
-                                               target:self action:@selector(doneSearching_Clicked:)];
-}
 
-- (NSIndexPath *)tableView :(UITableView *)theTableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    
-    if(_letUserSelectRow)
-        return indexPath;
-    else
-        return nil;
-}
-
-- (void)searchBar:(UISearchBar *)theSearchBar textDidChange:(NSString *)searchText
-{
-    
-    //Remove all objects first.
-    [_listOfItems removeAllObjects];
-    
-    if([searchText length] > 0) {
-        
-        _searching = YES;
-        _letUserSelectRow = YES;
-        _videoTable.scrollEnabled = YES;
-        [self searchTableView];
-    }
-    else {
-        
-        _searching = NO;
-        _letUserSelectRow = NO;
-        _videoTable.scrollEnabled = NO;
-    }
-    
-    [_videoTable reloadData];
-}
-
-- (void) searchTableView
-{
-    
-    NSString *searchText = _searchBar.text;
-    NSMutableArray *searchArray = [[NSMutableArray alloc] init];
-    
-    for (NSArray *array in _tableArray)
-    {
-        [searchArray addObjectsFromArray:array];
-    }
-    
-    for (NSString *sTemp in searchArray)
-    {
-        NSRange titleResultsRange = [sTemp rangeOfString:searchText options:NSCaseInsensitiveSearch];
-        
-        if (titleResultsRange.length > 0)
-            [_listOfItems addObject:sTemp];
-    }
-    searchArray = nil;
-}
-
-- (void) doneSearching_Clicked:(id)sender
-{
-    
-    _searchBar.text = @"";
-    [_searchBar resignFirstResponder];
-    
-    _letUserSelectRow = YES;
-    _searching = NO;
-    _videoTable.scrollEnabled = YES;
-    //Recreate the sync button
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]
-                                              initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
-                                              target:self action:@selector(updateList:)];
-    
-    
-    [_videoTable reloadData];
-}
 
 - (void) searchBarSearchButtonClicked:(UISearchBar *)theSearchBar
 {
@@ -396,4 +313,54 @@
     }
 }
 
+//Searching methods
+/*- (void) searchBarTextDidBeginEditing:(UISearchBar *)theSearchBar
+ {
+ 
+ _searching = YES;
+ 
+ } */
+
+- (void)searchBar:(UISearchBar *)theSearchBar textDidChange:(NSString *)searchText {
+    //Remove all objects first.
+    [_listOfItems removeAllObjects];
+ 
+    if([searchText length] > 0) {
+ 
+        _searching = YES;
+        [self searchTableView];
+    }
+    else {
+        _searching = NO;
+    }
+ 
+    [_videoTable reloadData];
+ } 
+
+- (void) searchTableView {
+ 
+    NSString *searchText = _searchBar.text;
+    NSMutableArray *searchArray = [[NSMutableArray alloc] init];
+    for (NSArray *array in _tableArray)
+    {
+        [searchArray addObjectsFromArray:array];
+    }
+    for (NSString *sTemp in searchArray)
+    {
+        NSRange titleResultsRange = [sTemp rangeOfString:searchText options:NSCaseInsensitiveSearch];
+        if (titleResultsRange.length > 0)
+            [_listOfItems addObject:sTemp];
+    }
+    searchArray = nil;
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
+{
+    _searching = NO;
+	searchBar.text = nil;
+	[searchBar resignFirstResponder];
+    
+    [_videoTable reloadData];
+	
+}
 @end

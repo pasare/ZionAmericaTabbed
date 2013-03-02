@@ -26,6 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    _searchBar.tintColor = [UIColor colorWithHue:0.6 saturation:0.33 brightness:0.69 alpha:0];
     _historyTable.backgroundColor = [UIColor colorWithRed:0/255.0f green:41/255.0f blue:92/255.0f alpha:1];
     [_historyTable setBackgroundView:nil];
     // Uncomment the following line to preserve selection between presentations.
@@ -160,24 +161,24 @@
     cell.backgroundColor = [UIColor colorWithRed:210/255.0f green:226/255.0f blue:245/255.0f alpha:1];
 }
 
--(NSString *)calculateDate:(NSDate *)historyDate {
+-(NSString *)calculateDate:(NSDate *)calendarDate {
     NSCalendar *calendar = [[NSLocale currentLocale] objectForKey:NSLocaleCalendar];
     [calendar setTimeZone:[NSTimeZone timeZoneWithName:@"America/New_York"]];
     NSDate *date = [NSDate date];
-    NSTimeInterval secondsBetween = [date timeIntervalSinceDate:historyDate];
+    NSTimeInterval secondsBetween = [date timeIntervalSinceDate:calendarDate];
     int numberOfDays = secondsBetween / 86400;
     NSString * dateString;
     
     
     //If it occured today than put the time
     if (numberOfDays <= 0) {
-        dateString = [NSDateFormatter localizedStringFromDate:historyDate
+        dateString = [NSDateFormatter localizedStringFromDate:calendarDate
                                                     dateStyle:NSDateFormatterNoStyle
                                                     timeStyle:NSDateFormatterShortStyle];
     }
     //If it occured during this week than put the day
     else if (numberOfDays < 7) {
-        NSDateComponents *weekdayComponents = [calendar components:NSWeekdayCalendarUnit fromDate:historyDate];
+        NSDateComponents *weekdayComponents = [calendar components:NSWeekdayCalendarUnit fromDate:calendarDate];
         int dayOfWeek = [weekdayComponents weekday];
         NSLog(@"This is the date %d",dayOfWeek);
         NSLog(@"This is the date %@",date);
@@ -201,13 +202,13 @@
                 dateString = @"Friday";
                 break;
             case 7:
-                dateString = @"Sabbath";
+                dateString = @"Saturday";
                 break;
         }
     }
     //more than a week old put the date
     else {
-        dateString = [NSDateFormatter localizedStringFromDate:historyDate
+        dateString = [NSDateFormatter localizedStringFromDate:calendarDate
                                                     dateStyle:NSDateFormatterShortStyle
                                                     timeStyle:NSDateFormatterNoStyle];
     }
@@ -248,7 +249,7 @@
     
     NSPredicate *predicate = nil;
     if ([searchString length]) {
-        if (searchOption == 0){ // full text, in my implementation.  Other scope button titles are "Author", "Title"
+        if (searchOption == 0){
             predicate = [NSPredicate predicateWithFormat:@"recipient contains[cd] %@ OR video contains[cd] %@", searchString, searchString];
         }
         else {
