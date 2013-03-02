@@ -266,7 +266,6 @@
                 
                 //delete the old object
                 [[[VariableStore sharedInstance] context] deleteObject:currentContact];
-                
                 break;
             }
             else
