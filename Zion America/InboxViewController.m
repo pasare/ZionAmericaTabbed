@@ -26,6 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    _searchBar.tintColor = [UIColor colorWithHue:0.6 saturation:0.33 brightness:0.69 alpha:0];
     _emailTable.backgroundColor = [UIColor colorWithRed:0/255.0f green:41/255.0f blue:92/255.0f alpha:1];
     [_emailTable setBackgroundView:nil];
     _searching = NO;
@@ -141,11 +142,8 @@
     NSString *currentSender = [[message.from anyObject] name];
     NSString *subject = [message subject];
     NSDate *senderDate = [message senderDate];
-    NSDate *localDate = [NSDate date];
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
-    dateFormatter.dateFormat = @"MM/dd/yy";
         
-    NSString *dateString = [dateFormatter stringFromDate: senderDate];
+    NSString *dateString = [self calculateDate:senderDate];
         
     if ([currentSender isEqualToString:@""]) {
             currentSender = [[message.from anyObject] email];
@@ -159,7 +157,6 @@
     [[cell senderLabel]setText:currentSender];
     [[cell titleLabel]setText:subject];
     [[cell timeLabel]setText:dateString];
-    //NSLog(@"Sender date %@",dateString);
     cell.backgroundColor = [UIColor colorWithRed:210/255.0f green:226/255.0f blue:245/255.0f alpha:1];
     return cell;
 }
@@ -288,5 +285,60 @@
     if (buttonIndex == 0) {
         [self performSegueWithIdentifier: @"logoutSegue" sender: self];
     }
+}
+
+//Get the string version of the day of the week
+-(NSString *)calculateDate:(NSDate *)calendarDate {
+    NSCalendar *calendar = [[NSLocale currentLocale] objectForKey:NSLocaleCalendar];
+    [calendar setTimeZone:[NSTimeZone timeZoneWithName:@"America/New_York"]];
+    NSDate *date = [NSDate date];
+    NSTimeInterval secondsBetween = [date timeIntervalSinceDate:calendarDate];
+    int numberOfDays = secondsBetween / 86400;
+    NSString * dateString;
+    
+    
+    //If it occured today than put the time
+    if (numberOfDays <= 0) {
+        dateString = [NSDateFormatter localizedStringFromDate:calendarDate
+                                                    dateStyle:NSDateFormatterNoStyle
+                                                    timeStyle:NSDateFormatterShortStyle];
+    }
+    //If it occured during this week than put the day
+    else if (numberOfDays < 7) {
+        NSDateComponents *weekdayComponents = [calendar components:NSWeekdayCalendarUnit fromDate:calendarDate];
+        int dayOfWeek = [weekdayComponents weekday];
+        NSLog(@"This is the date %d",dayOfWeek);
+        NSLog(@"This is the date %@",date);
+        switch (dayOfWeek) {
+            case 1:
+                dateString = @"Sunday";
+                break;
+            case 2:
+                dateString = @"Monday";
+                break;
+            case 3:
+                dateString = @"Tuesday";
+                break;
+            case 4:
+                dateString = @"Wednesday";
+                break;
+            case 5:
+                dateString = @"Thursday";
+                break;
+            case 6:
+                dateString = @"Friday";
+                break;
+            case 7:
+                dateString = @"Saturday";
+                break;
+        }
+    }
+    //more than a week old put the date
+    else {
+        dateString = [NSDateFormatter localizedStringFromDate:calendarDate
+                                                    dateStyle:NSDateFormatterShortStyle
+                                                    timeStyle:NSDateFormatterNoStyle];
+    }
+    return dateString;
 }
 @end

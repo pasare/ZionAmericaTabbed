@@ -121,12 +121,14 @@
 {
     if (_activeView !=nil)
     {
-        NSDictionary* info = [aNotification userInfo];
-        CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
-        CGRect bkgndRect = _activeView.superview.frame;
-        bkgndRect.size.height += kbSize.height;
-        [_activeView.superview setFrame:bkgndRect];
-        [_scrollView setContentOffset:CGPointMake(0.0, _activeView.frame.origin.y-kbSize.height+200) animated:YES];
+        if (UIDeviceOrientationIsPortrait([[UIDevice currentDevice] orientation])) {
+            NSDictionary* info = [aNotification userInfo];
+            CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+            CGRect bkgndRect = _activeView.superview.frame;
+            bkgndRect.size.height += kbSize.height;
+            [_activeView.superview setFrame:bkgndRect];
+            [_scrollView setContentOffset:CGPointMake(0.0, _activeView.frame.origin.y-kbSize.height+200) animated:YES];
+        }
     }
 }
 
@@ -299,11 +301,4 @@
     history = nil;
 }
 
-- (BOOL)shouldAutorotate {
-    return YES;
-}
-
-- (NSUInteger)supportedInterfaceOrientations {
-    return UIInterfaceOrientationMaskPortrait;
-}
 @end

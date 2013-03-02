@@ -11,6 +11,7 @@
 #import "VariableStore.h"
 
 @interface HistoryViewController : UIViewController <UIActionSheetDelegate>
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UITableView *historyTable;
 @property (nonatomic, retain) UIActionSheet *sheet;
 @end

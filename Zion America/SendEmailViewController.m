@@ -142,10 +142,8 @@
 {
     // Any new character added is passed in as the "text" parameter
     if ([text isEqualToString:@"\n"]) {
-        // Be sure to test for equality using the "isEqualToString" message
         [textView resignFirstResponder];
         
-        // Return FALSE so that the final '\n' character doesn't get added
         return FALSE;
     }
     // For any other character return TRUE so that the text gets added to the view
@@ -156,12 +154,14 @@
 {
     if (_activeView !=nil)
     {
-        NSDictionary* info = [aNotification userInfo];
-        CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
-        CGRect bkgndRect = _activeView.superview.frame;
-        bkgndRect.size.height += kbSize.height;
-        [_activeView.superview setFrame:bkgndRect];
-        [_scrollView setContentOffset:CGPointMake(0.0, _activeView.frame.origin.y-kbSize.height+200) animated:YES];
+        if (UIDeviceOrientationIsPortrait([[UIDevice currentDevice] orientation])) {
+            NSDictionary* info = [aNotification userInfo];
+            CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+            CGRect bkgndRect = _activeView.superview.frame;
+            bkgndRect.size.height += kbSize.height;
+            [_activeView.superview setFrame:bkgndRect];
+            [_scrollView setContentOffset:CGPointMake(0.0, _activeView.frame.origin.y-kbSize.height+200) animated:YES];
+        }
     }
 }
 
@@ -286,6 +286,7 @@
         _emailAddress.autocorrectionType = UITextAutocorrectionTypeNo;
         [_emailAddress setClearButtonMode:UITextFieldViewModeWhileEditing];
         [_emailAddress setReturnKeyType:UIReturnKeyNext];
+        _emailAddress.autocapitalizationType = UITextAutocapitalizationTypeNone;
         [_emailAddress setKeyboardType:UIKeyboardTypeEmailAddress];
         cell.textLabel.text = @"Email";
         cell.accessoryView = _emailAddress;
@@ -371,11 +372,4 @@
     history = nil;
 }
 
-- (BOOL)shouldAutorotate {
-    return YES;
-}
-
-- (NSUInteger)supportedInterfaceOrientations {
-    return UIInterfaceOrientationMaskPortrait;
-}
 @end

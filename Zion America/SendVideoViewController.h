@@ -24,11 +24,9 @@
 @property NSArray *englishSorted;
 @property NSArray *spanishSorted;
 @property BOOL searching;
-@property BOOL letUserSelectRow;
 @property (nonatomic, retain) UIActionSheet *sheet;
 
 - (void) searchTableView;
-- (void) doneSearching_Clicked:(id)sender;
 - (void) updateList:(id) sender;
 - (void) loadVideoList:(NSArray*) wpposts;
 @end
