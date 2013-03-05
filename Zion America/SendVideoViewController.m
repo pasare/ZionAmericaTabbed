@@ -8,6 +8,13 @@
 
 #import "SendVideoViewController.h"
 
+// ADDED BY P.BROWNING ---------------------------------------------------------
+#define FONT_SIZE 17.0f
+#define CELL_CONTENT_WIDTH 270.0f
+#define CELL_CONTENT_MARGIN 10.0f
+#define CELL_SEARCHING_WIDTH 320.0f
+// END -------------------------------------------------------------------------
+
 @interface SendVideoViewController ()
 
 @end
@@ -36,10 +43,10 @@
     
     //Check if the back button should be displayed
     /*if ([[VariableStore sharedInstance] updateContact] != nil) {
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]
-                                                  initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
-                                                  target:self action:@selector(updateList:)];
-    } */
+     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]
+     initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
+     target:self action:@selector(updateList:)];
+     } */
     //set the background color
     _searchBar.tintColor = [UIColor colorWithHue:0.6 saturation:0.33 brightness:0.69 alpha:0];
     _videoTable.backgroundColor = [UIColor colorWithRed:0/255.0f green:41/255.0f blue:92/255.0f alpha:1];
@@ -138,7 +145,7 @@
     //Save the posts to defaults, to keep across sessions
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:wpposts forKey:@"posts"];
-
+    
     if (wpposts != nil) {
         _tableArray = [[NSMutableArray alloc] initWithCapacity:[wpposts count]];
         _englishArray = [[NSMutableArray alloc] initWithCapacity:[wpposts count]];
@@ -186,10 +193,10 @@
     if (_searching)
         return @"";
     else {
-    if(section == 0)
-        return @"English";
-    else
-        return @"Spanish";
+        if(section == 0)
+            return @"English";
+        else
+            return @"Spanish";
     }
 }
 
@@ -240,31 +247,54 @@
     if (cell == nil)
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        // ADDED BY P.BROWNING -------------------------------------------------
+        [[cell textLabel] setLineBreakMode:NSLineBreakByWordWrapping];
+        [[cell textLabel] setFont:[UIFont systemFontOfSize:FONT_SIZE]];
+        [[cell textLabel] setTextAlignment:NSTextAlignmentLeft];
+        [[cell textLabel] setNumberOfLines:0];
+        [[cell textLabel] setPreferredMaxLayoutWidth:0.0];
+        [[cell textLabel] setTag:1];
+        // END -----------------------------------------------------------------
     }
     if (_searching){
         cell.textLabel.text = [_listOfItems objectAtIndex:indexPath.row];
         return cell;
     }
     else {
-    //Add the cells by sections
+        //Add the cells by sections
         NSArray *array = [_tableArray objectAtIndex:indexPath.section];
         cell.textLabel.text = [array objectAtIndex:indexPath.row];
         
         //Set background of cells
         /*UIGraphicsBeginImageContext(self.view.frame.size);
-        [[UIImage imageNamed:@"Zion America_v2_login_button grey.png"] drawInRect:self.view.bounds];
-        UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-        UIGraphicsEndImageContext();
-        cell.backgroundColor = [UIColor colorWithPatternImage:image]; */
+         [[UIImage imageNamed:@"Zion America_v2_login_button grey.png"] drawInRect:self.view.bounds];
+         UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+         UIGraphicsEndImageContext();
+         cell.backgroundColor = [UIColor colorWithPatternImage:image]; */
         
         cell.backgroundColor = [UIColor colorWithRed:210/255.0f green:226/255.0f blue:245/255.0f alpha:1];
         return cell;
     }
 }
 
-/*- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSArray *array;
+    NSString *cellText;
+    CGSize constraintSize;
     
-}*/
+    if (_searching && _listOfItems.count > 0) {
+        cellText = [_listOfItems objectAtIndex:indexPath.row];
+        constraintSize = CGSizeMake(CELL_SEARCHING_WIDTH - (CELL_CONTENT_MARGIN * 2), MAXFLOAT);
+    } else {
+        array = [_tableArray objectAtIndex:indexPath.section];
+        cellText = [array objectAtIndex:indexPath.row];
+        constraintSize = CGSizeMake(CELL_CONTENT_WIDTH - (CELL_CONTENT_MARGIN * 2), MAXFLOAT);
+    }
+    CGSize labelSize = [cellText sizeWithFont:[UIFont systemFontOfSize:FONT_SIZE] constrainedToSize:constraintSize lineBreakMode:NSLineBreakByWordWrapping];
+    CGFloat height = MAX(labelSize.height, FONT_SIZE);
+    return height + (CELL_CONTENT_MARGIN * 2);
+}
 
 //Get the selected row
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -328,21 +358,21 @@
 - (void)searchBar:(UISearchBar *)theSearchBar textDidChange:(NSString *)searchText {
     //Remove all objects first.
     [_listOfItems removeAllObjects];
- 
+    
     if([searchText length] > 0) {
- 
+        
         _searching = YES;
         [self searchTableView];
     }
     else {
         _searching = NO;
     }
- 
+    
     [_videoTable reloadData];
- } 
+}
 
 - (void) searchTableView {
- 
+    
     NSString *searchText = _searchBar.text;
     NSMutableArray *searchArray = [[NSMutableArray alloc] init];
     for (NSArray *array in _tableArray)

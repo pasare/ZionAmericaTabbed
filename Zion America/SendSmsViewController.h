@@ -12,15 +12,15 @@
 #import "VariableStore.h"
 #import "Contact.h"
 #import "History.h"
+#import <AddressBook/AddressBook.h>
+#import <AddressBookUI/AddressBookUI.h>
 
-@interface SendSmsViewController : UIViewController<UITextFieldDelegate, MFMessageComposeViewControllerDelegate, UINavigationControllerDelegate>
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-@property (weak, nonatomic) IBOutlet UITableView *sendSmsTable;
-@property (weak, nonatomic) IBOutlet UITextView *commentView;
+@interface SendSmsViewController : UIViewController<MFMessageComposeViewControllerDelegate, UINavigationControllerDelegate>
 @property UITextField *phoneName;
 @property UITextField *phoneText;
 @property UIAlertView *statusAlert;
 @property UIAlertView *failedAlert;
 @property UITextView *activeView;
+@property NSArray *recipients;
 
 @end

@@ -40,8 +40,16 @@
     return _selectedEmail;
 }
 
--(Contact *)selectedContact {
-    return _selectedContact;
+-(NSString*)selectedContactName {
+    return _selectedContactName;
+}
+
+-(NSString*)selectedContactEmail {
+    return _selectedContactEmail;
+}
+
+-(NSString*)selectedContactPhone {
+    return _selectedContactPhone;
 }
 
 -(Contact *)updateContact {

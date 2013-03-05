@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		9900D14316994913004DD65A /* ContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9900D14216994913004DD65A /* ContactsViewController.m */; };
+		99047A9016E57C0900622548 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99047A8F16E57C0900622548 /* AddressBook.framework */; };
+		99047A9416E57C1200622548 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99047A9316E57C1200622548 /* AddressBookUI.framework */; };
 		99050B3B168D441800276395 /* SendVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99050B3A168D441800276395 /* SendVideoViewController.m */; };
 		99050B3E168D59DB00276395 /* VariableStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 99050B3D168D59DB00276395 /* VariableStore.m */; };
 		9907A06B16AB992A003599BE /* red_uibutton.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9907A06A16AB992A003599BE /* red_uibutton.jpeg */; };
@@ -165,6 +167,8 @@
 /* Begin PBXFileReference section */
 		9900D14116994913004DD65A /* ContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsViewController.h; sourceTree = "<group>"; };
 		9900D14216994913004DD65A /* ContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsViewController.m; sourceTree = "<group>"; };
+		99047A8F16E57C0900622548 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		99047A9316E57C1200622548 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		99050B39168D441800276395 /* SendVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendVideoViewController.h; sourceTree = "<group>"; };
 		99050B3A168D441800276395 /* SendVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendVideoViewController.m; sourceTree = "<group>"; };
 		99050B3C168D59DB00276395 /* VariableStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VariableStore.h; sourceTree = "<group>"; };
@@ -297,6 +301,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99047A9416E57C1200622548 /* AddressBookUI.framework in Frameworks */,
+				99047A9016E57C0900622548 /* AddressBook.framework in Frameworks */,
 				99A7186C16D1BD5E00AA7518 /* CoreData.framework in Frameworks */,
 				99E3E65C16CCA3C300207D44 /* MessageUI.framework in Frameworks */,
 				99881EFA16921FB9006433E8 /* libcrypto.a in Frameworks */,
@@ -347,8 +353,6 @@
 		FC8511FD168A1AB100F94C60 = {
 			isa = PBXGroup;
 			children = (
-				99A7186B16D1BD5E00AA7518 /* CoreData.framework */,
-				99E3E65B16CCA3C200207D44 /* MessageUI.framework */,
 				99881EC816921DE9006433E8 /* MailCore.xcodeproj */,
 				9991E0F2168BCF1400A88911 /* XMLRPC-iOS.xcodeproj */,
 				FC851212168A1AB100F94C60 /* Zion America */,
@@ -371,6 +375,10 @@
 		FC85120B168A1AB100F94C60 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				99047A9316E57C1200622548 /* AddressBookUI.framework */,
+				99047A8F16E57C0900622548 /* AddressBook.framework */,
+				99A7186B16D1BD5E00AA7518 /* CoreData.framework */,
+				99E3E65B16CCA3C200207D44 /* MessageUI.framework */,
 				99881EF516921F3D006433E8 /* CFNetwork.framework */,
 				FC85120C168A1AB100F94C60 /* UIKit.framework */,
 				FC85120E168A1AB100F94C60 /* Foundation.framework */,

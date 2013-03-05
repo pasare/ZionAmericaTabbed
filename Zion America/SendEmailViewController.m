@@ -37,11 +37,12 @@
     _emailAddress = [[UITextField alloc] initWithFrame:CGRectMake(5, 0, 195, 21)];
     _emailSubject = [[UITextField alloc] initWithFrame:CGRectMake(5, 0, 195, 21)];
     
-    Contact *contact = [VariableStore sharedInstance].selectedContact;
-    if (contact != nil) {
-        _emailName.text = [contact name];
-        _emailAddress.text = [contact email];
-    }
+    if ([VariableStore sharedInstance].selectedContactName != nil) 
+        _emailName.text =[VariableStore sharedInstance].selectedContactName;
+    
+    if ([VariableStore sharedInstance].selectedContactEmail !=nil)
+        _emailAddress.text = [VariableStore sharedInstance].selectedContactEmail;
+    
     //Set up mailer alert
     //UIAlert for retrieving video list
 	self.statusAlert = [[UIAlertView alloc] initWithTitle:@"Sending Email" message:@"Please wait..." delegate:self cancelButtonTitle:nil otherButtonTitles:nil ];
@@ -132,6 +133,7 @@
     }
     else if (theTextField == _emailSubject) {
         [theTextField resignFirstResponder];
+        [_commentView becomeFirstResponder];
     }
     return YES;
 }
@@ -154,14 +156,14 @@
 {
     if (_activeView !=nil)
     {
-        if (UIDeviceOrientationIsPortrait([[UIDevice currentDevice] orientation])) {
+        //if (UIDeviceOrientationIsPortrait([[UIDevice currentDevice] orientation])) {
             NSDictionary* info = [aNotification userInfo];
             CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
             CGRect bkgndRect = _activeView.superview.frame;
             bkgndRect.size.height += kbSize.height;
             [_activeView.superview setFrame:bkgndRect];
             [_scrollView setContentOffset:CGPointMake(0.0, _activeView.frame.origin.y-kbSize.height+200) animated:YES];
-        }
+        //}
     }
 }
 
@@ -252,11 +254,12 @@
         //return to video selection view
         [[NSNotificationCenter defaultCenter] postNotificationName:@"DataSaved" object:nil];
         [self performSegueWithIdentifier: @"emailSentSegue" sender: self];
-        [VariableStore sharedInstance].selectedContact = nil;
+        [VariableStore sharedInstance].selectedContactName = nil;
+        [VariableStore sharedInstance].selectedContactEmail = nil;
+        [VariableStore sharedInstance].selectedContactPhone = nil;
         _emailAddress.text=@"";
         _emailName.text=@"";
         _emailSubject.text=@"";
-
     }
     else {
         [self.statusAlert dismissWithClickedButtonIndex:0 animated:YES];
@@ -338,7 +341,6 @@
                 
                 //delete the old object
                 [[[VariableStore sharedInstance] context] deleteObject:currentContact];
-                
                 break;
             }
             else

@@ -27,7 +27,9 @@ bool _searching = NO;
 
 - (void)viewDidLoad
 {
+    
     [super viewDidLoad];
+    _listOfItems = [[NSMutableArray alloc] init];
     _searchBar.tintColor = [UIColor colorWithHue:0.6 saturation:0.33 brightness:0.69 alpha:0];
     _contactTable.backgroundColor = [UIColor colorWithRed:0/255.0f green:41/255.0f blue:92/255.0f alpha:1];
     [_contactTable setBackgroundView:nil];
@@ -43,6 +45,13 @@ bool _searching = NO;
                                              selector:@selector(dataSaved:)
                                                  name:@"DataSaved" object:nil];
 	// Do any additional setup after loading the view.
+    
+    
+    //Create the success alert
+    _successContactAlert = [[UIAlertView alloc] initWithTitle:@"Status" message:@"The contact was added successfully, God bless you!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil ];
+    
+    //get the contacts from the address book
+    [self displayContacts];
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -58,22 +67,35 @@ bool _searching = NO;
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSFetchedResultsController * fetchedResultsController = [[VariableStore sharedInstance ]fetchedContactsController];
-    id <NSFetchedResultsSectionInfo> sectionInfo = [[fetchedResultsController sections] objectAtIndex:section];
-    return [sectionInfo numberOfObjects];
+    if (_searching)
+        return [_listOfItems count];
+    else {
+        return [_contactsArray count];
+    }
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *cellIdentifier = @"contactCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    
+    NSString *firstName;
+    NSString *lastName;
     if (cell == nil)
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
     
-    [self configureCell:cell atIndexPath:indexPath];
+    if (_searching){
+        firstName =(__bridge NSString *)ABRecordCopyValue((__bridge ABRecordRef)([_listOfItems objectAtIndex:indexPath.row]), kABPersonFirstNameProperty);
+        lastName = (__bridge NSString *)ABRecordCopyValue((__bridge ABRecordRef)([_listOfItems objectAtIndex:indexPath.row]), kABPersonLastNameProperty);
+    }
+    else {
+        firstName =(__bridge NSString *)ABRecordCopyValue((__bridge ABRecordRef)([_contactsArray objectAtIndex:indexPath.row]), kABPersonFirstNameProperty);
+        lastName = (__bridge NSString *)ABRecordCopyValue((__bridge ABRecordRef)([_contactsArray objectAtIndex:indexPath.row]), kABPersonLastNameProperty);
+    }
+    
+    NSMutableString *personName = [[NSMutableString alloc] initWithFormat:@"%@ %@",firstName,lastName];
+    cell.textLabel.text = personName;
     cell.backgroundColor = [UIColor colorWithRed:210/255.0f green:226/255.0f blue:245/255.0f alpha:1];
     return cell;
 }
@@ -81,15 +103,22 @@ bool _searching = NO;
 //Get the selected row
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSArray *usedArray;
+    if(_searching)
+        usedArray = _listOfItems;
+    else {
+        usedArray = _contactsArray;
+    }
+    NSString* firstName =(__bridge NSString *)ABRecordCopyValue((__bridge ABRecordRef)([usedArray objectAtIndex:indexPath.row]), kABPersonFirstNameProperty);
+    NSString* lastName = (__bridge NSString *)ABRecordCopyValue((__bridge ABRecordRef)([usedArray objectAtIndex:indexPath.row]), kABPersonLastNameProperty);
+    [VariableStore sharedInstance].selectedContactName = [[NSMutableString alloc] initWithFormat:@"%@ %@",firstName,lastName];
+    //Get the first non null email
+    ABMultiValueRef multiEmail = ABRecordCopyValue((__bridge ABRecordRef)([usedArray objectAtIndex:indexPath.row]), kABPersonEmailProperty);
+    [VariableStore sharedInstance].selectedContactEmail = (__bridge NSString*)ABMultiValueCopyValueAtIndex(multiEmail, 0);
+    //Get first non null phone number
+    ABMultiValueRef multiPhone = ABRecordCopyValue((__bridge ABRecordRef)([usedArray objectAtIndex:indexPath.row]), kABPersonPhoneProperty);
+    [VariableStore sharedInstance].selectedContactPhone = (__bridge NSString*)ABMultiValueCopyValueAtIndex(multiPhone, 0);
     
-    Contact *contact = [[[VariableStore sharedInstance] fetchedContactsController] objectAtIndexPath:indexPath];
-    [VariableStore sharedInstance].selectedContact = contact;
-    
-    /*UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard"
-                                                             bundle: nil];
-    SendVideoViewController *controller = (SendVideoViewController*)[mainStoryboard
-                                                                     instantiateViewControllerWithIdentifier: @"sendVideoView"];
-    [self.navigationController pushViewController:controller animated:YES]; */
     [self performSegueWithIdentifier: @"contactToEmailSegue" sender: self];
 }
 
@@ -97,56 +126,8 @@ bool _searching = NO;
 
 
 -(void) dataSaved:(NSNotification *)notification{
-    NSError *error;
-    [[[VariableStore sharedInstance] fetchedContactsController] performFetch:&error];
+    [self displayContacts];
     [_contactTable reloadData];
-}
-
--(void)handleLongPress:(UILongPressGestureRecognizer *)gestureRecognizer
-{
-    CGPoint p = [gestureRecognizer locationInView:_contactTable];
-    
-    NSIndexPath *indexPath = [_contactTable indexPathForRowAtPoint:p];
-    if (indexPath == nil) {
-     
-    }
-    else {
-        Contact *contact = [[[VariableStore sharedInstance] fetchedContactsController] objectAtIndexPath:indexPath];
-        [VariableStore sharedInstance].updateContact = contact;
-        [self performSegueWithIdentifier: @"addContactSegue" sender: self];
-        
-    }
-}
-
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        NSManagedObjectContext *context = [[VariableStore sharedInstance] context];
-        NSFetchedResultsController *fetchedResults = [[VariableStore sharedInstance]fetchedContactsController];
-        [context deleteObject:[fetchedResults objectAtIndexPath:indexPath]];
-        
-        
-        NSError *error = nil;
-        if (![context save:&error]) {
-            // Replace this implementation with code to handle the error appropriately.
-            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-            abort();
-        }
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"DataSaved" object:nil];
-    }
-}
-
-- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
-{
-    NSFetchedResultsController * fetchedResultsController = [[VariableStore sharedInstance] fetchedContactsController];
-    NSManagedObject *object = [fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = [[object valueForKey:@"name"] description];
-}
-
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return YES if you want the specified item to be editable.
-    return YES;
 }
 
 
@@ -169,53 +150,8 @@ bool _searching = NO;
     }
 }
 
-//Code for search feature
-- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString {
-    NSInteger searchOption = controller.searchBar.selectedScopeButtonIndex;
-    return [self searchDisplayController:controller shouldReloadTableForSearchString:searchString searchScope:searchOption];
-}
-
-- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchScope:(NSInteger)searchOption {
-    NSString* searchString = controller.searchBar.text;
-    return [self searchDisplayController:controller shouldReloadTableForSearchString:searchString searchScope:searchOption];
-}
-
-- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString*)searchString searchScope:(NSInteger)searchOption {
-    _searching = YES;
-    NSPredicate *predicate = nil;
-    if ([searchString length]) {
-        if (searchOption == 0){ 
-            predicate = [NSPredicate predicateWithFormat:@"name contains[cd] %@ OR email contains[cd] %@", searchString, searchString];
-        }
-        else {
-            predicate = [NSPredicate predicateWithFormat:@"%K contains[cd] %@", [[controller.searchBar.scopeButtonTitles objectAtIndex:searchOption] lowercaseString], searchString];
-        }
-    }
-    [[[VariableStore sharedInstance] fetchedContactsController].fetchRequest setPredicate:predicate];
-    
-    NSError *error = nil;
-    if (![[[VariableStore sharedInstance] fetchedContactsController] performFetch:&error]) {
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
-    }
-    
-    return YES;
-}
-
-- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
-{
-    NSError *error;
-	searchBar.text = nil;
-	[searchBar resignFirstResponder];
-    _searching = NO;
-    [[[VariableStore sharedInstance] fetchedContactsController].fetchRequest setPredicate:nil];
-    [[[VariableStore sharedInstance] fetchedContactsController] performFetch:&error];
-    [_contactTable reloadData];
-	
-}
-
 //Index view on right hand side
-/*- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
+- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
     
     if(_searching)
         return nil;
@@ -258,5 +194,188 @@ bool _searching = NO;
         return -1;
     }
     return index;
-} */
+}
+
+//search methods
+- (void)searchBar:(UISearchBar *)theSearchBar textDidChange:(NSString *)searchText {
+    //Remove all objects first.
+    [_listOfItems removeAllObjects];
+    
+    if([searchText length] > 0) {
+        _searching = YES;
+        [self searchTableView];
+    }
+    else {
+        _searching = NO;
+    }
+    [_contactTable reloadData];
+}
+
+- (void) searchTableView {
+
+    NSString *searchText = _searchBar.text;
+    NSMutableArray *searchArray = [[NSMutableArray alloc] init];
+    [searchArray addObjectsFromArray:_contactsArray];
+    NSString *firstName;
+    NSString *lastName;
+    NSMutableString *personName;
+    for (int i=0; i<[searchArray count]; i++) {
+        firstName =(__bridge NSString *)ABRecordCopyValue((__bridge ABRecordRef)([searchArray objectAtIndex:i]), kABPersonFirstNameProperty);
+        lastName = (__bridge NSString *)ABRecordCopyValue((__bridge ABRecordRef)([searchArray objectAtIndex:i]), kABPersonLastNameProperty);
+        personName = [[NSMutableString alloc] initWithFormat:@"%@ %@",firstName,lastName];
+    
+        NSRange titleResultsRange = [personName rangeOfString:searchText options:NSCaseInsensitiveSearch];
+        if (titleResultsRange.length > 0)
+        [_listOfItems addObject:[_contactsArray objectAtIndex:i]];
+}
+searchArray = nil;
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
+{
+	searchBar.text = nil;
+	[searchBar resignFirstResponder];
+    _searching = NO;
+    [_contactTable reloadData];
+	
+}
+
+//Methods for the iOS addressbook
+-(void) displayContacts {
+    ABAddressBookRef addressBook = ABAddressBookCreateWithOptions(NULL,NULL);
+    [self CheckIfGroupExistWithName:@"Zion America"];
+    
+    ABRecordRef zionAmericaGroup = ABAddressBookGetGroupWithRecordID(addressBook,_groupId);
+    __block BOOL accessGranted = NO;
+    
+    if (ABAddressBookRequestAccessWithCompletion != NULL) {
+        dispatch_semaphore_t sema = dispatch_semaphore_create(0);
+        
+        ABAddressBookRequestAccessWithCompletion(addressBook, ^(bool granted, CFErrorRef error) {
+            accessGranted = granted;
+            dispatch_semaphore_signal(sema);
+        });
+        
+        dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
+    }
+    else {
+        accessGranted = YES;
+    }
+    
+    
+    if (accessGranted) {
+        _contactsArray = (__bridge_transfer NSArray*)ABGroupCopyArrayOfAllMembersWithSortOrdering(zionAmericaGroup, kABPersonSortByFirstName);
+    }
+    //CFRelease(addressBook);
+}
+//Add contact functions
+- (IBAction)addContact:(id)sender {
+    ABNewPersonViewController *view = [[ABNewPersonViewController alloc] init];
+    view.newPersonViewDelegate = self;
+    
+    //NSLog(@"This is the group %@",(__bridge NSString *)ABRecordCopyCompositeName(zionAmericaGroup));
+    UINavigationController *newNavigationController = [[UINavigationController alloc]
+                                                       initWithRootViewController:view];
+    [self presentViewController:newNavigationController animated:YES completion:^(void){}];
+}
+
+- (void)newPersonViewController:(ABNewPersonViewController *)newPersonViewController didCompleteWithNewPerson:(ABRecordRef)person {
+    CFErrorRef error = NULL;
+    ABRecordRef zionAmericaGroup = ABAddressBookGetGroupWithRecordID(newPersonViewController.addressBook, _groupId);
+    ABGroupAddMember(zionAmericaGroup, person, &error);
+    ABAddressBookSave(newPersonViewController.addressBook, &error);
+    [self displayContacts];
+    [_contactTable reloadData];
+    [self dismissViewControllerAnimated:YES completion:^(void){}];
+}
+
+//Edit contact functions
+
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+{
+    ABPersonViewController *personView = [[ABPersonViewController alloc] init];
+    personView.personViewDelegate = self;
+    personView.displayedPerson = (__bridge ABRecordRef)([_contactsArray objectAtIndex:indexPath.row]);
+    personView.allowsEditing = YES;
+    NSArray *displayedItems = [NSArray arrayWithObjects:[NSNumber numberWithInt:kABPersonPhoneProperty],
+                               [NSNumber numberWithInt:kABPersonEmailProperty],[NSNumber numberWithInt:kABPersonNoteProperty], nil];
+    personView.displayedProperties = displayedItems;
+    [self.navigationController pushViewController:personView animated:YES];
+    
+}
+
+- (BOOL)personViewController:(ABPersonViewController *)personViewController shouldPerformDefaultActionForPerson:(ABRecordRef)person property:(ABPropertyID)property identifier:(ABMultiValueIdentifier)identifierForValue {
+    return NO;
+}
+
+//Delete contact functions
+-(void)handleLongPress:(UILongPressGestureRecognizer *)gestureRecognizer
+{
+    CGPoint p = [gestureRecognizer locationInView:_contactTable];
+    
+    NSIndexPath *indexPath = [_contactTable indexPathForRowAtPoint:p];
+    if (indexPath == nil) {
+        
+    }
+    else {
+        ABPersonViewController *personView = [[ABPersonViewController alloc] init];
+        personView.personViewDelegate = self;
+        personView.displayedPerson = (__bridge ABRecordRef)([_contactsArray objectAtIndex:indexPath.row]);
+        personView.allowsEditing = YES;
+        personView.allowsActions = YES;
+        NSArray *displayedItems = [NSArray arrayWithObjects:[NSNumber numberWithInt:kABPersonPhoneProperty],
+                                   [NSNumber numberWithInt:kABPersonEmailProperty],[NSNumber numberWithInt:kABPersonNoteProperty], nil];
+        
+        
+        personView.displayedProperties = displayedItems;
+        [self.navigationController pushViewController:personView animated:YES];
+        
+        
+    }
+}
+
+//Check for group name
+-(void) CheckIfGroupExistWithName:(NSString*)groupName {
+    
+    
+    BOOL hasGroup = NO;
+    //checks to see if the group is created ad creats group for HiBye contacts
+    ABAddressBookRef addressBook = ABAddressBookCreateWithOptions(NULL, NULL);
+    CFIndex groupCount = ABAddressBookGetGroupCount(addressBook);
+    CFArrayRef groupLists= ABAddressBookCopyArrayOfAllGroups(addressBook);
+    
+    for (int i=0; i<groupCount; i++) {
+        ABRecordRef currentCheckedGroup = CFArrayGetValueAtIndex(groupLists, i);
+        NSString *currentGroupName = (__bridge NSString *)ABRecordCopyCompositeName(currentCheckedGroup);
+        
+        if ([currentGroupName isEqualToString:groupName]){
+            //!!! important - save groupID for later use
+            _groupId = ABRecordGetRecordID(currentCheckedGroup);
+            hasGroup=YES;
+        }
+    }
+    
+    if (hasGroup==NO){
+        //id the group does not exist you can create one
+        [self createNewGroup:groupName];
+    }
+    
+    //CFRelease(currentCheckedGroup);
+    CFRelease(groupLists);
+    CFRelease(addressBook); 
+}
+
+-(void) createNewGroup:(NSString*)groupName {
+    
+    ABAddressBookRef addressBook = ABAddressBookCreateWithOptions(NULL, NULL);
+    ABRecordRef newGroup = ABGroupCreate();
+    ABRecordSetValue(newGroup, kABGroupNameProperty,(__bridge CFTypeRef)(groupName), nil);
+    ABAddressBookAddRecord(addressBook, newGroup, nil);
+    ABAddressBookSave(addressBook, nil);
+    CFRelease(addressBook);
+    
+    //!!! important - save groupID for later use
+    _groupId = ABRecordGetRecordID(newGroup);
+    CFRelease(newGroup);
+}
 @end

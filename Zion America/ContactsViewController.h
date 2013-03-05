@@ -11,11 +11,16 @@
 #import "Contact.h"
 #import "SendVideoViewController.h"
 #import <CoreData/CoreData.h>
+#import <AddressBook/AddressBook.h>
+#import <AddressBookUI/AddressBookUI.h>
 
-@interface ContactsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, UISearchDisplayDelegate,UIActionSheetDelegate>
+@interface ContactsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, UISearchDisplayDelegate,UIActionSheetDelegate, ABPersonViewControllerDelegate, ABNewPersonViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UITableView *contactTable;
 @property (nonatomic, retain) UIActionSheet *sheet;
-
+@property (nonatomic, retain) NSArray *contactsArray;
+@property (nonatomic, retain) NSMutableArray *listOfItems;
+@property UIAlertView *successContactAlert;
+@property ABRecordID groupId;
 
 @end

@@ -15,7 +15,9 @@
 @property (nonatomic) NSString *loginPass;
 @property (nonatomic) NSString *videoName;
 @property (nonatomic) CTCoreMessage *selectedEmail;
-@property (nonatomic) Contact *selectedContact;
+@property (nonatomic) NSString *selectedContactName;
+@property (nonatomic) NSString *selectedContactEmail;
+@property (nonatomic) NSString *selectedContactPhone;
 @property (nonatomic) Contact *updateContact;
 @property (nonatomic) NSManagedObjectContext *context;
 @property (nonatomic) NSFetchedResultsController *fetchedContactsController;
@@ -26,7 +28,9 @@
 - (NSString*) loginPass;
 - (NSString*) videoName;
 - (CTCoreMessage*) selectedEmail;
-- (Contact*) selectedContact;
+- (NSString*) selectedContactName;
+- (NSString*) selectedContactEmail;
+- (NSString*) selectedContactPhone;
 - (Contact*) updateContact;
 - (NSManagedObjectContext*) context;
 - (NSFetchedResultsController*) fetchedContactsController;
