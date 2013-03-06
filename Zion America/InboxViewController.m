@@ -59,8 +59,8 @@
     }
     //Retrieve video list from server
     else {
-        [self.statusAlert show];
-        [NSTimer scheduledTimerWithTimeInterval:.5 target:self selector:@selector(tryRetrieveEmailList) userInfo:nil repeats:NO];
+        //[self.statusAlert show];
+        //[NSTimer scheduledTimerWithTimeInterval:.5 target:self selector:@selector(tryRetrieveEmailList) userInfo:nil repeats:NO];
     }
     
 }
@@ -97,8 +97,8 @@
             newCount++;
     }
     
-    //NSMutableString *newTitle= [NSMutableString stringWithFormat:@"Inbox (%d)",newCount];
-    NSString *newTitle = @"Inbox";
+    NSMutableString *newTitle= [NSMutableString stringWithFormat:@"Inbox (%d)",newCount];
+    //NSString *newTitle = @"Inbox";
     _inboxNavigationItem.title = newTitle;
     [_emailTable reloadData];
     
@@ -150,10 +150,10 @@
             currentSender = [[message.from anyObject] email];
         }
     if ([message isUnread]) {
-        //[[cell unreadMessageLabel] setImage:[UIImage imageNamed:@"gnome_mail_unread.png"]];
+        [[cell unreadMessageLabel] setImage:[UIImage imageNamed:@"gnome_mail_unread.png"]];
     }
     else {
-        //[[cell unreadMessageLabel] setImage:[UIImage imageNamed:@"gnome_mail_read.png"]];
+        [[cell unreadMessageLabel] setImage:[UIImage imageNamed:@"gnome_mail_read.png"]];
     }
     [[cell senderLabel]setText:currentSender];
     [[cell titleLabel]setText:subject];
