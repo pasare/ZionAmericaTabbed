@@ -11,6 +11,8 @@
 #import <MessageUI/MessageUI.h>
 #import <MessageUI/MFMailComposeViewController.h>
 #import <MailCore/MailCore.h>
+#import <AddressBook/AddressBook.h>
+#import <AddressBookUI/AddressBookUI.h>
 #import "Constants.h"
 #import "Contact.h"
 #import "History.h"
@@ -27,5 +29,6 @@
 @property UIAlertView *statusAlert;
 @property UIAlertView *emailAlert;
 @property UIAlertView *failedAlert;
+@property ABRecordID groupId;
 @end
 

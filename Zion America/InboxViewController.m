@@ -97,7 +97,8 @@
             newCount++;
     }
     
-    NSMutableString *newTitle= [NSMutableString stringWithFormat:@"Inbox (%d)",newCount];
+    //NSMutableString *newTitle= [NSMutableString stringWithFormat:@"Inbox (%d)",newCount];
+    NSString *newTitle = @"Inbox";
     _inboxNavigationItem.title = newTitle;
     [_emailTable reloadData];
     
@@ -149,10 +150,10 @@
             currentSender = [[message.from anyObject] email];
         }
     if ([message isUnread]) {
-        [[cell unreadMessageLabel] setImage:[UIImage imageNamed:@"gnome_mail_unread.png"]];
+        //[[cell unreadMessageLabel] setImage:[UIImage imageNamed:@"gnome_mail_unread.png"]];
     }
     else {
-        [[cell unreadMessageLabel] setImage:[UIImage imageNamed:@"gnome_mail_read.png"]];
+        //[[cell unreadMessageLabel] setImage:[UIImage imageNamed:@"gnome_mail_read.png"]];
     }
     [[cell senderLabel]setText:currentSender];
     [[cell titleLabel]setText:subject];

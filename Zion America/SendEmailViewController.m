@@ -320,46 +320,66 @@
 }
 
 -(void) saveContact {
-    BOOL duplicate = NO;
-    Contact *contact = (Contact *)[NSEntityDescription insertNewObjectForEntityForName:@"Contact" inManagedObjectContext:[[VariableStore sharedInstance] context]];
-    [contact setName:_emailName.text];
-    [contact setEmail:_emailAddress.text];
-    [contact setPhone:nil];
-    
-    //Save this contact to the contact list
-    NSFetchedResultsController *fetchedContacts = [[VariableStore sharedInstance]fetchedContactsController];
-    NSArray *contactList = [fetchedContacts fetchedObjects];
-    
-    //loop through the contact list checking for a duplicate name
-    for (Contact *currentContact in contactList){
-        if ([contact duplicateContact:currentContact] ) {
-            //If the contact exists but the email is blank copy the phone and save again
-            if ([[currentContact email] isEqualToString:@""]) {
-                [contact setName:_emailName.text];
-                [contact setEmail:_emailAddress.text];
-                [contact setPhone:[currentContact phone]];
+    CFErrorRef error = NULL;
+    NSArray *nameParts = [_emailName.text componentsSeparatedByString:@" "];
+    NSString *firstName = [nameParts objectAtIndex:0];
+    NSString *lastName = [nameParts objectAtIndex:1];
+    NSMutableString *fullName = [[NSMutableString alloc]initWithFormat:@"%@ %@",firstName,lastName];
+    NSString *emailAddress = _emailAddress.text;
+	ABAddressBookRef addressBook = ABAddressBookCreateWithOptions(NULL, NULL);
+	NSArray *people = (__bridge NSArray *)ABAddressBookCopyPeopleWithName(addressBook, (__bridge CFStringRef)(fullName));
+	// This contact already exists in the addressbook. Check if its email address is blank
+	if ((people != nil) && [people count]) {
+		ABRecordRef person = (__bridge ABRecordRef)[people objectAtIndex:0];
+        //Check if the email address is set
+        ABMutableMultiValueRef emailMultiValue = ABRecordCopyValue(person, kABPersonEmailProperty);
+        if(emailMultiValue){
+            NSString *email = (__bridge NSString *) ABMultiValueCopyValueAtIndex(emailMultiValue,0);
+            if (email == nil || [email isEqualToString:@""]){
+                //Create the new email and save
+                emailMultiValue = ABMultiValueCreateMutable(kABPersonEmailProperty);
+                bool didAddEmail = ABMultiValueAddValueAndLabel(emailMultiValue, (__bridge CFTypeRef)(emailAddress), kABHomeLabel, NULL);
                 
-                //delete the old object
-                [[[VariableStore sharedInstance] context] deleteObject:currentContact];
-                break;
+                if(didAddEmail){
+                    ABRecordSetValue(person, kABPersonEmailProperty, emailMultiValue, nil);
+                    
+                    ABAddressBookAddRecord(addressBook, person, &error);
+                    ABAddressBookSave(addressBook, &error);
+                    CFRelease(emailMultiValue);
+                    CFRelease(person);
+                    CFRelease(addressBook);
+                }
             }
-            else
-                duplicate = YES;
-                break;
+        }        
+    }
+	else {
+        //Contact does not exist create new
+        ABRecordRef person = ABPersonCreate();
+        ABRecordSetValue(person, kABPersonFirstNameProperty, (__bridge CFTypeRef)(firstName), nil);
+        if (lastName != nil && ![lastName isEqualToString:@""])
+            ABRecordSetValue(person, kABPersonLastNameProperty, (__bridge CFTypeRef)(lastName), nil);
+        //create the email
+        ABMutableMultiValueRef emailMultiValue = ABMultiValueCreateMutable(kABPersonEmailProperty);
+        bool didAddEmail = ABMultiValueAddValueAndLabel(emailMultiValue, (__bridge CFTypeRef)(emailAddress), kABHomeLabel, NULL);
+        
+        if(didAddEmail){
+            ABRecordSetValue(person, kABPersonEmailProperty, emailMultiValue, nil);
         }
+        //Save the contact
+        CFRelease(emailMultiValue);
+        ABAddressBookAddRecord(addressBook, person, &error);
+        ABAddressBookSave(addressBook, &error);
+        
+        //Add the contact to the group
+        [self CheckIfGroupExistsWithName:@"Zion America"];
+        
+        ABRecordRef zionAmericaGroup = ABAddressBookGetGroupWithRecordID(addressBook, _groupId);
+        ABGroupAddMember(zionAmericaGroup, person, &error);
+        ABAddressBookSave(addressBook, &error);
+        
+        CFRelease(person);
+        CFRelease(addressBook);
     }
-    if (!duplicate){
-        NSError *error = nil;
-        if (![[[VariableStore sharedInstance] context] save:&error]) {
-            // Handle the error.
-        }
-    }
-    else {
-        //clear the contact so that it does not get saved
-        [[[VariableStore sharedInstance]context]deleteObject:contact];
-    }
-    
-    contact = nil;
 }
 
 -(void) saveHistory {
@@ -372,6 +392,51 @@
         // Handle the error.
     }
     history = nil;
+}
+
+//Check for group name
+-(void) CheckIfGroupExistsWithName:(NSString*)groupName {
+    
+    
+    BOOL hasGroup = NO;
+    //checks to see if the group is created ad creats group for HiBye contacts
+    ABAddressBookRef addressBook = ABAddressBookCreateWithOptions(NULL, NULL);
+    CFIndex groupCount = ABAddressBookGetGroupCount(addressBook);
+    CFArrayRef groupLists= ABAddressBookCopyArrayOfAllGroups(addressBook);
+    
+    for (int i=0; i<groupCount; i++) {
+        ABRecordRef currentCheckedGroup = CFArrayGetValueAtIndex(groupLists, i);
+        NSString *currentGroupName = (__bridge NSString *)ABRecordCopyCompositeName(currentCheckedGroup);
+        
+        if ([currentGroupName isEqualToString:groupName]){
+            //!!! important - save groupID for later use
+            _groupId = ABRecordGetRecordID(currentCheckedGroup);
+            hasGroup=YES;
+        }
+    }
+    
+    if (hasGroup==NO){
+        //id the group does not exist you can create one
+        [self createNewGroup:groupName];
+    }
+    
+    //CFRelease(currentCheckedGroup);
+    CFRelease(groupLists);
+    CFRelease(addressBook);
+}
+
+-(void) createNewGroup:(NSString*)groupName {
+    
+    ABAddressBookRef addressBook = ABAddressBookCreateWithOptions(NULL, NULL);
+    ABRecordRef newGroup = ABGroupCreate();
+    ABRecordSetValue(newGroup, kABGroupNameProperty,(__bridge CFTypeRef)(groupName), nil);
+    ABAddressBookAddRecord(addressBook, newGroup, nil);
+    ABAddressBookSave(addressBook, nil);
+    CFRelease(addressBook);
+    
+    //!!! important - save groupID for later use
+    _groupId = ABRecordGetRecordID(newGroup);
+    CFRelease(newGroup);
 }
 
 @end

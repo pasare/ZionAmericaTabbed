@@ -29,26 +29,22 @@ bool _searching = NO;
 {
     
     [super viewDidLoad];
+    _contactsDictionary = [[NSMutableDictionary alloc]init];
     _listOfItems = [[NSMutableArray alloc] init];
     _searchBar.tintColor = [UIColor colorWithHue:0.6 saturation:0.33 brightness:0.69 alpha:0];
     _contactTable.backgroundColor = [UIColor colorWithRed:0/255.0f green:41/255.0f blue:92/255.0f alpha:1];
     [_contactTable setBackgroundView:nil];
-    UILongPressGestureRecognizer *lpgr = [[UILongPressGestureRecognizer alloc]
-                                          initWithTarget:self action:@selector(handleLongPress:)];
-    lpgr.minimumPressDuration = 0.3; //seconds
-    //lpgr.delegate = self;
-    [_contactTable addGestureRecognizer:lpgr];
     
-    //[_contactTable setEditing:YES animated:YES];
-    //Notification for when table needs to be updated
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(dataSaved:)
-                                                 name:@"DataSaved" object:nil];
 	// Do any additional setup after loading the view.
     
     
     //Create the success alert
     _successContactAlert = [[UIAlertView alloc] initWithTitle:@"Status" message:@"The contact was added successfully, God bless you!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil ];
+    
+    //Notification for when table needs to be updated
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(dataSaved:)
+                                                 name:@"DataSaved" object:nil];
     
     //get the contacts from the address book
     [self displayContacts];
@@ -151,7 +147,7 @@ bool _searching = NO;
 }
 
 //Index view on right hand side
-- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
+/*- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
     
     if(_searching)
         return nil;
@@ -194,7 +190,7 @@ bool _searching = NO;
         return -1;
     }
     return index;
-}
+} */
 
 //search methods
 - (void)searchBar:(UISearchBar *)theSearchBar textDidChange:(NSString *)searchText {
@@ -243,7 +239,7 @@ searchArray = nil;
 //Methods for the iOS addressbook
 -(void) displayContacts {
     ABAddressBookRef addressBook = ABAddressBookCreateWithOptions(NULL,NULL);
-    [self CheckIfGroupExistWithName:@"Zion America"];
+    [self CheckIfGroupExistsWithName:@"Zion America"];
     
     ABRecordRef zionAmericaGroup = ABAddressBookGetGroupWithRecordID(addressBook,_groupId);
     __block BOOL accessGranted = NO;
@@ -265,6 +261,27 @@ searchArray = nil;
     
     if (accessGranted) {
         _contactsArray = (__bridge_transfer NSArray*)ABGroupCopyArrayOfAllMembersWithSortOrdering(zionAmericaGroup, kABPersonSortByFirstName);
+        //Create the sections and the list for display
+        ABRecordRef contact;
+        NSString *firstName;
+        NSString *lastName;
+        NSString *firstLetter;
+        NSMutableString *fullName;
+        NSMutableArray *workingArray;
+        for (int i=0; i<[_contactsArray count]; i++) {
+            contact = (__bridge ABRecordRef)([_contactsArray objectAtIndex:i]);
+            firstName = (__bridge NSString *)(ABRecordCopyValue(contact, kABPersonFirstNameProperty));
+            lastName = (__bridge NSString *)(ABRecordCopyValue(contact, kABPersonLastNameProperty));
+            firstLetter = [firstName substringToIndex:1];
+            fullName = [[NSMutableString alloc]initWithFormat:@"%@ %@",firstName,lastName];
+            workingArray = [_contactsDictionary objectForKey:firstLetter];
+            //This letter group has not been created yet
+            if (workingArray == nil)
+                workingArray = [[NSMutableArray alloc]initWithObjects:fullName, nil];
+            else
+                [workingArray addObject:fullName];
+            [_contactsDictionary setObject:workingArray forKey:firstLetter];
+        }
     }
     //CFRelease(addressBook);
 }
@@ -273,7 +290,6 @@ searchArray = nil;
     ABNewPersonViewController *view = [[ABNewPersonViewController alloc] init];
     view.newPersonViewDelegate = self;
     
-    //NSLog(@"This is the group %@",(__bridge NSString *)ABRecordCopyCompositeName(zionAmericaGroup));
     UINavigationController *newNavigationController = [[UINavigationController alloc]
                                                        initWithRootViewController:view];
     [self presentViewController:newNavigationController animated:YES completion:^(void){}];
@@ -308,34 +324,8 @@ searchArray = nil;
     return NO;
 }
 
-//Delete contact functions
--(void)handleLongPress:(UILongPressGestureRecognizer *)gestureRecognizer
-{
-    CGPoint p = [gestureRecognizer locationInView:_contactTable];
-    
-    NSIndexPath *indexPath = [_contactTable indexPathForRowAtPoint:p];
-    if (indexPath == nil) {
-        
-    }
-    else {
-        ABPersonViewController *personView = [[ABPersonViewController alloc] init];
-        personView.personViewDelegate = self;
-        personView.displayedPerson = (__bridge ABRecordRef)([_contactsArray objectAtIndex:indexPath.row]);
-        personView.allowsEditing = YES;
-        personView.allowsActions = YES;
-        NSArray *displayedItems = [NSArray arrayWithObjects:[NSNumber numberWithInt:kABPersonPhoneProperty],
-                                   [NSNumber numberWithInt:kABPersonEmailProperty],[NSNumber numberWithInt:kABPersonNoteProperty], nil];
-        
-        
-        personView.displayedProperties = displayedItems;
-        [self.navigationController pushViewController:personView animated:YES];
-        
-        
-    }
-}
-
 //Check for group name
--(void) CheckIfGroupExistWithName:(NSString*)groupName {
+-(void) CheckIfGroupExistsWithName:(NSString*)groupName {
     
     
     BOOL hasGroup = NO;
