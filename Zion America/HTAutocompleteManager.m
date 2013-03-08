@@ -298,8 +298,62 @@ static HTAutocompleteManager *sharedManager;
             
         }
     }
-    
+    else if (textField.autocompleteType == HTAutocompleteTypeContact)
+    {
+        static dispatch_once_t colorOnceToken;
+        static NSArray *contactAutocompleteArray;
+        dispatch_once(&colorOnceToken, ^
+                      {
+                          ABRecordRef contact;
+                          NSString *firstName;
+                          NSString *lastName;
+                          NSMutableString *fullName;
+                          NSMutableArray *contactsArray = [[NSMutableArray alloc] init];
+                          for (int i=0; i<[[VariableStore sharedInstance].contactsArray count]; i++) {
+                              contact = (__bridge ABRecordRef)([[VariableStore sharedInstance].contactsArray objectAtIndex:i]);
+                              firstName = (__bridge NSString *)(ABRecordCopyValue(contact, kABPersonFirstNameProperty));
+                              lastName = (__bridge NSString *)(ABRecordCopyValue(contact, kABPersonLastNameProperty));
+                              fullName = [[NSMutableString alloc]initWithFormat:@"%@ %@",firstName,lastName];
+                              [contactsArray addObject:fullName];
+                          }
+                        contactAutocompleteArray = contactsArray;
+                      });
+        
+        NSString *stringToLookFor = [[NSString alloc] init];
+		NSArray *componentsString = [prefix componentsSeparatedByString:@","];
+        NSString *prefixLastComponent = [componentsString.lastObject stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        if (ignoreCase)
+        {
+            if (prefixLastComponent!=nil)
+            stringToLookFor = [prefixLastComponent lowercaseString];
+        }
+        else
+        {
+            if (prefixLastComponent!=nil)
+            stringToLookFor = prefixLastComponent;
+        }
+        
+        for (NSString *stringFromReference in contactAutocompleteArray)
+        {
+            NSString *stringToCompare;
+            if (ignoreCase)
+            {
+                stringToCompare = [stringFromReference lowercaseString];
+            }
+            else
+            {
+                stringToCompare = stringFromReference;
+            }
+            
+            if ([stringToCompare hasPrefix:stringToLookFor])
+            {
+                return [stringFromReference stringByReplacingCharactersInRange:[stringToCompare rangeOfString:stringToLookFor] withString:@""];
+            }
+            
+        }
+    }
     return @"";
+    
 }
 
 @end
