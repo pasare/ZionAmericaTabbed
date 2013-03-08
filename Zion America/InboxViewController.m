@@ -43,7 +43,7 @@
     [self.statusAlert addSubview:indicator];
     
     //Create the failed load alert
-    self.failedVideoAlert = [[UIAlertView alloc] initWithTitle:@"List Error" message:@"unable to load the email list at this time" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil ];
+    self.failedVideoAlert = [[UIAlertView alloc] initWithTitle:@"List Error" message:@"Unable to load the email list at this time" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil ];
     
     //Load the video list from memory if possible
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -79,31 +79,38 @@
 -(void) tryRetrieveEmailList
 {
     int newCount = 0;
+    VariableStore *globals =[VariableStore sharedInstance];
+    
     CTCoreAccount *account = [[CTCoreAccount alloc] init];
-    [account connectToServer:@"mail.marylandzion.org" port:143 connectionType:CONNECTION_TYPE_PLAIN authType:IMAP_AUTH_TYPE_PLAIN login:@"info@marylandzion.org" password:@"M4ryl4ndZ1on!"];
-    CTCoreFolder *inbox = [account folderWithPath:@"INBOX"];
-    NSArray *messageList = [inbox messagesFromSequenceNumber:1 to:0 withFetchAttributes:CTFetchAttrEnvelope| CTFetchAttrBodyStructure];
-    _tableArray = messageList;
+    if (globals.smtpServer != nil) {
+        [account connectToServer:globals.smtpServer port:143 connectionType:CONNECTION_TYPE_PLAIN authType:IMAP_AUTH_TYPE_PLAIN login:globals.smtpEmail password:globals.smtpPassword];
+        CTCoreFolder *inbox = [account folderWithPath:@"INBOX"];
+        NSArray *messageList = [inbox messagesFromSequenceNumber:1 to:0 withFetchAttributes:CTFetchAttrEnvelope| CTFetchAttrBodyStructure];
+        _tableArray = messageList;
     
-    //Sort array so that newest mail shows up first
-    NSSortDescriptor *sortDescriptor;
-    sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"senderDate" ascending:NO];
-    NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
-    _tableArray = [messageList sortedArrayUsingDescriptors:sortDescriptors];
+        //Sort array so that newest mail shows up first
+        NSSortDescriptor *sortDescriptor;
+        sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"senderDate" ascending:NO];
+        NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
+        _tableArray = [messageList sortedArrayUsingDescriptors:sortDescriptors];
     
-    for (CTCoreMessage *message in messageList) {
-        //Get the number of new messages
-        if([message isUnread])
-            newCount++;
+        for (CTCoreMessage *message in messageList) {
+            //Get the number of new messages
+            if([message isUnread])
+                newCount++;
+        }
+    
+        NSMutableString *newTitle= [NSMutableString stringWithFormat:@"Inbox (%d)",newCount];
+        //NSString *newTitle = @"Inbox";
+        _inboxNavigationItem.title = newTitle;
+        [_emailTable reloadData];
+    
+        [self.statusAlert dismissWithClickedButtonIndex:0 animated:YES];
     }
-    
-    NSMutableString *newTitle= [NSMutableString stringWithFormat:@"Inbox (%d)",newCount];
-    //NSString *newTitle = @"Inbox";
-    _inboxNavigationItem.title = newTitle;
-    [_emailTable reloadData];
-    
-       [self.statusAlert dismissWithClickedButtonIndex:0 animated:YES]; 
-    
+    else {
+        [self.statusAlert dismissWithClickedButtonIndex:0 animated:YES];
+        [_failedVideoAlert show];
+    }
 }
 
 //Methods for the table generation

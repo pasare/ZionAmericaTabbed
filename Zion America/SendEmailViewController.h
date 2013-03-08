@@ -13,15 +13,17 @@
 #import <MailCore/MailCore.h>
 #import <AddressBook/AddressBook.h>
 #import <AddressBookUI/AddressBookUI.h>
-#import "Constants.h"
 #import "Contact.h"
 #import "History.h"
+#import "HTAutocompleteManager.h"
+#import "HTAutocompleteTextField.h"
+#import "VariableStore.h"
 
 @interface SendEmailViewController : UIViewController <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *sendEmailTable;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UITextView *commentView;
-@property (nonatomic, retain) UITextField *emailName;
+@property (nonatomic, retain) HTAutocompleteTextField *emailName;
 @property (nonatomic, retain) UITextField *emailAddress;
 @property (nonatomic, retain) UITextField *emailSubject;
 @property UITextField *activeField;
@@ -29,6 +31,5 @@
 @property UIAlertView *statusAlert;
 @property UIAlertView *emailAlert;
 @property UIAlertView *failedAlert;
-@property ABRecordID groupId;
 @end
 

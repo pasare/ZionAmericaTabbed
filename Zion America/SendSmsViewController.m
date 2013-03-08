@@ -37,7 +37,7 @@
     _phoneName = [[UITextField alloc] initWithFrame:CGRectMake(5, 0, 195, 21)];
     _phoneText = [[UITextField alloc] initWithFrame:CGRectMake(5, 0, 195, 21)]; */
     
-    //Create the failed login alert
+    //Create the failed message alert
     self.failedAlert = [[UIAlertView alloc] initWithTitle:@"Status" message:@"Message Sent Sucessfully, God bless you!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil ];
 }
 
@@ -67,9 +67,8 @@
 		controller.body = bodyText;
 		controller.recipients = [NSArray arrayWithObjects:_phoneText.text, nil];
 		controller.messageComposeDelegate = self;
-        controller.modalTransitionStyle = UIModalTransitionStylePartialCurl;
-        [self presentViewController:controller animated:YES completion:^(void){}];
-		//[self dismissViewControllerAnimated:YES completion:^(void){}];
+        //controller.modalTransitionStyle = UIModalTransitionStylePartialCurl;
+        [self presentViewController:controller animated:NO completion:^(void){}];
 	}
 }
 
@@ -89,6 +88,7 @@
             [self.statusAlert dismissWithClickedButtonIndex:0 animated:YES];
             _recipients = controller.recipients;
             
+            //Check if the contact that was texted exists
             //add item to history
             [self saveHistory];
             
@@ -101,7 +101,7 @@
 		case MessageComposeResultFailed:
             [_failedAlert setMessage:@"SMS sending failed"];
             [_failedAlert show];
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"DataSaved" object:nil];
+            //[[NSNotificationCenter defaultCenter] postNotificationName:@"DataSaved" object:nil];
             [self performSegueWithIdentifier: @"smsSentSegue" sender: self];
 			break;
 		default:
@@ -121,12 +121,7 @@
     if ([VariableStore sharedInstance].selectedContactName != nil)
         [history setRecipient:[VariableStore sharedInstance].selectedContactName];
     else {
-        //Save the phone number as the name
-        NSMutableString *finalRecipients = [[NSMutableString alloc]init];
-        for (NSString *recipient in _recipients) {
-            [finalRecipients appendFormat:@",%@",recipient];
-        }
-        [history setRecipient:finalRecipients];
+        [history setRecipient:@"Unknown"];
     }
     
     [history setVideo:[[VariableStore sharedInstance] videoName ]];

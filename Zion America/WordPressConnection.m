@@ -20,14 +20,12 @@
 - (IBAction)actionGetBlogPost:(id) sender username:(NSString *)username password:(NSString *)password{
     
     //XMLRPC call to retreive a single post and push the content to a UIWebView
-    NSString *server = WPSERVER;
-    NSMutableDictionary *returnedPost = [self getPost:server username:username password:password];
+    //NSString *server = WPSERVER;
+    //NSMutableDictionary *returnedPost = [self getPost:server username:username password:password];
     
-    NSString *postDescription = [returnedPost objectForKey:@"description"];
-    NSLog(@"Post Description: %@", postDescription);
+    //NSString *postDescription = [returnedPost objectForKey:@"description"];
+    //NSLog(@"Post Description: %@", postDescription);
     
-    //[descWebView loadHTMLString:postDescription baseURL:nil];
-    //descWebView.delegate = self;
     
 }
 
@@ -54,14 +52,11 @@
         
         NSMutableDictionary *returnedData = [self executeXMLRPCRequest:request];
         
-        //[request release];
         
 		if([returnedData isKindOfClass:[NSArray class]]) {
-            //[finalData release];
             finalData = [NSArray arrayWithObjects:returnedData, nil];
 		}
         else if([returnedData isKindOfClass:[NSDictionary class]]) {
-            //[finalData release];
             finalData = returnedData;
 		}
 		else if([returnedData isKindOfClass:[NSError class]]) {
@@ -208,6 +203,41 @@
     
 	return wpusers;
 }
+
+// ADDED BY PHIL BROWNING ------------------------------------------------------
+- (NSMutableDictionary *)getEmailCredentials:(NSString *)xmlrpc username:(NSString *)username password:(NSString *)password {
+    
+    // The array will consist of 4 elements.
+    NSMutableDictionary *wpEmailCredentials = [[NSMutableDictionary alloc] init];
+    @try {
+        XMLRPCRequest *xmlrpcEmailCredentials = [[XMLRPCRequest alloc] initWithURL:[NSURL URLWithString:xmlrpc]];
+        [xmlrpcEmailCredentials setMethod:@"myZion.emailCredentials" withParameters:[NSArray arrayWithObjects:username,password, nil]];
+        wpEmailCredentials = [self executeXMLRPCRequest:xmlrpcEmailCredentials];
+        
+        if ([wpEmailCredentials isKindOfClass:[NSDictionary class]]) {
+            wpEmailCredentials = [NSMutableDictionary dictionaryWithDictionary:wpEmailCredentials];
+        }
+        else if ([wpEmailCredentials isKindOfClass:[NSError class]]) {
+            self.error = (NSError *)wpEmailCredentials;
+            NSString *errorMessage = [self.error localizedDescription];
+            wpEmailCredentials = nil;
+            
+            if([errorMessage isEqualToString:@"The operation couldn’t be completed. (NSXMLParserErrorDomain error 4.)"]) {
+				errorMessage = @"Your blog's XML-RPC endpoint was found but it isn't communicating properly. Try disabling plugins or contacting your host.";
+            }
+        } else {
+            wpEmailCredentials = nil;
+            NSLog(@"getEmailCredentials failed: No Data\n");
+        }
+    }
+    @catch (NSException *exception) {
+        wpEmailCredentials = nil;
+        NSLog(@"getEmailCredentials failed %@", exception);
+    }
+    
+    return wpEmailCredentials;
+}
+// END -------------------------------------------------------------------------
 
 - (id)executeXMLRPCRequest:(XMLRPCRequest *)req {
     NSError *error2 = nil;

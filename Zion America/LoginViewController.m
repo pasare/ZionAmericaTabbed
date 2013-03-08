@@ -34,7 +34,7 @@
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyy"];
     NSString *yearString = [formatter stringFromDate:[NSDate date]];
-    _copyrightLabel.text = [NSString stringWithFormat:@"\u00A9 %@, All Rights Reserved",yearString];
+    _copyrightLabel.text = [NSString stringWithFormat:@"\u00A9 %@ Zion America, All Rights Reserved",yearString];
     //set background
     UIGraphicsBeginImageContext(self.view.frame.size);
     [[UIImage imageNamed:@"Zion America v2_login_bg only_no text_2.png"] drawInRect:self.view.bounds];
@@ -127,6 +127,21 @@
         globals.loginPass = self.loginPass;
         
         NSLog(@"Authenticated");
+        
+        // ADDED BY PHIL BROWNING ----------------------------------------------
+        NSMutableDictionary *emailCredentials = [connection getEmailCredentials:server username:globals.loginID password:globals.loginPass];
+        
+        if (emailCredentials != nil && [emailCredentials count]) {
+            globals.zionName = emailCredentials[@"name"];
+            globals.smtpEmail = emailCredentials[@"email"];
+            globals.smtpPassword = emailCredentials[@"smtp_pass"];
+            globals.smtpPort = [emailCredentials[@"smtp_port"] unsignedIntValue];
+            globals.smtpServer = emailCredentials[@"smtp_server"];
+            globals.smtpUser = emailCredentials[@"smtp_user"];
+        }
+        
+        // END -----------------------------------------------------------------
+        
         [self performSegueWithIdentifier: @"loginSegue" sender: self];
     } else {
         [self.failedLoginAlert show];
@@ -168,7 +183,6 @@
     
     [_loginTable addSubview:_userID];
     [_loginTable addSubview:_userPassword];
-    //cell.backgroundView = [[UIView alloc] initWithFrame:cell.bounds];
     cell.backgroundColor = [UIColor colorWithRed:210/255.0f green:226/255.0f blue:245/255.0f alpha:1];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;

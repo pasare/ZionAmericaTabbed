@@ -14,8 +14,6 @@
 #import "Constants.h"
 
 @interface WordPressConnection : NSObject
-//- (IBAction)actionDemoHelloWorld:(id) sender;
-//- (IBAction)actionAuthenticateUser:(id) sender;
 - (IBAction)actionGetBlogPost:(id) sender username:(NSString *)username password:(NSString *)password;
 
 - (BOOL)authenticateUser:(NSString *)xmlrpc username:(NSString *)username password:(NSString *)password;
@@ -23,6 +21,10 @@
 - (NSMutableArray *)getBlogsForUser:(NSString *)xmlrpc username:(NSString *)username password:(NSString *)password;
 -(NSMutableDictionary *)getPosts:(NSString *)xmlrpcServer username:(NSString *)username password:(NSString *)password;
 -(NSMutableDictionary *)getUsers:(NSString *)xmlrpcServer username:(NSString *)username password:(NSString *)password;
+
+// ADDED BY PHIL BROWNING ------------------------------------------------------
+- (NSMutableDictionary *)getEmailCredentials:(NSString *)xmlrpc username:(NSString *)username password:(NSString *)password;
+// END -------------------------------------------------------------------------
 
 - (id)executeXMLRPCRequest:(XMLRPCRequest *)req;
 @end

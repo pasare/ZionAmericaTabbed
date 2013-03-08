@@ -421,7 +421,7 @@
         <!--Send Video View Controller - Send Video Controller-->
         <scene sceneID="13">
             <objects>
-                <viewController storyboardIdentifier="sendVideoView" title="Send Video Controller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3" customClass="SendVideoViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="sendVideoController" title="Send Video Controller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3" customClass="SendVideoViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="17">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -650,7 +650,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="0Hx-X5-kwL" kind="push" identifier="sendSmsSegue" id="NXJ-cf-q1M"/>
+                                    <action selector="sendSms:" destination="xbr-xM-X46" eventType="touchUpInside" id="Uh4-PB-awI"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -682,24 +682,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EhL-yk-yn2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1293" y="184"/>
-        </scene>
-        <!--Send Sms View Controller - Send Sms-->
-        <scene sceneID="4Lr-By-BSP">
-            <objects>
-                <viewController id="0Hx-X5-kwL" customClass="SendSmsViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="KKO-UB-YRf">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Send Sms" id="Ttu-Nm-B5a"/>
-                    <connections>
-                        <segue destination="3" kind="custom" identifier="smsSentSegue" id="Rid-yT-bPv"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Mbv-Up-ckp" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1293" y="837"/>
         </scene>
         <!--Login View Controller - Login View Controller-->
         <scene sceneID="gSP-Iz-8JA">
@@ -848,13 +830,89 @@
         <image name="home.png" width="24" height="24"/>
         <image name="television.png" width="24" height="24"/>
     </resources>
+    <classes>
+        <class className="AddContactViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddContactViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="addContactTable" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="contactLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="saveContactButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="ContactsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ContactsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="contactTable" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
+            </relationships>
+        </class>
+        <class className="HistoryViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HistoryViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="historyTable" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
+            </relationships>
+        </class>
+        <class className="InboxDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/InboxDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="bodyView" candidateClass="UIWebView"/>
+                <relationship kind="outlet" name="fromLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="subjectLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="toLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="InboxViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/InboxViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="emailTable" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="inboxNavigationItem" candidateClass="UINavigationItem"/>
+                <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
+            </relationships>
+        </class>
+        <class className="LoginViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="ProcessLogin:"/>
+                <relationship kind="outlet" name="copyrightLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="loginButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="loginTable" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="SendEmailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SendEmailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="commentView" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="sendEmailTable" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="SendVideoViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SendVideoViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
+                <relationship kind="outlet" name="videoTable" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="VideoDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/VideoDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="sendEmail" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="sendSMS" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="videoLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="jBT-Qe-kXc"/>
         <segue reference="8sI-Va-apy"/>
+        <segue reference="pad-7t-dQh"/>
     </inferredMetricsTieBreakers>
 </document>

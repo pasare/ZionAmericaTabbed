@@ -25,7 +25,6 @@
 		997C98DC1694046B00B2C809 /* InboxCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 997C98DB1694046B00B2C809 /* InboxCellView.xib */; };
 		997F12C51694170200E2F27B /* gnome_mail_read.png in Resources */ = {isa = PBXBuildFile; fileRef = 997F12C41694170200E2F27B /* gnome_mail_read.png */; };
 		997FE37416E0745400D20FCE /* Zion America v2_power button-20x20.png in Resources */ = {isa = PBXBuildFile; fileRef = 997FE37316E0745400D20FCE /* Zion America v2_power button-20x20.png */; };
-		9982926916A1211300709871 /* SendSmsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9982926816A1211300709871 /* SendSmsViewController.m */; };
 		9984A05E169218A700C28A9A /* App_Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9984A05D169218A700C28A9A /* App_Icon.png */; };
 		9984A060169218D500C28A9A /* App_Icon.png_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 9984A05F169218D500C28A9A /* App_Icon.png_4.png */; };
 		9986BB52168EAD3F00A1C8F5 /* VideoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9986BB51168EAD3F00A1C8F5 /* VideoDetailViewController.m */; };
@@ -44,7 +43,6 @@
 		998DB38916D978570088C9D3 /* Zion America v2_login_no line.png in Resources */ = {isa = PBXBuildFile; fileRef = 998DB38816D978570088C9D3 /* Zion America v2_login_no line.png */; };
 		998DB38C16D97CBB0088C9D3 /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 998DB38B16D97CBB0088C9D3 /* HistoryViewController.m */; };
 		9991E11B168BD50500A88911 /* libXMLRPC_iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9991E118168BD4F000A88911 /* libXMLRPC_iOS.a */; };
-		9991E122168C0ADF00A88911 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9991E121168C0ADF00A88911 /* Constants.m */; };
 		9991E126168C21C700A88911 /* butterfly with text.png in Resources */ = {isa = PBXBuildFile; fileRef = 9991E125168C21C700A88911 /* butterfly with text.png */; };
 		99A7181516D1B4B700AA7518 /* Zion_America.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 99A7181316D1B4B700AA7518 /* Zion_America.xcdatamodeld */; };
 		99A7186C16D1BD5E00AA7518 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99A7186B16D1BD5E00AA7518 /* CoreData.framework */; };
@@ -84,6 +82,12 @@
 		99E814AB16DF314000ED04C5 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 99E814AA16DF314000ED04C5 /* Default.png */; };
 		99E814AD16DF314D00ED04C5 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 99E814AC16DF314D00ED04C5 /* Default@2x.png */; };
 		99E814AF16DF315700ED04C5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 99E814AE16DF315700ED04C5 /* Default-568h@2x.png */; };
+		99F7C12516E8521C0065B0AA /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 99F7C10616E8521B0065B0AA /* .gitignore */; };
+		99F7C13416E8521C0065B0AA /* HTAutocompleteTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F7C12116E8521C0065B0AA /* HTAutocompleteTextField.m */; };
+		99F7C13616E8521C0065B0AA /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 99F7C12316E8521C0065B0AA /* LICENSE */; };
+		99F7C13716E8521C0065B0AA /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 99F7C12416E8521C0065B0AA /* README.md */; };
+		99F7C13F16E8550C0065B0AA /* HTAutocompleteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F7C13E16E8550C0065B0AA /* HTAutocompleteManager.m */; };
+		99F7C14216E9A1BD0065B0AA /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F7C14116E9A1BC0065B0AA /* Constants.m */; };
 		FC85120D168A1AB100F94C60 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC85120C168A1AB100F94C60 /* UIKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		FC85120F168A1AB100F94C60 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC85120E168A1AB100F94C60 /* Foundation.framework */; };
 		FC851211168A1AB100F94C60 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC851210168A1AB100F94C60 /* CoreGraphics.framework */; };
@@ -105,7 +109,6 @@
 		FC851249168A1AB200F94C60 /* Zion_AmericaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FC851248168A1AB200F94C60 /* Zion_AmericaTests.m */; };
 		FC851268168A54B100F94C60 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC851267168A54B100F94C60 /* LoginViewController.m */; };
 		FC85127A168ABEC800F94C60 /* right.png in Resources */ = {isa = PBXBuildFile; fileRef = FC851279168ABEC800F94C60 /* right.png */; };
-		FC851281168AC78C00F94C60 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC851280168AC78C00F94C60 /* HomeViewController.m */; };
 		FC851283168AD11400F94C60 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = FC851282168AD11400F94C60 /* home.png */; };
 		FC851285168AD1ED00F94C60 /* envelop.png in Resources */ = {isa = PBXBuildFile; fileRef = FC851284168AD1ED00F94C60 /* envelop.png */; };
 		FC851287168AD1F600F94C60 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = FC851286168AD1F600F94C60 /* arrow.png */; };
@@ -188,8 +191,6 @@
 		997C98DB1694046B00B2C809 /* InboxCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InboxCellView.xib; sourceTree = "<group>"; };
 		997F12C41694170200E2F27B /* gnome_mail_read.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gnome_mail_read.png; sourceTree = "<group>"; };
 		997FE37316E0745400D20FCE /* Zion America v2_power button-20x20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Zion America v2_power button-20x20.png"; sourceTree = "<group>"; };
-		9982926716A1211300709871 /* SendSmsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendSmsViewController.h; sourceTree = "<group>"; };
-		9982926816A1211300709871 /* SendSmsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendSmsViewController.m; sourceTree = "<group>"; };
 		9984A05D169218A700C28A9A /* App_Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = App_Icon.png; path = ../App_Icon.png; sourceTree = "<group>"; };
 		9984A05F169218D500C28A9A /* App_Icon.png_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = App_Icon.png_4.png; path = ../App_Icon.png_4.png; sourceTree = "<group>"; };
 		9986BB50168EAD3F00A1C8F5 /* VideoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoDetailViewController.h; sourceTree = "<group>"; };
@@ -215,8 +216,6 @@
 		998DB38A16D97CBB0088C9D3 /* HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryViewController.h; sourceTree = "<group>"; };
 		998DB38B16D97CBB0088C9D3 /* HistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryViewController.m; sourceTree = "<group>"; };
 		9991E0F2168BCF1400A88911 /* XMLRPC-iOS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "XMLRPC-iOS.xcodeproj"; path = "kdbdallas-xmlrpc-ios-f28a13cc16ae/XMLRPC-iOS.xcodeproj"; sourceTree = "<group>"; };
-		9991E120168C0ADF00A88911 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
-		9991E121168C0ADF00A88911 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		9991E125168C21C700A88911 /* butterfly with text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "butterfly with text.png"; sourceTree = "<group>"; };
 		99A7181416D1B4B700AA7518 /* Zion_America.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Zion_America.xcdatamodel; sourceTree = "<group>"; };
 		99A7186B16D1BD5E00AA7518 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -262,6 +261,15 @@
 		99E814AA16DF314000ED04C5 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
 		99E814AC16DF314D00ED04C5 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
 		99E814AE16DF315700ED04C5 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
+		99F7C10616E8521B0065B0AA /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		99F7C12016E8521C0065B0AA /* HTAutocompleteTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTAutocompleteTextField.h; sourceTree = "<group>"; };
+		99F7C12116E8521C0065B0AA /* HTAutocompleteTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTAutocompleteTextField.m; sourceTree = "<group>"; };
+		99F7C12316E8521C0065B0AA /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		99F7C12416E8521C0065B0AA /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		99F7C13D16E854F90065B0AA /* HTAutocompleteManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HTAutocompleteManager.h; path = ../HTAutocompleteManager.h; sourceTree = "<group>"; };
+		99F7C13E16E8550C0065B0AA /* HTAutocompleteManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HTAutocompleteManager.m; path = ../HTAutocompleteManager.m; sourceTree = "<group>"; };
+		99F7C14016E9A1BB0065B0AA /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		99F7C14116E9A1BC0065B0AA /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		FC851208168A1AB100F94C60 /* Zion America.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Zion America.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC85120C168A1AB100F94C60 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FC85120E168A1AB100F94C60 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -288,8 +296,6 @@
 		FC851266168A54B100F94C60 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		FC851267168A54B100F94C60 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		FC851279168ABEC800F94C60 /* right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right.png; sourceTree = "<group>"; };
-		FC85127F168AC78C00F94C60 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
-		FC851280168AC78C00F94C60 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		FC851282168AD11400F94C60 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
 		FC851284168AD1ED00F94C60 /* envelop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = envelop.png; sourceTree = "<group>"; };
 		FC851286168AD1F600F94C60 /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
@@ -350,6 +356,20 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		99F7C10516E8521B0065B0AA /* HTAutocompleteTextField-master */ = {
+			isa = PBXGroup;
+			children = (
+				99F7C13D16E854F90065B0AA /* HTAutocompleteManager.h */,
+				99F7C13E16E8550C0065B0AA /* HTAutocompleteManager.m */,
+				99F7C10616E8521B0065B0AA /* .gitignore */,
+				99F7C12016E8521C0065B0AA /* HTAutocompleteTextField.h */,
+				99F7C12116E8521C0065B0AA /* HTAutocompleteTextField.m */,
+				99F7C12316E8521C0065B0AA /* LICENSE */,
+				99F7C12416E8521C0065B0AA /* README.md */,
+			);
+			path = "HTAutocompleteTextField-master";
+			sourceTree = "<group>";
+		};
 		FC8511FD168A1AB100F94C60 = {
 			isa = PBXGroup;
 			children = (
@@ -398,20 +418,14 @@
 				FC851224168A1AB200F94C60 /* MainStoryboard.storyboard */,
 				FC851266168A54B100F94C60 /* LoginViewController.h */,
 				FC851267168A54B100F94C60 /* LoginViewController.m */,
-				FC85127F168AC78C00F94C60 /* HomeViewController.h */,
-				FC851280168AC78C00F94C60 /* HomeViewController.m */,
 				99050B39168D441800276395 /* SendVideoViewController.h */,
 				99050B3A168D441800276395 /* SendVideoViewController.m */,
-				9991E120168C0ADF00A88911 /* Constants.h */,
-				9991E121168C0ADF00A88911 /* Constants.m */,
 				99050B3C168D59DB00276395 /* VariableStore.h */,
 				99050B3D168D59DB00276395 /* VariableStore.m */,
 				9986BB50168EAD3F00A1C8F5 /* VideoDetailViewController.h */,
 				9986BB51168EAD3F00A1C8F5 /* VideoDetailViewController.m */,
 				9986BB5616913F0C00A1C8F5 /* SendEmailViewController.h */,
 				9986BB5716913F0C00A1C8F5 /* SendEmailViewController.m */,
-				9982926716A1211300709871 /* SendSmsViewController.h */,
-				9982926816A1211300709871 /* SendSmsViewController.m */,
 				99881EFF16924DF0006433E8 /* InboxViewController.h */,
 				99881F0016924DF0006433E8 /* InboxViewController.m */,
 				997C98D81694039600B2C809 /* InboxCell.h */,
@@ -433,6 +447,8 @@
 				99E8147816DC80BB00ED04C5 /* HistoryCell.xib */,
 				99E8147316DC7F4200ED04C5 /* HistoryCell.h */,
 				99E8147416DC7F4200ED04C5 /* HistoryCell.m */,
+				99F7C14016E9A1BB0065B0AA /* Constants.h */,
+				99F7C14116E9A1BC0065B0AA /* Constants.m */,
 				FC851276168AB5D800F94C60 /* Resources */,
 				FC851213168A1AB100F94C60 /* Supporting Files */,
 				99CAA9AD16D88598001622B0 /* loginBox.xib */,
@@ -443,6 +459,7 @@
 		FC851213168A1AB100F94C60 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				99F7C10516E8521B0065B0AA /* HTAutocompleteTextField-master */,
 				99881EF916921FB9006433E8 /* libcrypto.a */,
 				99881EF716921FAC006433E8 /* libiconv.dylib */,
 				99881EF316921F20006433E8 /* libetpan.framework */,
@@ -721,6 +738,9 @@
 				99E814AF16DF315700ED04C5 /* Default-568h@2x.png in Resources */,
 				99C7370116DF3A3000173260 /* logout button-20x20.png in Resources */,
 				997FE37416E0745400D20FCE /* Zion America v2_power button-20x20.png in Resources */,
+				99F7C12516E8521C0065B0AA /* .gitignore in Resources */,
+				99F7C13616E8521C0065B0AA /* LICENSE in Resources */,
+				99F7C13716E8521C0065B0AA /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -758,8 +778,6 @@
 				FC851219168A1AB200F94C60 /* main.m in Sources */,
 				FC85121D168A1AB200F94C60 /* Zion_AmericaAppDelegate.m in Sources */,
 				FC851268168A54B100F94C60 /* LoginViewController.m in Sources */,
-				FC851281168AC78C00F94C60 /* HomeViewController.m in Sources */,
-				9991E122168C0ADF00A88911 /* Constants.m in Sources */,
 				99050B3B168D441800276395 /* SendVideoViewController.m in Sources */,
 				99050B3E168D59DB00276395 /* VariableStore.m in Sources */,
 				9986BB52168EAD3F00A1C8F5 /* VideoDetailViewController.m in Sources */,
@@ -769,13 +787,15 @@
 				997C98DA1694039600B2C809 /* InboxCell.m in Sources */,
 				9988A0CE1696A06700D90D0D /* InboxDetailViewController.m in Sources */,
 				9900D14316994913004DD65A /* ContactsViewController.m in Sources */,
-				9982926916A1211300709871 /* SendSmsViewController.m in Sources */,
 				99E3E65F16CDADE900207D44 /* AddContactViewController.m in Sources */,
 				99A7181516D1B4B700AA7518 /* Zion_America.xcdatamodeld in Sources */,
 				99A7186F16D1C10B00AA7518 /* Contact.m in Sources */,
 				998DB38C16D97CBB0088C9D3 /* HistoryViewController.m in Sources */,
 				99E8146E16DBAFFA00ED04C5 /* History.m in Sources */,
 				99E8147516DC7F4200ED04C5 /* HistoryCell.m in Sources */,
+				99F7C13416E8521C0065B0AA /* HTAutocompleteTextField.m in Sources */,
+				99F7C13F16E8550C0065B0AA /* HTAutocompleteManager.m in Sources */,
+				99F7C14216E9A1BD0065B0AA /* Constants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

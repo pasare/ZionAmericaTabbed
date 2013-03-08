@@ -17,25 +17,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
-    //ContactsViewController *rootViewController = [[ContactsViewController alloc]
-    //                                          initWithStyle:UITableViewStylePlain];
+    //Retieve the contacts
+    [[VariableStore sharedInstance] displayContacts];
     
     NSManagedObjectContext *context = [self managedObjectContext];
     if (!context) {
         // Handle the error.
     }
     else {
-        //Request for contacts
-        NSFetchRequest *request = [[NSFetchRequest alloc] init];
-        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Contact" inManagedObjectContext:_managedObjectContext];
-        [request setEntity:entity];
-        NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
-        NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
-        [request setSortDescriptors:sortDescriptors];
-        NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:_managedObjectContext sectionNameKeyPath:nil cacheName:@"Contacts"];
-        [VariableStore sharedInstance].fetchedContactsController = aFetchedResultsController;
-        
         //Request for history
         NSFetchRequest *request2 = [[NSFetchRequest alloc]init];
         NSEntityDescription *entity2 = [NSEntityDescription entityForName:@"History" inManagedObjectContext:_managedObjectContext];
@@ -51,20 +40,11 @@
         
         NSError *error = nil;
         
-        
-        
-        //globals.fetchedContactsController = aFetchedResultsController;
-        if (![globals.fetchedContactsController performFetch:&error]) {
-            // Replace this implementation with code to handle the error appropriately.
-            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-            abort();
-        }
         if (![globals.fetchedHistoryController performFetch:&error]) {
             // Replace this implementation with code to handle the error appropriately.
             // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
             NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-            abort();
+            //abort();
         }
         
     }
@@ -111,7 +91,7 @@
             // Replace this implementation with code to handle the error appropriately.
             // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
             NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-            abort();
+            //abort();
         }
     }
 }
@@ -181,7 +161,7 @@
          
          */
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
+        //abort();
     }
     
     return _persistentStoreCoordinator;
@@ -194,5 +174,6 @@
 {
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
+
 
 @end

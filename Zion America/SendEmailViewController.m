@@ -26,6 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [HTAutocompleteTextField setDefaultAutocompleteDataSource:[HTAutocompleteManager sharedManager]];
     //set the colors
      self.view.backgroundColor = [UIColor colorWithRed:0/255.0f green:41/255.0f blue:92/255.0f alpha:1];
     _sendEmailTable.backgroundColor = [UIColor clearColor];
@@ -33,7 +34,14 @@
     _commentView.backgroundColor = [UIColor colorWithRed:210/255.0f green:226/255.0f blue:245/255.0f alpha:1];
     
     //Initalize variables
-    _emailName = [[UITextField alloc] initWithFrame:CGRectMake(5, 0, 195, 21)];
+    _emailName = [[HTAutocompleteTextField alloc] initWithFrame:CGRectMake(5, 0, 195, 21)];
+    _emailName.autocompleteType = HTAutocompleteTypeContact;
+    _emailName.keyboardType = UIKeyboardTypeDefault;
+    _emailName.delegate = self;
+    _emailName.ignoreCase = YES;
+    _emailName.showAutocompleteButton = YES;
+    _emailName.clearButtonMode = UITextFieldViewModeAlways;
+
     _emailAddress = [[UITextField alloc] initWithFrame:CGRectMake(5, 0, 195, 21)];
     _emailSubject = [[UITextField alloc] initWithFrame:CGRectMake(5, 0, 195, 21)];
     
@@ -124,6 +132,7 @@
 {
     
     if (theTextField == _emailName) {
+        [self retrieveEmail];
         [theTextField resignFirstResponder];
         [_emailAddress becomeFirstResponder ];
     }
@@ -198,12 +207,12 @@
 }
 - (void) sendEmailFinal:(id) sender
 {
+    VariableStore *globals =[VariableStore sharedInstance];
     _emailAddress.layer.borderWidth = 0.0f;
     
     CTCoreMessage *msg = [[CTCoreMessage alloc] init];
     CTCoreAddress *toAddress = [CTCoreAddress addressWithName:_emailName.text email:_emailAddress.text];
-    CTCoreAddress *fromAddress = [CTCoreAddress addressWithName:@"Maryland Zion" email:@"info@marylandzion.org"];
-    
+    CTCoreAddress *fromAddress = [CTCoreAddress addressWithName:globals.zionName email:globals.smtpEmail];
     NSError *error;
     NSString *videoName = [VariableStore sharedInstance].videoName;
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -230,15 +239,17 @@
     if (_emailSubject.text.length > 0)
         [msg setSubject:_emailSubject.text];
     [msg setBody:msgBody];
-        
-    success = [CTSMTPConnection sendMessage:msg
-                                server:@"mail.marylandzion.org"
-                                username:@"info@marylandzion.org"
-                                password:@"M4ryl4ndZ1on!"
+    
+    if (globals.smtpServer != nil) {
+        success = [CTSMTPConnection sendMessage:msg
+                                server:globals.smtpServer
+                                username:globals.smtpEmail
+                                password:globals.smtpPassword
                                 port:26
                                 connectionType:CTSMTPConnectionTypeStartTLS
                                     useAuth:YES
                                     error:&error];
+    }
     
     if (success) {
         
@@ -371,9 +382,10 @@
         ABAddressBookSave(addressBook, &error);
         
         //Add the contact to the group
-        [self CheckIfGroupExistsWithName:@"Zion America"];
-        
-        ABRecordRef zionAmericaGroup = ABAddressBookGetGroupWithRecordID(addressBook, _groupId);
+        [[VariableStore sharedInstance] CheckIfGroupExistsWithName:@"Zion America"];
+        //[self CheckIfGroupExistsWithName:@"Zion America"];
+        ABRecordID groupId = [[VariableStore sharedInstance] groupId];
+        ABRecordRef zionAmericaGroup = ABAddressBookGetGroupWithRecordID(addressBook, groupId);
         ABGroupAddMember(zionAmericaGroup, person, &error);
         ABAddressBookSave(addressBook, &error);
         
@@ -394,49 +406,18 @@
     history = nil;
 }
 
-//Check for group name
--(void) CheckIfGroupExistsWithName:(NSString*)groupName {
-    
-    
-    BOOL hasGroup = NO;
-    //checks to see if the group is created ad creats group for HiBye contacts
+//Retrieve the email for the auto completed name. If it exists
+-(void) retrieveEmail {
     ABAddressBookRef addressBook = ABAddressBookCreateWithOptions(NULL, NULL);
-    CFIndex groupCount = ABAddressBookGetGroupCount(addressBook);
-    CFArrayRef groupLists= ABAddressBookCopyArrayOfAllGroups(addressBook);
-    
-    for (int i=0; i<groupCount; i++) {
-        ABRecordRef currentCheckedGroup = CFArrayGetValueAtIndex(groupLists, i);
-        NSString *currentGroupName = (__bridge NSString *)ABRecordCopyCompositeName(currentCheckedGroup);
-        
-        if ([currentGroupName isEqualToString:groupName]){
-            //!!! important - save groupID for later use
-            _groupId = ABRecordGetRecordID(currentCheckedGroup);
-            hasGroup=YES;
+    NSArray *people = (__bridge NSArray *)(ABAddressBookCopyPeopleWithName(addressBook, (__bridge CFStringRef)(_emailName.text)));
+    if ((people != nil) && [people count]) {
+        ABRecordRef person = (__bridge ABRecordRef)[people objectAtIndex:0];
+        ABMutableMultiValueRef emailMultiValue = ABRecordCopyValue(person, kABPersonEmailProperty);
+        if(emailMultiValue){
+            _emailAddress.text = (__bridge NSString *) ABMultiValueCopyValueAtIndex(emailMultiValue,0);
         }
     }
-    
-    if (hasGroup==NO){
-        //id the group does not exist you can create one
-        [self createNewGroup:groupName];
-    }
-    
-    //CFRelease(currentCheckedGroup);
-    CFRelease(groupLists);
-    CFRelease(addressBook);
-}
-
--(void) createNewGroup:(NSString*)groupName {
-    
-    ABAddressBookRef addressBook = ABAddressBookCreateWithOptions(NULL, NULL);
-    ABRecordRef newGroup = ABGroupCreate();
-    ABRecordSetValue(newGroup, kABGroupNameProperty,(__bridge CFTypeRef)(groupName), nil);
-    ABAddressBookAddRecord(addressBook, newGroup, nil);
-    ABAddressBookSave(addressBook, nil);
-    CFRelease(addressBook);
-    
-    //!!! important - save groupID for later use
-    _groupId = ABRecordGetRecordID(newGroup);
-    CFRelease(newGroup);
+    else _emailAddress.text = @"";
 }
 
 @end

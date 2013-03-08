@@ -29,7 +29,6 @@
     return self;
 }
 
-
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -41,18 +40,11 @@
 {
     [super viewDidLoad];
     
-    //Check if the back button should be displayed
-    /*if ([[VariableStore sharedInstance] updateContact] != nil) {
-     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]
-     initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
-     target:self action:@selector(updateList:)];
-     } */
     //set the background color
     _searchBar.tintColor = [UIColor colorWithHue:0.6 saturation:0.33 brightness:0.69 alpha:0];
     _videoTable.backgroundColor = [UIColor colorWithRed:0/255.0f green:41/255.0f blue:92/255.0f alpha:1];
     [_videoTable setBackgroundView:nil];
     //Add the searchbar to the view
-    //_videoTable.tableHeaderView = _searchBar;
     _searching = NO;
     _listOfItems = [[NSMutableArray alloc] init];
     
@@ -264,14 +256,6 @@
         //Add the cells by sections
         NSArray *array = [_tableArray objectAtIndex:indexPath.section];
         cell.textLabel.text = [array objectAtIndex:indexPath.row];
-        
-        //Set background of cells
-        /*UIGraphicsBeginImageContext(self.view.frame.size);
-         [[UIImage imageNamed:@"Zion America_v2_login_button grey.png"] drawInRect:self.view.bounds];
-         UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-         UIGraphicsEndImageContext();
-         cell.backgroundColor = [UIColor colorWithPatternImage:image]; */
-        
         cell.backgroundColor = [UIColor colorWithRed:210/255.0f green:226/255.0f blue:245/255.0f alpha:1];
         return cell;
     }
@@ -346,14 +330,6 @@
         [self performSegueWithIdentifier: @"logoutSegue" sender: self];
     }
 }
-
-//Searching methods
-/*- (void) searchBarTextDidBeginEditing:(UISearchBar *)theSearchBar
- {
- 
- _searching = YES;
- 
- } */
 
 - (void)searchBar:(UISearchBar *)theSearchBar textDidChange:(NSString *)searchText {
     //Remove all objects first.

@@ -8,10 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import "VariableStore.h"
+#import <MessageUI/MessageUI.h>
+#import <AddressBook/AddressBook.h>
+#import <AddressBookUI/AddressBookUI.h>
+#import "History.h"
 
-@interface VideoDetailViewController : UIViewController 
-@property (weak, nonatomic) IBOutlet UILabel *urlLabel;
+@interface VideoDetailViewController : UIViewController< MFMessageComposeViewControllerDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *sendSMS;
 @property (weak, nonatomic) IBOutlet UIButton *sendEmail;
 @property (weak, nonatomic) IBOutlet UILabel *videoLabel;
+@property UIAlertView *failedAlert;
+@property NSArray *recipients;
+@property ABRecordID groupId;
+@property NSString *contactName;
+@property NSString *contactPhone;
 @end

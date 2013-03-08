@@ -47,7 +47,7 @@ bool _searching = NO;
                                                  name:@"DataSaved" object:nil];
     
     //get the contacts from the address book
-    [self displayContacts];
+    //[self displayContacts];
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -66,7 +66,7 @@ bool _searching = NO;
     if (_searching)
         return [_listOfItems count];
     else {
-        return [_contactsArray count];
+        return [[VariableStore sharedInstance].contactsArray count];
     }
 }
 
@@ -86,8 +86,9 @@ bool _searching = NO;
         lastName = (__bridge NSString *)ABRecordCopyValue((__bridge ABRecordRef)([_listOfItems objectAtIndex:indexPath.row]), kABPersonLastNameProperty);
     }
     else {
-        firstName =(__bridge NSString *)ABRecordCopyValue((__bridge ABRecordRef)([_contactsArray objectAtIndex:indexPath.row]), kABPersonFirstNameProperty);
-        lastName = (__bridge NSString *)ABRecordCopyValue((__bridge ABRecordRef)([_contactsArray objectAtIndex:indexPath.row]), kABPersonLastNameProperty);
+        NSArray *contactsArray = [[VariableStore sharedInstance] contactsArray];
+        firstName =(__bridge NSString *)ABRecordCopyValue((__bridge ABRecordRef)([contactsArray objectAtIndex:indexPath.row]), kABPersonFirstNameProperty);
+        lastName = (__bridge NSString *)ABRecordCopyValue((__bridge ABRecordRef)([contactsArray objectAtIndex:indexPath.row]), kABPersonLastNameProperty);
     }
     
     NSMutableString *personName = [[NSMutableString alloc] initWithFormat:@"%@ %@",firstName,lastName];
@@ -103,7 +104,7 @@ bool _searching = NO;
     if(_searching)
         usedArray = _listOfItems;
     else {
-        usedArray = _contactsArray;
+        usedArray = [[VariableStore sharedInstance] contactsArray];
     }
     NSString* firstName =(__bridge NSString *)ABRecordCopyValue((__bridge ABRecordRef)([usedArray objectAtIndex:indexPath.row]), kABPersonFirstNameProperty);
     NSString* lastName = (__bridge NSString *)ABRecordCopyValue((__bridge ABRecordRef)([usedArray objectAtIndex:indexPath.row]), kABPersonLastNameProperty);
@@ -122,7 +123,7 @@ bool _searching = NO;
 
 
 -(void) dataSaved:(NSNotification *)notification{
-    [self displayContacts];
+    [[VariableStore sharedInstance] displayContacts];
     [_contactTable reloadData];
 }
 
@@ -210,8 +211,9 @@ bool _searching = NO;
 - (void) searchTableView {
 
     NSString *searchText = _searchBar.text;
+    NSArray *contactsArray = [[VariableStore sharedInstance] contactsArray];
     NSMutableArray *searchArray = [[NSMutableArray alloc] init];
-    [searchArray addObjectsFromArray:_contactsArray];
+    [searchArray addObjectsFromArray:contactsArray];
     NSString *firstName;
     NSString *lastName;
     NSMutableString *personName;
@@ -222,7 +224,7 @@ bool _searching = NO;
     
         NSRange titleResultsRange = [personName rangeOfString:searchText options:NSCaseInsensitiveSearch];
         if (titleResultsRange.length > 0)
-        [_listOfItems addObject:[_contactsArray objectAtIndex:i]];
+        [_listOfItems addObject:[contactsArray objectAtIndex:i]];
 }
 searchArray = nil;
 }
@@ -235,56 +237,7 @@ searchArray = nil;
     [_contactTable reloadData];
 	
 }
-
-//Methods for the iOS addressbook
--(void) displayContacts {
-    ABAddressBookRef addressBook = ABAddressBookCreateWithOptions(NULL,NULL);
-    [self CheckIfGroupExistsWithName:@"Zion America"];
     
-    ABRecordRef zionAmericaGroup = ABAddressBookGetGroupWithRecordID(addressBook,_groupId);
-    __block BOOL accessGranted = NO;
-    
-    if (ABAddressBookRequestAccessWithCompletion != NULL) {
-        dispatch_semaphore_t sema = dispatch_semaphore_create(0);
-        
-        ABAddressBookRequestAccessWithCompletion(addressBook, ^(bool granted, CFErrorRef error) {
-            accessGranted = granted;
-            dispatch_semaphore_signal(sema);
-        });
-        
-        dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
-    }
-    else {
-        accessGranted = YES;
-    }
-    
-    
-    if (accessGranted) {
-        _contactsArray = (__bridge_transfer NSArray*)ABGroupCopyArrayOfAllMembersWithSortOrdering(zionAmericaGroup, kABPersonSortByFirstName);
-        //Create the sections and the list for display
-        ABRecordRef contact;
-        NSString *firstName;
-        NSString *lastName;
-        NSString *firstLetter;
-        NSMutableString *fullName;
-        NSMutableArray *workingArray;
-        for (int i=0; i<[_contactsArray count]; i++) {
-            contact = (__bridge ABRecordRef)([_contactsArray objectAtIndex:i]);
-            firstName = (__bridge NSString *)(ABRecordCopyValue(contact, kABPersonFirstNameProperty));
-            lastName = (__bridge NSString *)(ABRecordCopyValue(contact, kABPersonLastNameProperty));
-            firstLetter = [firstName substringToIndex:1];
-            fullName = [[NSMutableString alloc]initWithFormat:@"%@ %@",firstName,lastName];
-            workingArray = [_contactsDictionary objectForKey:firstLetter];
-            //This letter group has not been created yet
-            if (workingArray == nil)
-                workingArray = [[NSMutableArray alloc]initWithObjects:fullName, nil];
-            else
-                [workingArray addObject:fullName];
-            [_contactsDictionary setObject:workingArray forKey:firstLetter];
-        }
-    }
-    //CFRelease(addressBook);
-}
 //Add contact functions
 - (IBAction)addContact:(id)sender {
     ABNewPersonViewController *view = [[ABNewPersonViewController alloc] init];
@@ -300,8 +253,8 @@ searchArray = nil;
     ABRecordRef zionAmericaGroup = ABAddressBookGetGroupWithRecordID(newPersonViewController.addressBook, _groupId);
     ABGroupAddMember(zionAmericaGroup, person, &error);
     ABAddressBookSave(newPersonViewController.addressBook, &error);
-    [self displayContacts];
-    [_contactTable reloadData];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"DataSaved" object:nil];
     [self dismissViewControllerAnimated:YES completion:^(void){}];
 }
 
@@ -311,7 +264,7 @@ searchArray = nil;
 {
     ABPersonViewController *personView = [[ABPersonViewController alloc] init];
     personView.personViewDelegate = self;
-    personView.displayedPerson = (__bridge ABRecordRef)([_contactsArray objectAtIndex:indexPath.row]);
+    personView.displayedPerson = (__bridge ABRecordRef)([[VariableStore sharedInstance].contactsArray objectAtIndex:indexPath.row]);
     personView.allowsEditing = YES;
     NSArray *displayedItems = [NSArray arrayWithObjects:[NSNumber numberWithInt:kABPersonPhoneProperty],
                                [NSNumber numberWithInt:kABPersonEmailProperty],[NSNumber numberWithInt:kABPersonNoteProperty], nil];
@@ -324,12 +277,12 @@ searchArray = nil;
     return NO;
 }
 
-//Check for group name
+/*//Check for group name
 -(void) CheckIfGroupExistsWithName:(NSString*)groupName {
     
     
     BOOL hasGroup = NO;
-    //checks to see if the group is created ad creats group for HiBye contacts
+    //checks to see if the group is created and creates group if it does not exist
     ABAddressBookRef addressBook = ABAddressBookCreateWithOptions(NULL, NULL);
     CFIndex groupCount = ABAddressBookGetGroupCount(addressBook);
     CFArrayRef groupLists= ABAddressBookCopyArrayOfAllGroups(addressBook);
@@ -351,7 +304,7 @@ searchArray = nil;
     }
     
     //CFRelease(currentCheckedGroup);
-    CFRelease(groupLists);
+    //CFRelease(groupLists);
     CFRelease(addressBook); 
 }
 
@@ -367,5 +320,5 @@ searchArray = nil;
     //!!! important - save groupID for later use
     _groupId = ABRecordGetRecordID(newGroup);
     CFRelease(newGroup);
-}
+} */
 @end
