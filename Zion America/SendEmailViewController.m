@@ -26,6 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     [HTAutocompleteTextField setDefaultAutocompleteDataSource:[HTAutocompleteManager sharedManager]];
     //set the colors
      self.view.backgroundColor = [UIColor colorWithRed:0/255.0f green:41/255.0f blue:92/255.0f alpha:1];
@@ -255,7 +256,8 @@
         
         [self.statusAlert dismissWithClickedButtonIndex:0 animated:YES];
         //Save contact
-        [self saveContact];
+        if ([VariableStore sharedInstance].accessGranted)
+            [self saveContact];
         
         //Add item to history
         [self saveHistory];
@@ -264,7 +266,7 @@
         [_emailAlert show];
         //return to video selection view
         [[NSNotificationCenter defaultCenter] postNotificationName:@"DataSaved" object:nil];
-        [self performSegueWithIdentifier: @"emailSentSegue" sender: self];
+        [self.navigationController popToRootViewControllerAnimated:YES];
         [VariableStore sharedInstance].selectedContactName = nil;
         [VariableStore sharedInstance].selectedContactEmail = nil;
         [VariableStore sharedInstance].selectedContactPhone = nil;

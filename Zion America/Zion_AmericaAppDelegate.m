@@ -17,9 +17,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    //Retieve the contacts
-    [[VariableStore sharedInstance] displayContacts];
-    
     NSManagedObjectContext *context = [self managedObjectContext];
     if (!context) {
         // Handle the error.

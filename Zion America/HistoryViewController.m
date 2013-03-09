@@ -180,8 +180,6 @@
     else if (numberOfDays < 7) {
         NSDateComponents *weekdayComponents = [calendar components:NSWeekdayCalendarUnit fromDate:calendarDate];
         int dayOfWeek = [weekdayComponents weekday];
-        NSLog(@"This is the date %d",dayOfWeek);
-        NSLog(@"This is the date %@",date);
         switch (dayOfWeek) {
             case 1:
                 dateString = @"Sunday";

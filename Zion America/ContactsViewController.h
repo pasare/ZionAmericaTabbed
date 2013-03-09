@@ -21,6 +21,5 @@
 @property (nonatomic, retain) NSMutableDictionary *contactsDictionary;
 @property (nonatomic, retain) NSMutableArray *listOfItems;
 @property UIAlertView *successContactAlert;
-@property ABRecordID groupId;
 
 @end

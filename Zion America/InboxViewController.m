@@ -100,8 +100,8 @@
                 newCount++;
         }
     
-        NSMutableString *newTitle= [NSMutableString stringWithFormat:@"Inbox (%d)",newCount];
-        //NSString *newTitle = @"Inbox";
+        //NSMutableString *newTitle= [NSMutableString stringWithFormat:@"Inbox (%d)",newCount];
+        NSString *newTitle = @"Inbox";
         _inboxNavigationItem.title = newTitle;
         [_emailTable reloadData];
     
@@ -156,12 +156,12 @@
     if ([currentSender isEqualToString:@""]) {
             currentSender = [[message.from anyObject] email];
         }
-    if ([message isUnread]) {
+    /*if ([message isUnread]) {
         [[cell unreadMessageLabel] setImage:[UIImage imageNamed:@"gnome_mail_unread.png"]];
     }
     else {
         [[cell unreadMessageLabel] setImage:[UIImage imageNamed:@"gnome_mail_read.png"]];
-    }
+    } */
     [[cell senderLabel]setText:currentSender];
     [[cell titleLabel]setText:subject];
     [[cell timeLabel]setText:dateString];
@@ -184,7 +184,47 @@
     [self performSegueWithIdentifier: @"emailDetailSegue" sender: self];
 }
 
-//Searching methods
+//search methods
+- (void)searchBar:(UISearchBar *)theSearchBar textDidChange:(NSString *)searchText {
+    //Remove all objects first.
+    [_listOfItems removeAllObjects];
+    
+    if([searchText length] > 0) {
+        _searching = YES;
+        [self searchTableView];
+    }
+    else {
+        _searching = NO;
+    }
+    [_emailTable reloadData];
+}
+
+- (void) searchTableView {
+    
+    NSString *searchText = _searchBar.text;
+    
+    for (CTCoreMessage *sTemp in _tableArray)
+    {
+        NSRange subjectResultsRange = [[sTemp subject] rangeOfString:searchText options:NSCaseInsensitiveSearch];
+        NSRange fromResultsRange = [[[sTemp.from anyObject]name] rangeOfString:searchText options:NSCaseInsensitiveSearch];
+        NSRange toResultsRange = [[[sTemp.to anyObject]name] rangeOfString:searchText options:NSCaseInsensitiveSearch];
+        NSRange bodyResultsRange = [[sTemp body] rangeOfString:searchText options:NSCaseInsensitiveSearch];
+        if (subjectResultsRange.length > 0 || fromResultsRange.length > 0 || toResultsRange.length > 0 || bodyResultsRange.length > 0)
+            [_listOfItems addObject:sTemp];
+    }
+    searchText = nil;
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
+{
+	searchBar.text = nil;
+	[searchBar resignFirstResponder];
+    _searching = NO;
+    [_emailTable reloadData];
+	
+}
+
+/*//Searching methods
 - (void) searchBarTextDidBeginEditing:(UISearchBar *)theSearchBar
 {
     
@@ -268,7 +308,7 @@
 {
     
     [self searchTableView];
-}
+} */
 
 -(void) updateList
 {

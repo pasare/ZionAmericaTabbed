@@ -126,6 +126,9 @@
         globals.loginID = self.loginID;
         globals.loginPass = self.loginPass;
         
+        //Retieve the contacts
+        [[VariableStore sharedInstance] displayContacts];
+        
         NSLog(@"Authenticated");
         
         // ADDED BY PHIL BROWNING ----------------------------------------------

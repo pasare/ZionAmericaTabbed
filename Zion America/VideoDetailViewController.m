@@ -55,7 +55,7 @@
 - (IBAction)sendSms:(id)sender {
     
     if ([VariableStore sharedInstance].selectedContactName == nil) {
-        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Save History?" message:@"In order to save the history please provide the contacts name" delegate:self cancelButtonTitle:@"Save" otherButtonTitles:@"Cancel",nil];
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Save History?" message:@"In order to save the history please provide the contacts name" delegate:self cancelButtonTitle:@"Save" otherButtonTitles:@"Don't Save",nil];
          alert.alertViewStyle = UIAlertViewStylePlainTextInput;
          [alert show];
     }
@@ -95,8 +95,10 @@
             [VariableStore sharedInstance].selectedContactPhone = nil;
             [VariableStore sharedInstance].selectedContactEmail = nil;
             [self dismissViewControllerAnimated:YES completion:^(void){}];
-            [self.navigationController popToRootViewControllerAnimated:YES];
             [_failedAlert show];
+            
+            
+            
 			break;
         }
 		case MessageComposeResultFailed:
@@ -196,6 +198,7 @@
 		controller.body = bodyText;
 		controller.recipients = [NSArray arrayWithObjects:[VariableStore sharedInstance].selectedContactPhone, nil];
 		controller.messageComposeDelegate = self;
+        //controller.modalTransitionStyle = UIModalTransitionStylePartialCurl;
         [self presentViewController:controller animated:YES completion:^(void){}];
 	}
 }
@@ -225,6 +228,7 @@
         [self createNewGroup:groupName];
     }
     
+    //CFRelease(currentCheckedGroup);
     CFRelease(groupLists);
     CFRelease(addressBook);
 }
@@ -251,8 +255,13 @@
     {
         [VariableStore sharedInstance].selectedContactName = [alertView textFieldAtIndex:0].text;
         //_contactPhone = [alertView textFieldAtIndex:1].text;
+        [self composeSms];
     }
-    [self composeSms];
+    else if ([title isEqualToString:@"Don't Save"])
+        [self composeSms];
+    else {
+        [self.navigationController popToRootViewControllerAnimated:YES];
+    }
 }
 
 @end

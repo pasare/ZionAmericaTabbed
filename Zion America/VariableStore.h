@@ -26,6 +26,7 @@
 @property (nonatomic) NSFetchedResultsController *fetchedContactsController;
 @property (nonatomic) NSFetchedResultsController *fetchedHistoryController;
 @property ABRecordID groupId;
+@property (nonatomic) BOOL accessGranted;
 
 // ADDED BY PHIL BROWNING ------------------------------------------------------
 @property (nonatomic) NSString *smtpEmail;
@@ -52,6 +53,7 @@
 - (NSFetchedResultsController*) fetchedHistoryController;
 -(void) displayContacts;
 -(void) CheckIfGroupExistsWithName:(NSString*)groupName;
+-(BOOL)accessGranted;
 
 // ADDED BY PHIL BROWNING ------------------------------------------------------
 - (NSString*) smtpEmail;

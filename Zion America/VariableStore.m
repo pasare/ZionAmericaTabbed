@@ -70,6 +70,10 @@
     return _fetchedHistoryController;
 }
 
+- (BOOL) accessGranted{
+    return _accessGranted;
+}
+
 // ADDED BY PHIL BROWNING ------------------------------------------------------
 - (NSString*) smtpEmail {
     return _smtpEmail;
@@ -101,29 +105,39 @@
 //Methods for the iOS addressbook
 -(void) displayContacts {
     
-    __block BOOL accessGranted = NO;
+    _accessGranted = NO;
     ABAddressBookRef addressBook = ABAddressBookCreateWithOptions(NULL,NULL);
+    
     if (ABAddressBookRequestAccessWithCompletion != NULL) {
-        dispatch_semaphore_t sema = dispatch_semaphore_create(0);
-        
-        ABAddressBookRequestAccessWithCompletion(addressBook, ^(bool granted, CFErrorRef error) {
-            accessGranted = granted;
-            dispatch_semaphore_signal(sema);
-        });
-        
-        dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
+        //First time access granted
+        if (ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusNotDetermined) {
+            ABAddressBookRequestAccessWithCompletion(addressBook, ^(bool granted, CFErrorRef error) {
+            _accessGranted = granted;
+            });
+        }
+        // Authorized access
+        else if (ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusAuthorized){
+            _accessGranted = YES;
+        }
+        else {
+            //Access has been denied
+            UIAlertView *failedAlert = [[UIAlertView alloc] initWithTitle:@"Alert!" message:@"Unable to access contacts, grant this application access in your privacy settings" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil ];
+            [failedAlert show];
+        }
     }
+    //Legacy device access request is not required
     else {
-        accessGranted = YES;
+        _accessGranted = YES;
     }
     
     
-    if (accessGranted) {
+    if (_accessGranted) {
         
         [self CheckIfGroupExistsWithName:@"Zion America"];
         ABRecordRef zionAmericaGroup = ABAddressBookGetGroupWithRecordID(addressBook,_groupId);
         [VariableStore sharedInstance].contactsArray = (__bridge_transfer NSArray*)ABGroupCopyArrayOfAllMembersWithSortOrdering(zionAmericaGroup, kABPersonSortByFirstName);
     }
+    
     //CFRelease(addressBook);
 }
 

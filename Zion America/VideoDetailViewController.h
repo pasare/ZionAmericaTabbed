@@ -17,7 +17,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *sendSMS;
 @property (weak, nonatomic) IBOutlet UIButton *sendEmail;
 @property (weak, nonatomic) IBOutlet UILabel *videoLabel;
-@property UIAlertView *failedAlert;
+@property (strong,retain) UIAlertView *failedAlert;
 @property NSArray *recipients;
 @property ABRecordID groupId;
 @property NSString *contactName;

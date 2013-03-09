@@ -32,7 +32,7 @@
     _toLabel.layer.borderWidth = 1.0;
     
     CTCoreMessage *currentEmail = [[VariableStore sharedInstance]selectedEmail];
-    NSString *body = [currentEmail htmlBody];
+    NSString *body = [currentEmail body];
     NSMutableString *fromText = [NSMutableString stringWithString:_fromLabel.text];
     NSMutableString *toText = [NSMutableString stringWithString:_toLabel.text];
     [fromText appendString:[[[currentEmail from] anyObject] name]];

@@ -52,7 +52,6 @@
 		99CAA9A816D87E1D001622B0 /* button-green1.png in Resources */ = {isa = PBXBuildFile; fileRef = 99CAA9A716D87E1D001622B0 /* button-green1.png */; };
 		99CAA9AA16D882CF001622B0 /* Zion America v2_login_bg only_no text.png in Resources */ = {isa = PBXBuildFile; fileRef = 99CAA9A916D882CF001622B0 /* Zion America v2_login_bg only_no text.png */; };
 		99CAA9AC16D8830E001622B0 /* Zion America v2_login_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 99CAA9AB16D8830E001622B0 /* Zion America v2_login_button.png */; };
-		99CAA9AE16D88598001622B0 /* loginBox.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99CAA9AD16D88598001622B0 /* loginBox.xib */; };
 		99CAA9B016D885CC001622B0 /* Zion America v2_login_user pass.png in Resources */ = {isa = PBXBuildFile; fileRef = 99CAA9AF16D885CC001622B0 /* Zion America v2_login_user pass.png */; };
 		99CAA9B216D886C9001622B0 /* Zion America v2_login_user_pass.png in Resources */ = {isa = PBXBuildFile; fileRef = 99CAA9B116D886C9001622B0 /* Zion America v2_login_user_pass.png */; };
 		99CAA9B416D88D4A001622B0 /* Zion America v2_login_pass.png in Resources */ = {isa = PBXBuildFile; fileRef = 99CAA9B316D88D4A001622B0 /* Zion America v2_login_pass.png */; };
@@ -226,7 +225,6 @@
 		99CAA9A716D87E1D001622B0 /* button-green1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-green1.png"; sourceTree = "<group>"; };
 		99CAA9A916D882CF001622B0 /* Zion America v2_login_bg only_no text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Zion America v2_login_bg only_no text.png"; sourceTree = "<group>"; };
 		99CAA9AB16D8830E001622B0 /* Zion America v2_login_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Zion America v2_login_button.png"; sourceTree = "<group>"; };
-		99CAA9AD16D88598001622B0 /* loginBox.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = loginBox.xib; sourceTree = "<group>"; };
 		99CAA9AF16D885CC001622B0 /* Zion America v2_login_user pass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Zion America v2_login_user pass.png"; sourceTree = "<group>"; };
 		99CAA9B116D886C9001622B0 /* Zion America v2_login_user_pass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Zion America v2_login_user_pass.png"; sourceTree = "<group>"; };
 		99CAA9B316D88D4A001622B0 /* Zion America v2_login_pass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Zion America v2_login_pass.png"; sourceTree = "<group>"; };
@@ -451,7 +449,6 @@
 				99F7C14116E9A1BC0065B0AA /* Constants.m */,
 				FC851276168AB5D800F94C60 /* Resources */,
 				FC851213168A1AB100F94C60 /* Supporting Files */,
-				99CAA9AD16D88598001622B0 /* loginBox.xib */,
 			);
 			path = "Zion America";
 			sourceTree = "<group>";
@@ -709,7 +706,6 @@
 				99CAA9A816D87E1D001622B0 /* button-green1.png in Resources */,
 				99CAA9AA16D882CF001622B0 /* Zion America v2_login_bg only_no text.png in Resources */,
 				99CAA9AC16D8830E001622B0 /* Zion America v2_login_button.png in Resources */,
-				99CAA9AE16D88598001622B0 /* loginBox.xib in Resources */,
 				99CAA9B016D885CC001622B0 /* Zion America v2_login_user pass.png in Resources */,
 				99CAA9B216D886C9001622B0 /* Zion America v2_login_user_pass.png in Resources */,
 				99CAA9B416D88D4A001622B0 /* Zion America v2_login_pass.png in Resources */,

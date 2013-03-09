@@ -35,9 +35,6 @@ bool _searching = NO;
     _contactTable.backgroundColor = [UIColor colorWithRed:0/255.0f green:41/255.0f blue:92/255.0f alpha:1];
     [_contactTable setBackgroundView:nil];
     
-	// Do any additional setup after loading the view.
-    
-    
     //Create the success alert
     _successContactAlert = [[UIAlertView alloc] initWithTitle:@"Status" message:@"The contact was added successfully, God bless you!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil ];
     
@@ -123,7 +120,8 @@ bool _searching = NO;
 
 
 -(void) dataSaved:(NSNotification *)notification{
-    [[VariableStore sharedInstance] displayContacts];
+    if ([VariableStore sharedInstance].accessGranted)
+        [[VariableStore sharedInstance] displayContacts];
     [_contactTable reloadData];
 }
 
@@ -250,7 +248,8 @@ searchArray = nil;
 
 - (void)newPersonViewController:(ABNewPersonViewController *)newPersonViewController didCompleteWithNewPerson:(ABRecordRef)person {
     CFErrorRef error = NULL;
-    ABRecordRef zionAmericaGroup = ABAddressBookGetGroupWithRecordID(newPersonViewController.addressBook, _groupId);
+    ABRecordID groupId = [[VariableStore sharedInstance] groupId];
+    ABRecordRef zionAmericaGroup = ABAddressBookGetGroupWithRecordID(newPersonViewController.addressBook, groupId);
     ABGroupAddMember(zionAmericaGroup, person, &error);
     ABAddressBookSave(newPersonViewController.addressBook, &error);
     
@@ -259,7 +258,6 @@ searchArray = nil;
 }
 
 //Edit contact functions
-
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
 {
     ABPersonViewController *personView = [[ABPersonViewController alloc] init];
@@ -277,48 +275,4 @@ searchArray = nil;
     return NO;
 }
 
-/*//Check for group name
--(void) CheckIfGroupExistsWithName:(NSString*)groupName {
-    
-    
-    BOOL hasGroup = NO;
-    //checks to see if the group is created and creates group if it does not exist
-    ABAddressBookRef addressBook = ABAddressBookCreateWithOptions(NULL, NULL);
-    CFIndex groupCount = ABAddressBookGetGroupCount(addressBook);
-    CFArrayRef groupLists= ABAddressBookCopyArrayOfAllGroups(addressBook);
-    
-    for (int i=0; i<groupCount; i++) {
-        ABRecordRef currentCheckedGroup = CFArrayGetValueAtIndex(groupLists, i);
-        NSString *currentGroupName = (__bridge NSString *)ABRecordCopyCompositeName(currentCheckedGroup);
-        
-        if ([currentGroupName isEqualToString:groupName]){
-            //!!! important - save groupID for later use
-            _groupId = ABRecordGetRecordID(currentCheckedGroup);
-            hasGroup=YES;
-        }
-    }
-    
-    if (hasGroup==NO){
-        //id the group does not exist you can create one
-        [self createNewGroup:groupName];
-    }
-    
-    //CFRelease(currentCheckedGroup);
-    //CFRelease(groupLists);
-    CFRelease(addressBook); 
-}
-
--(void) createNewGroup:(NSString*)groupName {
-    
-    ABAddressBookRef addressBook = ABAddressBookCreateWithOptions(NULL, NULL);
-    ABRecordRef newGroup = ABGroupCreate();
-    ABRecordSetValue(newGroup, kABGroupNameProperty,(__bridge CFTypeRef)(groupName), nil);
-    ABAddressBookAddRecord(addressBook, newGroup, nil);
-    ABAddressBookSave(addressBook, nil);
-    CFRelease(addressBook);
-    
-    //!!! important - save groupID for later use
-    _groupId = ABRecordGetRecordID(newGroup);
-    CFRelease(newGroup);
-} */
 @end
