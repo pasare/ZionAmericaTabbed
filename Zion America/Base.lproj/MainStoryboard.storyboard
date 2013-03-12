@@ -103,6 +103,9 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="340" id="7H9-46-y8f"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="delegate" destination="4N1-SI-aIo" id="D0u-Sk-1z2"/>
+                                        </connections>
                                     </webView>
                                 </subviews>
                                 <constraints>
@@ -913,6 +916,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="8sI-Va-apy"/>
-        <segue reference="pad-7t-dQh"/>
+        <segue reference="Dva-Xt-oQ0"/>
     </inferredMetricsTieBreakers>
 </document>

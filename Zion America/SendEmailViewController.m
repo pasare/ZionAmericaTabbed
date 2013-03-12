@@ -185,25 +185,30 @@
 //send the email
 
 -(void) sendEmail:(id) sender {
-    if (_emailName.text.length !=0) {
-        if (_emailAddress.text.length != 0) {
-            [self.statusAlert show];
-            [NSTimer scheduledTimerWithTimeInterval:.5 target:self selector:@selector(sendEmailFinal:) userInfo:nil repeats:NO];
+    if(![[VariableStore sharedInstance] connected]) {
+        UIAlertView *noaccess = [[UIAlertView alloc] initWithTitle:@"Status" message:@"No Internet Connection" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil ];
+        [noaccess show];
+    }else{
+        if (_emailName.text.length !=0) {
+            if (_emailAddress.text.length != 0) {
+                [self.statusAlert show];
+                [NSTimer scheduledTimerWithTimeInterval:.5 target:self selector:@selector(sendEmailFinal:) userInfo:nil repeats:NO];
+            }
+            else {
+                NSIndexPath *path = [NSIndexPath indexPathForRow:1 inSection:0];
+                [_sendEmailTable cellForRowAtIndexPath:path].textLabel.textColor = [UIColor redColor];
+                [_emailAddress becomeFirstResponder];
+                path = [NSIndexPath indexPathForRow:0 inSection:0];
+                [_sendEmailTable cellForRowAtIndexPath:path].textLabel.textColor = [UIColor blackColor];
+            }
         }
         else {
             NSIndexPath *path = [NSIndexPath indexPathForRow:1 inSection:0];
-            [_sendEmailTable cellForRowAtIndexPath:path].textLabel.textColor = [UIColor redColor];
-            [_emailAddress becomeFirstResponder];
-            path = [NSIndexPath indexPathForRow:0 inSection:0];
             [_sendEmailTable cellForRowAtIndexPath:path].textLabel.textColor = [UIColor blackColor];
+            path = [NSIndexPath indexPathForRow:0 inSection:0];
+            [_sendEmailTable cellForRowAtIndexPath:path].textLabel.textColor = [UIColor redColor];
+            [_emailName becomeFirstResponder];
         }
-    }
-    else {
-        NSIndexPath *path = [NSIndexPath indexPathForRow:1 inSection:0];
-        [_sendEmailTable cellForRowAtIndexPath:path].textLabel.textColor = [UIColor blackColor];
-        path = [NSIndexPath indexPathForRow:0 inSection:0];
-        [_sendEmailTable cellForRowAtIndexPath:path].textLabel.textColor = [UIColor redColor];
-        [_emailName becomeFirstResponder];
     }
 }
 - (void) sendEmailFinal:(id) sender

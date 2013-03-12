@@ -23,6 +23,8 @@
 		99176FA91694147900271DF1 /* bullet_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 99176FA81694147900271DF1 /* bullet_blue.png */; };
 		997C98DA1694039600B2C809 /* InboxCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 997C98D91694039600B2C809 /* InboxCell.m */; };
 		997C98DC1694046B00B2C809 /* InboxCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 997C98DB1694046B00B2C809 /* InboxCellView.xib */; };
+		997D83A316EEDAB500852961 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 997D83A216EEDAB400852961 /* SystemConfiguration.framework */; };
+		997D83A816EEDB8300852961 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 997D83A716EEDB8300852961 /* Reachability.m */; };
 		997F12C51694170200E2F27B /* gnome_mail_read.png in Resources */ = {isa = PBXBuildFile; fileRef = 997F12C41694170200E2F27B /* gnome_mail_read.png */; };
 		997FE37416E0745400D20FCE /* Zion America v2_power button-20x20.png in Resources */ = {isa = PBXBuildFile; fileRef = 997FE37316E0745400D20FCE /* Zion America v2_power button-20x20.png */; };
 		9984A05E169218A700C28A9A /* App_Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9984A05D169218A700C28A9A /* App_Icon.png */; };
@@ -188,6 +190,9 @@
 		997C98D81694039600B2C809 /* InboxCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InboxCell.h; sourceTree = "<group>"; };
 		997C98D91694039600B2C809 /* InboxCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InboxCell.m; sourceTree = "<group>"; };
 		997C98DB1694046B00B2C809 /* InboxCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InboxCellView.xib; sourceTree = "<group>"; };
+		997D83A216EEDAB400852961 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		997D83A616EEDB8300852961 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		997D83A716EEDB8300852961 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		997F12C41694170200E2F27B /* gnome_mail_read.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gnome_mail_read.png; sourceTree = "<group>"; };
 		997FE37316E0745400D20FCE /* Zion America v2_power button-20x20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Zion America v2_power button-20x20.png"; sourceTree = "<group>"; };
 		9984A05D169218A700C28A9A /* App_Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = App_Icon.png; path = ../App_Icon.png; sourceTree = "<group>"; };
@@ -305,6 +310,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				997D83A316EEDAB500852961 /* SystemConfiguration.framework in Frameworks */,
 				99047A9416E57C1200622548 /* AddressBookUI.framework in Frameworks */,
 				99047A9016E57C0900622548 /* AddressBook.framework in Frameworks */,
 				99A7186C16D1BD5E00AA7518 /* CoreData.framework in Frameworks */,
@@ -371,6 +377,7 @@
 		FC8511FD168A1AB100F94C60 = {
 			isa = PBXGroup;
 			children = (
+				997D83A216EEDAB400852961 /* SystemConfiguration.framework */,
 				99881EC816921DE9006433E8 /* MailCore.xcodeproj */,
 				9991E0F2168BCF1400A88911 /* XMLRPC-iOS.xcodeproj */,
 				FC851212168A1AB100F94C60 /* Zion America */,
@@ -456,6 +463,8 @@
 		FC851213168A1AB100F94C60 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				997D83A616EEDB8300852961 /* Reachability.h */,
+				997D83A716EEDB8300852961 /* Reachability.m */,
 				99F7C10516E8521B0065B0AA /* HTAutocompleteTextField-master */,
 				99881EF916921FB9006433E8 /* libcrypto.a */,
 				99881EF716921FAC006433E8 /* libiconv.dylib */,
@@ -792,6 +801,7 @@
 				99F7C13416E8521C0065B0AA /* HTAutocompleteTextField.m in Sources */,
 				99F7C13F16E8550C0065B0AA /* HTAutocompleteManager.m in Sources */,
 				99F7C14216E9A1BD0065B0AA /* Constants.m in Sources */,
+				997D83A816EEDB8300852961 /* Reachability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

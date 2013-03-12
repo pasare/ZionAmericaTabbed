@@ -13,6 +13,7 @@
 #import "WordPressConnection.h"
 #import "Constants.h"
 #import "VariableStore.h"
+#import <SystemConfiguration/SystemConfiguration.h>
 
 
 @interface LoginViewController : UIViewController <UITextFieldDelegate>

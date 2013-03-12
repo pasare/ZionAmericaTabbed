@@ -10,7 +10,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "VariableStore.h"
 
-@interface InboxDetailViewController : UIViewController
+@interface InboxDetailViewController : UIViewController<UIWebViewDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *subjectLabel;
 @property (weak, nonatomic) IBOutlet UIWebView *bodyView;
 @property (weak, nonatomic) IBOutlet UILabel *fromLabel;

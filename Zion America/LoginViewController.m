@@ -106,8 +106,13 @@
     }
     else
     {
-        [self.statusAlert show];
-        [NSTimer scheduledTimerWithTimeInterval:.5 target:self selector:@selector(tryLogin) userInfo:nil repeats:NO];
+        if(![[VariableStore sharedInstance] connected]) {
+            UIAlertView *noaccess = [[UIAlertView alloc] initWithTitle:@"Status" message:@"No Internet Connection" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil ];
+            [noaccess show];
+        }else{
+            [self.statusAlert show];
+            [NSTimer scheduledTimerWithTimeInterval:.5 target:self selector:@selector(tryLogin) userInfo:nil repeats:NO];
+        }
     }
 }
 
@@ -149,7 +154,7 @@
     } else {
         [self.failedLoginAlert show];
         NSLog(@"Bad login or password");
-    }  
+    }
 }
 
 

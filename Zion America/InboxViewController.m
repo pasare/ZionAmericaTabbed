@@ -224,96 +224,16 @@
 	
 }
 
-/*//Searching methods
-- (void) searchBarTextDidBeginEditing:(UISearchBar *)theSearchBar
-{
-    
-    _searching = YES;
-    _letUserSelectRow = NO;
-    _emailTable.scrollEnabled = NO;
-    
-    //Add the done button.
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]
-                                              initWithBarButtonSystemItem:UIBarButtonSystemItemDone
-                                              target:self action:@selector(doneSearching_Clicked:)];
-}
-
-- (NSIndexPath *)tableView :(UITableView *)theTableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    
-    if(_letUserSelectRow)
-        return indexPath;
-    else
-        return nil;
-}
-
-- (void)searchBar:(UISearchBar *)theSearchBar textDidChange:(NSString *)searchText
-{
-    
-    //Remove all objects first.
-    [_listOfItems removeAllObjects];
-    
-    if([searchText length] > 0) {
-        
-        _searching = YES;
-        _letUserSelectRow = YES;
-        _emailTable.scrollEnabled = YES;
-        [self searchTableView];
-    }
-    else {
-        
-        _searching = NO;
-        _letUserSelectRow = NO;
-        _emailTable.scrollEnabled = NO;
-    }
-    
-    [_emailTable reloadData];
-}
-
-- (void) searchTableView
-{
-    
-    NSString *searchText = _searchBar.text;
-
-    for (CTCoreMessage *sTemp in _tableArray)
-    {
-        NSRange subjectResultsRange = [[sTemp subject] rangeOfString:searchText options:NSCaseInsensitiveSearch];
-        NSRange fromResultsRange = [[[sTemp.from anyObject]name] rangeOfString:searchText options:NSCaseInsensitiveSearch];
-        NSRange toResultsRange = [[[sTemp.to anyObject]name] rangeOfString:searchText options:NSCaseInsensitiveSearch];
-        NSRange bodyResultsRange = [[sTemp body] rangeOfString:searchText options:NSCaseInsensitiveSearch];
-        if (subjectResultsRange.length > 0 || fromResultsRange.length > 0 || toResultsRange.length > 0 || bodyResultsRange.length > 0)
-            [_listOfItems addObject:sTemp];
-    }
-}
-
-- (void) doneSearching_Clicked:(id)sender
-{
-    
-    _searchBar.text = @"";
-    [_searchBar resignFirstResponder];
-    
-    _letUserSelectRow = YES;
-    _searching = NO;
-    _emailTable.scrollEnabled = YES;
-    //Recreate the sync button
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]
-                                              initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
-                                              target:self action:@selector(updateList)];
-    
-    
-    [_emailTable reloadData];
-}
-
-- (void) searchBarSearchButtonClicked:(UISearchBar *)theSearchBar
-{
-    
-    [self searchTableView];
-} */
-
 -(void) updateList
 {
-    [self.statusAlert show];
-    [NSTimer scheduledTimerWithTimeInterval:.5 target:self selector:@selector(tryRetrieveEmailList) userInfo:nil repeats:NO];
+    //First check for internet connectivity
+    if(![[VariableStore sharedInstance] connected]) {
+        UIAlertView *noaccess = [[UIAlertView alloc] initWithTitle:@"Status" message:@"No Internet Connection" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil ];
+        [noaccess show];
+    }else{
+        [self.statusAlert show];
+        [NSTimer scheduledTimerWithTimeInterval:.5 target:self selector:@selector(tryRetrieveEmailList) userInfo:nil repeats:NO];
+    }
 }
 
 - (IBAction)confirmLogout:(id)sender {

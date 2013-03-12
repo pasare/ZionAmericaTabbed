@@ -11,6 +11,7 @@
 #import <AddressBook/AddressBook.h>
 #import <AddressBookUI/AddressBookUI.h>
 #import "Contact.h"
+#import "Reachability.h"
 
 @interface VariableStore : NSObject
 @property (nonatomic) NSString *loginID;
@@ -64,4 +65,5 @@
 - (NSString*) zionName;
 // END -------------------------------------------------------------------------
 
+- (BOOL)connected;
 @end
