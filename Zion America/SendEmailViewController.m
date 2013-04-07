@@ -186,7 +186,7 @@
 
 -(void) sendEmail:(id) sender {
     if(![[VariableStore sharedInstance] connected]) {
-        UIAlertView *noaccess = [[UIAlertView alloc] initWithTitle:@"Status" message:@"No Internet Connection" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil ];
+        UIAlertView *noaccess = [[UIAlertView alloc] initWithTitle:@"No Internet Connection" message:@"An active internet connection is required to use this appliation" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil ];
         [noaccess show];
     }else{
         if (_emailName.text.length !=0) {
