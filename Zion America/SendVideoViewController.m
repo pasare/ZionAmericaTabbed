@@ -10,7 +10,7 @@
 
 // ADDED BY P.BROWNING ---------------------------------------------------------
 #define FONT_SIZE 17.0f
-#define CELL_CONTENT_WIDTH 270.0f
+#define CELL_CONTENT_WIDTH 260.0f
 #define CELL_CONTENT_MARGIN 10.0f
 #define CELL_SEARCHING_WIDTH 320.0f
 // END -------------------------------------------------------------------------
@@ -63,6 +63,7 @@
     
     //Load the video list from memory if possible
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSLog(@"%@", defaults);
     NSArray *wpposts = [defaults objectForKey:@"posts"];
     
     //Load the video list from memory
@@ -132,11 +133,15 @@
     NSString *server = WPSERVER;
     WordPressConnection *connection = [WordPressConnection alloc];
     NSDictionary *wpposts = [connection getPosts:server username: [[VariableStore sharedInstance] loginID] password:[[VariableStore sharedInstance] loginPass]];
+    NSArray *wpmedia = [connection getMediaLibrary:server username:[[VariableStore sharedInstance] loginID] password:[[VariableStore sharedInstance] loginPass]];
     [self.statusAlert dismissWithClickedButtonIndex:0 animated:YES];
     
     //Save the posts to defaults, to keep across sessions
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:wpposts forKey:@"posts"];
+    
+    // Add video URL to posts
+    NSLog(@"%@", wpmedia);
     
     if (wpposts != nil) {
         _tableArray = [[NSMutableArray alloc] initWithCapacity:[wpposts count]];

@@ -12,8 +12,10 @@
 #import <AddressBook/AddressBook.h>
 #import <AddressBookUI/AddressBookUI.h>
 #import "History.h"
+#import <MediaPlayer/MediaPlayer.h>
 
 @interface VideoDetailViewController : UIViewController< MFMessageComposeViewControllerDelegate, UINavigationControllerDelegate>
+
 @property (weak, nonatomic) IBOutlet UIButton *sendSMS;
 @property (weak, nonatomic) IBOutlet UIButton *sendEmail;
 @property (weak, nonatomic) IBOutlet UILabel *videoLabel;
@@ -22,4 +24,5 @@
 @property ABRecordID groupId;
 @property NSString *contactName;
 @property NSString *contactPhone;
+@property NSString *videoURL;
 @end

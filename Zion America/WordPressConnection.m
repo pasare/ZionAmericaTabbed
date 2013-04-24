@@ -237,6 +237,45 @@
     
     return wpEmailCredentials;
 }
+
+- (NSMutableArray *)getMediaLibrary:(NSString *)xmlrpc username:(NSString *)username password:(NSString *)password {
+    
+    /* Returns the full array of media items on the website:
+     *
+     * media Item {
+     *     int post_id
+     *     string URL
+     * }
+     */
+    NSMutableArray *wpMediaLibrary = [[NSMutableArray alloc] init];
+    @try {
+        XMLRPCRequest *xmlrpcMediaLibrary = [[XMLRPCRequest alloc] initWithURL:[NSURL URLWithString:xmlrpc]];
+        [xmlrpcMediaLibrary setMethod:@"myZion.videoLinks" withParameters:[NSArray arrayWithObjects:username, password, nil]];
+        wpMediaLibrary = [self executeXMLRPCRequest:xmlrpcMediaLibrary];
+        
+        if ([wpMediaLibrary isKindOfClass:[NSArray class]]) {
+            wpMediaLibrary = [NSMutableArray arrayWithArray:wpMediaLibrary];
+        }
+        else if ([wpMediaLibrary isKindOfClass:[NSError class]]) {
+            self.error = (NSError *)wpMediaLibrary;
+            NSString *errorMessage = [self.error localizedDescription];
+            wpMediaLibrary = nil;
+    
+            if([errorMessage isEqualToString:@"The operation couldn’t be completed. (NSXMLParserErrorDomain error 4.)"]) {
+                errorMessage = @"Your blog's XML-RPC endpoint was found but it isn't communicating properly. Try disabling plugins or contacting your host.";
+            }
+        } else {
+            wpMediaLibrary = nil;
+            NSLog(@"wpMediaLibrary failed: No Data\n");
+        }
+    }
+    @catch (NSException *exception) {
+        wpMediaLibrary = nil;
+        NSLog(@"getMediaLibrary failed %@", exception);
+    }
+    
+    return wpMediaLibrary;
+}
 // END -------------------------------------------------------------------------
 
 - (id)executeXMLRPCRequest:(XMLRPCRequest *)req {

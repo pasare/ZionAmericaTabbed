@@ -89,6 +89,9 @@
 		99F7C13716E8521C0065B0AA /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 99F7C12416E8521C0065B0AA /* README.md */; };
 		99F7C13F16E8550C0065B0AA /* HTAutocompleteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F7C13E16E8550C0065B0AA /* HTAutocompleteManager.m */; };
 		99F7C14216E9A1BD0065B0AA /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F7C14116E9A1BC0065B0AA /* Constants.m */; };
+		99FE5D5B171CDFC20059F56F /* video.png in Resources */ = {isa = PBXBuildFile; fileRef = 99FE5D5A171CDFC20059F56F /* video.png */; };
+		99FE5D5F171CE01F0059F56F /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = 99FE5D5E171CE01F0059F56F /* play.png */; };
+		99FE5D61171CF5BD0059F56F /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99FE5D60171CF5BD0059F56F /* MediaPlayer.framework */; };
 		FC85120D168A1AB100F94C60 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC85120C168A1AB100F94C60 /* UIKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		FC85120F168A1AB100F94C60 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC85120E168A1AB100F94C60 /* Foundation.framework */; };
 		FC851211168A1AB100F94C60 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC851210168A1AB100F94C60 /* CoreGraphics.framework */; };
@@ -273,6 +276,9 @@
 		99F7C13E16E8550C0065B0AA /* HTAutocompleteManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HTAutocompleteManager.m; path = ../HTAutocompleteManager.m; sourceTree = "<group>"; };
 		99F7C14016E9A1BB0065B0AA /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		99F7C14116E9A1BC0065B0AA /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		99FE5D5A171CDFC20059F56F /* video.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = video.png; sourceTree = "<group>"; };
+		99FE5D5E171CE01F0059F56F /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
+		99FE5D60171CF5BD0059F56F /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		FC851208168A1AB100F94C60 /* Zion America.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Zion America.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC85120C168A1AB100F94C60 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FC85120E168A1AB100F94C60 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -310,6 +316,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99FE5D61171CF5BD0059F56F /* MediaPlayer.framework in Frameworks */,
 				997D83A316EEDAB500852961 /* SystemConfiguration.framework in Frameworks */,
 				99047A9416E57C1200622548 /* AddressBookUI.framework in Frameworks */,
 				99047A9016E57C0900622548 /* AddressBook.framework in Frameworks */,
@@ -377,6 +384,7 @@
 		FC8511FD168A1AB100F94C60 = {
 			isa = PBXGroup;
 			children = (
+				99FE5D60171CF5BD0059F56F /* MediaPlayer.framework */,
 				997D83A216EEDAB400852961 /* SystemConfiguration.framework */,
 				99881EC816921DE9006433E8 /* MailCore.xcodeproj */,
 				9991E0F2168BCF1400A88911 /* XMLRPC-iOS.xcodeproj */,
@@ -505,6 +513,8 @@
 		FC851276168AB5D800F94C60 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				99FE5D5E171CE01F0059F56F /* play.png */,
+				99FE5D5A171CDFC20059F56F /* video.png */,
 				997FE37316E0745400D20FCE /* Zion America v2_power button-20x20.png */,
 				99C7370016DF3A3000173260 /* logout button-20x20.png */,
 				99E814AE16DF315700ED04C5 /* Default-568h@2x.png */,
@@ -746,6 +756,8 @@
 				99F7C12516E8521C0065B0AA /* .gitignore in Resources */,
 				99F7C13616E8521C0065B0AA /* LICENSE in Resources */,
 				99F7C13716E8521C0065B0AA /* README.md in Resources */,
+				99FE5D5B171CDFC20059F56F /* video.png in Resources */,
+				99FE5D5F171CE01F0059F56F /* play.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

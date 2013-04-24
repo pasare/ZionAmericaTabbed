@@ -145,52 +145,6 @@ bool _searching = NO;
     }
 }
 
-//Index view on right hand side
-/*- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
-    
-    if(_searching)
-        return nil;
-    
-    NSMutableArray *tempArray = [[NSMutableArray alloc] init];
-    [tempArray addObject:UITableViewIndexSearch];
-    [tempArray addObject:@"A"];
-    [tempArray addObject:@"B"];
-    [tempArray addObject:@"C"];
-    [tempArray addObject:@"D"];
-    [tempArray addObject:@"E"];
-    [tempArray addObject:@"F"];
-    [tempArray addObject:@"G"];
-    [tempArray addObject:@"H"];
-    [tempArray addObject:@"I"];
-    [tempArray addObject:@"J"];
-    [tempArray addObject:@"K"];
-    [tempArray addObject:@"L"];
-    [tempArray addObject:@"M"];
-    [tempArray addObject:@"N"];
-    [tempArray addObject:@"O"];
-    [tempArray addObject:@"P"];
-    [tempArray addObject:@"Q"];
-    [tempArray addObject:@"R"];
-    [tempArray addObject:@"S"];
-    [tempArray addObject:@"T"];
-    [tempArray addObject:@"U"];
-    [tempArray addObject:@"V"];
-    [tempArray addObject:@"W"];
-    [tempArray addObject:@"X"];
-    [tempArray addObject:@"Y"];
-    [tempArray addObject:@"Z"];
-    
-    return tempArray;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index {
-    if (index == 0) {
-        [tableView scrollRectToVisible:[[tableView tableHeaderView] bounds] animated:NO];
-        return -1;
-    }
-    return index;
-} */
-
 //search methods
 - (void)searchBar:(UISearchBar *)theSearchBar textDidChange:(NSString *)searchText {
     //Remove all objects first.
@@ -247,13 +201,14 @@ searchArray = nil;
 }
 
 - (void)newPersonViewController:(ABNewPersonViewController *)newPersonViewController didCompleteWithNewPerson:(ABRecordRef)person {
-    CFErrorRef error = NULL;
-    ABRecordID groupId = [[VariableStore sharedInstance] groupId];
-    ABRecordRef zionAmericaGroup = ABAddressBookGetGroupWithRecordID(newPersonViewController.addressBook, groupId);
-    ABGroupAddMember(zionAmericaGroup, person, &error);
-    ABAddressBookSave(newPersonViewController.addressBook, &error);
-    
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"DataSaved" object:nil];
+    if (person) {
+        CFErrorRef error = NULL;
+        ABRecordID groupId = [[VariableStore sharedInstance] groupId];
+        ABRecordRef zionAmericaGroup = ABAddressBookGetGroupWithRecordID(newPersonViewController.addressBook, groupId);
+        ABGroupAddMember(zionAmericaGroup, person, &error);
+        ABAddressBookSave(newPersonViewController.addressBook, &error);
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"DataSaved" object:nil];
+    }
     [self dismissViewControllerAnimated:YES completion:^(void){}];
 }
 

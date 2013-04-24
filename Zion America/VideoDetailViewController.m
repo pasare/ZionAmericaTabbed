@@ -26,6 +26,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    //Add the gesture recognizer for the play button
     //Create the failed message alert
     _failedAlert = [[UIAlertView alloc] initWithTitle:@"Status" message:@"Message Sent Sucessfully, God bless you!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil ];
     
@@ -42,9 +44,11 @@
         if ([[currentPost objectForKey:@"post_title"] isEqualToString:videoName])
         {
             videoInfo = currentPost;
+            _videoURL = [currentPost objectForKey:@"link"];
             
         }
     }
+    NSLog(@"current video information: %@",videoInfo);
 }
 
 - (void)didReceiveMemoryWarning
@@ -262,6 +266,17 @@
     else {
         [self.navigationController popToRootViewControllerAnimated:YES];
     }
+}
+- (IBAction)playVideo:(id)sender {
+    MPMoviePlayerController *moviePlayer;
+    NSURL *urlString=[NSURL URLWithString:_videoURL];
+    moviePlayer = [[MPMoviePlayerController alloc] initWithContentURL:urlString];
+    moviePlayer.scalingMode = MPMovieScalingModeAspectFill;
+    [moviePlayer setControlStyle:MPMovieControlStyleNone];
+    [[moviePlayer view] setFrame:[[self view] bounds]];
+    [moviePlayer prepareToPlay];
+    [self.view addSubview:moviePlayer.view];
+    [moviePlayer play];
 }
 
 @end

@@ -613,7 +613,7 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="redraw" image="butterfly with text.png" translatesAutoresizingMaskIntoConstraints="NO" id="i4C-cr-oSN">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="z93-jU-lHN"/>
+                                    <constraint firstAttribute="height" constant="34" id="Ddo-8i-FiZ"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Video Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="ug0-9x-mev">
@@ -656,18 +656,37 @@
                                     <action selector="sendSms:" destination="xbr-xM-X46" eventType="touchUpInside" id="Uh4-PB-awI"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f2S-ud-mCp">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="136" id="bsm-dZ-eft"/>
+                                    <constraint firstAttribute="height" constant="83" id="s1V-Sd-OE6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" backgroundImage="video.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playVideo:" destination="xbr-xM-X46" eventType="touchUpInside" id="0t4-Fq-D2G"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="S7k-nF-eRy" firstAttribute="leading" secondItem="nVv-BA-ESd" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="3SN-kK-tQs"/>
                             <constraint firstAttribute="trailing" secondItem="suH-Jj-vwk" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="4f4-9R-Icu"/>
                             <constraint firstItem="i4C-cr-oSN" firstAttribute="leading" secondItem="nVv-BA-ESd" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="8Rd-O6-QoY"/>
+                            <constraint firstItem="S7k-nF-eRy" firstAttribute="centerX" secondItem="f2S-ud-mCp" secondAttribute="centerX" type="default" id="NHV-pf-Tzn"/>
                             <constraint firstItem="suH-Jj-vwk" firstAttribute="leading" secondItem="nVv-BA-ESd" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Nmi-SK-kqV"/>
                             <constraint firstItem="i4C-cr-oSN" firstAttribute="top" secondItem="nVv-BA-ESd" secondAttribute="top" constant="20" symbolic="YES" type="default" id="Zdx-Dk-xLL"/>
                             <constraint firstAttribute="trailing" secondItem="ug0-9x-mev" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="ahb-B6-8Ug"/>
                             <constraint firstItem="ug0-9x-mev" firstAttribute="leading" secondItem="nVv-BA-ESd" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="b5d-2f-sWs"/>
                             <constraint firstAttribute="trailing" secondItem="i4C-cr-oSN" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="cZu-gY-5oi"/>
                             <constraint firstAttribute="trailing" secondItem="S7k-nF-eRy" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="hZG-u0-EtE"/>
+                            <constraint firstItem="f2S-ud-mCp" firstAttribute="centerY" secondItem="nVv-BA-ESd" secondAttribute="centerY" type="default" id="keI-9D-Yaw"/>
                             <constraint firstAttribute="bottom" secondItem="S7k-nF-eRy" secondAttribute="bottom" constant="72" type="user" id="mrO-kc-l9G"/>
                             <constraint firstItem="ug0-9x-mev" firstAttribute="top" secondItem="i4C-cr-oSN" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="pCu-nX-Wjl"/>
                             <constraint firstItem="suH-Jj-vwk" firstAttribute="top" secondItem="S7k-nF-eRy" secondAttribute="bottom" constant="8" symbolic="YES" type="user" id="q2n-rd-Hc7"/>
@@ -832,90 +851,15 @@
         <image name="envelop.png" width="24" height="24"/>
         <image name="home.png" width="24" height="24"/>
         <image name="television.png" width="24" height="24"/>
+        <image name="video.png" width="128" height="128"/>
     </resources>
-    <classes>
-        <class className="AddContactViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddContactViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="addContactTable" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="contactLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="saveContactButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="ContactsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ContactsViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="contactTable" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
-            </relationships>
-        </class>
-        <class className="HistoryViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HistoryViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="historyTable" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
-            </relationships>
-        </class>
-        <class className="InboxDetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/InboxDetailViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="bodyView" candidateClass="UIWebView"/>
-                <relationship kind="outlet" name="fromLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="subjectLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="toLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="InboxViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/InboxViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="emailTable" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="inboxNavigationItem" candidateClass="UINavigationItem"/>
-                <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
-            </relationships>
-        </class>
-        <class className="LoginViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="ProcessLogin:"/>
-                <relationship kind="outlet" name="copyrightLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="loginButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="loginTable" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="SendEmailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SendEmailViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="commentView" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="sendEmailTable" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="SendVideoViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SendVideoViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
-                <relationship kind="outlet" name="videoTable" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="VideoDetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VideoDetailViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="sendEmail" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="sendSMS" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="videoLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="44M-Gs-5WA"/>
         <segue reference="Dva-Xt-oQ0"/>
+        <segue reference="8sI-Va-apy"/>
     </inferredMetricsTieBreakers>
 </document>
