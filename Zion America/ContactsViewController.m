@@ -33,6 +33,7 @@ bool _searching = NO;
     _listOfItems = [[NSMutableArray alloc] init];
     _searchBar.tintColor = [UIColor colorWithHue:0.6 saturation:0.33 brightness:0.69 alpha:0];
     _contactTable.backgroundColor = [UIColor colorWithRed:0/255.0f green:41/255.0f blue:92/255.0f alpha:1];
+    //_contactTable.backgroundColor = [UIColor colorWithRed:210/255.0f green:226/255.0f blue:245/255.0f alpha:1];
     [_contactTable setBackgroundView:nil];
     
     //Create the success alert
@@ -87,8 +88,11 @@ bool _searching = NO;
         firstName =(__bridge NSString *)ABRecordCopyValue((__bridge ABRecordRef)([contactsArray objectAtIndex:indexPath.row]), kABPersonFirstNameProperty);
         lastName = (__bridge NSString *)ABRecordCopyValue((__bridge ABRecordRef)([contactsArray objectAtIndex:indexPath.row]), kABPersonLastNameProperty);
     }
-    
-    NSMutableString *personName = [[NSMutableString alloc] initWithFormat:@"%@ %@",firstName,lastName];
+    NSMutableString *personName;
+    if (lastName != nil)
+        personName = [[NSMutableString alloc] initWithFormat:@"%@ %@",firstName,lastName];
+    else
+        personName = [[NSMutableString alloc] initWithFormat:@"%@",firstName];
     cell.textLabel.text = personName;
     cell.backgroundColor = [UIColor colorWithRed:210/255.0f green:226/255.0f blue:245/255.0f alpha:1];
     return cell;
@@ -113,7 +117,11 @@ bool _searching = NO;
     ABMultiValueRef multiPhone = ABRecordCopyValue((__bridge ABRecordRef)([usedArray objectAtIndex:indexPath.row]), kABPersonPhoneProperty);
     [VariableStore sharedInstance].selectedContactPhone = (__bridge NSString*)ABMultiValueCopyValueAtIndex(multiPhone, 0);
     
-    [self performSegueWithIdentifier: @"contactToEmailSegue" sender: self];
+    //[[VariableStore sharedInstance] setContactSelected:YES];
+    //if ([[VariableStore sharedInstance] videoSelected])
+        //[self performSegueWithIdentifier:@"contactToDetailSegue" sender:self];
+    //else
+        [self performSegueWithIdentifier: @"contactToEmailSegue" sender: self];
 }
 
 

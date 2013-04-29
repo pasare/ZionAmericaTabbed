@@ -28,6 +28,8 @@
 @property (nonatomic) NSFetchedResultsController *fetchedHistoryController;
 @property ABRecordID groupId;
 @property (nonatomic) BOOL accessGranted;
+@property (nonatomic) BOOL contactSelected;
+@property (nonatomic) BOOL videoSelected;
 
 // ADDED BY PHIL BROWNING ------------------------------------------------------
 @property (nonatomic) NSString *smtpEmail;
@@ -36,6 +38,7 @@
 @property (nonatomic) NSString *smtpServer;
 @property (nonatomic) NSString *smtpUser;
 @property (nonatomic) NSString *zionName;
+@property (nonatomic) NSArray *mediaLibrary;
 // END -------------------------------------------------------------------------
 
 

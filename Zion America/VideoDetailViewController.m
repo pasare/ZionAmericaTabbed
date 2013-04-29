@@ -27,6 +27,10 @@
 {
     [super viewDidLoad];
     
+    //unset these options
+    [[VariableStore sharedInstance]setContactSelected:NO];
+    [[VariableStore sharedInstance] setVideoSelected:NO];
+    
     //Add the gesture recognizer for the play button
     //Create the failed message alert
     _failedAlert = [[UIAlertView alloc] initWithTitle:@"Status" message:@"Message Sent Sucessfully, God bless you!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil ];
@@ -44,8 +48,6 @@
         if ([[currentPost objectForKey:@"post_title"] isEqualToString:videoName])
         {
             videoInfo = currentPost;
-            _videoURL = [currentPost objectForKey:@"link"];
-            
         }
     }
     NSLog(@"current video information: %@",videoInfo);
@@ -268,15 +270,41 @@
     }
 }
 - (IBAction)playVideo:(id)sender {
-    MPMoviePlayerController *moviePlayer;
-    NSURL *urlString=[NSURL URLWithString:_videoURL];
-    moviePlayer = [[MPMoviePlayerController alloc] initWithContentURL:urlString];
-    moviePlayer.scalingMode = MPMovieScalingModeAspectFill;
-    [moviePlayer setControlStyle:MPMovieControlStyleNone];
+    //get the proper video link
+    
+    NSString *videoName = [[VariableStore sharedInstance] videoName];
+    NSString *videoURL;
+    NSDictionary *videoInfo;
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSArray *savedPosts = [defaults objectForKey:@"posts"];
+    NSArray *mediaLibrary = [defaults objectForKey:@"media"];
+    //Retrieve the video information
+    for (id currentPost in savedPosts)
+    {
+        if ([[currentPost objectForKey:@"post_title"] isEqualToString:videoName])
+        {
+            videoInfo = currentPost;
+            break;
+        }
+    }
+    //Get the correct video for the posts
+    for (NSDictionary *mediaItem in mediaLibrary) {
+        //NSLog(@"%@",mediaItem objectForKey:@"post_id"]);
+        //NSLog(@"%@",[videoInfo objectForKey:@"post_id"]);
+        if ([[mediaItem objectForKey:@"post_parent"] isEqualToString:[videoInfo objectForKey:@"post_id"]]) {
+            
+            videoURL = [mediaItem objectForKey:@"guid"];
+            break;
+        }
+    }
+    NSLog(@"%@",videoURL);
+    
+    
+    MPMoviePlayerViewController *moviePlayer;
+    NSURL *urlString=[NSURL URLWithString:videoURL];
+    moviePlayer = [[MPMoviePlayerViewController alloc] initWithContentURL:urlString];
     [[moviePlayer view] setFrame:[[self view] bounds]];
-    [moviePlayer prepareToPlay];
-    [self.view addSubview:moviePlayer.view];
-    [moviePlayer play];
+    [self presentMoviePlayerViewControllerAnimated:moviePlayer];
 }
 
 @end

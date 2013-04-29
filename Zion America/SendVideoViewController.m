@@ -63,7 +63,7 @@
     
     //Load the video list from memory if possible
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSLog(@"%@", defaults);
+    //NSLog(@"%@", defaults);
     NSArray *wpposts = [defaults objectForKey:@"posts"];
     
     //Load the video list from memory
@@ -133,15 +133,16 @@
     NSString *server = WPSERVER;
     WordPressConnection *connection = [WordPressConnection alloc];
     NSDictionary *wpposts = [connection getPosts:server username: [[VariableStore sharedInstance] loginID] password:[[VariableStore sharedInstance] loginPass]];
-    NSArray *wpmedia = [connection getMediaLibrary:server username:[[VariableStore sharedInstance] loginID] password:[[VariableStore sharedInstance] loginPass]];
+    NSMutableArray *wpmedia = [connection getMediaLibrary:server username:[[VariableStore sharedInstance] loginID] password:[[VariableStore sharedInstance] loginPass]];
     [self.statusAlert dismissWithClickedButtonIndex:0 animated:YES];
     
+    [[VariableStore sharedInstance] setMediaLibrary:wpmedia];
     //Save the posts to defaults, to keep across sessions
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:wpposts forKey:@"posts"];
-    
+    [defaults setObject:wpmedia forKey:@"media"];
     // Add video URL to posts
-    NSLog(@"%@", wpmedia);
+     //NSLog(@"%lu", (unsigned long)[wpmedia count]);
     
     if (wpposts != nil) {
         _tableArray = [[NSMutableArray alloc] initWithCapacity:[wpposts count]];
@@ -298,7 +299,14 @@
         selectedVideo = [array objectAtIndex:indexPath.row];
     }
     [VariableStore sharedInstance].videoName = selectedVideo;
-    [self performSegueWithIdentifier: @"videoDetailSegue" sender: self];
+    
+    //[[VariableStore sharedInstance] setVideoSelected:YES];
+    
+    //check if the contact has already been selected
+    //if ([[VariableStore sharedInstance] contactSelected])
+        [self performSegueWithIdentifier:@"videoDetailSegue" sender:self];
+    //else
+        //[self performSegueWithIdentifier: @"pickContactSegue" sender: self];
 }
 
 

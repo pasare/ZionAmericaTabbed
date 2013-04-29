@@ -21,7 +21,7 @@
 - (NSMutableArray *)getBlogsForUser:(NSString *)xmlrpc username:(NSString *)username password:(NSString *)password;
 -(NSMutableDictionary *)getPosts:(NSString *)xmlrpcServer username:(NSString *)username password:(NSString *)password;
 -(NSMutableDictionary *)getUsers:(NSString *)xmlrpcServer username:(NSString *)username password:(NSString *)password;
-
+-(NSMutableArray *)getMediaLibrary:(NSString *)xmlrpc username:(NSString *)username password:(NSString *)password;
 // ADDED BY PHIL BROWNING ------------------------------------------------------
 - (NSMutableDictionary *)getEmailCredentials:(NSString *)xmlrpc username:(NSString *)username password:(NSString *)password;
 // END -------------------------------------------------------------------------

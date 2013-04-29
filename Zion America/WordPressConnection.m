@@ -243,8 +243,9 @@
     /* Returns the full array of media items on the website:
      *
      * media Item {
-     *     int post_id
-     *     string URL
+     *     int post_parent
+     *     string post_title
+            string guid
      * }
      */
     NSMutableArray *wpMediaLibrary = [[NSMutableArray alloc] init];
@@ -252,7 +253,6 @@
         XMLRPCRequest *xmlrpcMediaLibrary = [[XMLRPCRequest alloc] initWithURL:[NSURL URLWithString:xmlrpc]];
         [xmlrpcMediaLibrary setMethod:@"myZion.videoLinks" withParameters:[NSArray arrayWithObjects:username, password, nil]];
         wpMediaLibrary = [self executeXMLRPCRequest:xmlrpcMediaLibrary];
-        
         if ([wpMediaLibrary isKindOfClass:[NSArray class]]) {
             wpMediaLibrary = [NSMutableArray arrayWithArray:wpMediaLibrary];
         }

@@ -121,7 +121,7 @@
         }
         else {
             //Access has been denied
-            UIAlertView *failedAlert = [[UIAlertView alloc] initWithTitle:@"Alert!" message:@"Unable to access contacts, grant this application access in your privacy settings" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil ];
+            UIAlertView *failedAlert = [[UIAlertView alloc] initWithTitle:@"Alert!" message:@"Unable to access contacts, in order to be fully functional this application requires access to contacts" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil ];
             [failedAlert show];
         }
     }

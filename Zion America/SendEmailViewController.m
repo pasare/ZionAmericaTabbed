@@ -27,6 +27,9 @@
 {
     [super viewDidLoad];
     
+    //Clear the selected contact because we did not want to use it
+    
+    
     [HTAutocompleteTextField setDefaultAutocompleteDataSource:[HTAutocompleteManager sharedManager]];
     //set the colors
      self.view.backgroundColor = [UIColor colorWithRed:0/255.0f green:41/255.0f blue:92/255.0f alpha:1];
@@ -256,7 +259,6 @@
                                     useAuth:YES
                                     error:&error];
     }
-    
     if (success) {
         
         [self.statusAlert dismissWithClickedButtonIndex:0 animated:YES];
@@ -341,8 +343,14 @@
     CFErrorRef error = NULL;
     NSArray *nameParts = [_emailName.text componentsSeparatedByString:@" "];
     NSString *firstName = [nameParts objectAtIndex:0];
-    NSString *lastName = [nameParts objectAtIndex:1];
-    NSMutableString *fullName = [[NSMutableString alloc]initWithFormat:@"%@ %@",firstName,lastName];
+    NSString *lastName = nil;
+    NSMutableString *fullName;
+    if ([nameParts count]>1) {
+        lastName = [nameParts objectAtIndex:1];
+     fullName = [[NSMutableString alloc]initWithFormat:@"%@ %@",firstName,lastName];
+    }
+    else
+        fullName = fullName = [[NSMutableString alloc]initWithFormat:@"%@",firstName];
     NSString *emailAddress = _emailAddress.text;
 	ABAddressBookRef addressBook = ABAddressBookCreateWithOptions(NULL, NULL);
 	NSArray *people = (__bridge NSArray *)ABAddressBookCopyPeopleWithName(addressBook, (__bridge CFStringRef)(fullName));
@@ -398,6 +406,7 @@
         
         CFRelease(person);
         CFRelease(addressBook);
+        
     }
 }
 

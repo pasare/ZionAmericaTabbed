@@ -31,6 +31,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [[VariableStore sharedInstance]setContactSelected:NO];
+    [[VariableStore sharedInstance] setVideoSelected:NO];
+    
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyy"];
     NSString *yearString = [formatter stringFromDate:[NSDate date]];

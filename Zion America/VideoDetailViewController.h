@@ -24,5 +24,4 @@
 @property ABRecordID groupId;
 @property NSString *contactName;
 @property NSString *contactPhone;
-@property NSString *videoURL;
 @end
