@@ -55,6 +55,7 @@
 		99A7186C16D1BD5E00AA7518 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99A7186B16D1BD5E00AA7518 /* CoreData.framework */; };
 		99A7186F16D1C10B00AA7518 /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = 99A7186E16D1C10B00AA7518 /* Contact.m */; };
 		99C7370116DF3A3000173260 /* logout button-20x20.png in Resources */ = {isa = PBXBuildFile; fileRef = 99C7370016DF3A3000173260 /* logout button-20x20.png */; };
+		99C8E6F417334DF000F9C90D /* OrderedDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 99C8E6F317334DF000F9C90D /* OrderedDictionary.m */; };
 		99CAA9A416D8539F001622B0 /* Zion America v2_logo_transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = 99CAA9A316D8539F001622B0 /* Zion America v2_logo_transparent.png */; };
 		99CAA9A816D87E1D001622B0 /* button-green1.png in Resources */ = {isa = PBXBuildFile; fileRef = 99CAA9A716D87E1D001622B0 /* button-green1.png */; };
 		99CAA9AA16D882CF001622B0 /* Zion America v2_login_bg only_no text.png in Resources */ = {isa = PBXBuildFile; fileRef = 99CAA9A916D882CF001622B0 /* Zion America v2_login_bg only_no text.png */; };
@@ -238,6 +239,8 @@
 		99A7186D16D1C10B00AA7518 /* Contact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contact.h; sourceTree = "<group>"; };
 		99A7186E16D1C10B00AA7518 /* Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contact.m; sourceTree = "<group>"; };
 		99C7370016DF3A3000173260 /* logout button-20x20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logout button-20x20.png"; sourceTree = "<group>"; };
+		99C8E6F017334DEA00F9C90D /* OrderedDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderedDictionary.h; sourceTree = "<group>"; };
+		99C8E6F317334DF000F9C90D /* OrderedDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderedDictionary.m; sourceTree = "<group>"; };
 		99CAA9A316D8539F001622B0 /* Zion America v2_logo_transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Zion America v2_logo_transparent.png"; sourceTree = "<group>"; };
 		99CAA9A716D87E1D001622B0 /* button-green1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-green1.png"; sourceTree = "<group>"; };
 		99CAA9A916D882CF001622B0 /* Zion America v2_login_bg only_no text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Zion America v2_login_bg only_no text.png"; sourceTree = "<group>"; };
@@ -470,6 +473,8 @@
 				99E8147416DC7F4200ED04C5 /* HistoryCell.m */,
 				99F7C14016E9A1BB0065B0AA /* Constants.h */,
 				99F7C14116E9A1BC0065B0AA /* Constants.m */,
+				99C8E6F017334DEA00F9C90D /* OrderedDictionary.h */,
+				99C8E6F317334DF000F9C90D /* OrderedDictionary.m */,
 				FC851276168AB5D800F94C60 /* Resources */,
 				FC851213168A1AB100F94C60 /* Supporting Files */,
 			);
@@ -830,6 +835,7 @@
 				99F7C13F16E8550C0065B0AA /* HTAutocompleteManager.m in Sources */,
 				99F7C14216E9A1BD0065B0AA /* Constants.m in Sources */,
 				997D83A816EEDB8300852961 /* Reachability.m in Sources */,
+				99C8E6F417334DF000F9C90D /* OrderedDictionary.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

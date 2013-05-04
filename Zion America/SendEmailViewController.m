@@ -238,7 +238,7 @@
     
     
     //Create the message to send
-    NSString *videoDescription = [NSString stringWithFormat:@"Please enjoy this video titled: %@\r%@",videoName , videoUrl];
+    NSString *videoDescription = [NSString stringWithFormat:@"\rPlease enjoy this video titled: %@\r%@",videoName , videoUrl];
     NSMutableString *msgBody = [NSMutableString stringWithCapacity:0];
         
     [msgBody appendString:[NSString stringWithFormat:@"\r%@\r",_commentView.text]];

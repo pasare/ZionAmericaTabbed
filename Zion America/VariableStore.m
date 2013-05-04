@@ -132,10 +132,21 @@
     
     
     if (_accessGranted) {
-        
+        NSArray *tempContactsArray;
+        NSMutableArray *returnedContactsArray = [[NSMutableArray alloc] init];
         [self CheckIfGroupExistsWithName:@"Zion America"];
-        ABRecordRef zionAmericaGroup = ABAddressBookGetGroupWithRecordID(addressBook,_groupId);
-        [VariableStore sharedInstance].contactsArray = (__bridge_transfer NSArray*)ABGroupCopyArrayOfAllMembersWithSortOrdering(zionAmericaGroup, kABPersonSortByFirstName);
+        ABRecordRef zionAmericaGroup = ABAddressBookGetGroupWithRecordID(addressBook,[[VariableStore sharedInstance] groupId]);
+        tempContactsArray = (__bridge_transfer NSArray*)ABGroupCopyArrayOfAllMembersWithSortOrdering(zionAmericaGroup, kABPersonSortByFirstName);
+        NSString *firstName=@"";
+        NSString *lastName=@"";
+        NSMutableString *fullName;
+        for (int i=0; i<[tempContactsArray count]; i++) {
+            firstName =(__bridge NSString *)ABRecordCopyValue((__bridge ABRecordRef)([tempContactsArray objectAtIndex:i]) , kABPersonFirstNameProperty);
+            lastName = (__bridge NSString *)ABRecordCopyValue((__bridge ABRecordRef)([tempContactsArray objectAtIndex:i]), kABPersonLastNameProperty);
+            fullName = [[NSMutableString alloc] initWithFormat:@"%@ %@",firstName,lastName];
+            [returnedContactsArray addObject:fullName];
+        }
+        [[VariableStore sharedInstance] setContactsArray:returnedContactsArray];
     }
     
     //CFRelease(addressBook);
