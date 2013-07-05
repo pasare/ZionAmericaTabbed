@@ -108,17 +108,23 @@
 			break;
         }
 		case MessageComposeResultFailed:
+            [VariableStore sharedInstance].selectedContactName = nil;
+            [VariableStore sharedInstance].selectedContactPhone = nil;
+            [VariableStore sharedInstance].selectedContactEmail = nil;
             [_failedAlert setMessage:@"SMS sending failed"];
             [_failedAlert show];
 			break;
 		default:
+            [VariableStore sharedInstance].selectedContactName = nil;
+            [VariableStore sharedInstance].selectedContactPhone = nil;
+            [VariableStore sharedInstance].selectedContactEmail = nil;
             [_failedAlert setMessage:@"Unable to send message at this time"];
             [_failedAlert show];
 			break;
 	}
 
 }
-
+//Not possible with iphone restrictions
 /*-(void) saveContact {
     //If recipients is empty than the contact does not exist in the address book
     if (![_recipients count]) {

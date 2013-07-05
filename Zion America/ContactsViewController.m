@@ -159,8 +159,10 @@ bool _searching = NO;
 
 
 -(void) dataSaved:(NSNotification *)notification{
-    if ([VariableStore sharedInstance].accessGranted)
+    if ([VariableStore sharedInstance].accessGranted) {
         [[VariableStore sharedInstance] displayContacts];
+        [self getContacts];
+    }
     [_contactTable reloadData];
 }
 
@@ -275,14 +277,33 @@ bool _searching = NO;
 //Edit contact functions
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
 {
-    ABPersonViewController *personView = [[ABPersonViewController alloc] init];
-    personView.personViewDelegate = self;
-    personView.displayedPerson = (__bridge ABRecordRef)([[VariableStore sharedInstance].contactsArray objectAtIndex:indexPath.row]);
-    personView.allowsEditing = YES;
-    NSArray *displayedItems = [NSArray arrayWithObjects:[NSNumber numberWithInt:kABPersonPhoneProperty],
+    //Retrieve contact name from dictionary
+    ABAddressBookRef addressBook = ABAddressBookCreateWithOptions(NULL,NULL);
+    NSArray *contactsGroup = [_contactsDictionary objectAtIndex:indexPath.section];
+    NSString *contactName = [contactsGroup objectAtIndex:indexPath.row];
+    NSArray *people = (__bridge NSArray *)ABAddressBookCopyPeopleWithName(addressBook, (__bridge CFStringRef)(contactName));
+    
+    if ((people != nil) && [people count])
+    {
+        ABRecordRef person = (__bridge ABRecordRef)[people objectAtIndex:0];
+        ABPersonViewController *personView = [[ABPersonViewController alloc] init];
+        personView.personViewDelegate = self;
+        personView.displayedPerson = person;
+        personView.allowsEditing = YES;
+        NSArray *displayedItems = [NSArray arrayWithObjects:[NSNumber numberWithInt:kABPersonPhoneProperty],
                                [NSNumber numberWithInt:kABPersonEmailProperty],[NSNumber numberWithInt:kABPersonNoteProperty], nil];
-    personView.displayedProperties = displayedItems;
-    [self.navigationController pushViewController:personView animated:YES];
+        personView.displayedProperties = displayedItems;
+        [self.navigationController pushViewController:personView animated:YES];
+    }
+    else {
+        // Show an alert if contact is not in addressbook
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
+														message:@"Could not find the contact in your addressbook"
+													   delegate:nil
+											  cancelButtonTitle:@"Cancel"
+											  otherButtonTitles:nil];
+        [alert show];
+    }
     
 }
 

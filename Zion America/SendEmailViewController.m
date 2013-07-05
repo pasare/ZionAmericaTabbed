@@ -350,7 +350,7 @@
      fullName = [[NSMutableString alloc]initWithFormat:@"%@ %@",firstName,lastName];
     }
     else
-        fullName = fullName = [[NSMutableString alloc]initWithFormat:@"%@",firstName];
+        fullName = [[NSMutableString alloc]initWithFormat:@"%@",firstName];
     NSString *emailAddress = _emailAddress.text;
 	ABAddressBookRef addressBook = ABAddressBookCreateWithOptions(NULL, NULL);
 	NSArray *people = (__bridge NSArray *)ABAddressBookCopyPeopleWithName(addressBook, (__bridge CFStringRef)(fullName));

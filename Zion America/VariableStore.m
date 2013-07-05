@@ -143,7 +143,10 @@
         for (int i=0; i<[tempContactsArray count]; i++) {
             firstName =(__bridge NSString *)ABRecordCopyValue((__bridge ABRecordRef)([tempContactsArray objectAtIndex:i]) , kABPersonFirstNameProperty);
             lastName = (__bridge NSString *)ABRecordCopyValue((__bridge ABRecordRef)([tempContactsArray objectAtIndex:i]), kABPersonLastNameProperty);
-            fullName = [[NSMutableString alloc] initWithFormat:@"%@ %@",firstName,lastName];
+            if (lastName != nil )
+                fullName = [[NSMutableString alloc] initWithFormat:@"%@ %@",firstName,lastName];
+            else
+                fullName = [[NSMutableString alloc] initWithFormat:@"%@",firstName ] ;
             [returnedContactsArray addObject:fullName];
         }
         [[VariableStore sharedInstance] setContactsArray:returnedContactsArray];
